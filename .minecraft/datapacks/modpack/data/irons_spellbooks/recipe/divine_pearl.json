@@ -1,14 +1,3 @@
 ﻿{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "c:ingots/gold"
-    },
-    {
-      "tag": "c:ingots/silver"
-    }
-  ],
-  "result": {
-    "id": "irons_spellbooks:divine_pearl"
-  }
+  "type": "minecraft:none"
 }

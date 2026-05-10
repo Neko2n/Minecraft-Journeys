@@ -13,7 +13,7 @@
       "item": "minecraft:crossbow"
     },
     "Y": {
-      "tag": "c:ingots/silver"
+      "item": "oreganized:silver_ingot"
     }
   },
   "result": {

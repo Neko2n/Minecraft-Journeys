@@ -1,0 +1,79 @@
+[general]
+	#Master switch for all imprint capture.
+	#When disabled, imprint generation and rendering stop completely.
+	enable_imprints = true
+	#Minimum movement, in blocks, before placing the next imprint stamp.
+	#Larger value = sparser trail
+	#Range: 0.01 .. 1.0
+	imprint_step_distance = 0.15
+	#Use render-model snapshots to place stamps from the visible entity shape.
+	#When disabled, bounding-box contact is used instead.
+	imprint_model_contact = true
+	#How model-contact should handle entities missing a usable render snapshot.
+	#DISABLED = never force offscreen captures.
+	#ON_DEMAND = request a forced capture when a usable model snapshot is missing.
+	#Available values: DISABLED, ON_DEMAND
+	model_contact_offscreen_policy = "ON_DEMAND"
+	#What to do when model-contact cannot produce a usable contact area.
+	#SKIP = skip this entity's imprint tick.
+	#BOUNDING_BOX = use the entity bounding box for this stamp.
+	#Available values: SKIP, BOUNDING_BOX
+	model_contact_fallback_policy = "SKIP"
+	#Combine render-model snapshots captured during the same game tick.
+	#This can preserve fast limb motion better than using only the latest pose.
+	imprint_accumulate_snapshots = true
+	#Vertical tolerance above the surface for model-contact sampling.
+	#0.0 keeps the band razor-thin; larger values are more forgiving.
+	#Range: 0.0 .. 0.5
+	imprint_contact_band_height = 0.15
+	#Minimum body rotation before placing a new model-contact stamp.
+	#0.0 disables rotation-triggered updates.
+	#Range: 0.0 .. 360.0
+	imprint_rotation_step_degrees = 10.0
+	#Entity type ids that should never leave imprints in BLACKLIST mode.
+	#Example: ["minecraft:enderman"]
+	imprint_target_blacklist = []
+	#Entity type ids allowed to leave imprints in WHITELIST mode.
+	#Example: ["minecraft:boat"]
+	imprint_target_whitelist = []
+	#Entity target filter mode for imprint tracking.
+	#BLACKLIST = all valid entities except ids in imprint_target_blacklist.
+	#WHITELIST = only ids in imprint_target_whitelist.
+	#Available values: BLACKLIST, WHITELIST
+	imprint_target_filter_mode = "BLACKLIST"
+	#How often dirty chunks are queued for visual rebuilds after imprint changes.
+	#1 = every tick
+	#Range: 1 .. 200
+	imprint_chunk_rebuild_tick_rate = 1
+	#How often the client flushes pending imprint writes into the cache.
+	#1 = every tick, 2 = every 2 ticks, etc.
+	#Range: 1 .. 200
+	imprint_write_check_tick_rate = 1
+	#Drop cached imprint maps when a chunk unloads.
+	clear_imprints_on_chunk_unload = false
+	#Maximum dirty render sections processed per rebuild iteration.
+	#The maximum slider value means unlimited.
+	#Range: 1 .. 21
+	max_sections_rebuild_per_iteration = 6
+	#Maximum entities around the observer checked by the imprint tracker each tick.
+	#The maximum slider value means unlimited.
+	#Range: 1 .. 101
+	max_track_entities = 101
+	#Maximum distance from the observer for entity imprint tracking.
+	#The maximum slider value means unlimited.
+	#Range: 0 .. 257
+	entities_track_range = 257
+	#Maximum model-contact offscreen entity captures per render frame.
+	#0 disables forced offscreen captures.
+	#Range: 0 .. 65
+	max_offscreen_captures_per_frame = 24
+	#Maximum imprint block maps kept in the client cache before old entries are discarded.
+	#Higher values preserve more distant imprints but use more memory.
+	#Range: 128 .. 4096
+	max_cached_imprint_blocks = 4096
+	#Capture render-model snapshots every N render frames while target entities are visible.
+	#1 = every frame
+	#Range: 1 .. 20
+	imprint_snapshot_interval = 12
+	#Soft Imprints plugin ids disabled by the config screen
+	disabled_plugins = []

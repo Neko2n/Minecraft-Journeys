@@ -1,27 +1,11 @@
-{
+﻿{
   "pools": [
     {
-      "name": "ender_essence",
       "rolls": 1,
-      "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "waystones:warp_dust",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 5
-              }
-            }
-          ],
-          "weight": 1
+          "name": "bosses_of_mass_destruction:blazing_eye"
         }
       ]
     },
@@ -30,7 +14,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bosses_of_mass_destruction:blazing_eye"
+          "name": "aether:netherite_gloves"
         }
       ]
     }

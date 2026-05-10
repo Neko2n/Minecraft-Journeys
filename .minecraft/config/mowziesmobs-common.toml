@@ -200,7 +200,7 @@
 			#Probability of a spawn attempt succeeding. 1 for normal spawning, 0 will prevent spawning. Used to make mobs extra rare.
 			# Default: 1.0
 			# Range: 0.0 ~ 1.0
-			extra_rarity = 0.1
+			extra_rarity = 0.005
 			#Smaller number causes less spawning, 0 to disable spawning
 			# Default: 20
 			# Range: > 0
@@ -859,7 +859,7 @@
 			#Allow spawns in these biomes regardless of the biome tag settings
 			biome_whitelist = []
 			#Prevent spawns in these biomes regardless of the biome tag settings
-			biome_blacklist = []
+			biome_blacklist = ["deep_aether:yagroot_swamp", "deep_aether:aerlavender_fields"]
 
 		#Controls for vanilla-style mob spawning
 		[mobs.Elokosa.spawn_config]
@@ -878,7 +878,7 @@
 			#Probability of a spawn attempt succeeding. 1 for normal spawning, 0 will prevent spawning. Used to make mobs extra rare.
 			# Default: 1.0
 			# Range: 0.0 ~ 1.0
-			extra_rarity = 1.0
+			extra_rarity = 0.04
 			#Names of dimensions this mob can spawn in
 			dimensions = ["aether:the_aether"]
 			#Names of blocks this mob is allowed to spawn on. Leave blank to ignore block names.

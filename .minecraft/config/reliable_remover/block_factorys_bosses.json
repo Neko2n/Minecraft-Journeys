@@ -1,0 +1,23 @@
+﻿[
+    {
+        "action": "remove",
+        "items": [
+            "block_factorys_bosses:dragon_bones_boots",
+            "block_factorys_bosses:dragon_bones_chestplate",
+            "block_factorys_bosses:dragon_bones_leggings",
+            "block_factorys_bosses:knight_helmet",
+            "block_factorys_bosses:knight_chestplate",
+            "block_factorys_bosses:knight_leggings",
+            "block_factorys_bosses:knight_boots",
+            "block_factorys_bosses:knight_sword",
+            "block_factorys_bosses:pirate_saber",
+            "block_factorys_bosses:large_sword",
+            "block_factorys_bosses:warrior_sword",
+            "block_factorys_bosses:dagger",
+            "block_factorys_bosses:kraken_trident",
+            "block_factorys_bosses:undying_tentacle",
+            "block_factorys_bosses:ice_gauntlet",
+            "block_factorys_bosses:enhanced_shield"
+        ]
+    }
+]

@@ -1,5 +1,7 @@
 {
+  "replace": false,
   "values": [
+    "#minecraft:stone_crafting_materials",
     {
       "id": "bloomingnature:travertin",
       "required": false
@@ -10,6 +12,10 @@
     },
     {
       "id": "bloomingnature:slate",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:chert",
       "required": false
     }
   ]

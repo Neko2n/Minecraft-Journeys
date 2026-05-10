@@ -10,7 +10,7 @@
       "item": "irons_spellbooks:arcane_essence"
     },
     "W": {
-      "tag": "c:ingots/silver"
+      "item": "oreganized:silver_ingot"
     }
   },
   "result": {

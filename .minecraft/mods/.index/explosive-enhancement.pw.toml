@@ -1,0 +1,21 @@
+filename = 'explosive-enhancement-neoforge-1.4.2-1.21.1.jar'
+name = 'Explosive Enhancement'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1-Snapshot', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'explosive-enhancement-neoforge-1.4.2-1.21.1.jar'
+
+[download]
+hash = '3ffe6f93d2cd756a997881098ce084a4afb80aed'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8038666
+project-id = 1318792
+
+[[x-prismlauncher-dependencies]]
+addonId = '306612'
+type = 'REQUIRED'

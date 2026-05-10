@@ -1,14 +1,4 @@
-{
-  "structures": [
-    {
-      "structure": "block_factorys_bosses:underworld_arena",
-      "weight": 1
-    }
-  ],
-  "placement": {
-    "type": "minecraft:random_spread",
-    "spacing": 48,
-    "separation": 40,
-    "salt": 565960105
-  }
+﻿{
+  "structures": [{"structure": "block_factorys_bosses:underworld_arena", "weight": 1}],
+  "placement": {"type": "minecraft:random_spread", "spacing": 1000, "separation": 999, "salt": 565960105}
 }

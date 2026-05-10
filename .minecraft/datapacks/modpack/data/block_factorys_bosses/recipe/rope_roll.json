@@ -1,0 +1,7 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {"O": {"item": "supplementaries:rope"}},
+  "pattern": ["OOO", "O O", "OOO"],
+  "result": {"count": 1, "id": "block_factorys_bosses:rope_roll"}
+}

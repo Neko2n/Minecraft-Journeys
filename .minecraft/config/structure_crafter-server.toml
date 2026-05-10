@@ -11,6 +11,9 @@ structure_place_distance = 3
 structure_place_mode = "BLACKLIST"
 #NBT Ignore List
 structure_blacklist = []
+#Structure Upload Validation
+#Allowed Values: ALL, MODERATORS, GAMEMASTERS, ADMINS, OWNERS, NO_ONE
+server_upload_validation = "ADMINS"
 
 ["Structure Size Limit"]
 	#Structure Size Limit (X)

@@ -1,0 +1,13 @@
+{
+  "block.oreganized.deepslate_silver_ore": "Deepslate Platinum Ore",
+  "block.oreganized.raw_silver_block": "Block of Raw Platinum",
+  "block.oreganized.silver_block": "Block of Platinum",
+  "block.oreganized.silver_ore": "Platinum Ore",
+  "item.oreganized.raw_silver": "Raw Platinum",
+  "item.oreganized.silver_ingot": "Platinum Ingot",
+  "item.oreganized.silver_nugget": "Platinum Nugget",
+  "trim_material.oreganized.silver": "Platinum Material",
+  "advancements.oreganized.obtain_silver.title": "Every Stone has a Platinum Lining",
+  "advancements.oreganized.obtain_silver.description": "Smelt Raw Platinum",
+  "advancements.oreganized.weeping_devil.description": "Exchange a Silver Ingot for a hellish growl of the Gargoyle"
+}

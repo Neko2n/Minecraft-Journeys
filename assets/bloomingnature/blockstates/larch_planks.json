@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/larch_planks",
+        "weight": 1
+      }
+    ]
+  }
+}

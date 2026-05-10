@@ -1,6 +1,7 @@
 {
   "replace": true,
   "values": [
+    "caverns_and_chasms:silver_nugget",
     {
       "id": "galosphere:silver_nugget",
       "required": false

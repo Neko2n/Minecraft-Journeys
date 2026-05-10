@@ -1,0 +1,8 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "neoforge:conditions": [{"type": "neoforge:false"}],
+  "category": "building",
+  "key": {"O": {"tag": "minecraft:planks"}},
+  "pattern": ["  O", " O ", "O  "],
+  "result": {"count": 12, "id": "block_factorys_bosses:plank"}
+}

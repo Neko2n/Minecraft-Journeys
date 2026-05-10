@@ -1,9 +1,6 @@
-{
+﻿{
   "replace": true,
   "values": [
-    {
-      "id": "irons_spellbooks:nature_upgrade_orb",
-      "required": false
-    }
+    "irons_spellbooks:nature_upgrade_orb"
   ]
 }

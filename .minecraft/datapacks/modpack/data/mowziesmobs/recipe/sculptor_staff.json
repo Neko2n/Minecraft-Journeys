@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " BS",
+    " TB",
+    "T  "
+  ],
+  "key": {
+    "S": { "item": "deep_aether:skyjade" },
+    "B": { "item": "mowziesmobs:bluff_rod" },
+    "T": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "id": "mowziesmobs:sculptor_staff",
+    "count": 1
+  }
+}

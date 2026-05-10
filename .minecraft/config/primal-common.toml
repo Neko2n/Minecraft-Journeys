@@ -23,6 +23,13 @@
 		polarBearIncreasesHealth = true
 		wolfIncreasesHealth = true
 		foxIncreasesHealth = true
+		#Extra mods with supported wolf variants. For custom resourcepacks
+		#You must write the mod namespace here, after that Primal will read the custom texture files (e.g. wolfExtraModsSupportedForVariants = ["atmospheric", "environmental"] )
+		#The new custom texture files must be located on "resources/assets/primal/textures/entity/wolf/[mod namespace]/[variant name].png"
+		#You also need to add the glowing eye texture on "resources/assets/primal/textures/entity/wolf/[mod namespace]/[variant name]_eyes.png"
+		#This will only work with correctly registered variants, no with new entities that use the wolf renderer
+		#Default = []
+		wolfExtraModsSupportedForVariants = []
 
 		[mob.misc.babyCustomModels]
 			#If for some reason you don't want the cute babies custom models, you can disable them here, and they will use the adult model with a big head.

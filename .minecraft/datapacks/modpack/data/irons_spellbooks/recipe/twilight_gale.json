@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  M",
+    "LB ",
+    "WL "
+  ],
+  "key": {
+    "M": { "tag": "c:ingots/mithril" },
+    "B": { "item": "minecraft:breeze_rod" },
+    "L": { "item": "irons_spellbooks:lightning_bottle" },
+    "W": { "item": "irons_spellbooks:weapon_parts" }
+  },
+  "result": {
+    "id": "irons_spellbooks:twilight_gale",
+    "count": 1
+  }
+}

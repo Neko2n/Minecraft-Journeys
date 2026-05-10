@@ -7,7 +7,7 @@
   ],
   "key": {
     "I": {
-      "tag": "c:ingots/silver"
+      "item": "oreganized:silver_ingot"
     },
     "L": {
       "item": "netherexp:phasmo_shard"

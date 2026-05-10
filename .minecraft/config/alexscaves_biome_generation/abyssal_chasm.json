@@ -1,7 +1,7 @@
 {
   "disabled_completely": false,
   "distance_from_spawn": 400,
-  "alexscaves_rarity_offset": 3,
+  "alexscaves_rarity_offset": 0,
   "continentalness": [
     -0.95,
     -0.65

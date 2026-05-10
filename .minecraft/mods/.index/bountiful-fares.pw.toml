@@ -1,0 +1,21 @@
+filename = 'bountifulfares-neoforge-1.21.1-3.0.8.jar'
+name = 'Bountiful Fares'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'bountifulfares-neoforge-1.21.1-3.0.8.jar'
+
+[download]
+hash = '0c75e68622df874b80ade363a996d88735d2e80c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8041170
+project-id = 972289
+
+[[x-prismlauncher-dependencies]]
+addonId = '1279113'
+type = 'REQUIRED'

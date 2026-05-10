@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#goodending:improved_swamp_features",
+  "features": "modpack:swamp_oak_marsh",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,212 @@
+{
+	// Whether mobs spawned by any encounter event can drop their equipment when killed.
+	mobsDropEquipment: false,
+	// Master toggle for the lightning_overcharge event
+	lightningOverchargeEnabled: true,
+	// Probability that a natural lightning bolt during a storm triggers the event
+	lightningOverchargeChance: 0.05,
+	// Minimum number of mobs spawned by the event (inclusive)
+	lightningOverchargeGroupMin: 2,
+	// Maximum number of mobs spawned by the event (inclusive)
+	lightningOverchargeGroupMax: 5,
+	// When enabled, the first mob of a group acts as leader and the others regroup around it whenever they stray too far. Followers in active combat are left alone.
+	lightningOverchargeGroupCohesionEnabled: true,
+	// Distance (in blocks) beyond which a follower is pulled back toward its leader
+	lightningOverchargeGroupCohesionRadius: 12,
+	// Weighted mob pool. Each entry: { id, weight, nbt?, label? }. 'nbt' is SNBT identical to the /summon command. Editable from the in-game config GUI.
+	lightningOverchargeMobs: [
+		{
+			id: "minecraft:skeleton",
+			weight: 10,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:28.0d}],Health:28.0f,HandItems:[{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{power:3,flame:1,punch:1}}},{}],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}}],HandDropChances:[0f,0f],ArmorDropChances:[0f,0f,0f,0f]}",
+			label: "Stormcaller"
+		},
+		{
+			id: "minecraft:zombie",
+			weight: 8,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.15d},{id:"minecraft:generic.max_health",base:40.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:40.0f,active_effects:[{id:"minecraft:strength",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2,knockback:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}},{}],HandDropChances:[0f,0f],ArmorDropChances:[0f,0f,0f,0f]}",
+			label: "Soul-Drowned"
+		},
+		{
+			id: "minecraft:stray",
+			weight: 5,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:26.0d}],Health:26.0f,HandItems:[{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{power:2,punch:2}}},{}],HandDropChances:[0f,0f]}",
+			label: "Frostbound Echo"
+		},
+		{
+			id: "minecraft:drowned",
+			weight: 4,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f,active_effects:[{id:"minecraft:conduit_power",amplifier:0b,duration:-1,show_particles:1b}],HandItems:[{id:"minecraft:trident",count:1,components:{"minecraft:enchantments":{impaling:4,loyalty:3}}},{}],HandDropChances:[0f,0f]}",
+			label: "Tempest Wraith"
+		},
+		{
+			id: "minecraft:wither_skeleton",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.2d},{id:"minecraft:generic.max_health",base:45.0d}],Health:45.0f,active_effects:[{id:"minecraft:strength",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:stone_sword",count:1,components:{"minecraft:enchantments":{sharpness:3,fire_aspect:2}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":0,"minecraft:enchantments":{protection:3}}},{}],HandDropChances:[0f,0f],ArmorDropChances:[0f,0f,0f,0f]}",
+			label: "Soul-lit Vanguard"
+		},
+		{
+			id: "minecraft:wither_skeleton",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.25d},{id:"minecraft:generic.max_health",base:50.0d}],Health:50.0f,active_effects:[{id:"minecraft:strength",amplifier:1b,duration:-1,show_particles:0b}],HandItems:[{id:"epicfight:netherite_greatsword",count:1,components:{"minecraft:enchantments":{sharpness:3}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:3}}},{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}}]}",
+			label: "Stormcrown Vanguard"
+		},
+		{
+			id: "minecraft:skeleton",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.movement_speed",base:0.28d},{id:"minecraft:generic.max_health",base:26.0d}],Health:26.0f,active_effects:[{id:"minecraft:speed",amplifier:1b,duration:-1,show_particles:0b}],HandItems:[{id:"epicfight:iron_dagger",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{id:"epicfight:iron_dagger",count:1,components:{"minecraft:enchantments":{sharpness:1}}}],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":1912627}}]}",
+			label: "Echo Fencer"
+		},
+		{
+			id: "minecraft:drowned",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.movement_speed",base:0.26d},{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f,active_effects:[{id:"minecraft:conduit_power",amplifier:0b,duration:-1,show_particles:1b},{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"epicfight:iron_spear",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{}]}",
+			label: "Spearborn Drowned"
+		},
+		{
+			id: "minecraft:zombie",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:38.0d}],Health:38.0f,active_effects:[{id:"minecraft:strength",amplifier:0b,duration:-1,show_particles:0b},{id:"irons_spellbooks:charged",amplifier:1b,duration:-1,show_particles:1b},{id:"irons_spellbooks:volt_strike",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2,knockback:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}},{}]}",
+			label: "Voltaic Revenant"
+		},
+		{
+			id: "minecraft:stray",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:28.0d}],Health:28.0f,active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b},{id:"irons_spellbooks:echoing_strikes",amplifier:1b,duration:-1,show_particles:0b},{id:"irons_spellbooks:hastened",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{power:2,punch:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}},{}]}",
+			label: "Sculk-Echo Stalker"
+		},
+		{
+			id: "minecraft:skeleton",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.15d},{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f,active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b},{id:"simplyswords:storm",amplifier:1b,duration:-1,show_particles:1b}],HandItems:[{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{power:3,punch:2}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1912627,"minecraft:enchantments":{protection:2}}},{}]}",
+			label: "Stormborn Marksman"
+		}
+	],
+	// Master toggle for the nether_portal_invasion event
+	netherPortalInvasionEnabled: true,
+	// How often (in server ticks) the mod scans loaded chunks for active nether portals
+	netherPortalInvasionScanIntervalTicks: 100,
+	// Cooldown (in ticks) after an invasion ends before the same portal can trigger again
+	netherPortalInvasionPortalCooldownTicks: 12000,
+	// Probability (per scan) that an eligible portal triggers an invasion
+	netherPortalInvasionTriggerChance: 0.05,
+	// Minimum number of waves per invasion (inclusive)
+	netherPortalInvasionMinWaves: 4,
+	// Maximum number of waves per invasion (inclusive)
+	netherPortalInvasionMaxWaves: 6,
+	// Number of mobs in the first wave
+	netherPortalInvasionFirstWaveSize: 2,
+	// Additional mobs added per wave (linear scaling: wave_n = first + (n-1) * step)
+	netherPortalInvasionWaveSizeStep: 1,
+	// When enabled, the first mob of each wave acts as leader. Other wave members regroup around it whenever they stray too far. Followers in active combat are left alone, and mounted mobs' passengers are skipped.
+	netherPortalInvasionGroupCohesionEnabled: true,
+	// Distance (in blocks) beyond which a wave member is pulled back toward its leader
+	netherPortalInvasionGroupCohesionRadius: 12,
+	// Weighted mob pool for the nether portal invasion. Same { id, weight, nbt?, label? } format as the lightning event.
+	netherPortalInvasionMobs: [
+		{
+			id: "minecraft:piglin",
+			weight: 40,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:golden_sword",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{}]}",
+			label: "Piglin Soldier"
+		},
+		{
+			id: "minecraft:piglin",
+			weight: 25,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:crossbow",count:1,components:{"minecraft:enchantments":{quick_charge:2}}},{}]}",
+			label: "Piglin Marksman"
+		},
+		{
+			id: "minecraft:piglin",
+			weight: 15,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:35.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:35.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{id:"minecraft:shield",count:1}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":10497574,"minecraft:enchantments":{protection:1}}},{}]}",
+			label: "Piglin Shieldbearer"
+		},
+		{
+			id: "minecraft:wither_skeleton",
+			weight: 12,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,HandItems:[{id:"minecraft:stone_sword",count:1},{}]}",
+			label: "Ashen Marauder"
+		},
+		{
+			id: "minecraft:piglin",
+			weight: 10,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,IsImmuneToZombification:1b,active_effects:[{id:"minecraft:fire_resistance",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:golden_sword",count:1,components:{"minecraft:enchantments":{sharpness:1,fire_aspect:2}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":7227919}},{}]}",
+			label: "Piglin Pyromancer"
+		},
+		{
+			id: "minecraft:blaze",
+			weight: 8,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f}",
+			label: "Embercaller"
+		},
+		{
+			id: "minecraft:piglin",
+			weight: 8,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,IsImmuneToZombification:1b,active_effects:[{id:"minecraft:strength",amplifier:0b,duration:-1,show_particles:0b},{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:iron_axe",count:1,components:{"minecraft:enchantments":{sharpness:3}}},{}]}",
+			label: "Piglin Berserker"
+		},
+		{
+			id: "minecraft:piglin",
+			weight: 6,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:40.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:40.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{}],ArmorItems:[{},{},{id:"minecraft:iron_chestplate",count:1,components:{"minecraft:enchantments":{protection:2}}},{id:"minecraft:iron_helmet",count:1,components:{"minecraft:enchantments":{protection:1}}}]}",
+			label: "Piglin Heavy Guard"
+		},
+		{
+			id: "minecraft:piglin_brute",
+			weight: 5,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:60.0d},{id:"minecraft:generic.knockback_resistance",base:0.4d}],Health:60.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:iron_axe",count:1,components:{"minecraft:enchantments":{sharpness:3}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1315860,"minecraft:enchantments":{protection:2}}},{id:"minecraft:iron_helmet",count:1,components:{"minecraft:enchantments":{protection:1}}}]}",
+			label: "Ironhide Brute"
+		},
+		{
+			id: "minecraft:wither_skeleton",
+			weight: 5,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f,HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{}],ArmorItems:[{id:"minecraft:chainmail_boots",count:1},{id:"minecraft:chainmail_leggings",count:1},{id:"minecraft:chainmail_chestplate",count:1,components:{"minecraft:enchantments":{protection:1}}},{id:"minecraft:chainmail_helmet",count:1}]}",
+			label: "Cinder Knight"
+		},
+		{
+			id: "minecraft:wither_skeleton",
+			weight: 4,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,active_effects:[{id:"minecraft:speed",amplifier:0b,duration:-1,show_particles:0b}],HandItems:[{id:"minecraft:stone_axe",count:1,components:{"minecraft:enchantments":{sharpness:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1315860}},{}]}",
+			label: "Ash Sentinel"
+		},
+		{
+			id: "minecraft:zombified_piglin",
+			weight: 4,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,HandItems:[{id:"minecraft:golden_sword",count:1,components:{"minecraft:enchantments":{sharpness:1}}},{}],ArmorItems:[{},{},{},{id:"minecraft:golden_helmet",count:1}]}",
+			label: "Zombified Piglin Wanderer"
+		},
+		{
+			id: "minecraft:piglin_brute",
+			weight: 3,
+			nbt: "{Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:60.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:60.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:golden_axe",count:1,components:{"minecraft:enchantments":{sharpness:3,fire_aspect:1}}},{}],ArmorItems:[{id:"minecraft:golden_boots",count:1,components:{"minecraft:enchantments":{protection:2}}},{id:"minecraft:golden_leggings",count:1,components:{"minecraft:enchantments":{protection:2}}},{id:"minecraft:golden_chestplate",count:1,components:{"minecraft:enchantments":{protection:3}}},{id:"minecraft:golden_helmet",count:1,components:{"minecraft:enchantments":{protection:2}}}]}",
+			label: "Goldforged Brute"
+		},
+		{
+			id: "minecraft:hoglin",
+			weight: 3,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:50.0d},{id:"minecraft:generic.knockback_resistance",base:0.6d}],Health:50.0f,IsImmuneToZombification:1b,Passengers:[{id:"minecraft:piglin_brute",Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:50.0d}],Health:50.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:iron_axe",count:1,components:{"minecraft:enchantments":{sharpness:2,knockback:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":10497574,"minecraft:enchantments":{protection:2}}},{}]}]}",
+			label: "Tusked Vanguard"
+		},
+		{
+			id: "minecraft:hoglin",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:45.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:45.0f,IsImmuneToZombification:1b,Passengers:[{id:"minecraft:piglin",Tags:["encounters_banner_eligible"],attributes:[{id:"minecraft:generic.max_health",base:25.0d}],Health:25.0f,IsImmuneToZombification:1b,HandItems:[{id:"minecraft:crossbow",count:1,components:{"minecraft:enchantments":{quick_charge:2,multishot:1}}},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":10497574,"minecraft:enchantments":{protection:1}}},{}]}]}",
+			label: "Crossbow Outrider"
+		},
+		{
+			id: "minecraft:hoglin",
+			weight: 2,
+			nbt: "{attributes:[{id:"minecraft:generic.max_health",base:50.0d},{id:"minecraft:generic.knockback_resistance",base:0.5d}],Health:50.0f,IsImmuneToZombification:1b,Passengers:[{id:"minecraft:wither_skeleton",attributes:[{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f,HandItems:[{id:"minecraft:iron_sword",count:1,components:{"minecraft:enchantments":{sharpness:2}}},{}],ArmorItems:[{},{},{id:"minecraft:chainmail_chestplate",count:1,components:{"minecraft:enchantments":{protection:1}}},{}]}]}",
+			label: "Iron Charger"
+		},
+		{
+			id: "minecraft:ghast",
+			weight: 1,
+			nbt: "{attributes:[{id:"minecraft:generic.scale",base:1.1d},{id:"minecraft:generic.max_health",base:30.0d}],Health:30.0f}",
+			label: "Inferno Sovereign"
+		}
+	],
+	// When enabled (and Iron's Spells 'n Spellbooks is loaded), the portal periodically lobs magma bombs out of the gateway during the invasion. Spell level scales +1 per wave, capped at 8. No effect if the mod is absent.
+	netherPortalInvasionMagmaBombEnabled: true
+}

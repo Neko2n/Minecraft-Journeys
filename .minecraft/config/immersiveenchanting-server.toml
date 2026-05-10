@@ -1,7 +1,7 @@
 [bookshelves]
 	#The number of blocks in the X-level that the enchanting table can detect chiseled bookshelves. Each 'row' can hold up to 96 books. If you have many enchantments, you may need to increase this value to provide more space.
 	# Default: 2
-	# Range: 1 ~ 8
+	# Range: 2 ~ 8
 	bookshelfSearchX = 2
 	#The number of blocks in the Y-level that the enchanting table can detect chiseled bookshelves. Each 'row' can hold up to 96 books. If you have many enchantments, you may need to increase this value to provide more space.
 	# Default: 3
@@ -9,7 +9,7 @@
 	bookshelfSearchY = 3
 	#The number of blocks in the Z-level that the enchanting table can detect chiseled bookshelves. Each 'row' can hold up to 96 books. If you have many enchantments, you may need to increase this value to provide more space.
 	# Default: 2
-	# Range: 1 ~ 8
+	# Range: 2 ~ 8
 	bookshelfSearchZ = 2
 
 [ancientbooks]

@@ -1,10 +1,10 @@
 {
   "entity.mowziesmobs.naga": "Wyvern",
   "item.mowziesmobs.naga_fang": "Wyvern Fang",
-  "item.mowziesmobs.naga_fang.text.0": "Used to brew Potion of Poison Resistance, craft a Wyvern Fang Dagger, or craft darts",
-  "item.mowziesmobs.naga_fang_dagger": "Wyvern Fang Dagger",
-  "item.mowziesmobs.naga_fang_dagger.text.0": "Poisons targets",
-  "item.mowziesmobs.naga_fang_dagger.text.1": "Deals double damage from behind",
+  "item.mowziesmobs.naga_fang.text.0": "",
+  "item.mowziesmobs.naga_fang_dagger": "Dagger",
+  "item.mowziesmobs.naga_fang_dagger.text.0": "",
+  "item.mowziesmobs.naga_fang_dagger.text.1": "",
   "item.mowziesmobs.naga_spawn_egg": "Wyvern Spawn Egg",
   "advancements.mowziesmobs.kill_naga.title": "Wingin' It",
   "advancements.mowziesmobs.kill_naga.description": "Kill a Wyvern",
@@ -17,5 +17,8 @@
   "subtitles.mowziesmobs.naga.grunt": "Wyvern grunts",
   "subtitles.mowziesmobs.naga.roar": "Wyvern roars",
   "subtitles.mowziesmobs.naga.swoop": "Wyvern swoops",
-  "item.minecraft.phantom_membrane": "Membrane"
+  "item.minecraft.phantom_membrane": "Membrane",
+  "item.mowziesmobs.sculptor_staff": "Staff",
+  "item.mowziesmobs.sculptor_staff.text.0": "",
+  "item.mowziesmobs.sculptor_staff.text.1": ""
 }

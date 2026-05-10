@@ -38,3 +38,11 @@
 # Default: 0.2
 # Range: 0.01 ~ 1.0
 "Percentage Boost:" = 0.2
+#What should the default cooldown (in seconds) be for the Sprig weapon?
+# Default: 3
+# Range: 1 ~ 999
+"Sprig Cooldown:" = 3
+#What should the default cooldown (in seconds) be for the Oculus weapon?
+# Default: 4
+# Range: 1 ~ 999
+"Oculus Cooldown:" = 4

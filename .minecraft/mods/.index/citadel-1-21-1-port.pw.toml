@@ -1,5 +1,5 @@
 filename = 'citadel-1.21.1-2.7.6.jar'
-name = 'Citadel'
+name = 'Citadel (Unofficial Port)'
 side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]

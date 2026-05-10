@@ -10,7 +10,7 @@
       "item": "species:werefang"
     },
     "B": {
-      "tag": "c:ingots/silver"
+      "item": "oreganized:silver_ingot"
     }
   },
   "result": {

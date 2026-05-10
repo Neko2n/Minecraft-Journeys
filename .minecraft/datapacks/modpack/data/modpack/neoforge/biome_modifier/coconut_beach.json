@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:beach",
+  "features": "natures_spirit:coconut_beach_placed",
+  "step": "vegetal_decoration"
+}

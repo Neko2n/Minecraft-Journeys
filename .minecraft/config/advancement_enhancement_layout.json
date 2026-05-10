@@ -2187,6 +2187,758 @@
     "supplementaries:story/unenchanter": [
       224,
       81
+    ],
+    "archeological:profound_discoveries": [
+      0,
+      0
+    ],
+    "bountifulfares:bountiful_fares": [
+      0,
+      219
+    ],
+    "bountifulfares:plant_on_trellis": [
+      32,
+      378
+    ],
+    "bountifulfares:obtain_sun_hat": [
+      32,
+      222
+    ],
+    "bountifulfares:obtain_spongekin_seeds": [
+      32,
+      121
+    ],
+    "bountifulfares:place_gristmill": [
+      32,
+      60
+    ],
+    "bountifulfares:obtain_tiffin": [
+      32,
+      189
+    ],
+    "bountifulfares:obtain_flour": [
+      64,
+      81
+    ],
+    "bountifulfares:throw_flour_as_cover": [
+      96,
+      94
+    ],
+    "bountifulfares:place_all_baked_goods": [
+      96,
+      67
+    ],
+    "bountifulfares:obtain_feldspar": [
+      64,
+      40
+    ],
+    "bountifulfares:make_first_food": [
+      32,
+      256
+    ],
+    "bountifulfares:obtain_ceramic_clay": [
+      96,
+      40
+    ],
+    "bountifulfares:obtain_fermentation_vessel": [
+      128,
+      0
+    ],
+    "bountifulfares:pick_fruit": [
+      32,
+      351
+    ],
+    "bountifulfares:obtain_walnut": [
+      32,
+      148
+    ],
+    "bountifulfares:obtain_golden_apple_sapling": [
+      64,
+      337
+    ],
+    "bountifulfares:obtain_lemon_block": [
+      64,
+      391
+    ],
+    "bountifulfares:fill_tiffin": [
+      64,
+      175
+    ],
+    "bountifulfares:eat_all_food": [
+      64,
+      229
+    ],
+    "bountifulfares:craft_food_in_tiffin": [
+      64,
+      202
+    ],
+    "bountifulfares:obtain_artisan_brush": [
+      128,
+      40
+    ],
+    "bountifulfares:feed_wolf_mulch": [
+      64,
+      148
+    ],
+    "bountifulfares:eat_all_bad_foods": [
+      64,
+      256
+    ],
+    "bountifulfares:obtain_all_fruit": [
+      64,
+      364
+    ],
+    "bountifulfares:eat_ancient_fruit": [
+      64,
+      310
+    ],
+    "bountifulfares:obtain_tea_blends": [
+      128,
+      81
+    ],
+    "bountifulfares:eat_citrus_essence": [
+      160,
+      0
+    ],
+    "bountifulfares:obtain_spongekin": [
+      64,
+      121
+    ],
+    "bountifulfares:eat_all_candy": [
+      64,
+      283
+    ],
+    "bountifulfares:dye_leather_armor_on_armor_stand": [
+      160,
+      27
+    ],
+    "bountifulfares:obtain_golden_apple": [
+      96,
+      337
+    ],
+    "bountifulfares:place_all_tea_candles": [
+      160,
+      81
+    ],
+    "bountifulfares:acidify_effect_2_levels": [
+      192,
+      0
+    ],
+    "bountifulfares:obtain_prismarine_blossom": [
+      96,
+      121
+    ],
+    "bountifulfares:dye_ceramic_block": [
+      160,
+      54
+    ],
+    "archeological:the_key_to_the_past": [
+      0,
+      0
+    ],
+    "archeological:artist_in_antiquity": [
+      0,
+      0
+    ],
+    "archeological:magician_from_a_different_era": [
+      0,
+      0
+    ],
+    "archeological:ancient_relics": [
+      0,
+      0
+    ],
+    "archeological:the_archaeologist_dream": [
+      0,
+      0
+    ],
+    "archeological:remains_of_the_past": [
+      0,
+      0
+    ],
+    "archeological:perfect_for_a_museum": [
+      0,
+      0
+    ],
+    "alexscaves:alexscaves/root": [
+      0,
+      534
+    ],
+    "alexscaves:alexscaves/cave_tablet": [
+      32,
+      534
+    ],
+    "alexscaves:alexscaves/cave_book": [
+      64,
+      548
+    ],
+    "alexscaves:alexscaves/cave_codex": [
+      64,
+      521
+    ],
+    "alexscaves:alexscaves/cave_map": [
+      96,
+      521
+    ],
+    "alexscaves:alexscaves/discover_forlorn_hollows": [
+      128,
+      951
+    ],
+    "alexscaves:alexscaves/discover_primordial_caves": [
+      128,
+      91
+    ],
+    "alexscaves:alexscaves/limestone": [
+      160,
+      121
+    ],
+    "alexscaves:alexscaves/discover_abyssal_chasm": [
+      128,
+      796
+    ],
+    "alexscaves:alexscaves/defeat_corrodent": [
+      160,
+      938
+    ],
+    "alexscaves:alexscaves/discover_toxic_caves": [
+      128,
+      273
+    ],
+    "alexscaves:alexscaves/discover_dinosaur": [
+      160,
+      60
+    ],
+    "alexscaves:alexscaves/tree_star": [
+      192,
+      27
+    ],
+    "alexscaves:alexscaves/abyssal_bucket": [
+      160,
+      870
+    ],
+    "alexscaves:alexscaves/discover_abyssal_ruins": [
+      160,
+      722
+    ],
+    "alexscaves:alexscaves/discover_magnetic_caves": [
+      128,
+      627
+    ],
+    "alexscaves:alexscaves/cave_painting": [
+      192,
+      121
+    ],
+    "alexscaves:alexscaves/deep_sea_sushi_roll": [
+      192,
+      884
+    ],
+    "alexscaves:alexscaves/dinosaurs_minecart": [
+      192,
+      94
+    ],
+    "alexscaves:alexscaves/trilocaris_bucket": [
+      192,
+      67
+    ],
+    "alexscaves:alexscaves/discover_candy_cavity": [
+      128,
+      475
+    ],
+    "alexscaves:alexscaves/burrowing_arrow": [
+      192,
+      938
+    ],
+    "alexscaves:alexscaves/tame_subterranodon": [
+      224,
+      54
+    ],
+    "alexscaves:alexscaves/guano": [
+      160,
+      965
+    ],
+    "alexscaves:alexscaves/defeat_mine_guardian": [
+      192,
+      722
+    ],
+    "alexscaves:alexscaves/enter_acid_with_armor": [
+      160,
+      324
+    ],
+    "alexscaves:alexscaves/breed_grottoceratops": [
+      224,
+      27
+    ],
+    "alexscaves:alexscaves/radgill_bucket": [
+      192,
+      297
+    ],
+    "alexscaves:alexscaves/mussel": [
+      160,
+      789
+    ],
+    "alexscaves:alexscaves/neodymium": [
+      160,
+      648
+    ],
+    "alexscaves:alexscaves/pearl": [
+      192,
+      803
+    ],
+    "alexscaves:alexscaves/fiddlehead": [
+      256,
+      0
+    ],
+    "alexscaves:alexscaves/ride_submarine": [
+      192,
+      749
+    ],
+    "alexscaves:alexscaves/bioluminesscence": [
+      192,
+      857
+    ],
+    "alexscaves:alexscaves/defeat_notor": [
+      160,
+      607
+    ],
+    "alexscaves:alexscaves/marine_snow": [
+      192,
+      911
+    ],
+    "alexscaves:alexscaves/uranium": [
+      160,
+      222
+    ],
+    "alexscaves:alexscaves/tame_raycat": [
+      224,
+      297
+    ],
+    "alexscaves:alexscaves/walk_on_rock_candy": [
+      160,
+      475
+    ],
+    "alexscaves:alexscaves/feed_relicheirus": [
+      224,
+      81
+    ],
+    "alexscaves:alexscaves/eat_block_of_chocolate": [
+      192,
+      378
+    ],
+    "alexscaves:alexscaves/deepsight": [
+      192,
+      830
+    ],
+    "alexscaves:alexscaves/defeat_big_dinosaur": [
+      256,
+      54
+    ],
+    "alexscaves:alexscaves/mystery_cave_painting": [
+      224,
+      121
+    ],
+    "alexscaves:alexscaves/serene_salad": [
+      288,
+      0
+    ],
+    "alexscaves:alexscaves/hologram_projector": [
+      192,
+      607
+    ],
+    "alexscaves:alexscaves/eat_candy_cane": [
+      224,
+      364
+    ],
+    "alexscaves:alexscaves/diving_armor": [
+      192,
+      695
+    ],
+    "alexscaves:alexscaves/acid_create_rust": [
+      192,
+      324
+    ],
+    "alexscaves:alexscaves/repair_submarine": [
+      224,
+      749
+    ],
+    "alexscaves:alexscaves/stalked_by_deep_one": [
+      224,
+      803
+    ],
+    "alexscaves:alexscaves/bioluminescent_torch": [
+      224,
+      870
+    ],
+    "alexscaves:alexscaves/defeat_caniac": [
+      256,
+      364
+    ],
+    "alexscaves:alexscaves/ominous_catalyst": [
+      256,
+      121
+    ],
+    "alexscaves:alexscaves/defeat_gloomoth": [
+      192,
+      965
+    ],
+    "alexscaves:alexscaves/sugar_rush": [
+      224,
+      391
+    ],
+    "alexscaves:alexscaves/licowitch_tower": [
+      192,
+      573
+    ],
+    "alexscaves:alexscaves/radon_bottle": [
+      192,
+      351
+    ],
+    "alexscaves:alexscaves/primordial_armor": [
+      288,
+      81
+    ],
+    "alexscaves:alexscaves/floater": [
+      224,
+      843
+    ],
+    "alexscaves:alexscaves/primitive_club": [
+      288,
+      54
+    ],
+    "alexscaves:alexscaves/radiant_essence": [
+      224,
+      573
+    ],
+    "alexscaves:alexscaves/cooked_mussel": [
+      192,
+      776
+    ],
+    "alexscaves:alexscaves/defeat_gumbeeper": [
+      288,
+      378
+    ],
+    "alexscaves:alexscaves/neodymium_ingot": [
+      192,
+      661
+    ],
+    "alexscaves:alexscaves/cooked_dinosaur_chop": [
+      288,
+      27
+    ],
+    "alexscaves:alexscaves/defeat_boundroid": [
+      192,
+      634
+    ],
+    "alexscaves:alexscaves/sulfur_dust": [
+      192,
+      175
+    ],
+    "alexscaves:alexscaves/defeat_nucleeper": [
+      192,
+      270
+    ],
+    "alexscaves:alexscaves/gingerbread_town": [
+      192,
+      533
+    ],
+    "alexscaves:alexscaves/candy_cane_hook": [
+      288,
+      351
+    ],
+    "alexscaves:alexscaves/enter_purple_soda": [
+      192,
+      479
+    ],
+    "alexscaves:alexscaves/discover_underzealot": [
+      224,
+      951
+    ],
+    "alexscaves:alexscaves/magnet": [
+      224,
+      600
+    ],
+    "alexscaves:alexscaves/dinosaur_nugget": [
+      320,
+      27
+    ],
+    "alexscaves:alexscaves/magnetic_levitation_rail": [
+      224,
+      722
+    ],
+    "alexscaves:alexscaves/shot_gum": [
+      320,
+      378
+    ],
+    "alexscaves:alexscaves/telecore": [
+      224,
+      627
+    ],
+    "alexscaves:alexscaves/pearl_on_abyssal_altar": [
+      256,
+      803
+    ],
+    "alexscaves:alexscaves/uranium_rod": [
+      224,
+      270
+    ],
+    "alexscaves:alexscaves/gobthumper": [
+      320,
+      351
+    ],
+    "alexscaves:alexscaves/moth_ball": [
+      224,
+      978
+    ],
+    "alexscaves:alexscaves/tame_vallumraptor": [
+      352,
+      27
+    ],
+    "alexscaves:alexscaves/frostmint_explosion": [
+      224,
+      492
+    ],
+    "alexscaves:alexscaves/summon_luxtructosaurus": [
+      288,
+      121
+    ],
+    "alexscaves:alexscaves/seeking_arrow": [
+      224,
+      695
+    ],
+    "alexscaves:alexscaves/trade_with_deep_one": [
+      288,
+      803
+    ],
+    "alexscaves:alexscaves/tame_tremorsaurus": [
+      320,
+      54
+    ],
+    "alexscaves:alexscaves/conversion_crucible": [
+      256,
+      573
+    ],
+    "alexscaves:alexscaves/defeat_magnetron": [
+      224,
+      668
+    ],
+    "alexscaves:alexscaves/defeat_luxtructosaurus": [
+      320,
+      121
+    ],
+    "alexscaves:alexscaves/gingerbread_armor": [
+      224,
+      519
+    ],
+    "alexscaves:alexscaves/atlatitan_stomp": [
+      352,
+      135
+    ],
+    "alexscaves:alexscaves/gingerbread_crumbs": [
+      224,
+      546
+    ],
+    "alexscaves:alexscaves/eat_radiation_foods": [
+      224,
+      175
+    ],
+    "alexscaves:alexscaves/quarry": [
+      256,
+      681
+    ],
+    "alexscaves:alexscaves/sweetish_fish_bucket": [
+      224,
+      465
+    ],
+    "alexscaves:alexscaves/defeat_brainiac": [
+      256,
+      283
+    ],
+    "alexscaves:alexscaves/raygun": [
+      256,
+      310
+    ],
+    "alexscaves:alexscaves/nuclear_bomb": [
+      256,
+      229
+    ],
+    "alexscaves:alexscaves/defeat_gum_worm": [
+      352,
+      364
+    ],
+    "alexscaves:alexscaves/desolate_dagger": [
+      256,
+      938
+    ],
+    "alexscaves:alexscaves/galena_gauntlet_challenge": [
+      256,
+      627
+    ],
+    "alexscaves:alexscaves/underzealot_sacrifice": [
+      256,
+      965
+    ],
+    "alexscaves:alexscaves/defuse_nuclear_bomb": [
+      288,
+      202
+    ],
+    "alexscaves:alexscaves/feed_gammaroach": [
+      256,
+      175
+    ],
+    "alexscaves:alexscaves/frostmint_spear": [
+      256,
+      492
+    ],
+    "alexscaves:alexscaves/deep_ones_become_neutral": [
+      320,
+      803
+    ],
+    "alexscaves:alexscaves/tremorzilla_egg": [
+      288,
+      229
+    ],
+    "alexscaves:alexscaves/defeat_watcher": [
+      288,
+      985
+    ],
+    "alexscaves:alexscaves/ride_gum_worm": [
+      352,
+      337
+    ],
+    "alexscaves:alexscaves/beholder_far_away": [
+      320,
+      972
+    ],
+    "alexscaves:alexscaves/toxic_paste": [
+      288,
+      175
+    ],
+    "alexscaves:alexscaves/resistor_shield": [
+      256,
+      654
+    ],
+    "alexscaves:alexscaves/nuclear_furnace_component": [
+      288,
+      283
+    ],
+    "alexscaves:alexscaves/convert_biome": [
+      288,
+      573
+    ],
+    "alexscaves:alexscaves/convert_nether_biome": [
+      320,
+      573
+    ],
+    "alexscaves:alexscaves/extinction_spear": [
+      352,
+      108
+    ],
+    "alexscaves:alexscaves/ride_nuclear_bomb": [
+      288,
+      256
+    ],
+    "alexscaves:alexscaves/polymer_plate": [
+      320,
+      175
+    ],
+    "alexscaves:alexscaves/defeat_forsaken": [
+      288,
+      945
+    ],
+    "alexscaves:alexscaves/confection_oven": [
+      256,
+      546
+    ],
+    "alexscaves:alexscaves/hatch_tremorzilla_egg": [
+      320,
+      229
+    ],
+    "alexscaves:alexscaves/remote_detonation": [
+      352,
+      162
+    ],
+    "alexscaves:alexscaves/finished_quarry": [
+      288,
+      681
+    ],
+    "alexscaves:alexscaves/sack_of_sating": [
+      384,
+      364
+    ],
+    "alexscaves:alexscaves/gelatin": [
+      256,
+      465
+    ],
+    "alexscaves:alexscaves/totem_of_possession": [
+      320,
+      999
+    ],
+    "alexscaves:alexscaves/deep_ones_become_helpful": [
+      352,
+      803
+    ],
+    "alexscaves:alexscaves/caramel": [
+      288,
+      418
+    ],
+    "alexscaves:alexscaves/gummy_rings": [
+      288,
+      513
+    ],
+    "alexscaves:alexscaves/deep_one_items": [
+      384,
+      803
+    ],
+    "alexscaves:alexscaves/shadow_silk": [
+      320,
+      945
+    ],
+    "alexscaves:alexscaves/hazmat_armor": [
+      352,
+      189
+    ],
+    "alexscaves:alexscaves/sundae": [
+      320,
+      405
+    ],
+    "alexscaves:alexscaves/rainbounce_boots": [
+      288,
+      486
+    ],
+    "alexscaves:alexscaves/tame_tremorzilla": [
+      352,
+      229
+    ],
+    "alexscaves:alexscaves/feed_gummy_bear": [
+      288,
+      459
+    ],
+    "alexscaves:alexscaves/tremorzilla_kill_beam": [
+      384,
+      229
+    ],
+    "alexscaves:alexscaves/shadow_armor": [
+      352,
+      931
+    ],
+    "alexscaves:alexscaves/eat_darkened_apple": [
+      384,
+      931
+    ],
+    "alexscaves:alexscaves/caramel_apple": [
+      320,
+      432
+    ],
+    "alexscaves:alexscaves/dreadbow": [
+      352,
+      958
+    ],
+    "alexscaves:alexscaves/jelly_bean": [
+      320,
+      459
+    ],
+    "alexscaves:alexscaves/tame_candicorn": [
+      352,
+      432
     ]
   },
   "tab_properties": {
@@ -2233,6 +2985,96 @@
     "modpack:end/root": {
       "title": "The End",
       "background": "minecraft:textures/gui/advancements/backgrounds/end.png",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:profound_discoveries": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "bountifulfares:bountiful_fares": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:the_key_to_the_past": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:artist_in_antiquity": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:magician_from_a_different_era": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:ancient_relics": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:the_archaeologist_dream": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:remains_of_the_past": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "archeological:perfect_for_a_museum": {
+      "title": "",
+      "static_background": false,
+      "bg_width": 16,
+      "bg_height": 16,
+      "width": 0,
+      "height": 0,
+      "index": 5
+    },
+    "alexscaves:alexscaves/root": {
+      "title": "",
       "static_background": false,
       "bg_width": 16,
       "bg_height": 16,

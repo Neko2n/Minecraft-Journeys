@@ -1,9 +1,0 @@
-{
-  "replace": true,
-  "values": [
-    {
-      "id": "#minecraft:is_mountain",
-      "required": false
-    }
-  ]
-}

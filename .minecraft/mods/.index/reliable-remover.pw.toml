@@ -1,19 +1,19 @@
-filename = 'reliable_remover-neoforge-1.21.1-2.2.4.jar'
+filename = 'reliable_remover-neoforge-1.21.1-2.3.1.jar'
 name = 'Reliable Remover'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Reliable Remover Neoforge 1.21.1 - 2.2.4'
+x-prismlauncher-version-number = 'Reliable Remover Neoforge 1.21.1 - 2.3.1'
 
 [download]
-hash = '7947126c6ce9f91e3f71c2f6a96578d0924b736c'
+hash = 'f068f44674dafb682ab0137a93cedf0535fdc91f'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7974176
+file-id = 8045244
 project-id = 1420447
 
 [[x-prismlauncher-dependencies]]
@@ -21,9 +21,9 @@ addonId = '348521'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = '238222'
+addonId = '580555'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = '580555'
+addonId = '238222'
 type = 'OPTIONAL'

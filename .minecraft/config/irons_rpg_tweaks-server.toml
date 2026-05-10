@@ -59,10 +59,10 @@
 	blockDropXpMultiplier = 1.0
 
 [Hunger-Module]
+	#Disable Hunger. Without this, most of the hunger module features and config are nullified, but if you want to adjust stack sizes or potion mechanics without disabling hunger, you can do so here.
+	disableHunger = false
 	#The hunger module removes hunger and makes food to directly heal in order to to remove the tedious task of maintaining hunger, as well as rebalance health management during combat and exploration. Disabling will nullify every feature listed under this module.
 	hungerModuleEnable = true
-	#Disable Hunger. Without this, most of the hunger module features and config are nullified, but if you want to adjust stack sizes or potion mechanics without disabling hunger, you can do so here.
-	disableHunger = true
 	#Whether the Hunger status effect prevents the player from sprinting. Default: true
 	hungerEffectPreventsSprinting = true
 	#Whether sprinting is allowed. Default: true

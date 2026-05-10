@@ -1,0 +1,21 @@
+filename = 'spyglass_improvements-1.5.7+mc1.21+neoforge.jar'
+name = 'Spyglass Improvements: Zoom, Quick Access... [Fabric/NeoForge]'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '[NeoForge 1.21] Spyglass Improvements 1.5.7'
+
+[download]
+hash = 'c7a2041f23f99a289fa2307774a2709e42d3d591'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5634604
+project-id = 571264
+
+[[x-prismlauncher-dependencies]]
+addonId = '309927'
+type = 'OPTIONAL'

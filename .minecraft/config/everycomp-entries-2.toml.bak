@@ -1,23 +1,10 @@
 #Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
 [types]
 
-		[types.wood_type.mynethersdelight]
-			powdery = true
-
-		[types.wood_type.ecologics]
-			flowering_azalea = false
-			azalea = false
-			coconut = true
-			walnut = true
-
 		[types.wood_type.quark]
 			azalea = true
 			ancient = true
 			blossom = true
-
-		[types.wood_type.upgrade_aquatic]
-			driftwood = true
-			river = true
 
 		[types.wood_type.bloomingnature]
 			larch = true
@@ -75,15 +62,19 @@
 			conberry = true
 			sunroot = true
 
-		[types.wood_type.phantasm]
-			pream = true
+		[types.wood_type.ghosts]
+			haunted = true
 
-		[types.leaves_type.ecologics]
-			coconut = false
+		[types.wood_type.bountifulfares]
+			hoary = true
 			walnut = true
 
-		[types.leaves_type.upgrade_aquatic]
-			river = true
+		[types.wood_type.spawn]
+			rotten = true
+			date = true
+
+		[types.wood_type.caverns_and_chasms]
+			azalea = true
 
 		[types.leaves_type.quark]
 			ancient = true
@@ -139,9 +130,6 @@
 			mahogany = true
 			saxaul = true
 
-		[types.leaves_type.galosphere]
-			opal = true
-
 		[types.leaves_type.primal]
 			thorny_acacia = true
 
@@ -168,11 +156,33 @@
 			conberry = true
 			sunroot = true
 
-		[types.leaves_type.phantasm]
-			pream = true
+		[types.leaves_type.ghosts]
+			haunted = true
+
+		[types.leaves_type.bountifulfares]
+			apple = true
+			flowering_apple = true
+			orange = true
+			flowering_orange = true
+			lemon = true
+			flowering_lemon = true
+			plum = true
+			flowering_plum = true
+			hoary = true
+			walnut = true
+			golden_apple = true
+			flowering_golden_apple = true
+
+		[types.leaves_type.spawn]
+			date = true
 
 		[types.cake.natures_spirit]
 			cheese_block = true
+
+		[types.cake.bountifulfares]
+			coconut_cake = true
+			cocoa_cake = true
+			sponge_cake = true
 
 		[types.stone_type.bloomingnature]
 			travertin = true
@@ -187,11 +197,6 @@
 			jasper = true
 			shale = true
 			myalite = true
-
-		[types.stone_type.galosphere]
-			pink_salt = true
-			rose_pink_salt = true
-			pastel_pink_salt = true
 
 		[types.stone_type.natures_spirit]
 			white_kaolin = true
@@ -258,17 +263,20 @@
 			weatherrack = true
 			goreshed = true
 
-		[types.stone_type.phantasm]
-			cirite = true
+		[types.stone_type.bountifulfares]
+			feldspar = true
+
+		[types.stone_type.caverns_and_chasms]
+			sugilite = true
+			cylindrite = true
+			cassiterite = true
+			rhyolite = true
 
 		[types.mud_type.deep_aether]
 			aether_mud = true
 
 #Disables specific entries
 [entries]
-
-		[entries.wood_type.farmersdelight]
-			cabinet = true
 
 		[entries.wood_type.quark]
 			hollow_log = true
@@ -290,9 +298,6 @@
 			chiseled_bookshelf = true
 			ladder = true
 
-		[entries.wood_type.copperagebackport]
-			shelf = true
-
 		[entries.wood_type.another_furniture]
 			flower_box = true
 			shelf = true
@@ -301,6 +306,10 @@
 			table = true
 			drawer = true
 			chair = true
+
+		[entries.wood_type.bountifulfares]
+			trellis = true
+			pickets = true
 
 		[entries.leaves_type.quark]
 			hedge = false
@@ -313,9 +322,6 @@
 			polished_vertical_slab = false
 			pillar = true
 			vertical_slab = false
-
-		[entries.stone_type.waystones]
-			waystone = false
 
 		[entries.mud_type.quark]
 			carved_bricks = true

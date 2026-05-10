@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:ingots/gold"
+    },
+    "B": {
+      "item": "caverns_and_chasms:silver_ingot"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "ABA",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "oreganized:silver_mirror"
+  }
+}

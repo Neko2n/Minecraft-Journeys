@@ -1,0 +1,15 @@
+{
+  "item.irons_spellbooks.fire_upgrade_orb": "Fire Rune",
+  "item.irons_spellbooks.ice_upgrade_orb": "Ice Rune",
+  "item.irons_spellbooks.lightning_upgrade_orb": "Lightning Rune",
+  "item.irons_spellbooks.holy_upgrade_orb": "Holy Rune",
+  "item.irons_spellbooks.ender_upgrade_orb": "Ender Rune",
+  "item.irons_spellbooks.blood_upgrade_orb": "Blood Rune",
+  "item.irons_spellbooks.evocation_upgrade_orb": "Evocation Rune",
+  "item.irons_spellbooks.nature_upgrade_orb": "Nature Rune",
+  "item.irons_spellbooks.protection_upgrade_orb": "Protective Rune",
+  "item.irons_spellbooks.cooldown_upgrade_orb": "Recovery Rune",
+  "item.irons_spellbooks.upgrade_orb": "Blank Runestone",
+  "item.irons_spellbooks.mana_upgrade_orb": "Arcane Rune",
+  "block.irons_spellbooks.deepslate_mithril_ore": "Holystone Mithril Ore"
+}

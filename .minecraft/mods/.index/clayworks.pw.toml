@@ -1,16 +1,21 @@
-filename = 'clayworks-1.21.1-4.0.2.jar'
+filename = 'clayworks-1.21.1-4.0.3.jar'
 name = 'Clayworks'
-side = 'both'
+side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Clayworks 1.21.1 - 4.0.3'
 
 [download]
-hash = '18a07425e0662ad5e3fb7305b5081f9c88050bfe'
+hash = 'e57792898117777a09b04cb29bbceb2d88fbc7f6'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7118508
+file-id = 8050928
 project-id = 592162
+
+[[x-prismlauncher-dependencies]]
+addonId = '382216'
+type = 'REQUIRED'

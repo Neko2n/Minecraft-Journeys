@@ -1,16 +1,21 @@
-filename = 'block_factorys_bosses-2.0.12-neo-1.21.1.jar'
-name = "Bosses'Rise"
-side = 'both'
+filename = 'block_factorys_bosses-2.1.1-neo-1.21.1.jar'
+name = "Bosses'Rise (Forge/NeoForge)"
+side = 'server'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '[2.1.1 - NeoForge 1.21.1]'
 
 [download]
-hash = '4d0da6d81b445bdeb10308fec7a5dd8c7e3a4d8f'
+hash = '4ad805284253ec9f4a1b35ac7fe1a94c2c82ffb7'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7822334
+file-id = 8034099
 project-id = 1314084
+
+[[x-prismlauncher-dependencies]]
+addonId = '388172'
+type = 'REQUIRED'
