@@ -55,8 +55,12 @@
 # Range: 1 ~ 999
 "Wrench Cooldown:" = 2
 #What should the default cooldown (in seconds) be for the Tuning Fork weapon?
-# Default: 3
+# Default: 1
 # Range: 1 ~ 999
 "Tuning Fork Cooldown:" = 3
 #Should Sprigs be able to bonemeal crops?
 "Sprigs bonemeal:" = true
+#What should the default cooldown (in seconds) be for the Broom weapon?
+# Default: 2
+# Range: 1 ~ 999
+"Broom Cooldown:" = 2

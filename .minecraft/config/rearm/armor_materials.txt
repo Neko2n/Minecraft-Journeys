@@ -9,7 +9,6 @@ minecraft:turtle
 minecraft:netherite
 minecraft:armadillo
 supplementaries:shulker_shell
-quark:backpack
 block_factorys_bosses:dragon_armor
 block_factorys_bosses:invisible
 darkerdepths:glowshroom
@@ -40,6 +39,15 @@ caverns_and_chasms:sanguine
 caverns_and_chasms:cowl
 caverns_and_chasms:toolbelt
 enderscape:drift_leggings
+legendary_monsters:mossy
+legendary_monsters:bomber
+legendary_monsters:fiery
+legendary_monsters:shulker
+legendary_monsters:wither
+legendary_monsters:cloudy
+legendary_monsters:chorus
+legendary_monsters:dinosaur_bone
+legendary_monsters:annihilator
 irons_spellbooks:tarnished
 irons_spellbooks:wandering_magician
 irons_spellbooks:pumpkin

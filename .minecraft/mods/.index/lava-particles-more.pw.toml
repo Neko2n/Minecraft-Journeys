@@ -1,0 +1,18 @@
+filename = 'lavalive-neoforge-1.21.1-1.0.0.jar'
+name = 'Lava Particles | More'
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'lavalive-neoforge-1.21.1-1.0.0.jar'
+
+[download]
+hash = 'c31e32abe4b1d5bb25cc6fafdb4d772909384f02'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8211349
+project-id = 1567174

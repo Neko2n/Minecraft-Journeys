@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "curiosities:raw_nickel_block" },
+  "result": { "id": "curiosities:nickel_block", "count": 1 },
+  "experience": 6.3,
+  "cookingtime": 900
+}

@@ -1,19 +1,19 @@
-filename = 'modestmagic-neoforge-1.21.1-1.2.2.jar'
+filename = 'modestmagic-neoforge-1.21.1-1.3.0.jar'
 name = 'Modest Magic'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Modest Magic Neoforge 1.21.1 - 1.2.2'
+x-prismlauncher-version-number = 'Modest Magic Neoforge 1.21.1 - 1.3.0'
 
 [download]
-hash = '3f783ceabfc7252fc077f5363791f87acfd18c92'
+hash = 'a6f058a4eb0768a8a56743a2333af9fbfdc0a088'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 8086028
+file-id = 8204301
 project-id = 534359
 
 [[x-prismlauncher-dependencies]]

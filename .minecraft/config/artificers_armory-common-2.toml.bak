@@ -43,7 +43,7 @@
 # Range: 1 ~ 999
 "Sprig Cooldown:" = 3
 #What should the default cooldown (in seconds) be for the Oculus weapon?
-# Default: 4
+# Default: 2
 # Range: 1 ~ 999
 "Oculus Cooldown:" = 4
 #Should censer weapons accept potion effects when used with a potion in the offhand?

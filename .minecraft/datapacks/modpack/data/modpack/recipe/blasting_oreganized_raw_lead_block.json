@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "oreganized:raw_lead_block" },
+  "result": { "id": "oreganized:lead_block", "count": 1 },
+  "experience": 6.3,
+  "cookingtime": 900
+}

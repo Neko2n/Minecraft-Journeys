@@ -97,6 +97,8 @@
 	# Default: 2.0
 	# Range: 0.0 ~ 2.147483647E9
 	firebombExplosionRadius = 2.0
+	#If incendiary arrows place fire blocks where they land.
+	incendiaryArrowPlacesFire = true
 
 [bulk_placement]
 	#Set to 0 to disable any key.
@@ -176,3 +178,24 @@
 	# Default: 20
 	# Range: > 0
 	wardingEffigyRangePerEffigy = 20
+
+[recipe_tweaks]
+	#Toggle changes to vanilla crafting recipes.
+	andesite = true
+	bookshelf = true
+	diorite = true
+	granite = true
+	lectern = true
+	light_blue_dye_from_blue_orchid = true
+	light_gray_dye_from_white_tulip = true
+	lodestone = true
+	mushroom_stew = true
+	polished_deepslate = true
+	rabbit_stew_from_red_mushroom = true
+	red_dye_from_rose_bush = true
+	red_sandstone = true
+	sandstone = true
+	scaffolding = true
+	smoker = true
+	stone_bricks = true
+	tnt = true

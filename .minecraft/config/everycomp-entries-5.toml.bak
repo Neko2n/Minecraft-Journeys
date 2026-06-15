@@ -76,15 +76,6 @@
 		[types.wood_type.caverns_and_chasms]
 			azalea = true
 
-		[types.wood_type.alexscaves]
-			pewen = false
-			thornwood = false
-
-		[types.wood_type.undergarden]
-			smogstem = true
-			wigglewood = true
-			grongle = true
-
 		[types.leaves_type.quark]
 			ancient = true
 			blue_blossom = false
@@ -185,14 +176,6 @@
 		[types.leaves_type.spawn]
 			date = true
 
-		[types.leaves_type.alexscaves]
-			ancient = false
-
-		[types.leaves_type.undergarden]
-			smogstem = true
-			wigglewood = true
-			grongle = true
-
 		[types.cake.natures_spirit]
 			cheese_block = true
 
@@ -289,17 +272,14 @@
 			cassiterite = true
 			rhyolite = true
 
-		[types.stone_type.alexscaves]
-			galena = true
-			radrock = true
-			abyssmarine = true
-			guanostone = true
-
-		[types.stone_type.undergarden]
-			depthrock = true
-			shiverstone = true
-			dreadrock = true
-			tremblecrust = true
+		[types.stone_type.create]
+			limestone = true
+			asurine = true
+			crimsite = true
+			ochrum = true
+			veridium = true
+			scoria = true
+			scorchia = true
 
 		[types.mud_type.deep_aether]
 			aether_mud = true
@@ -340,6 +320,10 @@
 			trellis = true
 			pickets = true
 
+		[entries.wood_type.create]
+			window = true
+			window_pane = true
+
 		[entries.leaves_type.quark]
 			hedge = true
 			leaf_carpet = false
@@ -351,6 +335,26 @@
 			polished_vertical_slab = false
 			pillar = true
 			vertical_slab = false
+
+		[entries.stone_type.create]
+			small_brick_wall = true
+			cut_wall = true
+			small_bricks = true
+			cut_brick_slab = true
+			polished_cut_slab = true
+			small_brick_stairs = true
+			cut_bricks = true
+			cut = true
+			polished_cut = true
+			small_brick_slab = true
+			layered = true
+			polished_cut_stairs = true
+			cut_brick_wall = true
+			pillar = true
+			cut_stairs = true
+			cut_brick_stairs = true
+			polished_cut_wall = true
+			cut_slab = true
 
 		[entries.mud_type.quark]
 			carved_bricks = true

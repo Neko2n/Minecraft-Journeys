@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": { "item": "enderscape:raw_shadoline_block" },
+  "result": { "id": "enderscape:shadoline_block", "count": 1 },
+  "experience": 6.3,
+  "cookingtime": 900
+}

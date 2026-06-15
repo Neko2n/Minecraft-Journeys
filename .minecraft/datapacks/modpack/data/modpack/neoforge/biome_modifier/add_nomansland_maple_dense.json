@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "natures_spirit:maple_woodlands"
+  ],
+  "features": "modpack:dense_nomansland_maple",
+  "step": "vegetal_decoration"
+}

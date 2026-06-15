@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "natures_spirit:golden_wilds"
+  ],
+  "features": "modpack:sparse_nomansland_maple",
+  "step": "vegetal_decoration"
+}

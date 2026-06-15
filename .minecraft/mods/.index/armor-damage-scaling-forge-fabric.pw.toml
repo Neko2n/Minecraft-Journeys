@@ -1,19 +1,19 @@
-filename = 'armordamagescale-1.21.1-3.2.jar'
+filename = 'armordamagescale-1.21.1-3.5.jar'
 name = 'armordamagescale mod'
 side = 'server'
 x-prismlauncher-loaders = [ 'neoforge' ]
-x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'armordamagescale-1.21.1-3.2.jar'
+x-prismlauncher-version-number = 'armordamagescale-1.21.1-3.5.jar'
 
 [download]
-hash = '0c43cbfaa29c60e1459ca6307edf476b5f71bfd9'
+hash = '9b001dca16f0f0e0b3921f9043092c4b0a22b119'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 8025641
+file-id = 8217954
 project-id = 824936
 
 [[x-prismlauncher-dependencies]]
