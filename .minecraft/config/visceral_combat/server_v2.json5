@@ -12,7 +12,7 @@
 	// Forward Lunge speed cap
 	"lungeSpeedCap": 4.0,
 	// Impulse decay coefficient
-	"impulseCoeff": 0.10000000298023224,
+	"impulseCoeff": 0.10000000149011612,
 	// Impulse speed coefficient
 	"maxImpulse": 1.100000023841858,
 	// Impact recoil on attacker when hitting enemy

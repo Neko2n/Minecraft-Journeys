@@ -39,6 +39,9 @@ blockImpactSoundMode = "INCREMENTAL"
 #First matching entry wins.
 #Examples: 'example_mod:crystal=minecraft:block.amethyst_block.hit', '#example_mod:metal_blocks=minecraft:block.copper.hit'.
 blockImpactSoundOverrides = []
+#When enabled, Efficiency and Haste increase mining damage per swing instead of reducing the swing interval.
+#Uses the same efficiencyTierStep and hasteTierStep multipliers.
+miningSpeedBonusesBoostDamage = false
 
 [sounds]
 	#Metal block sound
