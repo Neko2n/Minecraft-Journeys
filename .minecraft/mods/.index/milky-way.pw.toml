@@ -1,0 +1,25 @@
+filename = 'milky_way-1.21.1-3.0.0.jar'
+name = 'Milky Way'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '3.0.0'
+
+[download]
+hash = '0f8d631ebfb397fc3d719cb0a4cadc159c021a15cfe0955e4f0eca6c4588685c5be00b78337c33e0fc167870c200cfd8be60ff79621536ca536ba17924020a99'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Bp2dMRrt/versions/X6K8vIqw/milky_way-1.21.1-3.0.0.jar'
+
+[update.modrinth]
+mod-id = 'Bp2dMRrt'
+version = 'X6K8vIqw'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'MdwFAVRL'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'VsM5EDoI'
+type = 'REQUIRED'

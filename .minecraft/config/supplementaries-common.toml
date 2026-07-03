@@ -291,7 +291,12 @@
 		trapped_present = true
 
 [building]
-	lapis_bricks = true
+	pancake = false
+	flint_block = false
+	lapis_bricks = false
+	feather_block = false
+	fire_pit = false
+	fine_wood = false
 	deepslate_lamp = true
 	end_stone_lamp = true
 	blackstone_lamp = true
@@ -300,20 +305,12 @@
 	blackstone_tile = true
 	#Buntings are automatically disabled if 'rope' feature is disabled
 	bunting = true
-	pancake = true
 	checker_block = true
 	raked_gravel = true
-	feather_block = true
 	statue = true
 	doormat = true
-	flint_block = true
-	fine_wood = true
 	candle_holder = true
-	fire_pit = true
 	wicker_fence = true
-
-	[building.gold_bars]
-		enabled = false
 
 	[building.spider_head]
 		enabled = true
@@ -356,6 +353,9 @@
 		double_opening = true
 		#Makes iron (ang gold) gates behave like their door counterpart so for example iron gates will only be openable by redstone
 		door-like_gates = false
+
+	[building.gold_bars]
+		enabled = true
 
 	[building.item_shelf]
 		enabled = true

@@ -21,6 +21,10 @@
 	defaultSpeed = 0.1
 	#Custom flow speeds for specific entities. Format: modid:name=speed (Example: minecraft:pig=0.8 or alexmobs:bird=0.0)
 	customEntitySpeeds = ["minecraft:warden=1.0"]
+	#Flow speed multiplier for Sable / Aeronautics physics ships.
+	# Default: 2.0
+	# Range: 0.0 ~ 10.0
+	sableShipSpeed = 2.0
 
 [Visuals]
 	#Enable custom bubble particles in rivers.
@@ -98,6 +102,6 @@
 
 [General]
 	#Show the welcome message when joining the world.
-	showWelcomeMessage = true
+	showWelcomeMessage = false
 	#Automatically disable underground rivers from the Tectonic mod to improve performance and compatibility with Dynamic Waters.
 	disableTectonicUndergroundRivers = true

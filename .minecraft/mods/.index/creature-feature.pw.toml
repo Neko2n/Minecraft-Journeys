@@ -1,20 +1,20 @@
-filename = 'creaturefeature-1.1.0.jar'
+filename = 'creaturefeature-1.1.2.jar'
 name = 'Creature Feature'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.1.0'
+x-prismlauncher-version-number = '1.1.2'
 
 [download]
-hash = 'bd62da90b61cde46444901e25f49357c6674ff5c12850662f1acb7ae3914b1391bc307684f6a713085f0efb72aa63135f2404692b865ef66b3a8bfa995d4abd3'
+hash = 'b61af6c64d39c667685b831efa2cf030779e81ab27a71ecd0bc6a945c103f7200312023ff06b461e83797a22e2d91755f951694f117e3eedecff717e1c121e7a'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/7nEkcq0F/versions/VWxybaeW/creaturefeature-1.1.0.jar'
+url = 'https://cdn.modrinth.com/data/7nEkcq0F/versions/gIYfLGXQ/creaturefeature-1.1.2.jar'
 
 [update.modrinth]
 mod-id = '7nEkcq0F'
-version = 'VWxybaeW'
+version = 'gIYfLGXQ'
 
 [[x-prismlauncher-dependencies]]
 addonId = 'VsM5EDoI'

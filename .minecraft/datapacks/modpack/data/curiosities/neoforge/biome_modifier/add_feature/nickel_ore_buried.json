@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#curiosities:has_feature/nickel",
+  "features": "curiosities:ore_nickel_buried",
+  "step": "underground_ores"
+}

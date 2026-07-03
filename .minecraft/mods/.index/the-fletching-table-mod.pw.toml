@@ -1,0 +1,18 @@
+filename = 'the_fletching_table_mod-1.4.jar'
+name = 'The Fletching Table Mod'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.4'
+
+[download]
+hash = '226ffce056163f2a71db85b5df955460894fb610ec8f058b7fbb03db9da77b98d47b6a98cf597ddf02efa9c532e33df68837ff6cc96c4183eeb4ab1489a947c8'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/FDFAU39Q/versions/uHm9UM9n/the_fletching_table_mod-1.4.jar'
+
+[update.modrinth]
+mod-id = 'FDFAU39Q'
+version = 'uHm9UM9n'

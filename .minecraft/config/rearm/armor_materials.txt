@@ -17,7 +17,6 @@ mowziesmobs:sol_visage
 mowziesmobs:umvuthana_mask
 mowziesmobs:wrought_helm
 mowziesmobs:geomancer_armor
-mutantmonsters:mutant_skeleton
 the_beyond:shroud
 the_beyond:anchor
 aether:zanite

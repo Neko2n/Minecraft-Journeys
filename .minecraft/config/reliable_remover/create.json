@@ -1,0 +1,14 @@
+[
+    {
+        "action": "remove",
+        "patterns": [
+            "/create:.*blaze.*/"
+        ]
+    },
+    {
+        "action": "remove",
+        "items": [
+            "create:shaft"
+        ]
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "action": "remove",
+        "patterns": [
+            "/curiosities:.*nickel.*/",
+            "/curiosities:invar_.*/"
+        ]
+    },
+    {
+        "action": "remove",
+        "items": [
+            "create:shaft"
+        ]
+    }
+]

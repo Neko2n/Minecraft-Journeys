@@ -11,15 +11,6 @@
             "tag": "c:ingots/silver"
         },
         {
-            "tag": "c:ingots/silver"
-        },
-        {
-            "tag": "c:ingots/silver"
-        },
-        {
-            "tag": "c:ingots/gold"
-        },
-        {
             "tag": "c:ingots/gold"
         },
         {
@@ -27,6 +18,7 @@
         }
     ],
     "result": {
-        "id": "oreganized:electrum_ingot"
+        "id": "oreganized:electrum_ingot",
+        "count": 2
     }
 }

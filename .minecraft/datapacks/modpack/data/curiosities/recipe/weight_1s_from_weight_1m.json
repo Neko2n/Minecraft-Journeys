@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "invar",
+  "ingredients": [
+    {
+      "item": "curiosities:weight_1m"
+    }
+  ],
+  "result": {
+    "count": 60,
+    "id": "curiosities:weight_1s"
+  }
+}

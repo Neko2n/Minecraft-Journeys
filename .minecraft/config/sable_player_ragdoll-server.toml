@@ -14,7 +14,7 @@ grabEnabled = true
 	#Seat the player on the ragdoll automatically after launch.
 	autoSeatOnTrigger = true
 	#Allow players to trigger their own ragdoll with the client keybind.
-	allowManualTrigger = true
+	allowManualTrigger = false
 	#Minimum ticks after ragdoll start before the player can manually exit. 60 = 3 seconds.
 	# Default: 60
 	# Range: 0 ~ 1200
@@ -50,15 +50,15 @@ grabEnabled = true
 	#Minimum speed lost in one tick before ragdoll impact sound and dust are played (m/s).
 	# Default: 4.0
 	# Range: 0.0 ~ 128.0
-	impactFeedbackThreshold = 4.0
+	impactFeedbackThreshold = 3.0
 	#Minimum speed lost in one tick before ragdoll impact damage is applied (m/s).
 	# Default: 12.0
 	# Range: 0.0 ~ 128.0
-	impactDamageThreshold = 12.0
+	impactDamageThreshold = 6.0
 	#Damage dealt per m/s of speed lost above the threshold.
 	# Default: 0.75
 	# Range: 0.0 ~ 20.0
-	impactDamageMultiplier = 0.75
+	impactDamageMultiplier = 0.5
 	#Maximum damage dealt by one ragdoll impact.
 	# Default: 20.0
 	# Range: 0.0 ~ 200.0
@@ -75,15 +75,15 @@ grabEnabled = true
 	#Ticks after launch before a player ragdoll expires and the player is unseated.
 	# Default: 40
 	# Range: 5 ~ 600
-	ragdollDurationTicks = 40
+	ragdollDurationTicks = 60
 	#Expire player ragdolls after they touch down and slow below the release speed threshold.
-	expireWhenSlow = false
+	expireWhenSlow = true
 	#Expire after touchdown only once the ragdoll slows below this speed (m/s).
 	# Default: 0.1
 	# Range: 0.0 ~ 32.0
 	releaseSpeedThreshold = 0.1
 	#Force-expire player ragdolls after the safety timeout.
-	expireAfterSafetyTimeout = false
+	expireAfterSafetyTimeout = true
 	#Hard safety limit: force expiry if the ragdoll still exists after this many ticks.
 	# Default: 200
 	# Range: 20 ~ 2400
@@ -94,7 +94,7 @@ grabEnabled = true
 	#Ragdoll mass per full 16x16x16 collision block. Player and mob parts scale by volume.
 	# Default: 1.4
 	# Range: 0.01 ~ 100.0
-	mobMassDensity = 1.4
+	mobMassDensity = 2.0
 
 #Developer options.
 [debug]

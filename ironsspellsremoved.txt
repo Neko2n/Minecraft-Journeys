@@ -4,3 +4,4 @@ GTBC's Geomancy Plus
 GTBC's SpellLib
 Iron's Lib
 Iron's Spells 'n Spellbooks
+Artificer's Armory

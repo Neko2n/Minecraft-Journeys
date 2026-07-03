@@ -1,0 +1,9 @@
+{
+  "item.gunmod.bullet": "Bullet",
+  "death.attack.gun_damage.player": "%1$s was shot whilst trying to escape %2$s",
+  "item.gunmod.flintlock": "Flintlock Pistol",
+  "subtitles.item.flintlock.load": "Flintlock Pistol loads",
+  "death.attack.gun_damage": "%1$s was shot",
+  "death.attack.gun_damage.item": "%1$s was shot by %2$s using %3$s",
+  "subtitles.item.flintlock.shot": "Flintlock Pistol shoots"
+}

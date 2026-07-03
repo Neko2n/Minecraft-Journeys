@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bed",
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:brown_wool"
+      },
+      {
+        "item": "wholecloth:brown_cloth_scrap_block"
+      }
+    ],
+    "X": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:brown_bed"
+  }
+}

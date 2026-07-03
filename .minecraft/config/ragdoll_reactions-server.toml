@@ -150,7 +150,7 @@ enabled = true
 		#Launch speed multiplier applied to explosion power before the global max launch speed clamp.
 		# Default: 15.0
 		# Range: 0.0 ~ 128.0
-		launchMultiplier = 15.0
+		launchMultiplier = 20.0
 
 	#Hard fall landing reactions.
 	[triggers.fall]
@@ -185,11 +185,11 @@ enabled = true
 		#Minimum damage required to trigger a ragdoll.
 		# Default: 8.0
 		# Range: 0.0 ~ 1024.0
-		minDamage = 8.0
+		minDamage = 10.0
 		#Launch speed (m/s) per point of damage taken.
 		# Default: 1.5
 		# Range: 0.0 ~ 64.0
-		launchMultiplier = 1.5
+		launchMultiplier = 1.75
 
 	#Lightning strike reactions.
 	[triggers.lightning]
@@ -225,11 +225,11 @@ enabled = true
 		#Fraction of the mob's remaining health that a hit must deal to trigger a ragdoll.
 		# Default: 0.3333333333333333
 		# Range: 0.0 ~ 1.0
-		healthFraction = 0.3333333333333333
+		healthFraction = 0.75
 		#Launch speed (m/s) per point of damage taken.
 		# Default: 1.5
 		# Range: 0.0 ~ 64.0
-		launchMultiplier = 1.5
+		launchMultiplier = 2.0
 
 	#Explosion reactions for mobs (vanilla and Create Big Cannons).
 	[mobs.explosion]

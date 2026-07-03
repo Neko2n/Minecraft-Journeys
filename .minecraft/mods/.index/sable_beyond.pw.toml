@@ -1,0 +1,29 @@
+filename = 'sablebeyond-neoforge-1.21.1-v0.4.2.jar'
+name = 'Sable Beyond'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'alpha'
+x-prismlauncher-version-number = 'neoforge1.21.1+v0.4.2'
+
+[download]
+hash = '140559fb1f0c73e799906b7a54ec41e9473b5f1e6d74fab936e82f6f97c3544e8d46acb1cd2c7f5a7beced165f8a372006cbca36d6c12264cac93f9f6cc0e565'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/PrW3B4fH/versions/5veGxmC8/sablebeyond-neoforge-1.21.1-v0.4.2.jar'
+
+[update.modrinth]
+mod-id = 'PrW3B4fH'
+version = '5veGxmC8'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'T9PomCSv'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'LNytGWDc'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '9s6osm5g'
+type = 'EMBEDDED'

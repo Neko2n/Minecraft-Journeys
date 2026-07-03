@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "metal_chiseled",
+  "key": {
+    "#": {
+      "item": "curiosities:cut_aluminum_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "curiosities:sheet_metal"
+  }
+}

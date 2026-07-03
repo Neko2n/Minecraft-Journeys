@@ -42,6 +42,12 @@
                     }
                 },
                 {
+                    "scope": "keyword.control.throw.java",
+                    "settings": {
+                        "foreground": "#e06c75"
+                    }
+                },
+                {
                     "scope": "keyword.control.new.java",
                     "settings": {
                         "foreground": "#C586C0"

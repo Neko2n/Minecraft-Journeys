@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#curiosities:has_feature/aluminum",
+  "features": "curiosities:ore_aluminum_buried",
+  "step": "underground_ores"
+}

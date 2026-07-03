@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "invar",
+  "ingredients": [
+    {
+      "item": "curiosities:weight_5s"
+    },
+    {
+      "item": "curiosities:weight_5s"
+    },
+    {
+      "item": "curiosities:weight_5s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "curiosities:weight_20s"
+  }
+}

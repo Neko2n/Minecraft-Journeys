@@ -1,6 +1,6 @@
 {
   "configVersion": 7,
-  "maxForce": 120.0,
+  "maxForce": 20.0,
   "minDistance": 1.5,
   "grabReachBonus": 0.0,
   "grabStabilization": 0.01,

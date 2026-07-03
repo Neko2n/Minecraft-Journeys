@@ -4,7 +4,7 @@
 	#How long normal corpses remain before despawning, in minutes. Set to 0 to keep them forever.
 	# Default: 0.0
 	# Range: 0.0 ~ 10080.0
-	corpseLifetimeMinutes = 0.0
+	corpseLifetimeMinutes = 20.0
 	#How long an emptied corpse waits before despawning, in seconds.
 	# Default: 1.5
 	# Range: 0.0 ~ 600.0

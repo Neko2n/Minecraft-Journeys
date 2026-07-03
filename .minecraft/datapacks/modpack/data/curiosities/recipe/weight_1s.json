@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "invar",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/invar"
+    },
+    {
+      "tag": "c:nuggets/invar"
+    },
+    {
+      "tag": "c:nuggets/invar"
+    },
+    {
+      "item": "minecraft:iron_block"
+    }
+  ],
+  "result": {
+    "count": 16,
+    "id": "curiosities:weight_1s"
+  }
+}
