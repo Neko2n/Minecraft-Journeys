@@ -1,0 +1,7 @@
+{
+  "parent": "bountifulfares:block/leaves_with_overlay",
+  "textures": {
+    "all": "modpack:block/pear_leaves",
+    "overlay": "modpack:block/flowering_pear_leaves"
+  }
+}

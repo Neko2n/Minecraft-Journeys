@@ -15,7 +15,6 @@ import net.hecco.bountifulfares.definition.block.custom.StrippedFruitLogBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.nexuslib.lib.publicBlocks.PublicSaplingBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;

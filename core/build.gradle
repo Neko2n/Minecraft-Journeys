@@ -90,7 +90,9 @@ neoForge {
             // gameDirectory = project.file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            // --existing-mod makes Bountiful Fares' own assets (e.g. its fruit log template models)
+            // visible to ExistingFileHelper, since our fruit log blockstates/models parent to them.
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'bountifulfares'
         }
 
         // applies to all the run configs above
