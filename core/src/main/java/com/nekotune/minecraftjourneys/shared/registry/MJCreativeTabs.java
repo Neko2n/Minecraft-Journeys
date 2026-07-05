@@ -22,7 +22,7 @@ public class MJCreativeTabs {
             event.accept(MJBlocks.BFPearBlocks.STRIPPED_PEAR_WOOD.get().asItem());
             event.accept(MJBlocks.BFPearBlocks.PEAR_SAPLING.get().asItem());
             event.accept(MJBlocks.BFPearBlocks.PEAR_LEAVES.get().asItem());
-            event.accept(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get().asItem());
+            // event.accept(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get().asItem());
         }
     }
 }

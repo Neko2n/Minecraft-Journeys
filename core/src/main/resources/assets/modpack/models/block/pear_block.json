@@ -1,12 +1,13 @@
 {
-	"credit": "Made with Blockbench by Hecco",
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
 		"particle": "modpack:block/pear_block_side",
 		"side": "modpack:block/pear_block_side",
 		"top": "modpack:block/pear_block_top",
 		"bottom": "modpack:block/pear_block_bottom",
-		"stem": "modpack:block/pear_block_misc"
+		"misc": "modpack:block/pear_block_misc",
+		"stem": "modpack:block/pear_block_stem"
 	},
 	"elements": [
 		{
@@ -25,31 +26,24 @@
 			"from": [4, 16, 4],
 			"to": [12, 20, 12],
 			"faces": {
-				"north": {"uv": [0, 12, 8, 16], "texture": "#stem", "cullface": "up"},
-				"east": {"uv": [0, 12, 8, 16], "texture": "#stem", "cullface": "up"},
-				"south": {"uv": [0, 12, 8, 16], "texture": "#stem", "cullface": "up"},
-				"west": {"uv": [0, 12, 8, 16], "texture": "#stem", "cullface": "up"},
-				"up": {"uv": [0, 4, 8, 12], "texture": "#stem", "cullface": "up"}
+				"north": {"uv": [0, 12, 8, 16], "texture": "#misc", "cullface": "up"},
+				"east": {"uv": [0, 12, 8, 16], "texture": "#misc", "cullface": "up"},
+				"south": {"uv": [0, 12, 8, 16], "texture": "#misc", "cullface": "up"},
+				"west": {"uv": [0, 12, 8, 16], "texture": "#misc", "cullface": "up"},
+				"up": {"uv": [0, 4, 8, 12], "texture": "#misc", "cullface": "up"}
 			}
 		},
 		{
-			"from": [0.025, -3, 0.025],
-			"to": [15.975, 0, 15.975],
+			"from": [4, 20, 8],
+			"to": [12, 28, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 20, 8]},
 			"faces": {
-				"north": {"uv": [0.025, 0, 15.975, 3], "texture": "#stem", "cullface": "down"},
-				"east": {"uv": [0.025, 0, 15.975, 3], "texture": "#stem", "cullface": "down"},
-				"south": {"uv": [0.025, 0, 15.975, 3], "texture": "#stem", "cullface": "down"},
-				"west": {"uv": [0.025, 0, 15.975, 3], "texture": "#stem", "cullface": "down"}
-			}
-		},
-		{
-			"from": [15.975, -3, 0.025],
-			"to": [0.025, 0, 15.975],
-			"faces": {
-				"north": {"uv": [15.95, 0, 0.05, 3], "texture": "#stem", "cullface": "down"},
-				"east": {"uv": [15.95, 0, 0.05, 3], "texture": "#stem", "cullface": "down"},
-				"south": {"uv": [15.95, 0, 0.05, 3], "texture": "#stem", "cullface": "down"},
-				"west": {"uv": [15.95, 0, 0.05, 3], "texture": "#stem", "cullface": "down"}
+				"north": {"uv": [4, 8, 12, 16], "texture": "#stem"},
+				"east": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+				"south": {"uv": [12, 8, 4, 16], "texture": "#stem"},
+				"west": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+				"up": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+				"down": {"uv": [0, 0, 0, 0], "texture": "#stem"}
 			}
 		}
 	],

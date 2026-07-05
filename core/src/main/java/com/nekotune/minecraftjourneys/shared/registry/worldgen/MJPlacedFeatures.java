@@ -6,7 +6,6 @@ import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -24,11 +23,11 @@ public class MJPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PEAR_PLACED_KEY = registerKey("pear_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-        HolderGetter<ConfiguredFeature<?, ?>> cfgFeatureLookup = context.lookup(Registries.CONFIGURED_FEATURE);
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         // Pear trees
         register(context, PEAR_PLACED_KEY,
-                cfgFeatureLookup.getOrThrow(MJConfiguredFeatures.PEAR_KEY),
+                configuredFeatures.getOrThrow(MJConfiguredFeatures.PEAR_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(0, 0.5f, 1),
                         MJBlocks.BFPearBlocks.PEAR_SAPLING.get()));

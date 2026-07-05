@@ -36,8 +36,8 @@ public class MJItemTagsProvider extends ItemTagsProvider {
         tag(BFItemTags.FRUIT_LOGS).addTag(MJItemTags.PEAR_LOGS);
         tag(ItemTags.LOGS_THAT_BURN).addTag(MJItemTags.PEAR_LOGS);
         tag(MJItemTags.PEAR_LEAVES)
-            .add(MJBlocks.BFPearBlocks.PEAR_LEAVES.asItem())
-            .add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.asItem());
+            .add(MJBlocks.BFPearBlocks.PEAR_LEAVES.asItem());
+            // .add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.asItem());
         tag(ItemTags.LEAVES).addTag(MJItemTags.PEAR_LEAVES);
         tag(BFItemTags.C_FRUIT)
             .add(NMLItems.PEAR.get());

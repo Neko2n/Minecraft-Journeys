@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench by Hecco",
+	"credit": "Made with Blockbench",
 	"textures": {
 		"4": "modpack:block/pear_block_misc",
 		"particle": "modpack:block/pear_block_side",
@@ -30,22 +30,6 @@
 				"south": {"uv": [0, 12, 4, 16], "texture": "#4", "cullface": "up"},
 				"west": {"uv": [4, 12, 8, 16], "texture": "#4", "cullface": "up"},
 				"up": {"uv": [0, 8, 4, 12], "texture": "#4", "cullface": "up"}
-			}
-		},
-		{
-			"from": [0.025, -3, 8],
-			"to": [8, 0, 15.975],
-			"faces": {
-				"south": {"uv": [0.025, 0, 8, 3], "texture": "#4", "cullface": "down"},
-				"west": {"uv": [8, 0, 15.975, 3], "texture": "#4", "cullface": "down"}
-			}
-		},
-		{
-			"from": [0.025, -3, 15.975],
-			"to": [8, 0, 8],
-			"faces": {
-				"north": {"uv": [8, 0, 0.025, 3], "texture": "#4", "cullface": "down"},
-				"west": {"uv": [16, 0, 8.025, 3], "texture": "#4", "cullface": "down"}
 			}
 		}
 	]

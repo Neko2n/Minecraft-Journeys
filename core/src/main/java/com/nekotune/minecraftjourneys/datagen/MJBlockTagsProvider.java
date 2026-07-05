@@ -41,8 +41,8 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
         tag(BFBlockTags.HANGING_FRUIT)
             .add(MJBlocks.BFPearBlocks.HANGING_PEAR.get());
         tag(MJBlockTags.PEAR_LEAVES)
-            .add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get())
-            .add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get());
+            .add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get());
+            // .add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get());
         
         /* Block tags which derive from other tags */
         tag(BlockTags.LEAVES).addTag(MJBlockTags.PEAR_LEAVES);

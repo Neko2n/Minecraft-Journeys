@@ -92,7 +92,9 @@ neoForge {
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             // --existing-mod makes Bountiful Fares' own assets (e.g. its fruit log template models)
             // visible to ExistingFileHelper, since our fruit log blockstates/models parent to them.
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'bountifulfares'
+            // No Man's Land is added the same way so its biome tags (e.g. old_growth_forest) are visible
+            // when we add to its tags via MJBiomeTagsProvider.
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'bountifulfares', '--existing-mod', 'nomansland'
         }
 
         // applies to all the run configs above

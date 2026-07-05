@@ -30,8 +30,7 @@ public class BlockColorsHandler {
      */
     private static boolean isBlacklisted(Block block) {
         if (BLACKLIST.isEmpty()) {
-            BLACKLIST.add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get());
-            BLACKLIST.add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get());
+            /* Add items to the blacklist here */
         }
         return BLACKLIST.contains(block);
     }

@@ -113,11 +113,11 @@ public class MJBlocks {
                 .register();
 
         /** Flowering tree leaves */
-        public static final DeferredBlock<FruitLeavesBlock> FLOWERING_PEAR_LEAVES = new DeferredBlock.Builder<>(
-                "flowering_pear_leaves",
-                (properties) -> new FruitLeavesBlock(HANGING_PEAR.get().defaultBlockState(),
-                        Properties.ofFullCopy(BFBlocks.FLOWERING_APPLE_LEAVES.get())))
-                .register();
+        // public static final DeferredBlock<FruitLeavesBlock> FLOWERING_PEAR_LEAVES = new DeferredBlock.Builder<>(
+        //         "flowering_pear_leaves",
+        //         (properties) -> new FruitLeavesBlock(HANGING_PEAR.get().defaultBlockState(),
+        //                 Properties.ofFullCopy(BFBlocks.FLOWERING_APPLE_LEAVES.get())))
+        //         .register();
     }
 
     /**

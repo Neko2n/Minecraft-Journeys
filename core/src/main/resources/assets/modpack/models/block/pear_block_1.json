@@ -1,5 +1,6 @@
 {
-	"credit": "Made with Blockbench by Hecco",
+	"credit": "Made with Blockbench",
+	"parent": "bountifulfares:block/fruit_block_3",
 	"textures": {
 		"4": "modpack:block/pear_block_misc",
 		"particle": "modpack:block/pear_block_side",
@@ -51,40 +52,6 @@
 				"east": {"uv": [4, 12, 8, 16], "texture": "#4", "cullface": "up"},
 				"west": {"uv": [8, 12, 12, 16], "texture": "#4", "cullface": "up"},
 				"up": {"uv": [4, 4, 8, 8], "texture": "#4", "cullface": "up"}
-			}
-		},
-		{
-			"from": [0.025, -3, 8],
-			"to": [15.975, 0, 15.975],
-			"faces": {
-				"east": {"uv": [0.025, 0, 8, 3], "texture": "#4", "cullface": "down"},
-				"south": {"uv": [0.025, 0, 15.975, 3], "texture": "#4", "cullface": "down"},
-				"west": {"uv": [8, 0, 15.975, 3], "texture": "#4", "cullface": "down"}
-			}
-		},
-		{
-			"from": [15.975, -3, 8],
-			"to": [0.025, 0, 15.975],
-			"faces": {
-				"east": {"uv": [15.975, 0, 8, 3], "texture": "#4", "cullface": "down"},
-				"south": {"uv": [15.95, 0, 0, 3], "texture": "#4", "cullface": "down"},
-				"west": {"uv": [8, 0, 0.025, 3], "texture": "#4", "cullface": "down"}
-			}
-		},
-		{
-			"from": [8, -3, 0.025],
-			"to": [15.975, 0, 8],
-			"faces": {
-				"north": {"uv": [0.025, 0, 8, 3], "texture": "#4", "cullface": "down"},
-				"east": {"uv": [8, 0, 15.975, 3], "texture": "#4", "cullface": "down"}
-			}
-		},
-		{
-			"from": [8, -3, 8],
-			"to": [15.975, 0, 0.025],
-			"faces": {
-				"east": {"uv": [16, 0, 8.025, 3], "texture": "#4", "cullface": "down"},
-				"south": {"uv": [8, 0, 0.025, 3], "texture": "#4", "cullface": "down"}
 			}
 		}
 	]

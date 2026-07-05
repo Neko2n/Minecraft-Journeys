@@ -88,19 +88,15 @@ config="${mod_id}.mixins.json"
     ordering="NONE"
     side="BOTH"
 
-# Our blocks/items copy properties from and reference these mods' content directly (e.g. MJBlocks
-# copies BFBlocks properties via Properties.ofFullCopy, HangingPearBlock references NMLItems.PEAR).
-# Without an explicit AFTER ordering, our RegisterEvent handler can run before theirs, so those
-# references silently resolve to registry defaults (e.g. minecraft:air) instead of throwing.
 [[dependencies.${mod_id}]]
-    modId="bountifulfares"
+    modId="nomansland"
     type="required"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
-    modId="nomansland"
+    modId="bountifulfares"
     type="required"
     versionRange="[0,)"
     ordering="AFTER"
