@@ -12,11 +12,13 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID, value = Dist.CLIENT)
+@OnlyIn(value = Dist.CLIENT)
 public class BlockColorsHandler {
 
     private static final HashSet<Block> BLACKLIST = new HashSet<>();

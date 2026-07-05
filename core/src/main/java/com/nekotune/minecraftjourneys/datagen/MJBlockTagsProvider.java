@@ -1,15 +1,11 @@
 package com.nekotune.minecraftjourneys.datagen;
 
-import java.util.Collection;
-
-import com.jcraft.jorbis.Block;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registry.tags.MJBlockTags;
 
 import net.hecco.bountifulfares.registry.tags.BFBlockTags;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.api.distmarker.Dist;
