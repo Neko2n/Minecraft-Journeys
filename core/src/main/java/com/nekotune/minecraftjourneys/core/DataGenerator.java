@@ -44,7 +44,7 @@ public class DataGenerator {
      * Scans for {@link DataGenProvider}-annotated classes
      * and constructs/adds them to the data generator.
      */
-    @EventBusSubscriber(modid = MinecraftJourneys.MODID)
+    @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
     protected final class DataGeneratorProviderHandler {
 
         /**

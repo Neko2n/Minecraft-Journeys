@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.farcr.nomansland.common.registry.items.NMLItems;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
-import com.nekotune.minecraftjourneys.definition.block.pear.HangingPearBlock;
-import com.nekotune.minecraftjourneys.definition.block.pear.PearBlock;
-import com.nekotune.minecraftjourneys.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
+import com.nekotune.minecraftjourneys.shared.definition.block.pear.PearBlock;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;

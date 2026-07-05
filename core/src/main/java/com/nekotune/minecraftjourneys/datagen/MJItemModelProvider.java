@@ -5,7 +5,7 @@ import java.util.Set;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
-import com.nekotune.minecraftjourneys.registry.content.MJItems;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,7 +28,7 @@ public class MJItemModelProvider extends ItemModelProvider {
 
     public MJItemModelProvider(GatherDataEvent event) {
         super(event.getGenerator().getPackOutput(),
-                MinecraftJourneys.MODID,
+                MinecraftJourneys.MOD_ID,
                 event.getExistingFileHelper());
     }
 

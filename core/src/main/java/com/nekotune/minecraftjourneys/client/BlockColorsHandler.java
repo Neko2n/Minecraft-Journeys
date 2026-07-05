@@ -1,9 +1,10 @@
 package com.nekotune.minecraftjourneys.client;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.Holder;
@@ -15,23 +16,36 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-@EventBusSubscriber(modid = MinecraftJourneys.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID, value = Dist.CLIENT)
 public class BlockColorsHandler {
+
+    private static final HashSet<Block> BLACKLIST = new HashSet<>();
+
+    /**
+     * Prevents certain blocks from being automatically given colors.
+     * @param block The block to verify against.
+     * @return True if the given block is blacklisted, false otherwise.
+     */
+    private static boolean isBlacklisted(Block block) {
+        if (BLACKLIST.isEmpty()) {
+            BLACKLIST.add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get());
+            BLACKLIST.add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get());
+        }
+        return BLACKLIST.contains(block);
+    }
     
     @SubscribeEvent
     static void onRegisterBlockColors(RegisterColorHandlersEvent.Block event) {
         final Collection<Block> blocks = MJBlocks.BLOCKS.getEntries()
                 .stream().map(Holder::value).toList();
         blocks.forEach(block -> {
-            final boolean isLeaves = block instanceof LeavesBlock;
-            if (!isLeaves) return;
+            if (!shouldColor(block)) return;
             event.register((state, level, pos, tintIndex) ->
                     level != null && pos != null
                             ? BiomeColors.getAverageFoliageColor(level, pos)
                             : FoliageColor.getDefaultColor(),
                     block);
         });
-        
     }
 
     @SubscribeEvent
@@ -39,11 +53,17 @@ public class BlockColorsHandler {
         final Collection<Block> blocks = MJBlocks.BLOCKS.getEntries()
                 .stream().map(Holder::value).toList();
         blocks.forEach(block -> {
-            final boolean isLeaves = block instanceof LeavesBlock;
-            if (!isLeaves) return;
+            if (!shouldColor(block)) return;
             event.register((stack, tintIndex) ->
                     FoliageColor.getDefaultColor(),
                     block);
         });
+    }
+
+    private static boolean shouldColor(Block block) {
+        if (isBlacklisted(block)) return false;
+        final boolean isLeaves = block instanceof LeavesBlock;
+        if (!isLeaves) return false;
+        return true;
     }
 }

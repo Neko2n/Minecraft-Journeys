@@ -1,9 +1,9 @@
-package com.nekotune.minecraftjourneys.definition.block.pear;
+package com.nekotune.minecraftjourneys.shared.definition.block.pear;
 
 import java.util.function.Supplier;
 
 import com.farcr.nomansland.common.registry.items.NMLItems;
-import com.nekotune.minecraftjourneys.registry.tags.MJBlockTags;
+import com.nekotune.minecraftjourneys.shared.registry.tags.MJBlockTags;
 
 import net.hecco.bountifulfares.definition.block.custom.HangingFruitBlock;
 import net.hecco.bountifulfares.definition.platform.Services;

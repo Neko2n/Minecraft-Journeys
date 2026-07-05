@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import com.nekotune.minecraftjourneys.core.Config;
 import com.nekotune.minecraftjourneys.core.RegistryHandler;
-
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -16,10 +15,10 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 /** The value here should match an entry in the META-INF/neoforge.mods.toml file */
-@Mod(MinecraftJourneys.MODID)
+@Mod(MinecraftJourneys.MOD_ID)
 public class MinecraftJourneys {
     /** Define mod id in a common place for everything to reference */
-    public static final String MODID = "modpack";
+    public static final String MOD_ID = "modpack";
     /** Directly reference a slf4j logger */
     public static final Logger LOGGER = LogUtils.getLogger();
 

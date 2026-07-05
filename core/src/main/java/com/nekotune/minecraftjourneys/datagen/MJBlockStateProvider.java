@@ -7,7 +7,7 @@ import java.util.Set;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
 import com.nekotune.minecraftjourneys.datagen.util.bountifulfares.BFDataGenUtility;
-import com.nekotune.minecraftjourneys.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLogBlock;
@@ -49,7 +49,7 @@ public class MJBlockStateProvider extends BlockStateProvider {
 
     public MJBlockStateProvider(GatherDataEvent event) {
         super(event.getGenerator().getPackOutput(),
-                MinecraftJourneys.MODID,
+                MinecraftJourneys.MOD_ID,
                 event.getExistingFileHelper());
     }
 

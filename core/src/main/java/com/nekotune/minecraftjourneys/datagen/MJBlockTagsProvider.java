@@ -1,11 +1,15 @@
 package com.nekotune.minecraftjourneys.datagen;
 
+import java.util.Collection;
+
+import com.jcraft.jorbis.Block;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
-import com.nekotune.minecraftjourneys.registry.content.MJBlocks;
-import com.nekotune.minecraftjourneys.registry.tags.MJBlockTags;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registry.tags.MJBlockTags;
 
 import net.hecco.bountifulfares.registry.tags.BFBlockTags;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.api.distmarker.Dist;
@@ -18,7 +22,7 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
     public MJBlockTagsProvider(GatherDataEvent event) {
         super(event.getGenerator().getPackOutput(),
                 event.getLookupProvider(),
-                MinecraftJourneys.MODID,
+                MinecraftJourneys.MOD_ID,
                 event.getExistingFileHelper());
     }
 
@@ -28,7 +32,10 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
         // Mining type tags
         tag(BlockTags.MINEABLE_WITH_AXE)
             .add(MJBlocks.BFPearBlocks.HANGING_PEAR.get())
-            .add(MJBlocks.BFPearBlocks.PEAR_BLOCK.get())
+            .add(MJBlocks.BFPearBlocks.PEAR_BLOCK.get());
+
+        // Wood tags
+        tag(BlockTags.LOGS_THAT_BURN)
             .add(MJBlocks.BFPearBlocks.PEAR_LOG.get())
             .add(MJBlocks.BFPearBlocks.PEAR_WOOD.get())
             .add(MJBlocks.BFPearBlocks.STRIPPED_PEAR_LOG.get())
@@ -40,5 +47,8 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
         tag(MJBlockTags.PEAR_LEAVES)
             .add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get())
             .add(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get());
+        
+        /* Block tags which derive from other tags */
+        tag(BlockTags.LEAVES).addTag(MJBlockTags.PEAR_LEAVES);
     }
 }

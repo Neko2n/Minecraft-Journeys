@@ -1,34 +1,40 @@
-package com.nekotune.minecraftjourneys.registry.content;
+package com.nekotune.minecraftjourneys.shared.registry.content;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
-import com.nekotune.minecraftjourneys.definition.block.pear.HangingPearBlock;
-import com.nekotune.minecraftjourneys.definition.block.pear.PearBlock;
-import com.nekotune.minecraftjourneys.registry.misc.MJSaplingGenerators;
+import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
+import com.nekotune.minecraftjourneys.shared.definition.block.pear.PearBlock;
+import com.nekotune.minecraftjourneys.shared.registry.worldgen.tree.MJSaplingGenerators;
 
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLogBlock;
 import net.hecco.bountifulfares.definition.block.custom.StrippedFruitLogBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.nexuslib.lib.loader_agnostic.toolAction.NLToolActions;
 import net.hecco.nexuslib.lib.publicBlocks.PublicSaplingBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
 public class MJBlocks {
     /**
      * Deferred register for all blocks.
      */
     @Register
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MinecraftJourneys.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MinecraftJourneys.MOD_ID);
 
     /**
      * The Bountiful Fares fruit tree type for pears from No Man's Land.
@@ -97,7 +103,6 @@ public class MJBlocks {
                 (properties) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PEAR_SAPLING,
                         Properties.ofFullCopy(BFBlocks.POTTED_APPLE_SAPLING.get())))
                 .noItem()
-                .pottedPlant(PEAR_SAPLING)
                 .register();
 
         /** Tree leaves */
@@ -116,6 +121,22 @@ public class MJBlocks {
     }
 
     /**
+     * Defines blocks' runtime functionality.
+     */
+    @SubscribeEvent
+    public static void onCommonSetup(FMLCommonSetupEvent event) {
+
+        // Make logs strippable
+        NLToolActions.addStrippable(MJBlocks.BFPearBlocks.PEAR_LOG.get(), MJBlocks.BFPearBlocks.STRIPPED_PEAR_LOG.get());
+        NLToolActions.addStrippable(MJBlocks.BFPearBlocks.PEAR_WOOD.get(), MJBlocks.BFPearBlocks.STRIPPED_PEAR_WOOD.get());
+
+        // Pottable plants
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                BuiltInRegistries.BLOCK.getKey(MJBlocks.BFPearBlocks.PEAR_SAPLING.get()),
+                MJBlocks.BFPearBlocks.POTTED_PEAR_SAPLING);
+    }
+
+    /**
      * The interface type for registered blocks.
      */
     public static class DeferredBlock<T extends Block> implements Supplier<T> {
@@ -127,11 +148,19 @@ public class MJBlocks {
 
         /**
          * Returns the Block instance of the registered block.
-         * 
          * @return The Block instance.
          */
         public T get() {
             return this.BLOCK.get();
+        }
+
+        /**
+         * Returns the Item instance of the registered block,
+         * or AIR if the block has no item.
+         * @return The Item instance.
+         */
+        public Item asItem() {
+            return get().asItem();
         }
 
         /**
@@ -164,23 +193,6 @@ public class MJBlocks {
              */
             public Builder<T> noItem() {
                 this.hasItem = false;
-                return this;
-            }
-
-            /**
-             * The block is a potted plant.
-             * 
-             * @param plant The registered plant block that is potted.
-             * @return The current block builder instance.
-             */
-            public Builder<T> pottedPlant(DeferredBlock<?> plant) {
-                this.getBlock = () -> {
-                    T block = this.BLOCK.get();
-                    ((FlowerPotBlock) block).addPlant(
-                            BuiltInRegistries.BLOCK.getKey(plant.get()),
-                            plant);
-                    return block;
-                };
                 return this;
             }
 

@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.definition.block.pear;
+package com.nekotune.minecraftjourneys.shared.definition.block.pear;
 
 import java.util.stream.Stream;
 
@@ -15,7 +15,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-@SuppressWarnings("null")
 public class PearBlock extends FruitBlock {
     private static final VoxelShape[] NORTH_SHAPES;
     private static final VoxelShape[] EAST_SHAPES;

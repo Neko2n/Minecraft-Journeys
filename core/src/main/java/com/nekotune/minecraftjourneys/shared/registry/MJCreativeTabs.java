@@ -1,6 +1,6 @@
-package com.nekotune.minecraftjourneys.registry;
+package com.nekotune.minecraftjourneys.shared.registry;
 
-import com.nekotune.minecraftjourneys.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 
 import net.hecco.bountifulfares.registry.misc.BFItemGroups;
 import net.minecraft.world.item.CreativeModeTab;

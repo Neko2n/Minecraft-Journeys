@@ -14,8 +14,8 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
  * This class will not load on dedicated servers. Accessing client side code from here is safe.
  * You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
  */
-@Mod(value = MinecraftJourneys.MODID, dist = Dist.CLIENT)
-@EventBusSubscriber(modid = MinecraftJourneys.MODID, value = Dist.CLIENT)
+@Mod(value = MinecraftJourneys.MOD_ID, dist = Dist.CLIENT)
+@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID, value = Dist.CLIENT)
 public class MinecraftJourneysClient {
     public MinecraftJourneysClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
