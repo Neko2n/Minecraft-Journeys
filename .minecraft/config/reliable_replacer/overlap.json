@@ -1,29 +1,171 @@
 [
-  {
-    "input": "netherexp:soul_candle",
-    "output": "buzzier_bees:soul_candle"
-  },
-  {
-    "keep_states": true,
-    "inputs": [
-      "darkerdepths:rope",
-      "quark:rope"
-    ],
-    "output": "supplementaries:rope"
-  },
-  {
-    "keep_states": true,
-    "inputs": [
-      "natures_spirit:cattail",
-      "primal:cattails"
-    ],
-    "output": "nomansland:cattail"
-  },
-  {
-    "keep_states": true,
-    "inputs": [
-      "primal:river_reeds"
-    ],
-    "output": "nomansland:reeds"
-  }
+    {
+        "inputs": ["netherexp:soul_candle"],
+        "output": "buzzier_bees:soul_candle"
+    },
+    {
+        "keep_states": true,
+        "inputs": [
+            "darkerdepths:rope",
+            "quark:rope"
+        ],
+        "output": "supplementaries:rope"
+    },
+    {
+        "keep_states": true,
+        "inputs": [
+            "natures_spirit:cattail",
+            "primal:cattails"
+        ],
+        "output": "nomansland:cattail"
+    },
+    {
+        "keep_states": true,
+        "inputs": [
+            "primal:river_reeds"
+        ],
+        "output": "nomansland:reeds"
+    },
+    {
+        "inputs": ["nomansland:succulent"],
+        "output": "natures_spirit:sage_succulent"
+    },
+    {
+        "inputs": ["nomansland:lavender_bush"],
+        "output": "natures_spirit:lavender",
+        "output_state_properties": {
+            "half": "lower"
+        },
+        "additional_blocks": [
+            {
+                "output": "natures_spirit:lavender",
+                "x_offset": 0,
+                "y_offset": 1,
+                "z_offset": 0,
+                "output_state_properties": {
+                    "half": "upper"
+                }
+            }
+        ]
+    },
+    {
+        "inputs": ["newworld:fir_log"],
+        "output": "natures_spirit:fir_log",
+        "keep_states": true
+    },
+    {
+        "inputs": ["newworld:fir_wood"],
+        "output": "natures_spirit:fir_wood",
+        "keep_states": true
+    },
+    {
+        "inputs": ["newworld:stripped_fir_log"],
+        "output": "natures_spirit:stripped_fir_log",
+        "keep_states": true
+    },
+    {
+        "inputs": ["newworld:stripped_fir_wood"],
+        "output": "natures_spirit:stripped_fir_wood",
+        "keep_states": true
+    },
+    {
+        "inputs": ["newworld:fir_leaves"],
+        "output": "natures_spirit:fir_leaves",
+        "keep_states": true
+    },
+    {
+        "inputs": ["natures_spirit:willow_log"],
+        "output": "nomansland:willow_log",
+        "keep_states": true
+    },
+    {
+        "inputs": ["natures_spirit:willow_wood"],
+        "output": "nomansland:willow_wood",
+        "keep_states": true
+    },
+    {
+        "inputs": ["natures_spirit:stripped_willow_log"],
+        "output": "nomansland:stripped_willow_log",
+        "keep_states": true
+    },
+    {
+        "inputs": ["natures_spirit:stripped_willow_wood"],
+        "output": "nomansland:stripped_willow_wood",
+        "keep_states": true
+    },
+    {
+        "inputs": ["nomansland:willow_leaves"],
+        "output": "natures_spirit:willow_leaves",
+        "keep_states": true
+    },
+    {
+        "inputs": [
+            "natures_spirit:frosty_fir_leaves",
+            "natures_spirit:frosty_redwood_leaves"
+        ],
+        "output": "nomansland:frosted_leaves",
+        "keep_states": true
+    },
+    {
+        "inputs": ["natures_spirit:beach_grass"],
+        "output": "nomansland:short_beachgrass"
+    },
+    {
+        "inputs": ["natures_spirit:tall_beach_grass"],
+        "output": "nomansland:tall_beachgrass",
+        "keep_states": true
+    },
+    {
+        "inputs": [
+            "natures_spirit:sedge_grass",
+            "natures_spirit:melic_grass",
+            "natures_spirit:tall_sedge_grass",
+            "natures_spirit:tall_melic_grass"
+        ],
+        "output": "spawn:broad_grass",
+        "not": {
+            "state_properties": {
+                "half": "upper"
+            }
+        }
+    },
+    {
+        "inputs": [
+            "minecraft:short_dry_grass",
+            "natures_spirit:scorched_grass",
+            "minecraft:tall_dry_grass",
+            "natures_spirit:tall_scorched_grass"
+        ],
+        "output": "nomansland:dried_grass",
+        "not": {
+            "state_properties": {
+                "half": "upper"
+            }
+        }
+    },
+    {
+        "inputs": [
+            "natures_spirit:frigid_grass",
+            "natures_spirit:tall_frigid_grass"
+        ],
+        "output": "nomansland:frosted_grass",
+        "not": {
+            "state_properties": {
+                "half": "upper"
+            }
+        }
+    },
+    {
+        "inputs": [
+            "natures_spirit:tall_sedge_grass",
+            "natures_spirit:tall_melic_grass",
+            "minecraft:tall_dry_grass",
+            "natures_spirit:tall_scorched_grass",
+            "natures_spirit:tall_frigid_grass"
+        ],
+        "output": "minecraft:air",
+        "state_properties": {
+            "half": "upper"
+        }
+    }
 ]

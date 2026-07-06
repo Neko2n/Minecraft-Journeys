@@ -1,0 +1,65 @@
+{
+  "type": "nomansland:fallen_tree",
+  "config": {
+    "decorators": [
+      {
+        "type": "nomansland:cluster_top",
+        "block_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:moss_carpet"
+          }
+        },
+        "probability": 0.75,
+        "block_probability": 0.6,
+        "limit": 7
+      },
+      {
+        "type": "nomansland:cluster_side",
+        "block_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "nomansland:shelf_mushroom"
+          }
+        },
+        "probability": 0.6,
+        "block_probability": 0.1,
+        "limit": 2
+      },
+      {
+        "type": "nomansland:cluster_top",
+        "block_provider": {
+          "type": "minecraft:weighted_state_provider",
+          "entries": [
+            {
+              "data": {
+                "Name": "minecraft:red_mushroom"
+              },
+              "weight": 1
+            },
+            {
+              "data": {
+                "Name": "minecraft:brown_mushroom"
+              },
+              "weight": 1
+            }
+          ]
+        },
+        "probability": 0.3,
+        "block_probability": 0.5,
+        "limit": 3
+      }
+    ],
+    "gap": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 1,
+      "max_inclusive": 2
+    },
+    "size": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 3,
+      "max_inclusive": 4
+    },
+    "stump_probability": 0.5
+  }
+}

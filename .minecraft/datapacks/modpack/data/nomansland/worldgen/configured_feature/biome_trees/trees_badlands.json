@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "nomansland:small_walnut_checked",
+    "features": [
+      {
+        "chance": 0.033,
+        "feature": "nomansland:walnut_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "minecraft:oak_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "nomansland:autumnal_oak_checked"
+      },
+      {
+        "chance": 0.033,
+        "feature": "minecraft:fancy_oak_checked"
+      },
+      {
+        "chance": 0.034,
+        "feature": "nomansland:large_autumnal_oak_checked"
+      },
+      {
+        "chance": 0.4,
+        "feature": "nomansland:pine_checked"
+      }
+    ]
+  }
+}

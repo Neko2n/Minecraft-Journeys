@@ -1,6 +1,6 @@
 {
-  "config_version": "1.0.3",
-  "config_datetime": "2026-06-23_10-20-21",
+  "config_version": "1.0.4",
+  "config_datetime": "2026-07-06_14-27-04",
   "global": {
     "disable_all_placed_features": false
   },
@@ -58,10 +58,6 @@
       "is_disabled": true
     },
     {
-      "name": "artificers_armory:patch_mandrake",
-      "is_disabled": true
-    },
-    {
       "name": "curiosities:ore_aluminum",
       "is_disabled": true
     },
@@ -86,10 +82,6 @@
       "is_disabled": true
     },
     {
-      "name": "irons_spellbooks:ore_mithril_placement",
-      "is_disabled": true
-    },
-    {
       "name": "natures_spirit:ores/ore_diamond",
       "is_disabled": true
     },
@@ -111,6 +103,10 @@
     },
     {
       "name": "natures_spirit:ores/ore_lapis_buried",
+      "is_disabled": true
+    },
+    {
+      "name": "natures_spirit:patch_azolla",
       "is_disabled": true
     },
     {

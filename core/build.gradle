@@ -90,11 +90,12 @@ neoForge {
             // gameDirectory = project.file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            // --existing-mod makes Bountiful Fares' own assets (e.g. its fruit log template models)
-            // visible to ExistingFileHelper, since our fruit log blockstates/models parent to them.
-            // No Man's Land is added the same way so its biome tags (e.g. old_growth_forest) are visible
-            // when we add to its tags via MJBiomeTagsProvider.
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'bountifulfares', '--existing-mod', 'nomansland'
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath(),
+                    '--existing-mod', 'spawn',
+                    '--existing-mod', 'natures_spirit',
+                    '--existing-mod', 'nomansland',
+                    '--existing-mod', 'bountifulfares'
         }
 
         // applies to all the run configs above
@@ -154,8 +155,11 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     
+    implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
+    implementation "maven.modrinth:WBvnqHfV:MGjl80vc" // Nature's Spirit
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
+    implementation "maven.modrinth:kkmrDlKT:6e8GCrLb" // Terrablender (required by Nature's Spirit)
     implementation "maven.modrinth:bgDhVmqz:6oD2aKnX" // Nexus Lib (required by Bountiful Fares)
 }
 

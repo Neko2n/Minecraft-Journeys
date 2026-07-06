@@ -10,13 +10,63 @@
 #Mob Settings
 [mob]
 
+		[mob.lion.savanna]
+			#Enable or disable lion spawning on savanna
+			#Default=true
+			enableLionSavannaSpawn = false
+			#Spawn weight for lions (higher = more common)
+			#Default=5
+			# Default: 5
+			# Range: > 1
+			lionSavannaSpawnWeight = 5
+			#Minimum group size for lions, it MUST be lesser than max group size
+			#Default=2
+			# Default: 2
+			# Range: > 1
+			lionSavannaMinGroup = 2
+			#Maximum group size for lions, it MUST be greater than min group size
+			#Default=5
+			# Default: 5
+			# Range: > 1
+			lionSavannaMaxGroup = 5
+			#Extra biomes (separated from biome tag) where lions can spawn.
+			#Must be written as full biome IDs (e.g. "minecraft:plains", "nomansland:maple_forest")
+			#You can use biome tags too, just put a # before (e.g. "#minecraft:is_forest", "#nomansland:is_river")
+			#Default = []
+			lionSavannaExtraBiomes = []
+
+		[mob.lion.snowy]
+			#Enable or disable cave lions spawning on snowy biomes
+			#Default=true
+			enableLionSnowySpawn = false
+			#Spawn weight for cave lions (higher = more common)
+			#Default=1
+			# Default: 1
+			# Range: > 1
+			lionSnowySpawnWeight = 1
+			#Minimum group size for cave lions, it MUST be lesser than max group size
+			#Default=2
+			# Default: 2
+			# Range: > 1
+			lionSnowyMinGroup = 2
+			#Maximum group size for cave lions, it MUST be greater than min group size
+			#Default=3
+			# Default: 3
+			# Range: > 1
+			lionSnowyMaxGroup = 3
+			#Extra biomes (separated from biome tag) where cave lions can spawn.
+			#Must be written as full biome IDs (e.g. "minecraft:plains", "nomansland:maple_forest")
+			#You can use biome tags too, just put a # before (e.g. "#minecraft:is_forest", "#nomansland:is_river")
+			#Default = []
+			lionSnowyExtraBiomes = []
+
 	[mob.replaced_models]
-		rabbitModelChange = false
 		#Toggle model replacements for certain mobs
 		polarBearModelChange = true
-		foxModelChange = false
-		wolfModelChange = false
-		dolphinModelChange = false
+		foxModelChange = true
+		rabbitModelChange = true
+		wolfModelChange = true
+		dolphinModelChange = true
 
 	[mob.misc]
 		#Multiple random options
@@ -300,56 +350,6 @@
 			#Default = []
 			walrusOceanExtraBiomes = []
 
-		[mob.lion.savanna]
-			#Enable or disable lion spawning on savanna
-			#Default=true
-			enableLionSavannaSpawn = true
-			#Spawn weight for lions (higher = more common)
-			#Default=5
-			# Default: 5
-			# Range: > 1
-			lionSavannaSpawnWeight = 5
-			#Minimum group size for lions, it MUST be lesser than max group size
-			#Default=2
-			# Default: 2
-			# Range: > 1
-			lionSavannaMinGroup = 2
-			#Maximum group size for lions, it MUST be greater than min group size
-			#Default=5
-			# Default: 5
-			# Range: > 1
-			lionSavannaMaxGroup = 5
-			#Extra biomes (separated from biome tag) where lions can spawn.
-			#Must be written as full biome IDs (e.g. "minecraft:plains", "nomansland:maple_forest")
-			#You can use biome tags too, just put a # before (e.g. "#minecraft:is_forest", "#nomansland:is_river")
-			#Default = []
-			lionSavannaExtraBiomes = []
-
-		[mob.lion.snowy]
-			#Enable or disable cave lions spawning on snowy biomes
-			#Default=true
-			enableLionSnowySpawn = true
-			#Spawn weight for cave lions (higher = more common)
-			#Default=1
-			# Default: 1
-			# Range: > 1
-			lionSnowySpawnWeight = 1
-			#Minimum group size for cave lions, it MUST be lesser than max group size
-			#Default=2
-			# Default: 2
-			# Range: > 1
-			lionSnowyMinGroup = 2
-			#Maximum group size for cave lions, it MUST be greater than min group size
-			#Default=3
-			# Default: 3
-			# Range: > 1
-			lionSnowyMaxGroup = 3
-			#Extra biomes (separated from biome tag) where cave lions can spawn.
-			#Must be written as full biome IDs (e.g. "minecraft:plains", "nomansland:maple_forest")
-			#You can use biome tags too, just put a # before (e.g. "#minecraft:is_forest", "#nomansland:is_river")
-			#Default = []
-			lionSnowyExtraBiomes = []
-
 		[mob.snake.overworld]
 			#Enable or disable snake spawning (the spawn from hollow logs is in the world section)
 			#Default=true
@@ -431,7 +431,7 @@
 	[world.river_reeds]
 		#Enable or disable river reeds spawning, they spawn alongside some cattails
 		#Default=true
-		riverReedsSpawnInWorld = true
+		riverReedsSpawnInWorld = false
 		#Patch rarity for river reeds, they spawn alongside some cattails
 		#Default=2
 		# Default: 2

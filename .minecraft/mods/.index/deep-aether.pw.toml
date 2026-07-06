@@ -17,11 +17,11 @@ mod-id = 'gcHIih5B'
 version = 'MSW5emg8'
 
 [[x-prismlauncher-dependencies]]
-addonId = 'YhmgMVyu'
+addonId = 'kkmrDlKT'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]
-addonId = 'kkmrDlKT'
+addonId = 'YhmgMVyu'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]

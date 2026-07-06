@@ -10,8 +10,6 @@ minecraft:netherite
 minecraft:armadillo
 supplementaries:shulker_shell
 quark:backpack
-block_factorys_bosses:dragon_armor
-block_factorys_bosses:invisible
 darkerdepths:glowshroom
 mowziesmobs:sol_visage
 mowziesmobs:umvuthana_mask
@@ -54,4 +52,8 @@ curiosities:aluminum
 curiosities:invar
 curiosities:heavy
 alloyed:steel
+etcetera:tidal
+etcetera:silk
+etcetera:adventurer
+etcetera:cotton
 spawn:booby

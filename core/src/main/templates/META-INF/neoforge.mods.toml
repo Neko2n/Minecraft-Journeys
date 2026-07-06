@@ -89,6 +89,20 @@ config="${mod_id}.mixins.json"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
+    modId="natures_spirit"
+    type="required"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="spawn"
+    type="required"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
     modId="nomansland"
     type="required"
     versionRange="[0,)"
@@ -104,6 +118,13 @@ config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
     modId="nexuslib"
+    type="required"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="terrablender"
     type="required"
     versionRange="[0,)"
     ordering="AFTER"

@@ -3,8 +3,27 @@
         "action": "remove",
         "items": [
             "bountifulfares:sweet_berry_pips",
-            "minecraft:leaf_litter"
+            "minecraft:leaf_litter",
+            "nomansland:willow_leaves"
         ]
+    },
+    {
+        "action": "remove",
+        "patterns": [
+            "natures_spirit:.*sedge_grass",
+            "natures_spirit:.*beach_grass",
+            "natures_spirit:.*melic_grass",
+            "natures_spirit:.*scorched_grass",
+            "natures_spirit:.*frigid_grass"
+        ]
+    },
+    {
+        "action": "remove",
+        "pattern": ".*dr[y,ied]_grass",
+        "not": {
+            "mod": "nomansland"
+        },
+        "replace_with": "nomansland:dried_grass"
     },
     {
         "action": "remove",
@@ -95,12 +114,36 @@
     },
     {
         "action": "remove",
-        "item": "nomansland:sconce_torch",
+        "pattern": "/newworld:.*fir.*/"
+    },
+    {
+        "action": "remove",
+        "pattern": "/natures_spirit:.*willow.*/",
+        "not": {
+            "items": [
+                "natures_spirit:willow_vines",
+                "natures_spirit:willow_leaves"
+            ]
+        }
+    },
+    {
+        "action": "remove",
+        "items": ["nomansland:sconce_torch"],
         "replace_with": "supplementaries:sconce"
     },
     {
         "action": "remove",
-        "item": "nomansland:sconce_soul_torch",
+        "items": ["nomansland:sconce_soul_torch"],
         "replace_with": "supplementaries:sconce_soul"
+    },
+    {
+        "action": "remove",
+        "items": ["nomansland:succulent"],
+        "replace_with": "natures_spirit:sage_succulent"
+    },
+    {
+        "action": "remove",
+        "items": ["nomansland:lavender_bush"],
+        "replace_with": "natures_spirit:lavender"
     }
 ]

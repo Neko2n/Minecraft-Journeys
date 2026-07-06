@@ -27,7 +27,7 @@ public class MJItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(Provider provider) {
 
-        // Bountiful fares compatibility tags
+        // Bountiful fares compatibility
         tag(MJItemTags.PEAR_LOGS)
             .add(MJBlocks.BFPearBlocks.PEAR_LOG.asItem())
             .add(MJBlocks.BFPearBlocks.PEAR_WOOD.asItem())

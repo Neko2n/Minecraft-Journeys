@@ -1,19 +1,19 @@
-filename = 'visceral_combat-neoforge-1.0.4+1.21.1.jar'
+filename = 'visceral_combat-neoforge-1.0.5+1.21.1.jar'
 name = 'Visceral Combat'
 side = 'server'
 x-prismlauncher-loaders = [ 'neoforge' ]
-x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'visceral_combat-neoforge-1.0.4+1.21.1.jar'
+x-prismlauncher-version-number = 'visceral_combat-neoforge-1.0.5+1.21.1.jar'
 
 [download]
-hash = 'a8101468859170b72b2ce806d900660ae6ce0f4e'
+hash = '2105c61ceb341169647840ce259b8fbf168e4d1a'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 8306448
+file-id = 8378829
 project-id = 1573333
 
 [[x-prismlauncher-dependencies]]

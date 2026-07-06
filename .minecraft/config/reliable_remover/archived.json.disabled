@@ -1,6 +1,24 @@
 [
     {
         "action": "remove",
+        "mod": "block_factorys_bosses",
+        "not": {
+            "patterns": [
+                "/block_factorys_bosses:.*_spawn_egg/"
+            ],
+            "items": [
+                "block_factorys_bosses:worm_gauntlet"
+            ],
+            "entities": [
+                "block_factorys_bosses:infernal_dragon",
+                "block_factorys_bosses:yeti",
+                "block_factorys_bosses:sandworm",
+                "block_factorys_bosses:underworld_knight"
+            ]
+        }
+    },
+    {
+        "action": "remove",
         "patterns": [
             "/irons_spellbooks:.*rune/",
             "/gtbcs_geomancy_plus:.*rune/",
