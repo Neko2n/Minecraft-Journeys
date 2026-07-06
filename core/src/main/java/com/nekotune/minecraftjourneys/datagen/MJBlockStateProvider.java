@@ -143,7 +143,8 @@ public class MJBlockStateProvider extends BlockStateProvider {
             // Flower pot blocks; potted plants, textured with the plant's own texture.
             } else if (block instanceof FlowerPotBlock potBlock) {
                 model = models().withExistingParent(blockName, ResourceTemplates.FLOWER_POT_CROSS)
-                        .texture("plant", blockTexture(potBlock.getPotted()));
+                        .texture("plant", blockTexture(potBlock.getPotted()))
+                        .renderType("cutout");
 
             // All other blocks; flat, single textures.
             } else {

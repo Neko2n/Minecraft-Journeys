@@ -9,6 +9,7 @@ import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.FoliageColor;
+import net.hecco.bountifulfares.definition.block.custom.FruitLogBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.neoforged.api.distmarker.Dist;
@@ -30,9 +31,21 @@ public class BlockColorsHandler {
      */
     private static boolean isBlacklisted(Block block) {
         if (BLACKLIST.isEmpty()) {
-            /* Add items to the blacklist here */
+            BLACKLIST.add(MJBlocks.BFPearBlocks.PEAR_LEAVES.get());
         }
         return BLACKLIST.contains(block);
+    }
+
+    /**
+     * Determines what kinds of blocks should automatically be given colors.
+     * @param block The block to verify against.
+     * @return True if the given block should be colored, false otherwise.
+     */
+    private static boolean shouldColor(Block block) {
+        if (isBlacklisted(block)) return false;
+        if (block instanceof LeavesBlock) return true;
+        if (block instanceof FruitLogBlock) return true;
+        return false;
     }
     
     @SubscribeEvent
@@ -59,12 +72,5 @@ public class BlockColorsHandler {
                     FoliageColor.getDefaultColor(),
                     block);
         });
-    }
-
-    private static boolean shouldColor(Block block) {
-        if (isBlacklisted(block)) return false;
-        final boolean isLeaves = block instanceof LeavesBlock;
-        if (!isLeaves) return false;
-        return true;
     }
 }

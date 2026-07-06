@@ -7,7 +7,7 @@ import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.PearBlock;
-import com.nekotune.minecraftjourneys.shared.registry.worldgen.tree.MJSaplingGenerators;
+import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJTreeGrowers;
 
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLogBlock;
@@ -93,7 +93,7 @@ public class MJBlocks {
         /** Tree sapling */
         public static final DeferredBlock<PublicSaplingBlock> PEAR_SAPLING = new DeferredBlock.Builder<>(
                 "pear_sapling",
-                (properties) -> new PublicSaplingBlock(MJSaplingGenerators.PEAR_SAPLING_GENERATOR,
+                (properties) -> new PublicSaplingBlock(MJTreeGrowers.PEAR_SAPLING_GENERATOR,
                         Properties.ofFullCopy(BFBlocks.APPLE_SAPLING.get())))
                 .register();
 

@@ -53,10 +53,11 @@ public final class BFDataGenUtility {
                         overlayTexture.getNamespace(), "block/" + blockName.substring(prefix.length()));
                 model = provider.models().withExistingParent(blockName, ResourceTemplates.FRUIT_LEAVES)
                         .texture("all", allTexture)
-                        .texture("overlay", overlayTexture);
+                        .texture("overlay", overlayTexture)
+                        .renderType("cutout_mipped");
             } else {
                 final ResourceLocation ownTexture = provider.blockTexture(block);
-                model = provider.models().leaves(blockName, ownTexture);
+                model = provider.models().leaves(blockName, ownTexture).renderType("cutout_mipped");
             }
             return model;
         }
