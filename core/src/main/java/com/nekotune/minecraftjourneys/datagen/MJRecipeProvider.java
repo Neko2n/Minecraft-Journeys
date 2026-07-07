@@ -1,7 +1,5 @@
 package com.nekotune.minecraftjourneys.datagen;
 
-import java.util.function.Predicate;
-
 import com.davigj.wholecloth.core.registry.WCItems;
 import com.farcr.nomansland.common.registry.blocks.NMLBlocks;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
@@ -13,9 +11,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;

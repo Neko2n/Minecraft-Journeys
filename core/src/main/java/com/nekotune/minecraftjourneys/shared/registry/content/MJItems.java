@@ -8,12 +8,10 @@ import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
 import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
 import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
 
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.component.DyedItemColor;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
