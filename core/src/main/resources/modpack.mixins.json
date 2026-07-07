@@ -2,7 +2,10 @@
   "required": true,
   "package": "com.nekotune.minecraftjourneys.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "IncrementalMiningMixins$Rules",
+    "IncrementalMiningMixins$Feedback"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

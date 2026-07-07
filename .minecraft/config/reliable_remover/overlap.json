@@ -19,7 +19,7 @@
     },
     {
         "action": "remove",
-        "pattern": ".*dr[y,ied]_grass",
+        "pattern": "/.*dr(y|ied)_grass/",
         "not": {
             "mod": "nomansland"
         },

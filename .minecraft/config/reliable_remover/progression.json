@@ -1,0 +1,17 @@
+[
+    {
+        "action": "remove",
+        "patterns": [
+            "/minecraft:diamond_.*/",
+            "/minecraft:stone_(sword|axe|pickaxe|shovel|hoe)/",
+            "/minecraft:wooden_(sword|axe|pickaxe|shovel|hoe)/"
+        ]
+    },
+    {
+        "action": "remove",
+        "patterns": ["/.*_hoe/"],
+        "not": {
+            "items": ["minecraft:iron_hoe"]
+        }
+    }
+]

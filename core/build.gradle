@@ -156,6 +156,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     
+    implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
     implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
     implementation "maven.modrinth:WBvnqHfV:MGjl80vc" // Nature's Spirit

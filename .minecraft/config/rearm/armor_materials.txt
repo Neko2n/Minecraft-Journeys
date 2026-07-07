@@ -58,3 +58,4 @@ etcetera:silk
 etcetera:adventurer
 etcetera:cotton
 spawn:booby
+modpack:cloth
