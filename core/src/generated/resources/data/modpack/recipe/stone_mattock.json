@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "nomansland:pebbles"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " SX",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "modpack:stone_mattock"
+  }
+}

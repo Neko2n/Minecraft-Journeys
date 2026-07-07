@@ -1,7 +1,7 @@
 {
     "values": [
         {
-            "id": "#c:is_underground",
+            "id": "nomansland:cave_depths",
             "required": true
         }
     ]

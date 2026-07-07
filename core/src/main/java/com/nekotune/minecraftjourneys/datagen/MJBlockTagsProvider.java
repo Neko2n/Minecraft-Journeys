@@ -26,6 +26,10 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(Provider provider) {
 
         // Mining type tags
+        tag(MJBlockTags.MINEABLE_WITH_MULTITOOL)
+            .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .addTag(BlockTags.MINEABLE_WITH_AXE)
+            .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
         tag(BlockTags.MINEABLE_WITH_AXE)
             .add(MJBlocks.BFPearBlocks.HANGING_PEAR.get())
             .add(MJBlocks.BFPearBlocks.PEAR_BLOCK.get());

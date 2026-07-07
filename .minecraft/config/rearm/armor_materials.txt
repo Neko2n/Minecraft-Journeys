@@ -17,6 +17,7 @@ mowziesmobs:wrought_helm
 mowziesmobs:geomancer_armor
 the_beyond:shroud
 the_beyond:anchor
+netherman:azazel_armor
 aether:zanite
 aether:gravitite
 aether:neptune

@@ -4,6 +4,7 @@ import com.farcr.nomansland.common.registry.items.NMLItems;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 import com.nekotune.minecraftjourneys.shared.registry.tags.MJItemTags;
 
 import net.hecco.bountifulfares.registry.tags.BFItemTags;
@@ -26,6 +27,12 @@ public class MJItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(Provider provider) {
+
+        tag(ItemTags.DYEABLE)
+            .add(MJItems.Equipment.CLOTH_HELMET.get())
+            .add(MJItems.Equipment.CLOTH_CHESTPLATE.get())
+            .add(MJItems.Equipment.CLOTH_LEGGINGS.get())
+            .add(MJItems.Equipment.CLOTH_BOOTS.get());
 
         // Bountiful fares compatibility
         tag(MJItemTags.PEAR_LOGS)

@@ -1,10 +1,25 @@
 package com.nekotune.minecraftjourneys.shared.registry.content;
 
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
+import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
+import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
 
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.component.DyedItemColor;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
 public class MJItems {
     /**
      * Deferred register for all items.
@@ -13,6 +28,113 @@ public class MJItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MinecraftJourneys.MOD_ID);
     
     /**
-     * The items for Cloth Armor.
+     * Gear items (armor, tools, etc.)
      */
+    public static final class Equipment {
+
+        /**
+         * Cloth armor
+         */
+        public static final DeferredItem<ArmorItem> CLOTH_HELMET = new DeferredItem.Builder<ArmorItem>(
+                "cloth_helmet",
+                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.HELMET, properties
+                        .durability(ArmorItem.Type.HELMET.getDurability(3))
+                        .rarity(Rarity.COMMON)
+                )).register();
+        public static final DeferredItem<ArmorItem> CLOTH_CHESTPLATE = new DeferredItem.Builder<ArmorItem>(
+                "cloth_chestplate",
+                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.CHESTPLATE, properties
+                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(3))
+                        .rarity(Rarity.COMMON)
+                )).register();
+        public static final DeferredItem<ArmorItem> CLOTH_LEGGINGS = new DeferredItem.Builder<ArmorItem>(
+                "cloth_leggings",
+                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.LEGGINGS, properties
+                        .durability(ArmorItem.Type.LEGGINGS.getDurability(3))
+                        .rarity(Rarity.COMMON)
+                )).register();
+        public static final DeferredItem<ArmorItem> CLOTH_BOOTS = new DeferredItem.Builder<ArmorItem>(
+                "cloth_boots",
+                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.BOOTS, properties
+                        .durability(ArmorItem.Type.BOOTS.getDurability(3))
+                        .rarity(Rarity.COMMON)
+                )).register();
+        
+        /**
+         * Early-game tools
+         */
+        private static DeferredItem<MultitoolItem> basicMattock(String name) {
+            return new DeferredItem.Builder<MultitoolItem>(name, properties ->
+                    new MultitoolItem(Tiers.WOOD, 3, -3.0F, properties
+                            .durability(100)
+                            .rarity(Rarity.COMMON))
+            ).register();
+        }
+        public static final DeferredItem<MultitoolItem> STONE_MATTOCK = basicMattock("stone_mattock");
+        public static final DeferredItem<MultitoolItem> FLINT_MATTOCK = basicMattock("flint_mattock");
+        public static final DeferredItem<MultitoolItem> BONE_MATTOCK = basicMattock("bone_mattock");
+        public static final DeferredItem<MultitoolItem> OBSIDIAN_MATTOCK = new DeferredItem.Builder<MultitoolItem>(
+                "obsidian_mattock",
+                properties -> new MultitoolItem(Tiers.IRON, 5, -3.0F, properties
+                        .durability(2000)
+                        .rarity(Rarity.UNCOMMON)))
+                .register();
+    }
+
+    /**
+     * Defines items' runtime functionality.
+     */
+    @SubscribeEvent
+    public static void onCommonSetup(FMLCommonSetupEvent event) {}
+
+    /**
+     * The interface type for registered items.
+     */
+    public static class DeferredItem<T extends Item> implements Supplier<T> {
+        private final Supplier<T> ITEM;
+
+        protected DeferredItem(Builder<T> builder) {
+            this.ITEM = builder.getItem;
+        }
+
+        /**
+         * Returns the Item instance of the registered item.
+         * @return The Item instance.
+         */
+        public T get() {
+            return this.ITEM.get();
+        }
+
+        /**
+         * Class to build custom blocks.
+         */
+        public static class Builder<T extends Item> {
+            private final String NAME;
+            private final Supplier<T> ITEM;
+
+            protected Supplier<T> getItem;
+
+            /**
+             * Creates the definition for a new block type to be registered.
+             * 
+             * @param name     The name ID of the block to register.
+             * @param provider The supplier to create an instance of the block class from a
+             *                 given set of block properties.
+             */
+            public Builder(String name, Function<Item.Properties, T> provider) {
+                this.NAME = name;
+                this.ITEM = ITEMS.registerItem(this.NAME, provider);
+                this.getItem = this.ITEM;
+            }
+
+            /**
+             * Registers the block with the deferred register.
+             * 
+             * @return A supplier of the registered block.
+             */
+            public DeferredItem<T> register() {
+                return new DeferredItem<>(this);
+            }
+        }
+    }
 }
