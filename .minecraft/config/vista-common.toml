@@ -35,3 +35,6 @@
 	# Default: 20
 	# Range: 1 ~ 10000
 	tv_energy_consumption_rate = 20
+	#How right-clicking a view finder behaves. GUI: opens a screen with the lens slot, pitch/yaw angle controls and a 'view' button (sneak to jump straight into viewing). LEGACY: no screen at all - click to look through it directly, and use items on it to insert/remove the lens.
+	#Allowed Values: GUI, LEGACY
+	view_finder_interaction = "GUI"

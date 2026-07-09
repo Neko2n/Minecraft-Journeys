@@ -7,6 +7,9 @@ import java.util.stream.Stream;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
+import com.nekotune.minecraftjourneys.shared.definition.item.gear.KnifeItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.gear.SpearItem;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 import com.nekotune.minecraftjourneys.shared.registry.util.MJResourceLocations.Paths;
 
@@ -54,24 +57,67 @@ public class MJItemModelProvider extends ItemModelProvider {
         final Stream<Item> items = MJItems.ITEMS.getEntries().stream().map(Holder::value);
         items.forEach(item -> {
             if (item instanceof BlockItem) return;
-            final ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
-            if (registered.contains(key)) return;
+            if (registered.contains(BuiltInRegistries.ITEM.getKey(item))) return;
+
+            // Spears have special item models
+            if (item instanceof SpearItem) {
+                ItemModelBuilder throwingModel = spearThrowingModel(item);
+                model(item, "modpack:item/spear_in_hand")
+                        .override()
+                        .predicate(ResourceLocation.fromNamespaceAndPath(MinecraftJourneys.MOD_ID, "throwing"), 1)
+                        .model(throwingModel)
+                        .end();
+                return;
+            }
+
+            // Hand-held items (tools, weapons, etc.)
+            if (item instanceof MultitoolItem
+                    || item instanceof KnifeItem) {
+                handheldItem(item);
+                return;
+            }
+
+            // All other items
             basicItem(item);
         });
+    }
+    
+    @Override
+    public ItemModelBuilder handheldItem(Item item) {
+        return model(item, "item/handheld");
     }
 
     @Override
     public ItemModelBuilder basicItem(Item item) {
-        ResourceLocation resource = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
+        return model(item, "item/generated");
+    }
+
+    private ItemModelBuilder model(Item item, final String modelPath) {
+        ResourceLocation location = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
+        final String texturePath = getTexturePath(item);
+        return getBuilder(location.toString())
+                .parent(new ModelFile.UncheckedModelFile(modelPath))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(
+                        location.getNamespace(), texturePath));
+    }
+
+    private ItemModelBuilder spearThrowingModel(Item item) {
+        ResourceLocation location = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
+        final String texturePath = getTexturePath(item);
+        return getBuilder(location.getPath() + "_throwing")
+                .parent(new ModelFile.UncheckedModelFile("modpack:item/spear_throwing"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(
+                        location.getNamespace(), texturePath));
+    }
+
+    private static String getTexturePath(Item item) {
+        ResourceLocation modelLocation = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
         String modifier = "";
         if (item instanceof ArmorItem) {
             modifier = Paths.ARMOR;
         } else if (item instanceof TieredItem) {
             modifier = Paths.TOOL;
         }
-        final String path = "item/" + modifier + resource.getPath();
-        return getBuilder(item.toString())
-                .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                .texture("layer0", ResourceLocation.fromNamespaceAndPath(resource.getNamespace(), path));
+        return "item/" + modifier + modelLocation.getPath();
     }
 }

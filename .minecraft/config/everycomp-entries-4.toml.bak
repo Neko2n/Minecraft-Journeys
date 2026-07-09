@@ -172,6 +172,63 @@
 		[types.cake.natures_spirit]
 			cheese_block = true
 
+		[types.lantern.netherexp]
+			ancient_lantern = true
+
+		[types.lantern.infernalexp]
+			glowlight_lantern = true
+
+		[types.lantern.darkerdepths]
+			glowshroom_lantern = true
+
+		[types.lantern.bountifulfares]
+			feldspar_lantern = true
+
+		[types.lantern.deep_aether]
+			skyjade_lantern = true
+
+		[types.lantern.natures_spirit]
+			paper_lantern = true
+			white_paper_lantern = true
+			light_gray_paper_lantern = true
+			gray_paper_lantern = true
+			black_paper_lantern = true
+			brown_paper_lantern = true
+			red_paper_lantern = true
+			orange_paper_lantern = true
+			yellow_paper_lantern = true
+			lime_paper_lantern = true
+			green_paper_lantern = true
+			blue_paper_lantern = true
+			light_blue_paper_lantern = true
+			cyan_paper_lantern = true
+			purple_paper_lantern = true
+			magenta_paper_lantern = true
+			pink_paper_lantern = true
+
+		[types.lantern.suppsquared]
+			copper_lantern = true
+			brass_lantern = true
+			crimson_lantern = true
+
+		[types.lantern.caverns_and_chasms]
+			cupric_lantern = true
+			copper_lantern = true
+			exposed_copper_lantern = true
+			weathered_copper_lantern = true
+			oxidized_copper_lantern = true
+			waxed_copper_lantern = true
+			waxed_exposed_copper_lantern = true
+			waxed_weathered_copper_lantern = true
+			waxed_oxidized_copper_lantern = true
+
+		[types.lantern.enderscape]
+			bulb_lantern = true
+
+		[types.lantern.curiosities]
+			heavy_lantern = true
+			heavy_soul_lantern = true
+
 #Disables specific entries
 [entries]
 

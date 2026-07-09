@@ -21,12 +21,12 @@ public class MultitoolItem extends DiggerItem {
     private static final Supplier<Item> EXAMPLE_AXE = () -> Items.IRON_AXE;
     private static final Supplier<Item> EXAMPLE_PICKAXE = () -> Items.IRON_PICKAXE;
 
-    public MultitoolItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+    public MultitoolItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {
         super(tier, MJBlockTags.MINEABLE_WITH_MULTITOOL, properties
-                .attributes(MultitoolItem.createAttributes(tier, attackDamage, attackSpeed)));
+                .attributes(MultitoolItem.createAttributes(tier, attackDamageBonus, attackSpeed)));
     }
 
-    private static ItemAttributeModifiers createAttributes(Tier tier, int attackDamage, float attackSpeed) {
+    protected static ItemAttributeModifiers createAttributes(Tier tier, int attackDamage, float attackSpeed) {
         return DiggerItem.createAttributes(tier, (float)attackDamage, attackSpeed);
     }
 

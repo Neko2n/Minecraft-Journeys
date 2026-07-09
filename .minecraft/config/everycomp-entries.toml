@@ -44,16 +44,6 @@
 			hoary = true
 			walnut = true
 
-		[types.wood_type.aether]
-			skyroot = true
-
-		[types.wood_type.deep_aether]
-			roseroot = true
-			yagroot = true
-			cruderoot = true
-			conberry = true
-			sunroot = true
-
 		[types.wood_type.alexscaves]
 			pewen = true
 			thornwood = true
@@ -146,32 +136,11 @@
 			golden_apple = true
 			flowering_golden_apple = true
 
-		[types.leaves_type.aether]
-			skyroot = true
-			golden_oak = true
-			crystal = true
-			crystal_fruit = true
-			holiday = true
-			decorated_holiday = true
-
-		[types.leaves_type.deep_aether]
-			roseroot = true
-			flowering_roseroot = true
-			blue_roseroot = true
-			flowering_blue_roseroot = true
-			yagroot = true
-			cruderoot = true
-			conberry = true
-			sunroot = true
-
 		[types.leaves_type.alexscaves]
 			ancient = true
 
 		[types.leaves_type.spawn]
 			date = true
-
-		[types.leaves_type.modpack]
-			pear = true
 
 		[types.cake.bountifulfares]
 			coconut_cake = true
@@ -192,9 +161,6 @@
 
 		[types.lantern.bountifulfares]
 			feldspar_lantern = true
-
-		[types.lantern.deep_aether]
-			skyjade_lantern = true
 
 		[types.lantern.natures_spirit]
 			paper_lantern = true

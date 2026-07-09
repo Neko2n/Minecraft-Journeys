@@ -1,0 +1,6 @@
+{
+  "parent": "modpack:item/spear_throwing",
+  "textures": {
+    "layer0": "modpack:item/tool/obsidian_spear"
+  }
+}

@@ -1,19 +1,19 @@
-filename = 'etcetera-neoforge-1.21.1-2.2.1.jar'
+filename = 'etcetera-neoforge-1.21.1-2.2.2.jar'
 name = 'Etcetera'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Etcetera Neoforge 1.21.1 - 2.2.1'
+x-prismlauncher-version-number = 'Etcetera Neoforge 1.21.1 - 2.2.2'
 
 [download]
-hash = 'b29163f568feaea99ddf1c175896e0a4ed47b21f'
+hash = '1fedd2f762824803732b0f39e237c35be5cf12ca'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 8378796
+file-id = 8390468
 project-id = 891054
 
 [[x-prismlauncher-dependencies]]

@@ -11,8 +11,19 @@
   "item.modpack.flint_mattock": "Flint Tool",
   "item.modpack.bone_mattock": "Bone Tool",
   "item.modpack.obsidian_mattock": "Obsidian Mattock",
+  "item.modpack.wooden_spear": "Pike",
+  "item.modpack.stone_spear": "Stone Spear",
+  "item.modpack.flint_spear": "Flint Spear",
+  "item.modpack.bone_spear": "Bone Spear",
+  "item.modpack.obsidian_spear": "Obsidian Spear",
+  "item.modpack.stone_knife": "Stone Knife",
+  "item.modpack.flint_knife": "Flint Knife",
+  "item.modpack.bone_knife": "Bone Knife",
+  "item.modpack.obsidian_knife": "Obsidian Knife",
   "item.modpack.cloth_helmet": "Cloth Cap",
   "item.modpack.cloth_chestplate": "Cloth Tunic",
   "item.modpack.cloth_leggings": "Cloth Pants",
-  "item.modpack.cloth_boots": "Cloth Boots"
+  "item.modpack.cloth_boots": "Cloth Boots",
+
+  "entity.modpack.thrown_spear": "Thrown Spear"
 }

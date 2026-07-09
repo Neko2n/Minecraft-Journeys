@@ -39,6 +39,15 @@ public class MJCreativeTabs {
             event.accept(MJItems.Equipment.CLOTH_CHESTPLATE.get());
             event.accept(MJItems.Equipment.CLOTH_LEGGINGS.get());
             event.accept(MJItems.Equipment.CLOTH_BOOTS.get());
+            event.accept(MJItems.Equipment.STONE_KNIFE.get());
+            event.accept(MJItems.Equipment.FLINT_KNIFE.get());
+            event.accept(MJItems.Equipment.BONE_KNIFE.get());
+            event.accept(MJItems.Equipment.OBSIDIAN_KNIFE.get());
+            event.accept(MJItems.Equipment.WOODEN_SPEAR.get());
+            event.accept(MJItems.Equipment.STONE_SPEAR.get());
+            event.accept(MJItems.Equipment.FLINT_SPEAR.get());
+            event.accept(MJItems.Equipment.BONE_SPEAR.get());
+            event.accept(MJItems.Equipment.OBSIDIAN_SPEAR.get());
         }
     }
 

@@ -57,9 +57,14 @@ public class MJRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('X', CLOTH)
                 .unlockedBy(getHasName(CLOTH), has(CLOTH))
                 .save(recipeOutput);
+        
+        final ItemLike PEBBLES = NMLBlocks.PEBBLES.get();
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, PEBBLES, 4)
+                .requires(ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(PEBBLES), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(recipeOutput);
 
         // Mattocks
-        final ItemLike PEBBLES = NMLBlocks.PEBBLES.get();
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MJItems.Equipment.STONE_MATTOCK.get())
                 .pattern("XXX")
                 .pattern(" SX")
@@ -67,10 +72,6 @@ public class MJRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('X', PEBBLES)
                 .define('S', Items.STICK)
                 .unlockedBy(getHasName(PEBBLES), has(PEBBLES))
-                .save(recipeOutput);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, PEBBLES, 4)
-                .requires(ItemTags.STONE_TOOL_MATERIALS)
-                .unlockedBy(getHasName(PEBBLES), has(ItemTags.STONE_TOOL_MATERIALS))
                 .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MJItems.Equipment.FLINT_MATTOCK.get())
                 .pattern("XXX")
@@ -92,6 +93,76 @@ public class MJRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("XXX")
                 .pattern(" SX")
                 .pattern(" S ")
+                .define('X', Blocks.OBSIDIAN)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Blocks.OBSIDIAN), has(Blocks.OBSIDIAN))
+                .save(recipeOutput);
+        
+        // Spears
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.WOODEN_SPEAR.get())
+                .pattern(" S")
+                .pattern("S ")
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.STONE_SPEAR.get())
+                .pattern("  X")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('X', PEBBLES)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(PEBBLES), has(PEBBLES))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.FLINT_SPEAR.get())
+                .pattern("  X")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('X', Items.FLINT)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.FLINT), has(Items.FLINT))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.BONE_SPEAR.get())
+                .pattern("  X")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('X', Items.BONE)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.OBSIDIAN_SPEAR.get())
+                .pattern("  X")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('X', Blocks.OBSIDIAN)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Blocks.OBSIDIAN), has(Blocks.OBSIDIAN))
+                .save(recipeOutput);
+        
+        // Knives
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.STONE_KNIFE.get())
+                .pattern(" X")
+                .pattern("S ")
+                .define('X', PEBBLES)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(PEBBLES), has(PEBBLES))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.FLINT_KNIFE.get())
+                .pattern(" X")
+                .pattern("S ")
+                .define('X', Items.FLINT)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.FLINT), has(Items.FLINT))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.BONE_KNIFE.get())
+                .pattern(" X")
+                .pattern("S ")
+                .define('X', Items.BONE)
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MJItems.Equipment.OBSIDIAN_KNIFE.get())
+                .pattern(" X")
+                .pattern("S ")
                 .define('X', Blocks.OBSIDIAN)
                 .define('S', Items.STICK)
                 .unlockedBy(getHasName(Blocks.OBSIDIAN), has(Blocks.OBSIDIAN))

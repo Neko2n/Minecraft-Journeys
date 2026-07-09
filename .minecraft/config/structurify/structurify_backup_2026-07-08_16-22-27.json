@@ -1,0 +1,176 @@
+{
+  "config_version": "2.0.28",
+  "config_datetime": "2026-07-08_16-21-41",
+  "general": {
+    "disable_all_structures": false,
+    "prevent_structure_overlap": false,
+    "enable_global_spacing_and_separation_modifier": false,
+    "global_spacing_and_separation_modifier": 1.0
+  },
+  "structure_namespaces": [],
+  "structures": [
+    {
+      "name": "bosses_of_mass_destruction:gauntlet_arena",
+      "is_disabled": true
+    },
+    {
+      "name": "bosses_of_mass_destruction:lich_tower",
+      "is_disabled": true
+    },
+    {
+      "name": "bosses_of_mass_destruction:obsidilith_arena",
+      "is_disabled": true
+    },
+    {
+      "name": "bosses_of_mass_destruction:void_blossom",
+      "is_disabled": true
+    },
+    {
+      "name": "mowziesmobs:frostmaw_spawn",
+      "is_disabled": true
+    },
+    {
+      "name": "mowziesmobs:monastery",
+      "is_disabled": true
+    },
+    {
+      "name": "mowziesmobs:umvuthana_grove",
+      "is_disabled": true
+    },
+    {
+      "name": "mowziesmobs:wrought_chamber",
+      "is_disabled": true
+    },
+    {
+      "name": "netherman:head_altar",
+      "is_disabled": true
+    },
+    {
+      "name": "netherman:maze",
+      "is_disabled": true
+    },
+    {
+      "name": "netherman:monument",
+      "is_disabled": true
+    },
+    {
+      "name": "netherman:nether_geyser",
+      "is_disabled": true
+    },
+    {
+      "name": "netherman:pipes",
+      "is_disabled": true
+    }
+  ],
+  "structure_sets": [
+    {
+      "spacing": 32,
+      "separation": 16,
+      "name": "bosses_of_mass_destruction:gauntlet_arena",
+      "is_disabled": true,
+      "salt": 499672,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "bosses_of_mass_destruction:gauntlet_arena": 1
+      }
+    },
+    {
+      "spacing": 100,
+      "separation": 50,
+      "name": "bosses_of_mass_destruction:lich_tower",
+      "is_disabled": true,
+      "salt": 1230784,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "bosses_of_mass_destruction:lich_tower": 1
+      }
+    },
+    {
+      "spacing": 64,
+      "separation": 32,
+      "name": "bosses_of_mass_destruction:obsidilith_arena",
+      "is_disabled": true,
+      "salt": 499672,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "bosses_of_mass_destruction:obsidilith_arena": 1
+      }
+    },
+    {
+      "spacing": 64,
+      "separation": 24,
+      "name": "bosses_of_mass_destruction:void_blossom",
+      "is_disabled": true,
+      "salt": 574839,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "bosses_of_mass_destruction:void_blossom": 1
+      }
+    },
+    {
+      "spacing": 25,
+      "separation": 8,
+      "name": "mowziesmobs:frostmaw_spawns",
+      "is_disabled": true,
+      "salt": 23317578,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "mowziesmobs:frostmaw_spawn": 1
+      }
+    },
+    {
+      "spacing": 25,
+      "separation": 8,
+      "name": "mowziesmobs:monasteries",
+      "is_disabled": true,
+      "salt": 37312139,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "mowziesmobs:monastery": 1
+      }
+    },
+    {
+      "spacing": 25,
+      "separation": 8,
+      "name": "mowziesmobs:umvuthana_groves",
+      "is_disabled": true,
+      "salt": 23311138,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "mowziesmobs:umvuthana_grove": 1
+      }
+    },
+    {
+      "spacing": 15,
+      "separation": 5,
+      "name": "mowziesmobs:wrought_chambers",
+      "is_disabled": true,
+      "salt": 23217347,
+      "frequency": 1.0,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "mowziesmobs:wrought_chamber": 1
+      }
+    },
+    {
+      "spacing": 63,
+      "separation": 19,
+      "name": "supplementaries:galleons",
+      "is_disabled": false,
+      "salt": 121047156,
+      "frequency": 0.5,
+      "override_global_spacing_and_separation_modifier": false,
+      "structure_weights": {
+        "supplementaries:galleon": 1
+      }
+    }
+  ],
+  "structure_template_pools": []
+}

@@ -18,16 +18,6 @@ mowziesmobs:geomancer_armor
 the_beyond:shroud
 the_beyond:anchor
 netherman:azazel_armor
-aether:zanite
-aether:gravitite
-aether:neptune
-aether:valkyrie
-aether:phoenix
-aether:obsidian
-aether:sentry
-deep_aether:stratus
-deep_aether:stormforged
-deep_aether:skyjade
 caverns_and_chasms:copper
 caverns_and_chasms:exposed_copper
 caverns_and_chasms:weathered_copper
@@ -58,4 +48,3 @@ etcetera:silk
 etcetera:adventurer
 etcetera:cotton
 spawn:booby
-modpack:cloth

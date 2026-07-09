@@ -50,7 +50,7 @@
 	# Range: 1200 ~ 1000000
 	miniBossCooldown = 18000
 	#Cooldown (in ticks) for spawning Civilian NPCs (Blacksmith, Doctor, Gilded Golem, Trader).
-	# Default: 72000
+	# Default: 20000
 	# Range: 1200 ~ 1000000
 	civilianNpcCooldown = 72000
 	#Number of Believers spawned at once.
@@ -66,7 +66,7 @@
 	# Range: 1 ~ 50
 	believersMaxNearby = 5
 	#Cooldown if Believers successfully spawned.
-	# Default: 72000
+	# Default: 20000
 	# Range: 1200 ~ 1000000
 	believersSuccessCooldown = 72000
 	#Soft cooldown if spawning was skipped because there are too many Believers around.
@@ -114,7 +114,7 @@
 	# Range: 0.0 ~ 100.0
 	midasFireDamage = 8.0
 	#Ticks required near the boss to turn an item into gold (40 = 2 seconds)
-	# Default: 40
+	# Default: 200
 	# Range: 1 ~ 2000
 	midasGoldTime = 40
 
@@ -239,3 +239,9 @@
 	# Default: 100
 	# Range: 0 ~ 1200
 	humanProjectileSpikeWitherDuration = 100
+
+["NPC Doctor Config"]
+	#true = the Doctor will only give potions with effects from vanilla.false = it gives random effects from ANY installed mod
+	doctorVanillaPotionsOnly = false
+	#A list of mod IDs (namespaces) allowed to be given as potions by the Doctor if doctorVanillaPotionsOnly is true.
+	doctorAllowedModNamespaces = ["minecraft"]
