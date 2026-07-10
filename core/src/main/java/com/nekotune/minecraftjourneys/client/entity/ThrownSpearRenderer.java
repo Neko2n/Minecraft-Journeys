@@ -75,6 +75,6 @@ public class ThrownSpearRenderer extends EntityRenderer<ThrownSpear> {
         Item spearItem = entity.getItem().getItem();
         ResourceLocation location = BuiltInRegistries.ITEM.getKey(spearItem);
         return ResourceLocation.fromNamespaceAndPath(location.getNamespace(),
-            "textures/entity/" + location.getPath() + ".png");
+            "textures/entity/spear/" + location.getPath() + ".png");
     }
 }

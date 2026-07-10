@@ -23,7 +23,7 @@ public class SpearWoodenModel extends EntityModel<ThrownSpear> {
     }
 
     public static LayerDefinition createBodyLayer() {
-        // TODO: Import from blockbench
+        // TODO
     }
 
     @Override
