@@ -4,7 +4,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
+import com.nekotune.minecraftjourneys.core.RegistryHandler.RegisterDeferred;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.PearBlock;
 import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJTreeGrowers;
@@ -33,7 +33,7 @@ public class MJBlocks {
     /**
      * Deferred register for all blocks.
      */
-    @Register
+    @RegisterDeferred
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MinecraftJourneys.MOD_ID);
 
     /**

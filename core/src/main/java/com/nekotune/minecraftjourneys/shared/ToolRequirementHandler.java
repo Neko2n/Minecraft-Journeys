@@ -18,7 +18,8 @@ public class ToolRequirementHandler {
     @SubscribeEvent
     public static void onBreakSpeed(PlayerEvent.BreakSpeed event) {
         final Optional<BlockPos> pos = event.getPosition();
-        if (!pos.isPresent()) return;
+        if (!pos.isPresent())
+            return;
         final Level level = event.getEntity().level();
         if (!event.getEntity().hasCorrectToolForDrops(event.getState(), level, pos.get())) {
             event.setCanceled(true);
@@ -28,9 +29,13 @@ public class ToolRequirementHandler {
     @SubscribeEvent
     public static void onBreak(BlockEvent.BreakEvent event) {
         final Player player = event.getPlayer();
-        if (player == null) return;
-        if (!player.hasCorrectToolForDrops(event.getState(), player.level(), event.getPos())) {
-            event.setCanceled(true);
-        }
+        if (player == null)
+            return;
+        if (player.isCreative())
+            return;
+        if (player.hasCorrectToolForDrops(
+                event.getState(), player.level(), event.getPos()))
+            return;
+        event.setCanceled(true);
     }
 }

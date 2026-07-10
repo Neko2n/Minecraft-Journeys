@@ -38,6 +38,9 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    flatDir {
+        dir 'libs'
+    }
 }
 
 base {
@@ -155,14 +158,15 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    implementation name: "natures_spirit-2.3.0-1.21.1" // Nature's Spirit
     
     implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
     implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
-    implementation "maven.modrinth:WBvnqHfV:MGjl80vc" // Nature's Spirit
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
-    implementation "maven.modrinth:kkmrDlKT:6e8GCrLb" // Terrablender (required by Nature's Spirit)
+    implementation "maven.modrinth:XaDC71GB:qPASucBM" // Lithostitched (required by Nature's Spirit)
     implementation "maven.modrinth:bgDhVmqz:6oD2aKnX" // Nexus Lib (required by Bountiful Fares)
 }
 

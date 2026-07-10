@@ -22,10 +22,10 @@ public class RegistryHandler {
      */
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.FIELD)
-    public @interface Register {}
+    public @interface RegisterDeferred {}
 
     /**
-     * Registers every {@link Register}-annotated {@link DeferredRegister} field
+     * Registers every {@link RegisterDeferred}-annotated {@link DeferredRegister} field
      * found anywhere in the mod's jar,
      * using FML's annotation scan data instead of a hard-coded list of classes.
      * 
@@ -36,7 +36,7 @@ public class RegistryHandler {
      */
     public static void registerAll(IEventBus modEventBus, ModContainer modContainer, ClassLoader classLoader) {
         ModFileScanData scanData = modContainer.getModInfo().getOwningFile().getFile().getScanResult();
-        scanData.getAnnotatedBy(Register.class, ElementType.FIELD).forEach(data -> {
+        scanData.getAnnotatedBy(RegisterDeferred.class, ElementType.FIELD).forEach(data -> {
             String className = data.clazz().getClassName();
             String fieldName = data.memberName();
             try {

@@ -1,15 +1,14 @@
 package com.nekotune.minecraftjourneys.shared.definition.item.gear;
 
 import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
+import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -26,20 +24,19 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbilities;
 
 public class SpearItem extends TieredItem implements ProjectileItem {
+    private static final RandomSource random = RandomSource.create();
 
     private final float throwDamage;
 
     public SpearItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {
         super(tier, properties.attributes(
                 SpearItem.createAttributes(tier, attackDamageBonus, attackSpeed)));
-        throwDamage = attackDamageBonus + tier.getAttackDamageBonus();
+        throwDamage = attackDamageBonus + tier.getAttackDamageBonus() * 2.0f;
     }
 
     protected static ItemAttributeModifiers createAttributes(Tier tier, int attackDamage, float attackSpeed) {
@@ -84,19 +81,21 @@ public class SpearItem extends TieredItem implements ProjectileItem {
         int i = this.getUseDuration(stack, entityLiving) - timeLeft;
         if (i < 10) return;
         if (isTooDamagedToUse(stack)) return;
-        Holder<SoundEvent> holder = EnchantmentHelper.pickHighestLevel(stack, EnchantmentEffectComponents.TRIDENT_SOUND)
-            .orElse(SoundEvents.TRIDENT_THROW);
         if (!level.isClientSide) {
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(entityLiving.getUsedItemHand()));
             
-            ThrownSpear thrownSpear = asProjectile(level, player.position(), stack, player.getDirection());
-            thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
+            ThrownSpear thrownSpear = asProjectile(level, player.position().add(0.0f, 1.65f, 0.0f), stack, player.getDirection());
+            thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.6F, 1.0F);
             if (player.hasInfiniteMaterials()) {
                 thrownSpear.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
             }
 
             level.addFreshEntity(thrownSpear);
-            level.playSound(null, thrownSpear, holder.value(), SoundSource.PLAYERS, 1.0F, 1.2F);
+            final float fv = 0.2F;
+            final float pitch = random.nextFloat() * fv + 1.0F - (fv/2.0F);
+            level.playSound(null, thrownSpear, 
+                    MJSoundEvents.SPEAR_THROW.get(), SoundSource.PLAYERS,
+                    1.0F, pitch);
             if (!player.hasInfiniteMaterials()) {
                 player.getInventory().removeItem(stack);
             }
@@ -111,8 +110,6 @@ public class SpearItem extends TieredItem implements ProjectileItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if (isTooDamagedToUse(itemstack)) {
-            return InteractionResultHolder.fail(itemstack);
-        } else if (EnchantmentHelper.getTridentSpinAttackStrength(itemstack, player) > 0.0F && !player.isInWaterOrRain()) {
             return InteractionResultHolder.fail(itemstack);
         } else {
             player.startUsingItem(hand);
@@ -129,12 +126,6 @@ public class SpearItem extends TieredItem implements ProjectileItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
-        // Instantly kills fish-type entities
-        if (target instanceof AbstractFish && target.attackable()) {
-            target.die(target.damageSources().mobAttack(attacker));
-        }
-
         return true;
     }
 

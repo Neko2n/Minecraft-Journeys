@@ -1,80 +1,49 @@
 package com.nekotune.minecraftjourneys.client.entity;
 
-import java.util.IdentityHashMap;
-import java.util.Map;
-
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.client.entity.model.SpearGenericModel;
-import com.nekotune.minecraftjourneys.client.entity.model.SpearWoodenModel;
 import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
-import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 
-import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.inventory.InventoryMenu;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class ThrownSpearRenderer extends EntityRenderer<ThrownSpear> {
 
-    private final Map<Item, EntityModel<ThrownSpear>> modelsByItem = new IdentityHashMap<>();
-    private final ModelPart genericModelPart;
-    private final ModelPart woodenModelPart;
+    private final ItemRenderer itemRenderer;
 
     public ThrownSpearRenderer(Context context) {
         super(context);
-
-        // Wooden spears have a different model
-        final ModelLayerLocation genericLocation = new ModelLayerLocation(
-                ResourceLocation.fromNamespaceAndPath(
-                        MinecraftJourneys.MOD_ID, SpearGenericModel.NAME),
-                "main");
-        final ModelLayerLocation woodenLocation = new ModelLayerLocation(
-                ResourceLocation.fromNamespaceAndPath(
-                        MinecraftJourneys.MOD_ID, SpearWoodenModel.NAME),
-                "main");
-        genericModelPart = context.bakeLayer(genericLocation);
-        woodenModelPart = context.bakeLayer(woodenLocation);
+        this.itemRenderer = context.getItemRenderer();
     }
 
     public void render(ThrownSpear entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        EntityModel<ThrownSpear> model = modelsByItem.computeIfAbsent(entity.getItem().getItem(), item ->
-                item == MJItems.Equipment.WOODEN_SPEAR.get()
-                ? new SpearWoodenModel(woodenModelPart)
-                : new SpearGenericModel(genericModelPart));
-        
-        // Render code from ThrownTridentRenderer
+        // Orientation code from ThrownTridentRenderer - no camera billboarding, the spear
+        // keeps facing the direction it's flying in, like an in-world item.
         poseStack.pushPose();
-        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0F));
-        poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot()) + 90.0F));
-        VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(
-            buffer, model.renderType(this.getTextureLocation(entity)), false, entity.isFoil()
-        );
-        model.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY);
+        poseStack.scale(2.0f, 2.0f, 2.0f);
+        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) + 90.0F));
+        poseStack.mulPose(Axis.ZP.rotationDegrees(-1.0f * Mth.lerp(partialTicks, entity.xRotO, entity.getXRot()) - 45.0f - 90.0f));
+        poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
+        poseStack.translate(-0.15f, -0.25f, 0.0f);
+        
+        itemRenderer.renderStatic(entity.getItem(), ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY,
+                poseStack, buffer, entity.level(), entity.getId());
         poseStack.popPose();
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }
 
     @Override
     public ResourceLocation getTextureLocation(ThrownSpear entity) {
-
-        // Each spear has its own texture
-        Item spearItem = entity.getItem().getItem();
-        ResourceLocation location = BuiltInRegistries.ITEM.getKey(spearItem);
-        return ResourceLocation.fromNamespaceAndPath(location.getNamespace(),
-            "textures/entity/spear/" + location.getPath() + ".png");
+        return InventoryMenu.BLOCK_ATLAS;
     }
 }

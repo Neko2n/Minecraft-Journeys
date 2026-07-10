@@ -25,5 +25,9 @@
   "item.modpack.cloth_leggings": "Cloth Pants",
   "item.modpack.cloth_boots": "Cloth Boots",
 
-  "entity.modpack.thrown_spear": "Thrown Spear"
+  "entity.modpack.thrown_spear": "Thrown Spear",
+
+  "sounds.modpack.spear.throw": "Spear thrown",
+  "sounds.modpack.spear.hit": "Spear hits",
+  "sounds.modpack.spear.hit_ground": "Spear hits ground"
 }

@@ -3,7 +3,7 @@ package com.nekotune.minecraftjourneys.shared.registry.content;
 import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
+import com.nekotune.minecraftjourneys.core.RegistryHandler.RegisterDeferred;
 import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,7 +15,7 @@ public class MJEntities {
     /**
      * Deferred register for all entity types.
      */
-    @Register
+    @RegisterDeferred
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, MinecraftJourneys.MOD_ID);
 
     public static final Supplier<EntityType<ThrownSpear>> THROWN_SPEAR =

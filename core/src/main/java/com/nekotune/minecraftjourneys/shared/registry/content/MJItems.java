@@ -4,7 +4,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.core.RegistryHandler.Register;
+import com.nekotune.minecraftjourneys.core.RegistryHandler.RegisterDeferred;
 import com.nekotune.minecraftjourneys.shared.definition.item.gear.KnifeItem;
 import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
 import com.nekotune.minecraftjourneys.shared.definition.item.gear.SpearItem;
@@ -25,7 +25,7 @@ public class MJItems {
     /**
      * Deferred register for all items.
      */
-    @Register
+    @RegisterDeferred
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MinecraftJourneys.MOD_ID);
     
     /**
@@ -86,7 +86,7 @@ public class MJItems {
          */
         private static DeferredItem<SpearItem> basicSpear(String name, Tier tier) {
             return new DeferredItem.Builder<SpearItem>(name, properties ->
-                    new SpearItem(tier, 4, -3.2F, properties
+                    new SpearItem(tier, 5, -3.2F, properties
                             .durability(128)
                             .rarity(Rarity.COMMON))
                     ).register();
@@ -96,13 +96,13 @@ public class MJItems {
         public static final DeferredItem<SpearItem> BONE_SPEAR = basicSpear("bone_spear", Tiers.STONE);
         public static final DeferredItem<SpearItem> WOODEN_SPEAR = new DeferredItem.Builder<SpearItem>(
                     "wooden_spear",
-                    properties -> new SpearItem(Tiers.WOOD, 3, -3.2F, properties
+                    properties -> new SpearItem(Tiers.WOOD, 4, -3.2F, properties
                             .durability(32)
                             .rarity(Rarity.COMMON))
                 ).register();
         public static final DeferredItem<SpearItem> OBSIDIAN_SPEAR = new DeferredItem.Builder<SpearItem>(
                     "obsidian_spear",
-                    properties -> new SpearItem(Tiers.IRON, 5, -3.2F, properties
+                    properties -> new SpearItem(Tiers.IRON, 6, -3.2F, properties
                             .durability(2000)
                             .rarity(Rarity.UNCOMMON))
                 ).register();

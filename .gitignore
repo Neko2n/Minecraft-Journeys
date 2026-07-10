@@ -8,7 +8,7 @@
 !.minecraft/kubejs/
 !.minecraft/config/
 !.minecraft/datapacks/
-*.jar
+.minecraft/mods/*.jar
 
 ### Gradle ###
 .gradle
@@ -54,10 +54,10 @@ repo/
 ### NOTICE ON AI USE ###
 # AI tools were used for the following purposes:
 # - Datapack generation
-# - Web searching
-# Author note:
-#   Some tasks are too long to reasonably do manually.
-#   I hope to eventually replace all AI-generated content,
-#   but for now, it's a great tool for quickly getting through
-#   repetitive, non-creative tasks.
+# - Web/documentation searching
+# Note:
+#   Some tasks are too long to reasonably do manually, and
+#   require no creative or technical input.
+#   AI is only used for these kinds of tasks.
+#   All mod code and creative assets are made by humans.
 *.claude
