@@ -1,0 +1,18 @@
+filename = '2D_Trident.zip'
+name = '2D Trident'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.21' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.21'
+
+[download]
+hash = '4576f9d1e0a1b653e62fedd1743215d67f3d0ad37b076991ffdaf28ebeb8e0a31b2e9e18c171025b73b15e38d09977b8981395ea4f92a5a3b03153a64a093708'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/5VGeHh7s/versions/szs8Lza1/2D_Trident.zip'
+
+[update.modrinth]
+mod-id = '5VGeHh7s'
+version = 'szs8Lza1'

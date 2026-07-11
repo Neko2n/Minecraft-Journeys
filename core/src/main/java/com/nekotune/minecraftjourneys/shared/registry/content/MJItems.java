@@ -96,7 +96,7 @@ public class MJItems {
         public static final DeferredItem<SpearItem> BONE_SPEAR = basicSpear("bone_spear", Tiers.STONE);
         public static final DeferredItem<SpearItem> WOODEN_SPEAR = new DeferredItem.Builder<SpearItem>(
                     "wooden_spear",
-                    properties -> new SpearItem(Tiers.WOOD, 4, -3.2F, properties
+                    properties -> new SpearItem(Tiers.WOOD, 3, -3.2F, properties
                             .durability(32)
                             .rarity(Rarity.COMMON))
                 ).register();

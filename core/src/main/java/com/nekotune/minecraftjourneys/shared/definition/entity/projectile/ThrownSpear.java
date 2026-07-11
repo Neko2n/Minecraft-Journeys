@@ -1,13 +1,12 @@
 package com.nekotune.minecraftjourneys.shared.definition.entity.projectile;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.annotation.Nullable;
 
 import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJEntities;
 
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -16,9 +15,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.AbstractFish;
@@ -34,7 +35,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
+@EventBusSubscriber
 public class ThrownSpear extends AbstractArrow implements ItemSupplier {
 
     private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownSpear.class,
@@ -45,11 +50,6 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
             EntityDataSerializers.ITEM_STACK);
     private boolean dealtDamage;
     public int clientSideReturnSpearTickCount;
-
-    private final Set<Entity> stickingEntities = new HashSet<>();
-    private final Set<Entity> floatingEntities = new HashSet<>(); // Sticking entities which had their gravity disabled
-    private static final Set<Entity> RESERVED_ENTITIES = new HashSet<>(); // Prevent multiple spears from sticking the
-                                                                          // same entity
 
     private final float throwDamage;
 
@@ -74,46 +74,11 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
         builder.define(DATA_ITEM_STACK, ItemStack.EMPTY);
     }
 
-    private boolean stickEntity(Entity target) {
-        if (ThrownSpear.RESERVED_ENTITIES.contains(target))
-            return false;
-        ThrownSpear.RESERVED_ENTITIES.add(target);
-        stickingEntities.add(target);
-        if (!target.isNoGravity()) {
-            floatingEntities.add(target);
-            target.setNoGravity(true);
-        }
-        return true;
-    }
-
-    @Override
-    public void onRemovedFromLevel() {
-        floatingEntities.forEach(entity -> {
-            if (entity.isRemoved())
-                return;
-            entity.setNoGravity(false);
-        });
-        floatingEntities.clear();
-        stickingEntities.forEach(entity -> {
-            ThrownSpear.RESERVED_ENTITIES.remove(entity);
-        });
-        stickingEntities.clear();
-        super.onRemovedFromLevel();
-    }
-
     @Override
     public void tick() {
         if (this.inGroundTime > 4) {
             this.dealtDamage = true;
         }
-
-        // Update sticking entities' positions
-        stickingEntities.forEach(entity -> {
-            if (entity.isRemoved())
-                return;
-            entity.setPos(this.position());
-            entity.setDeltaMovement(Vec3.ZERO);
-        });
 
         Entity entity = this.getOwner();
         int i = this.entityData.get(ID_LOYALTY);
@@ -156,8 +121,8 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
 
     @Override
     protected boolean canHitEntity(Entity target) {
-        if (target instanceof ItemEntity item)
-            return !stickingEntities.contains(item);
+        if (target instanceof ItemEntity)
+            return !getPassengers().contains(target);
         return super.canHitEntity(target);
     }
 
@@ -176,10 +141,22 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Override
     protected void onHitEntity(EntityHitResult result) {
         Entity entity = result.getEntity();
+        Level level = entity.level();
 
         // Grabs onto items
         if (entity instanceof ItemEntity item) {
-            this.stickEntity(item);
+            item.setNeverPickUp();
+            item.startRiding(this);
+
+            // VFX + SFX
+            level.playSound(null, item.blockPosition(),
+                    MJSoundEvents.SPEAR_HIT.get(), SoundSource.BLOCKS,
+                    0.8f, 1.4f);
+            if (level instanceof ServerLevel serverlevel) {
+                serverlevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, item.getItem()),
+                        item.getX(), item.getY() + item.getBbHeight() * 0.5, item.getZ(),
+                        6, 0, 0, 0, 0.1);
+            }
 
         } else {
 
@@ -228,16 +205,23 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
         }
     }
 
+    /**
+     * Whether the spear should pierce a hit entity, sticking it to the spear.
+     * @param target The entity the spear hit.
+     */
+    protected boolean shouldPierce(LivingEntity target) {
+        return !target.isAlive()
+                && target.getBoundingBox().getSize() <= 1.0D;
+    }
+
     @Override
     protected void doPostHurtEffects(LivingEntity target) {
-        if (target.isAlive() || target.getBoundingBox().getSize() >= 1.0D) {
-            // Only bounce if it didn't kill the target, or if the target is large
-            this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01, -0.1, -0.01));
-        } else {
-            // Otherwise, they stick to the spear and the spear continues traveling
-            this.stickEntity(target);
-        }
         super.doPostHurtEffects(target);
+        if (shouldPierce(target)) {
+            target.startRiding(this);
+        } else {
+            this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01, -0.1, -0.01));
+        }
     }
 
     @Override
@@ -329,5 +313,38 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Override
     protected SoundEvent getDefaultHitGroundSoundEvent() {
         return MJSoundEvents.SPEAR_HIT_GROUND.get();
+    }
+
+    @Override
+    protected Vec3 getPassengerAttachmentPoint(Entity entity, EntityDimensions dimensions, float partialTick) {
+        return Vec3.ZERO;
+    }
+
+    @Override
+    protected boolean canAddPassenger(Entity passenger) {
+        return passenger instanceof LivingEntity
+                || passenger instanceof ItemEntity;
+    }
+
+    @Override
+    protected void removePassenger(Entity passenger) {
+        super.removePassenger(passenger);
+        if (passenger instanceof ItemEntity item) {
+            item.setDefaultPickUpDelay();
+        }
+    }
+
+    /**
+     * Spears grab the drops of entities they kill
+     */
+    @SubscribeEvent
+    public static void onLivingDrops(LivingDropsEvent event) {
+        Entity source = event.getSource().getDirectEntity();
+        if (!(source instanceof ThrownSpear spear))
+            return;
+        for (ItemEntity drop : event.getDrops()) {
+            drop.setNeverPickUp();
+            drop.startRiding(spear);
+        }
     }
 }

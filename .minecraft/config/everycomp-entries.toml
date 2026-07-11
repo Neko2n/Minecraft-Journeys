@@ -119,9 +119,6 @@
 		[types.leaves_type.newworld]
 			fir = true
 
-		[types.leaves_type.primal]
-			thorny_acacia = true
-
 		[types.leaves_type.bountifulfares]
 			apple = true
 			flowering_apple = true
@@ -141,6 +138,9 @@
 
 		[types.leaves_type.spawn]
 			date = true
+
+		[types.leaves_type.modpack]
+			pear = true
 
 		[types.cake.bountifulfares]
 			coconut_cake = true

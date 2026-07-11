@@ -27,7 +27,42 @@ public class MJItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(Provider provider) {
+ 
+        // Enchants
+        tag(MJItemTags.SPEAR_ENCHANTABLE)
+            .addTag(MJItemTags.Equipment.SPEARS);
+        tag(MJItemTags.KNIFE_ENCHANTABLE)
+            .addTag(MJItemTags.Equipment.KNIVES);
+        tag(MJItemTags.MATTOCK_ENCHANTABLE)
+            .addTag(MJItemTags.Equipment.MATTOCKS);
+        tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+            .addTag(MJItemTags.KNIFE_ENCHANTABLE);
+        tag(ItemTags.MINING_ENCHANTABLE)
+            .addTag(MJItemTags.MATTOCK_ENCHANTABLE);
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+            .addTag(MJItemTags.SPEAR_ENCHANTABLE)
+            .addTag(MJItemTags.KNIFE_ENCHANTABLE)
+            .addTag(MJItemTags.MATTOCK_ENCHANTABLE);
+        tag(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+            .addTag(MJItemTags.SPEAR_ENCHANTABLE);
 
+        // Equipment
+        tag(MJItemTags.Equipment.SPEARS)
+            .add(MJItems.Equipment.WOODEN_SPEAR.get())
+            .add(MJItems.Equipment.STONE_SPEAR.get())
+            .add(MJItems.Equipment.FLINT_SPEAR.get())
+            .add(MJItems.Equipment.BONE_SPEAR.get())
+            .add(MJItems.Equipment.OBSIDIAN_SPEAR.get());
+        tag(MJItemTags.Equipment.KNIVES)
+            .add(MJItems.Equipment.STONE_KNIFE.get())
+            .add(MJItems.Equipment.FLINT_KNIFE.get())
+            .add(MJItems.Equipment.BONE_KNIFE.get())
+            .add(MJItems.Equipment.OBSIDIAN_KNIFE.get());
+        tag(MJItemTags.Equipment.MATTOCKS)
+            .add(MJItems.Equipment.STONE_MATTOCK.get())
+            .add(MJItems.Equipment.FLINT_MATTOCK.get())
+            .add(MJItems.Equipment.BONE_MATTOCK.get())
+            .add(MJItems.Equipment.OBSIDIAN_MATTOCK.get());
         tag(ItemTags.DYEABLE)
             .add(MJItems.Equipment.CLOTH_HELMET.get())
             .add(MJItems.Equipment.CLOTH_CHESTPLATE.get())

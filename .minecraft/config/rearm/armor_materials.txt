@@ -17,7 +17,6 @@ mowziesmobs:wrought_helm
 mowziesmobs:geomancer_armor
 the_beyond:shroud
 the_beyond:anchor
-netherman:azazel_armor
 caverns_and_chasms:copper
 caverns_and_chasms:exposed_copper
 caverns_and_chasms:weathered_copper
@@ -48,3 +47,4 @@ etcetera:silk
 etcetera:adventurer
 etcetera:cotton
 spawn:booby
+modpack:cloth
