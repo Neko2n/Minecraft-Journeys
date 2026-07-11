@@ -15,6 +15,8 @@ public final class MJItemTags {
     public static final TagKey<Item> SPEAR_ENCHANTABLE = createTag("spear_enchantable");
     public static final TagKey<Item> KNIFE_ENCHANTABLE = createTag("knife_enchantable");
     public static final TagKey<Item> MATTOCK_ENCHANTABLE = createTag("mattock_enchantable");
+    public static final TagKey<Item> LOYALTY_ENCHANTABLE = createTag("loyalty_enchantable");
+    public static final TagKey<Item> PIERCING_ENCHANTABLE = createTag("piercing_enchantable");
 
     public static final class Equipment {
 

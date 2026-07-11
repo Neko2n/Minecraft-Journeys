@@ -45,6 +45,12 @@ public class MJItemTagsProvider extends ItemTagsProvider {
             .addTag(MJItemTags.MATTOCK_ENCHANTABLE);
         tag(ItemTags.FIRE_ASPECT_ENCHANTABLE)
             .addTag(MJItemTags.SPEAR_ENCHANTABLE);
+        tag(MJItemTags.LOYALTY_ENCHANTABLE)
+            .addTag(ItemTags.TRIDENT_ENCHANTABLE)
+            .addTag(MJItemTags.SPEAR_ENCHANTABLE);
+        tag(MJItemTags.PIERCING_ENCHANTABLE)
+            .addTag(ItemTags.CROSSBOW_ENCHANTABLE)
+            .addTag(MJItemTags.SPEAR_ENCHANTABLE);
 
         // Equipment
         tag(MJItemTags.Equipment.SPEARS)

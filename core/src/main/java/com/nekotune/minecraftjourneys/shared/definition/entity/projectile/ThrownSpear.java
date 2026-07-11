@@ -1,5 +1,8 @@
 package com.nekotune.minecraftjourneys.shared.definition.entity.projectile;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 import javax.annotation.Nullable;
 
 import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
@@ -48,9 +51,10 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
             EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(ThrownSpear.class,
             EntityDataSerializers.ITEM_STACK);
-    private boolean dealtDamage;
-    public int clientSideReturnSpearTickCount;
 
+    private boolean inGround = false;
+    public int clientSideReturnSpearTickCount;
+    public final Collection<Entity> hitEntities = new HashSet<>();
     private final float throwDamage;
 
     public ThrownSpear(EntityType<? extends ThrownSpear> entityType, Level level) {
@@ -76,18 +80,18 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
 
     @Override
     public void tick() {
-        if (this.inGroundTime > 4) {
-            this.dealtDamage = true;
-        }
 
+        // Update loyalty recall state
+        if (this.inGroundTime > 4) {
+            this.inGround = true;
+        }
         Entity entity = this.getOwner();
         int i = this.entityData.get(ID_LOYALTY);
-        if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
+        if (i > 0 && (this.inGround || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (!this.level().isClientSide && this.pickup == AbstractArrow.Pickup.ALLOWED) {
                     this.spawnAtLocation(this.getPickupItem(), 0.1F);
                 }
-
                 this.discard();
             } else {
                 this.setNoPhysics(true);
@@ -96,13 +100,11 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
                 if (this.level().isClientSide) {
                     this.yOld = this.getY();
                 }
-
                 double d0 = 0.05 * (double) i;
                 this.setDeltaMovement(this.getDeltaMovement().scale(0.95).add(vec3.normalize().scale(d0)));
                 if (this.clientSideReturnSpearTickCount == 0) {
                     this.playSound(SoundEvents.TRIDENT_RETURN, 10.0F, 1.0F);
                 }
-
                 this.clientSideReturnSpearTickCount++;
             }
         }
@@ -123,6 +125,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     protected boolean canHitEntity(Entity target) {
         if (target instanceof ItemEntity)
             return !getPassengers().contains(target);
+        if (hitEntities.contains(target)) return false;
         return super.canHitEntity(target);
     }
 
@@ -132,7 +135,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Nullable
     @Override
     protected EntityHitResult findHitEntity(Vec3 startVec, Vec3 endVec) {
-        return this.dealtDamage ? null : super.findHitEntity(startVec, endVec);
+        return this.inGround ? null : super.findHitEntity(startVec, endVec);
     }
 
     /**
@@ -174,7 +177,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
             }
 
             // Attempt to apply damage
-            this.dealtDamage = true;
+            this.hitEntities.add(entity);
             if (entity.hurt(damagesource, f)) {
                 if (entity.getType() == EntityType.ENDERMAN) {
                     return;
@@ -206,10 +209,11 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     }
 
     /**
-     * Whether the spear should pierce a hit entity, sticking it to the spear.
+     * Whether the spear should stick the hit entity to itself,
+     * carrying it as a passenger.
      * @param target The entity the spear hit.
      */
-    protected boolean shouldPierce(LivingEntity target) {
+    protected boolean shouldStick(LivingEntity target) {
         return !target.isAlive()
                 && target.getBoundingBox().getSize() <= 1.0D;
     }
@@ -217,8 +221,10 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Override
     protected void doPostHurtEffects(LivingEntity target) {
         super.doPostHurtEffects(target);
-        if (shouldPierce(target)) {
+        if (shouldStick(target)) {
             target.startRiding(this);
+        } else if (hitEntities.size() <= this.getPierceLevel()) {
+            this.setDeltaMovement(this.getDeltaMovement().multiply(1.0, 0.0, 1.0));
         } else {
             this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01, -0.1, -0.01));
         }
@@ -275,14 +281,14 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.dealtDamage = compound.getBoolean("DealtDamage");
+        this.inGround = compound.getBoolean("InGround");
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putBoolean("DealtDamage", this.dealtDamage);
+        compound.putBoolean("InGround", this.inGround);
     }
 
     private byte getLoyaltyFromItem(ItemStack stack) {
@@ -332,6 +338,12 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
         if (passenger instanceof ItemEntity item) {
             item.setDefaultPickUpDelay();
         }
+    }
+
+    @Override
+    public void onRemovedFromLevel() {
+        super.onRemovedFromLevel();
+        this.hitEntities.clear();
     }
 
     /**

@@ -36,7 +36,7 @@ public class SpearItem extends TieredItem implements ProjectileItem {
     public SpearItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {
         super(tier, properties.attributes(
                 SpearItem.createAttributes(tier, attackDamageBonus, attackSpeed)));
-        throwDamage = attackDamageBonus + tier.getAttackDamageBonus() * 2.0f;
+        throwDamage = attackDamageBonus + tier.getAttackDamageBonus() + 4.0f;
     }
 
     protected static ItemAttributeModifiers createAttributes(Tier tier, int attackDamage, float attackSpeed) {
@@ -85,6 +85,7 @@ public class SpearItem extends TieredItem implements ProjectileItem {
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(entityLiving.getUsedItemHand()));
             
             ThrownSpear thrownSpear = asProjectile(level, player.position().add(0.0f, 1.65f, 0.0f), stack, player.getDirection());
+            thrownSpear.setOwner(player);
             thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.6F, 1.0F);
             if (player.hasInfiniteMaterials()) {
                 thrownSpear.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
@@ -146,7 +147,8 @@ public class SpearItem extends TieredItem implements ProjectileItem {
 
     @Override
     public ThrownSpear asProjectile(Level level, Position pos, ItemStack stack, Direction direction) {
-        ThrownSpear thrownSpear = new ThrownSpear(throwDamage, level, pos.x(), pos.y(), pos.z(), stack.copyWithCount(1));
+        ThrownSpear thrownSpear = new ThrownSpear(throwDamage,
+                level, pos.x(), pos.y(), pos.z(), stack.copyWithCount(1));
         thrownSpear.pickup = AbstractArrow.Pickup.ALLOWED;
         return thrownSpear;
     }

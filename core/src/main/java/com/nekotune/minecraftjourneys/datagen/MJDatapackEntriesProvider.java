@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJEnchantments;
 import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJBiomeModifiers;
 import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJConfiguredFeatures;
 import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJPlacedFeatures;
@@ -19,6 +20,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries.Keys;
 public class MJDatapackEntriesProvider extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.ENCHANTMENT, MJEnchantments::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, MJConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, MJPlacedFeatures::bootstrap)
             .add(Keys.BIOME_MODIFIERS, MJBiomeModifiers::bootstrap);
