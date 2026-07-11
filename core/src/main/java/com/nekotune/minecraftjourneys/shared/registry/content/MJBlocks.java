@@ -5,9 +5,9 @@ import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.RegistryHandler.RegisterDeferred;
+import com.nekotune.minecraftjourneys.data.worldgen.MJTreeGrowers;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
 import com.nekotune.minecraftjourneys.shared.definition.block.pear.PearBlock;
-import com.nekotune.minecraftjourneys.shared.registry.worldgen.MJTreeGrowers;
 
 import net.hecco.bountifulfares.definition.block.custom.FruitLeavesBlock;
 import net.hecco.bountifulfares.definition.block.custom.FruitLogBlock;

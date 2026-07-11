@@ -13,10 +13,10 @@
   ],
   "key": {
     "1": {
-      "item": "nomansland:thatch"
+      "item": "modpack:grass"
     },
     "2": {
-      "item": "minecraft:string"
+      "item": "supplementaries:rope"
     }
   },
   "result": {

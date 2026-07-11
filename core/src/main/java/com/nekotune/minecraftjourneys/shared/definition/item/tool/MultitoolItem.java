@@ -2,7 +2,7 @@ package com.nekotune.minecraftjourneys.shared.definition.item.tool;
 
 import java.util.function.Supplier;
 
-import com.nekotune.minecraftjourneys.shared.registry.tags.MJBlockTags;
+import com.nekotune.minecraftjourneys.data.tags.MJBlockTags;
 
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;

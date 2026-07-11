@@ -9,7 +9,7 @@ import com.nekotune.minecraftjourneys.shared.definition.item.tool.IncendiarySpea
 import com.nekotune.minecraftjourneys.shared.definition.item.tool.KnifeItem;
 import com.nekotune.minecraftjourneys.shared.definition.item.tool.MultitoolItem;
 import com.nekotune.minecraftjourneys.shared.definition.item.tool.SpearItem;
-import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
+import com.nekotune.minecraftjourneys.shared.registry.content.properties.MJArmorMaterials;
 
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -29,6 +29,14 @@ public class MJItems {
     @RegisterDeferred
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MinecraftJourneys.MOD_ID);
     
+    /**
+     * Materials
+     */
+    public static final class Materials {
+
+        public static final DeferredItem<Item> GRASS = DeferredItem.createBasic("grass");
+    }
+
     /**
      * Armor
      */
@@ -159,6 +167,25 @@ public class MJItems {
 
         protected DeferredItem(Builder<T> builder) {
             this.ITEM = builder.getItem;
+        }
+
+        /**
+         * Creates a basic item with no properties
+         * @param name The item name
+         * @return The newly created DeferredItem
+         */
+        public static DeferredItem<Item> createBasic(String name) {
+            return new Builder<Item>(name, properties -> new Item(properties)).register();
+        }
+        
+        /**
+         * Creates a basic item with a defined rarity
+         * @param name The item name
+         * @param rarity The item's rarity
+         * @return The newly created DeferredItem
+         */
+        public static DeferredItem<Item> createBasic(String name, Rarity rarity) {
+            return new Builder<Item>(name, properties -> new Item(properties.rarity(rarity))).register();
         }
 
         /**

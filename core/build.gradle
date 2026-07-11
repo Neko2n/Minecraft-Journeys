@@ -95,6 +95,7 @@ neoForge {
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(),
                     '--existing', file('src/main/resources/').getAbsolutePath(),
+                    '--existing-mod', 'supplementaries',
                     '--existing-mod', 'wholecloth',
                     '--existing-mod', 'spawn',
                     '--existing-mod', 'natures_spirit',
@@ -161,11 +162,14 @@ dependencies {
 
     implementation name: "natures_spirit-2.3.0-1.21.1" // Nature's Spirit
     
+    implementation "maven.modrinth:fFEIiSDQ:53oYzPfG" // Supplementaries
     implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
     implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
+    
+    implementation "maven.modrinth:twkfQtEc:JtfVx8PK" // Moonlight Lib (required by Supplementaries)
     implementation "maven.modrinth:XaDC71GB:qPASucBM" // Lithostitched (required by Nature's Spirit)
     implementation "maven.modrinth:bgDhVmqz:6oD2aKnX" // Nexus Lib (required by Bountiful Fares)
 }

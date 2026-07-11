@@ -6,7 +6,7 @@ import java.util.HashSet;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems.Armors;
-import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
+import com.nekotune.minecraftjourneys.shared.registry.content.properties.MJArmorMaterials;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.Holder;
