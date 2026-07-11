@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.definition.item.gear;
+package com.nekotune.minecraftjourneys.shared.definition.item.tool;
 
 import java.util.function.Supplier;
 

@@ -7,9 +7,9 @@ import java.util.stream.Stream;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.KnifeItem;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.SpearItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.KnifeItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.MultitoolItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.SpearItem;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 import com.nekotune.minecraftjourneys.shared.registry.util.MJResourceLocations.Paths;
 

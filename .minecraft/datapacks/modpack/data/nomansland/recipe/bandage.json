@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:string"
+        },
+        {
+            "item": "wholecloth:cloth_scrap"
+        },
+        {
+            "item": "minecraft:string"
+        }
+    ],
+    "result": {
+        "id": "nomansland:bandage",
+        "count": 3
+    },
+    "group": "bandages"
+}

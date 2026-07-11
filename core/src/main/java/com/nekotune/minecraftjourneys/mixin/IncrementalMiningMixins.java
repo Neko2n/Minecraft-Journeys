@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.nekotune.minecraftjourneys.shared.ToolRequirementHandler;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.KnifeItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.KnifeItem;
 
 /**
  * @see ToolRequirementHandler

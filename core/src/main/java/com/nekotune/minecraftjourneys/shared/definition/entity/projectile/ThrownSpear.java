@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJEntities;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -262,7 +263,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        return ItemStack.EMPTY;
+        return MJItems.Tools.WOODEN_SPEAR.get().getDefaultInstance();
     }
 
     /**

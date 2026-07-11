@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.definition.item.gear;
+package com.nekotune.minecraftjourneys.shared.definition.item.tool;
 
 import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
 import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
@@ -29,9 +29,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbilities;
 
 public class SpearItem extends TieredItem implements ProjectileItem {
-    private static final RandomSource random = RandomSource.create();
+    protected static final RandomSource random = RandomSource.create();
 
-    private final float throwDamage;
+    protected final float throwDamage;
 
     public SpearItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {
         super(tier, properties.attributes(

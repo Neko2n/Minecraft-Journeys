@@ -3,7 +3,7 @@ package com.nekotune.minecraftjourneys.client;
 import java.util.stream.Stream;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.SpearItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.SpearItem;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 
 import net.minecraft.client.renderer.item.ItemProperties;

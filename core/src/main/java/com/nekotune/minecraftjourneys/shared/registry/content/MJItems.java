@@ -5,9 +5,10 @@ import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.RegistryHandler.RegisterDeferred;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.KnifeItem;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.MultitoolItem;
-import com.nekotune.minecraftjourneys.shared.definition.item.gear.SpearItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.IncendiarySpearItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.KnifeItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.MultitoolItem;
+import com.nekotune.minecraftjourneys.shared.definition.item.tool.SpearItem;
 import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
 
 import net.minecraft.world.item.ArmorItem;
@@ -29,38 +30,45 @@ public class MJItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MinecraftJourneys.MOD_ID);
     
     /**
-     * Gear items (armor, tools, etc.)
+     * Armor
      */
-    public static final class Equipment {
+    public static final class Armors {
 
-        /**
-         * Cloth armor
-         */
-        public static final DeferredItem<ArmorItem> CLOTH_HELMET = new DeferredItem.Builder<ArmorItem>(
-                "cloth_helmet",
-                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.HELMET, properties
-                        .durability(ArmorItem.Type.HELMET.getDurability(3))
-                        .rarity(Rarity.COMMON)
-                )).register();
-        public static final DeferredItem<ArmorItem> CLOTH_CHESTPLATE = new DeferredItem.Builder<ArmorItem>(
-                "cloth_chestplate",
-                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.CHESTPLATE, properties
-                        .durability(ArmorItem.Type.CHESTPLATE.getDurability(3))
-                        .rarity(Rarity.COMMON)
-                )).register();
-        public static final DeferredItem<ArmorItem> CLOTH_LEGGINGS = new DeferredItem.Builder<ArmorItem>(
-                "cloth_leggings",
-                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.LEGGINGS, properties
-                        .durability(ArmorItem.Type.LEGGINGS.getDurability(3))
-                        .rarity(Rarity.COMMON)
-                )).register();
-        public static final DeferredItem<ArmorItem> CLOTH_BOOTS = new DeferredItem.Builder<ArmorItem>(
-                "cloth_boots",
-                properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.BOOTS, properties
-                        .durability(ArmorItem.Type.BOOTS.getDurability(3))
-                        .rarity(Rarity.COMMON)
-                )).register();
+		/**
+		 * Cloth armor
+		 */
+		public static final DeferredItem<ArmorItem> CLOTH_HELMET = new DeferredItem.Builder<ArmorItem>(
+		        "cloth_helmet",
+		        properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.HELMET, properties
+		                .durability(ArmorItem.Type.HELMET.getDurability(3))
+		                .rarity(Rarity.COMMON)
+		        )).register();
+		public static final DeferredItem<ArmorItem> CLOTH_CHESTPLATE = new DeferredItem.Builder<ArmorItem>(
+		"cloth_chestplate",
+		properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.CHESTPLATE, properties
+		        .durability(ArmorItem.Type.CHESTPLATE.getDurability(3))
+		        .rarity(Rarity.COMMON)
+		)).register();
+		public static final DeferredItem<ArmorItem> CLOTH_LEGGINGS = new DeferredItem.Builder<ArmorItem>(
+		"cloth_leggings",
+		properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.LEGGINGS, properties
+		        .durability(ArmorItem.Type.LEGGINGS.getDurability(3))
+		        .rarity(Rarity.COMMON)
+		)).register();
+		public static final DeferredItem<ArmorItem> CLOTH_BOOTS = new DeferredItem.Builder<ArmorItem>(
+		"cloth_boots",
+		properties -> new ArmorItem(MJArmorMaterials.CLOTH, ArmorItem.Type.BOOTS, properties
+		        .durability(ArmorItem.Type.BOOTS.getDurability(3))
+		        .rarity(Rarity.COMMON)
+		)).register();
         
+    }
+
+    /**
+     * Weapons, digging tools, etc.
+     */
+    public static final class Tools {
+
         /**
          * Mattocks (early-game multi-tool)
          */
@@ -78,33 +86,41 @@ public class MJItems {
                 "obsidian_mattock",
                 properties -> new MultitoolItem(Tiers.IRON, 3, -2.8F, properties
                         .durability(2000)
-                        .rarity(Rarity.UNCOMMON)))
+                        .rarity(Rarity.UNCOMMON)
+                        .fireResistant()))
                 .register();
         
         /**
          * Spears (early-game throwing weapon)
          */
-        private static DeferredItem<SpearItem> basicSpear(String name, Tier tier) {
+        private static DeferredItem<SpearItem> stoneSpear(String name) {
             return new DeferredItem.Builder<SpearItem>(name, properties ->
-                    new SpearItem(tier, 5, -3.2F, properties
+                    new SpearItem(Tiers.STONE, 5, -3.2F, properties
                             .durability(128)
                             .rarity(Rarity.COMMON))
                     ).register();
         }
-        public static final DeferredItem<SpearItem> STONE_SPEAR = basicSpear("stone_spear", Tiers.STONE);
-        public static final DeferredItem<SpearItem> FLINT_SPEAR = basicSpear("flint_spear", Tiers.STONE);
-        public static final DeferredItem<SpearItem> BONE_SPEAR = basicSpear("bone_spear", Tiers.STONE);
         public static final DeferredItem<SpearItem> WOODEN_SPEAR = new DeferredItem.Builder<SpearItem>(
-                    "wooden_spear",
-                    properties -> new SpearItem(Tiers.WOOD, 3, -3.2F, properties
-                            .durability(32)
-                            .rarity(Rarity.COMMON))
+                "wooden_spear",
+                properties -> new SpearItem(Tiers.WOOD, 3, -3.2F, properties
+                        .durability(32)
+                        .rarity(Rarity.COMMON))
                 ).register();
+        public static final DeferredItem<IncendiarySpearItem> INCENDIARY_SPEAR = new DeferredItem.Builder<IncendiarySpearItem>(
+                "incendiary_spear",
+                properties -> new IncendiarySpearItem(Tiers.WOOD, 3, -3.2F, properties
+                        .durability(32)
+                        .rarity(Rarity.COMMON))
+                ).register();
+        public static final DeferredItem<SpearItem> STONE_SPEAR = stoneSpear("stone_spear");
+        public static final DeferredItem<SpearItem> FLINT_SPEAR = stoneSpear("flint_spear");
+        public static final DeferredItem<SpearItem> BONE_SPEAR = stoneSpear("bone_spear");
         public static final DeferredItem<SpearItem> OBSIDIAN_SPEAR = new DeferredItem.Builder<SpearItem>(
                     "obsidian_spear",
                     properties -> new SpearItem(Tiers.IRON, 6, -3.2F, properties
                             .durability(2000)
-                            .rarity(Rarity.UNCOMMON))
+                            .rarity(Rarity.UNCOMMON)
+                            .fireResistant())
                 ).register();
         
         /**
@@ -124,7 +140,8 @@ public class MJItems {
                 "obsidian_knife",
                 properties -> new KnifeItem(Tiers.IRON, 3, -2.2F, properties
                         .durability(2000)
-                        .rarity(Rarity.UNCOMMON))
+                        .rarity(Rarity.UNCOMMON)
+                        .fireResistant())
                 ).register();
     }
 

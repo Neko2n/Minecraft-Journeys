@@ -2,11 +2,8 @@ package com.nekotune.minecraftjourneys.datagen;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
-import com.nekotune.minecraftjourneys.shared.registry.content.MJEnchantments;
-
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
-import net.minecraft.tags.EnchantmentTags;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 

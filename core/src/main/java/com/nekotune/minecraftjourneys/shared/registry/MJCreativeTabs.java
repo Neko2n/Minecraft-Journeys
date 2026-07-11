@@ -2,6 +2,7 @@ package com.nekotune.minecraftjourneys.shared.registry;
 
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems.Armors;
 
 import net.hecco.bountifulfares.registry.misc.BFItemGroups;
 import net.minecraft.resources.ResourceKey;
@@ -29,25 +30,26 @@ public class MJCreativeTabs {
             // event.accept(MJBlocks.BFPearBlocks.FLOWERING_PEAR_LEAVES.get().asItem());
         }
         else if (tab == getTab(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
-            event.accept(MJItems.Equipment.STONE_MATTOCK.get());
-            event.accept(MJItems.Equipment.BONE_MATTOCK.get());
-            event.accept(MJItems.Equipment.FLINT_MATTOCK.get());
-            event.accept(MJItems.Equipment.OBSIDIAN_MATTOCK.get());
+            event.accept(MJItems.Tools.STONE_MATTOCK.get());
+            event.accept(MJItems.Tools.BONE_MATTOCK.get());
+            event.accept(MJItems.Tools.FLINT_MATTOCK.get());
+            event.accept(MJItems.Tools.OBSIDIAN_MATTOCK.get());
         }
         else if (tab == getTab(CreativeModeTabs.COMBAT)) {
-            event.accept(MJItems.Equipment.CLOTH_HELMET.get());
-            event.accept(MJItems.Equipment.CLOTH_CHESTPLATE.get());
-            event.accept(MJItems.Equipment.CLOTH_LEGGINGS.get());
-            event.accept(MJItems.Equipment.CLOTH_BOOTS.get());
-            event.accept(MJItems.Equipment.STONE_KNIFE.get());
-            event.accept(MJItems.Equipment.FLINT_KNIFE.get());
-            event.accept(MJItems.Equipment.BONE_KNIFE.get());
-            event.accept(MJItems.Equipment.OBSIDIAN_KNIFE.get());
-            event.accept(MJItems.Equipment.WOODEN_SPEAR.get());
-            event.accept(MJItems.Equipment.STONE_SPEAR.get());
-            event.accept(MJItems.Equipment.FLINT_SPEAR.get());
-            event.accept(MJItems.Equipment.BONE_SPEAR.get());
-            event.accept(MJItems.Equipment.OBSIDIAN_SPEAR.get());
+            event.accept(Armors.CLOTH_HELMET.get());
+            event.accept(Armors.CLOTH_CHESTPLATE.get());
+            event.accept(Armors.CLOTH_LEGGINGS.get());
+            event.accept(Armors.CLOTH_BOOTS.get());
+            event.accept(MJItems.Tools.STONE_KNIFE.get());
+            event.accept(MJItems.Tools.FLINT_KNIFE.get());
+            event.accept(MJItems.Tools.BONE_KNIFE.get());
+            event.accept(MJItems.Tools.OBSIDIAN_KNIFE.get());
+            event.accept(MJItems.Tools.WOODEN_SPEAR.get());
+            event.accept(MJItems.Tools.INCENDIARY_SPEAR.get());
+            event.accept(MJItems.Tools.STONE_SPEAR.get());
+            event.accept(MJItems.Tools.FLINT_SPEAR.get());
+            event.accept(MJItems.Tools.BONE_SPEAR.get());
+            event.accept(MJItems.Tools.OBSIDIAN_SPEAR.get());
         }
     }
 

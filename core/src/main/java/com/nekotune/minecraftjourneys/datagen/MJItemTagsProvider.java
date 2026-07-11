@@ -5,6 +5,7 @@ import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.core.DataGenerator.DataGenProvider;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems.Armors;
 import com.nekotune.minecraftjourneys.shared.registry.tags.MJItemTags;
 
 import net.hecco.bountifulfares.registry.tags.BFItemTags;
@@ -54,26 +55,27 @@ public class MJItemTagsProvider extends ItemTagsProvider {
 
         // Equipment
         tag(MJItemTags.Equipment.SPEARS)
-            .add(MJItems.Equipment.WOODEN_SPEAR.get())
-            .add(MJItems.Equipment.STONE_SPEAR.get())
-            .add(MJItems.Equipment.FLINT_SPEAR.get())
-            .add(MJItems.Equipment.BONE_SPEAR.get())
-            .add(MJItems.Equipment.OBSIDIAN_SPEAR.get());
+            .add(MJItems.Tools.WOODEN_SPEAR.get())
+            .add(MJItems.Tools.INCENDIARY_SPEAR.get())
+            .add(MJItems.Tools.STONE_SPEAR.get())
+            .add(MJItems.Tools.FLINT_SPEAR.get())
+            .add(MJItems.Tools.BONE_SPEAR.get())
+            .add(MJItems.Tools.OBSIDIAN_SPEAR.get());
         tag(MJItemTags.Equipment.KNIVES)
-            .add(MJItems.Equipment.STONE_KNIFE.get())
-            .add(MJItems.Equipment.FLINT_KNIFE.get())
-            .add(MJItems.Equipment.BONE_KNIFE.get())
-            .add(MJItems.Equipment.OBSIDIAN_KNIFE.get());
+            .add(MJItems.Tools.STONE_KNIFE.get())
+            .add(MJItems.Tools.FLINT_KNIFE.get())
+            .add(MJItems.Tools.BONE_KNIFE.get())
+            .add(MJItems.Tools.OBSIDIAN_KNIFE.get());
         tag(MJItemTags.Equipment.MATTOCKS)
-            .add(MJItems.Equipment.STONE_MATTOCK.get())
-            .add(MJItems.Equipment.FLINT_MATTOCK.get())
-            .add(MJItems.Equipment.BONE_MATTOCK.get())
-            .add(MJItems.Equipment.OBSIDIAN_MATTOCK.get());
+            .add(MJItems.Tools.STONE_MATTOCK.get())
+            .add(MJItems.Tools.FLINT_MATTOCK.get())
+            .add(MJItems.Tools.BONE_MATTOCK.get())
+            .add(MJItems.Tools.OBSIDIAN_MATTOCK.get());
         tag(ItemTags.DYEABLE)
-            .add(MJItems.Equipment.CLOTH_HELMET.get())
-            .add(MJItems.Equipment.CLOTH_CHESTPLATE.get())
-            .add(MJItems.Equipment.CLOTH_LEGGINGS.get())
-            .add(MJItems.Equipment.CLOTH_BOOTS.get());
+            .add(Armors.CLOTH_HELMET.get())
+            .add(Armors.CLOTH_CHESTPLATE.get())
+            .add(Armors.CLOTH_LEGGINGS.get())
+            .add(Armors.CLOTH_BOOTS.get());
 
         // Bountiful fares compatibility
         tag(MJItemTags.PEAR_LOGS)

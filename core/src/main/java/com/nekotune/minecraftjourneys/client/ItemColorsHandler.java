@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
-import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
+import com.nekotune.minecraftjourneys.shared.registry.content.MJItems.Armors;
 import com.nekotune.minecraftjourneys.shared.registry.misc.MJArmorMaterials;
 
 import net.minecraft.client.renderer.BiomeColors;
@@ -69,10 +69,10 @@ public class ItemColorsHandler {
     static void onRegisterClientExtensions(RegisterClientExtensionsEvent event) {
         event.registerItem(
                 CLOTH_ARMOR_EXTENSIONS,
-                MJItems.Equipment.CLOTH_HELMET.get(),
-                MJItems.Equipment.CLOTH_CHESTPLATE.get(),
-                MJItems.Equipment.CLOTH_LEGGINGS.get(),
-                MJItems.Equipment.CLOTH_BOOTS.get());
+                Armors.CLOTH_HELMET.get(),
+                Armors.CLOTH_CHESTPLATE.get(),
+                Armors.CLOTH_LEGGINGS.get(),
+                Armors.CLOTH_BOOTS.get());
     }
 
     @SubscribeEvent
@@ -95,10 +95,10 @@ public class ItemColorsHandler {
         // Cloth armor coloring
         event.register(
                 (stack, tintIndex) -> tintIndex > 0 ? -1 : DyedItemColor.getOrDefault(stack, MJArmorMaterials.CLOTH_COLOR),
-                MJItems.Equipment.CLOTH_HELMET.get(),
-                MJItems.Equipment.CLOTH_CHESTPLATE.get(),
-                MJItems.Equipment.CLOTH_LEGGINGS.get(),
-                MJItems.Equipment.CLOTH_BOOTS.get());
+                Armors.CLOTH_HELMET.get(),
+                Armors.CLOTH_CHESTPLATE.get(),
+                Armors.CLOTH_LEGGINGS.get(),
+                Armors.CLOTH_BOOTS.get());
 
         // Generic foliage tint colors for blocks
         final Collection<Block> blocks = MJBlocks.BLOCKS.getEntries()
