@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.registry.audio;
+package com.nekotune.minecraftjourneys.shared.registry;
 
 import java.util.function.Supplier;
 

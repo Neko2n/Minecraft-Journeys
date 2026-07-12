@@ -1,6 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.registry.effects;
-
-import java.util.function.Supplier;
+package com.nekotune.minecraftjourneys.shared.registry.content.capabilities;
 
 import com.mojang.serialization.MapCodec;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;

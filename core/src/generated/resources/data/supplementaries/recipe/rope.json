@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modpack:grass"
+    },
+    {
+      "item": "modpack:grass"
+    },
+    {
+      "item": "modpack:grass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "supplementaries:rope"
+  }
+}

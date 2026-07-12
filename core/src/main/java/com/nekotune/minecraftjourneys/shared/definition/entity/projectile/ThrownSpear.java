@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 import javax.annotation.Nullable;
 
-import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
+import com.nekotune.minecraftjourneys.shared.registry.MJSoundEvents;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJEntities;
 import com.nekotune.minecraftjourneys.shared.registry.content.MJItems;
 

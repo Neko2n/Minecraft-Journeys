@@ -3,7 +3,6 @@ package com.nekotune.minecraftjourneys;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.nekotune.minecraftjourneys.core.Config;
 import com.nekotune.minecraftjourneys.core.RegistryHandler;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -39,7 +38,7 @@ public class MinecraftJourneys {
         NeoForge.EVENT_BUS.register(this);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, MJConfig.SPEC);
     }
 
     /**

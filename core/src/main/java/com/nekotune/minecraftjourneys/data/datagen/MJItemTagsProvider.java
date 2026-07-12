@@ -28,7 +28,7 @@ public class MJItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(Provider provider) {
- 
+        
         // Enchants
         tag(MJItemTags.SPEAR_ENCHANTABLE)
             .addTag(MJItemTags.Equipment.SPEARS);

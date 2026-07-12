@@ -213,7 +213,9 @@ public class MJRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(recipeOutput);
         final Item rope = net.mehvahdjukaar.supplementaries.reg.ModRegistry.ROPE_ITEM.get();
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, rope, 1)
-                .requires(grass, 3);
+                .requires(grass, 3)
+                .unlockedBy(getHasName(grass), has(grass))
+                .save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, NMLBlocks.THATCH.asItem(), 2)
                 .pattern("GG")
                 .pattern("GG")

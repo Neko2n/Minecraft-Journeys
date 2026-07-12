@@ -1,7 +1,7 @@
 package com.nekotune.minecraftjourneys.shared.definition.item.tool;
 
 import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
-import com.nekotune.minecraftjourneys.shared.registry.audio.MJSoundEvents;
+import com.nekotune.minecraftjourneys.shared.registry.MJSoundEvents;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

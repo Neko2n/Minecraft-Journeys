@@ -6,9 +6,14 @@
     {
       "item": "modpack:wooden_spear"
     },
-    {
-      "item": "wholecloth:cloth_scrap"
-    },
+    [
+      {
+        "item": "wholecloth:cloth_scrap"
+      },
+      {
+        "item": "modpack:grass"
+      }
+    ],
     {
       "item": "nomansland:resin_oil_bottle"
     }
