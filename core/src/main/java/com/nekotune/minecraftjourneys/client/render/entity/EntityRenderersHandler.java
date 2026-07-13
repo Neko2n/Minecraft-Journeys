@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.client.entity;
+package com.nekotune.minecraftjourneys.client.render.entity;
 
 import com.nekotune.minecraftjourneys.shared.registries.content.MJEntityTypes;
 

@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.client;
+package com.nekotune.minecraftjourneys.client.hooks;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -28,7 +28,7 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 
 @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID, value = Dist.CLIENT)
 @OnlyIn(value = Dist.CLIENT)
-public class ItemColorsHandler {
+public class RegisterColors {
 
     private static final HashSet<ItemLike> BLACKLIST = new HashSet<>();
 

@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.client;
+package com.nekotune.minecraftjourneys.client.hooks;
 
 import java.util.stream.Stream;
 
@@ -18,7 +18,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT)
 @OnlyIn(value = Dist.CLIENT)
-public class ItemPropertiesHandler {
+public class RegisterItemProperties {
     
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
