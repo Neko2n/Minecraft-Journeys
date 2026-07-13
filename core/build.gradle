@@ -100,7 +100,8 @@ neoForge {
                     '--existing-mod', 'spawn',
                     '--existing-mod', 'natures_spirit',
                     '--existing-mod', 'nomansland',
-                    '--existing-mod', 'bountifulfares'
+                    '--existing-mod', 'bountifulfares',
+                    '--existing-mod', 'caverns_and_chasms'
         }
 
         // applies to all the run configs above
@@ -160,18 +161,34 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    // Content
     implementation name: "natures_spirit-2.3.0-1.21.1" // Nature's Spirit
-    
     implementation "maven.modrinth:fFEIiSDQ:53oYzPfG" // Supplementaries
     implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
     implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
+    implementation "maven.modrinth:tfjmPSbI:xDwRcEoZ" // Caverns & Chasms
     
+    // Libraries
     implementation "maven.modrinth:twkfQtEc:JtfVx8PK" // Moonlight Lib (required by Supplementaries)
     implementation "maven.modrinth:XaDC71GB:qPASucBM" // Lithostitched (required by Nature's Spirit)
     implementation "maven.modrinth:bgDhVmqz:6oD2aKnX" // Nexus Lib (required by Bountiful Fares)
+    implementation "maven.modrinth:VsM5EDoI:LMGtMapI" // Blueprint (required by Caverns & Chasms)
+    implementation "maven.modrinth:EOA6vv83:HzOpAks9" // Gallery (required by Caverns & Chasms)
+    implementation "maven.modrinth:1eAoo2KR:7TVdVtxF" // YACL (required by Windy & Better Clouds)
+
+    // Graphics
+    implementation "maven.modrinth:3jCB9cn2:oExXoCBC" // Grassier Grass
+    implementation "maven.modrinth:ft2cYBpB:e3AdhSXi" // Atmospherics
+    implementation "maven.modrinth:EwYg6C78:xcBfBf8H" // Windy
+    implementation "maven.modrinth:5srFLIaK:XK8POrWQ" // Better Clouds
+    implementation "maven.modrinth:AANobbMI:S3DUMfBo" // Sodium
+    implementation "maven.modrinth:3KUWeVhG:dqlL6EvF" // Veil
+
+    // Developer Tools
+    implementation "maven.modrinth:qy8EtCnG:E02gbf8F" // ImGui MC
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

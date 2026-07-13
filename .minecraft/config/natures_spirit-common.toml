@@ -68,10 +68,10 @@
 	has_alpine_highlands = true
 	has_coniferous_covert = true
 	has_boreal_taiga = false
-	has_tropical_shores = false
-	has_tropical_woods = false
-	has_sparse_tropical_woods = false
-	has_tropical_basin = false
+	has_tropical_shores = true
+	has_tropical_woods = true
+	has_sparse_tropical_woods = true
+	has_tropical_basin = true
 	has_arid_savanna = true
 	has_scorched_dunes = true
 	has_flowering_shrubland = false

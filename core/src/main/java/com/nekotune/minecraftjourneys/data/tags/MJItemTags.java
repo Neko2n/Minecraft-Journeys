@@ -18,11 +18,16 @@ public final class MJItemTags {
     public static final TagKey<Item> LOYALTY_ENCHANTABLE = createTag("loyalty_enchantable");
     public static final TagKey<Item> PIERCING_ENCHANTABLE = createTag("piercing_enchantable");
 
-    public static final class Equipment {
+    public static final class Tools {
 
-        public static final TagKey<Item> SPEARS = createCoreTag("spears");
-        public static final TagKey<Item> KNIVES = createCoreTag("knives");
-        public static final TagKey<Item> MATTOCKS = createCoreTag("mattocks");
+        public static final TagKey<Item> SPEARS = createCoreTag("tools/spears");
+        public static final TagKey<Item> KNIVES = createCoreTag("tools/knives");
+        public static final TagKey<Item> MATTOCKS = createCoreTag("tools/mattocks");
+    }
+
+    public static final class Armors {
+
+        public static final TagKey<Item> CLOTH = createCoreTag("armors/cloth");
     }
 
     private static TagKey<Item> createTag(String modid, String name) {

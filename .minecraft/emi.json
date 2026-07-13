@@ -68,9 +68,9 @@
     }
   ],
   "lookup_history": [
+    "item:modpack:cloth_chestplate",
     "item:minecraft:rabbit_hide",
     "item:supplementaries:turn_table",
-    "item:archeological:archeology_table",
     "item:minecraft:enchanting_table",
     "item:caverns_and_chasms:dismantling_table",
     "item:minecraft:smithing_table",
@@ -113,7 +113,6 @@
     "item:caverns_and_chasms:iron_bricks",
     "item:create:weathered_iron_window_pane",
     "item:create:industrial_iron_block",
-    "item:archeological:torn_leather",
     "item:minecraft:oak_door",
     {
       "type": "item",
@@ -180,8 +179,6 @@
     "item:nomansland:bandage{\"minecraft:potion_contents\":{potion:\"minecraft:night_vision\"}}",
     "item:nomansland:antidote_bandage",
     "item:nomansland:medicinal_bandage",
-    "item:archeological:runestone_runner",
-    "item:archeological:old_bandages",
     "item:mowziesmobs:bluff_rod",
     "item:amendments:dragon_charge",
     "item:minecraft:wind_charge",
@@ -639,10 +636,6 @@
     "item:darkerdepths:forsaken_bronze_ingot",
     "item:minecraft:enchanted_book{\"minecraft:stored_enchantments\":{levels:{\"minecraft:protection\":1}}}",
     "item:minecraft:enchanted_book{\"minecraft:stored_enchantments\":{levels:{\"minecraft:breach\":4}}}",
-    "item:archeological:runestone_heated",
-    "item:archeological:heated_rune",
-    "item:archeological:rusty_shovel",
-    "item:archeological:rotten_manuscript",
     "item:enderscape:bulb_lantern",
     "item:yo_hooks:netherite_grappling_hook",
     "item:yo_hooks:gold_grappling_hook",
@@ -1200,8 +1193,11 @@
     "item:minecraft:music_disc_5"
   ],
   "craft_history": [
-    "natures_spirit:coconut_half_from_coconut",
+    "nomansland:wood/maple/maple_planks",
+    "modpack:stone_knife",
     "minecraft:stick",
+    "modpack:wooden_spear",
+    "natures_spirit:coconut_half_from_coconut",
     "minecraft:dark_oak_planks",
     "natures_spirit:cedar_planks",
     "minecraft:torch",

@@ -2,7 +2,7 @@ package com.nekotune.minecraftjourneys.client.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.nekotune.minecraftjourneys.shared.definition.entity.projectile.ThrownSpear;
+import com.nekotune.minecraftjourneys.shared.definitions.entity.projectile.ThrownSpear;
 
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;

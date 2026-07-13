@@ -3,8 +3,8 @@ package com.nekotune.minecraftjourneys.data.worldgen;
 import java.util.List;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.definition.block.pear.HangingPearBlock;
-import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.definitions.block.pear.HangingPearBlock;
+import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -32,9 +32,9 @@ public class MJConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         register(context, PEAR_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(MJBlocks.BFPearBlocks.PEAR_LOG.get()),
+                BlockStateProvider.simple(MJBlocks.PEAR_LOG.get()),
                 new StraightTrunkPlacer(5, 1, 0),
-                BlockStateProvider.simple(MJBlocks.BFPearBlocks.PEAR_LEAVES.get()),
+                BlockStateProvider.simple(MJBlocks.PEAR_LEAVES.get()),
                 new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 4),
                 new TwoLayersFeatureSize(0, 0, 0))
                 .dirt(BlockStateProvider.simple(Blocks.GRASS_BLOCK))
@@ -43,7 +43,7 @@ public class MJConfiguredFeatures {
                         new AttachedToLeavesDecorator(
                                 0.5F, 1, 0,
                                 new RandomizedIntStateProvider(
-                                        BlockStateProvider.simple(MJBlocks.BFPearBlocks.HANGING_PEAR.get()
+                                        BlockStateProvider.simple(MJBlocks.HANGING_PEAR.get()
                                                 .defaultBlockState().setValue(HangingPearBlock.AGE, 4)),
                                         HangingPearBlock.AGE,
                                         UniformInt.of(0, 4)),

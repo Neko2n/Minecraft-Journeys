@@ -1,27 +1,27 @@
-filename = 'infernalexp-neoforge-1.21.1-0.3.10.jar'
+filename = 'infernalexp-neoforge-1.21.1-0.3.11.jar'
 name = 'Infernal Expansion'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '0.3.10-1.21.1-neoforge'
+x-prismlauncher-version-number = '0.3.11-1.21.1-neoforge'
 
 [download]
-hash = '71541945c02919598941800dcc960568752d8d8314bd2c4e66c8b2028830d548eb875bf895407f8584825d17c6fbbba6412507c621b6b9ba97b6f5f355dbcce6'
+hash = 'b9406716c551e4b21b082e94cb72a490f50b1cc6066eb2f894a32ac8860b09744b18d74d1a81775ed330cb6538cccd8f00fe25480d95ff0cafb83ea00773c231'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/wiPmcmNp/versions/1tHOUowL/infernalexp-neoforge-1.21.1-0.3.10.jar'
+url = 'https://cdn.modrinth.com/data/wiPmcmNp/versions/7iGcGxkX/infernalexp-neoforge-1.21.1-0.3.11.jar'
 
 [update.modrinth]
 mod-id = 'wiPmcmNp'
-version = '1tHOUowL'
+version = '7iGcGxkX'
 
 [[x-prismlauncher-dependencies]]
 addonId = '8BmcQJ2H'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]
-addonId = '9s6osm5g'
+addonId = 'W7xRcWxh'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
@@ -29,5 +29,5 @@ addonId = 'yBW8D80W'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = 'W7xRcWxh'
+addonId = '9s6osm5g'
 type = 'OPTIONAL'

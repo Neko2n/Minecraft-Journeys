@@ -1,6 +1,6 @@
 package com.nekotune.minecraftjourneys.client.entity;
 
-import com.nekotune.minecraftjourneys.shared.registry.content.MJEntities;
+import com.nekotune.minecraftjourneys.shared.registries.content.MJEntityTypes;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -14,6 +14,6 @@ public class EntityRenderersHandler {
 
     @SubscribeEvent
     static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(MJEntities.THROWN_SPEAR.get(), ThrownSpearRenderer::new);
+        event.registerEntityRenderer(MJEntityTypes.THROWN_SPEAR.get(), ThrownSpearRenderer::new);
     }
 }

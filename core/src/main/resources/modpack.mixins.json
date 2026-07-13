@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.nekotune.minecraftjourneys.mods.mixin",
+  "package": "com.nekotune.minecraftjourneys.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "IncrementalMiningMixins$Rules",

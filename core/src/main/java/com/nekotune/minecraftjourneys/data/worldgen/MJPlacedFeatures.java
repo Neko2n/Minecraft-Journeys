@@ -3,7 +3,7 @@ package com.nekotune.minecraftjourneys.data.worldgen;
 import java.util.List;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.registry.content.MJBlocks;
+import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -30,7 +30,7 @@ public class MJPlacedFeatures {
                 configuredFeatures.getOrThrow(MJConfiguredFeatures.PEAR_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(0, 0.5f, 1),
-                        MJBlocks.BFPearBlocks.PEAR_SAPLING.get()));
+                        MJBlocks.PEAR_SAPLING.get()));
     }
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,

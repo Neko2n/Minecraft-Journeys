@@ -3,7 +3,8 @@ package com.nekotune.minecraftjourneys;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.nekotune.minecraftjourneys.core.RegistryHandler;
+import com.nekotune.minecraftjourneys.shared.registries.MJRegistries;
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -29,8 +30,7 @@ public class MinecraftJourneys {
         // Register setup events
         modEventBus.addListener(this::commonSetup);
 
-        // Register all @Registry-annotated deferred registers found anywhere in this mod's jar
-        RegistryHandler.registerAll(modEventBus, modContainer, MinecraftJourneys.class.getClassLoader());
+        MJRegistries.registerAll(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (MinecraftJourneysCore) to respond directly to events.
