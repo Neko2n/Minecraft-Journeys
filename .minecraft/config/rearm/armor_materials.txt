@@ -17,6 +17,10 @@ mowziesmobs:wrought_helm
 mowziesmobs:geomancer_armor
 the_beyond:shroud
 the_beyond:anchor
+create:copper
+create:cardboard
+nomansland:tortoise
+nomansland:ancient_bronze_mask
 caverns_and_chasms:copper
 caverns_and_chasms:exposed_copper
 caverns_and_chasms:weathered_copper
@@ -33,10 +37,6 @@ alexscaves:darkness
 alexscaves:rainbounce
 alexscaves:gingerbread
 enderscape:drift_leggings
-create:copper
-create:cardboard
-nomansland:tortoise
-nomansland:ancient_bronze_mask
 oreganized:electrum
 curiosities:aluminum
 curiosities:invar

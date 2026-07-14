@@ -1193,10 +1193,9 @@
     "item:minecraft:music_disc_5"
   ],
   "craft_history": [
-    "nomansland:wood/maple/maple_planks",
-    "modpack:stone_knife",
     "minecraft:stick",
-    "modpack:wooden_spear",
+    "minecraft:oak_planks",
+    "nomansland:wood/maple/maple_planks",
     "natures_spirit:coconut_half_from_coconut",
     "minecraft:dark_oak_planks",
     "natures_spirit:cedar_planks",
@@ -1223,7 +1222,6 @@
     "minecraft:raw_copper",
     "minecraft:raw_copper_block",
     "minecraft:birch_planks",
-    "minecraft:oak_planks",
     "minecraft:cooked_beef",
     "nomansland:building/wooden_platform",
     "natures_spirit:ghaf_planks",

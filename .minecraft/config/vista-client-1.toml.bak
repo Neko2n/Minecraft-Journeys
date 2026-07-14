@@ -71,6 +71,8 @@
 		resolution_scale = 8
 		#Enables rendering of debug information for televisions
 		render_debug = false
+		#Attempts to disable iris shaders in the live feed view
+		iris_off_hack = true
 
 	[television.wave_gate]
 		#Enable FFmpeg use. This is needed if you want to use the Wave Gate

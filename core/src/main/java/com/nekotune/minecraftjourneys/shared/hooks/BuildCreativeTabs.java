@@ -1,9 +1,7 @@
 package com.nekotune.minecraftjourneys.shared.hooks;
 
-import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registries.content.MJItems;
 
-import net.hecco.bountifulfares.registry.misc.BFItemGroups;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -18,17 +16,7 @@ public class BuildCreativeTabs {
     @SubscribeEvent
     public static void onBuildCreativeTabs(BuildCreativeModeTabContentsEvent event) {
         CreativeModeTab tab = event.getTab();
-        if (tab == BFItemGroups.COMPATIBILITY.get()) {
-            event.accept(MJBlocks.PEAR_BLOCK.get().asItem());
-            event.accept(MJBlocks.PEAR_LOG.get().asItem());
-            event.accept(MJBlocks.PEAR_WOOD.get().asItem());
-            event.accept(MJBlocks.STRIPPED_PEAR_LOG.get().asItem());
-            event.accept(MJBlocks.STRIPPED_PEAR_WOOD.get().asItem());
-            event.accept(MJBlocks.PEAR_SAPLING.get().asItem());
-            event.accept(MJBlocks.PEAR_LEAVES.get().asItem());
-            // event.accept(MJBlocks.FLOWERING_PEAR_LEAVES.get().asItem());
-        }
-        else if (tab == getTab(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
+        if (tab == getTab(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
             event.accept(MJItems.STONE_MATTOCK.get());
             event.accept(MJItems.BONE_MATTOCK.get());
             event.accept(MJItems.FLINT_MATTOCK.get());

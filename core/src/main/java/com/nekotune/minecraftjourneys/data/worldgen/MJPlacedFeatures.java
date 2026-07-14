@@ -3,13 +3,9 @@ package com.nekotune.minecraftjourneys.data.worldgen;
 import java.util.List;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
-
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -20,18 +16,7 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 public class MJPlacedFeatures {
 
-    public static final ResourceKey<PlacedFeature> PEAR_PLACED_KEY = registerKey("pear_placed");
-
-    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-
-        // Pear trees
-        register(context, PEAR_PLACED_KEY,
-                configuredFeatures.getOrThrow(MJConfiguredFeatures.PEAR_KEY),
-                VegetationPlacements.treePlacement(
-                        PlacementUtils.countExtra(0, 0.5f, 1),
-                        MJBlocks.PEAR_SAPLING.get()));
-    }
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {}
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {

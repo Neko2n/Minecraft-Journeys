@@ -39,7 +39,7 @@ public class RegisterColors {
      */
     private static boolean isBlacklisted(ItemLike item) {
         if (BLACKLIST.isEmpty()) {
-            BLACKLIST.add(MJBlocks.PEAR_LEAVES.get());
+            // Add blacklist items here
         }
         return BLACKLIST.contains(item);
     }

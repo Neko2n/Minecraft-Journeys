@@ -64,10 +64,6 @@ public class MJBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        // Blocks which use static JSON / don't use datagen
-        registered.add(MJBlocks.PEAR_BLOCK.get());
-        registered.add(MJBlocks.HANGING_PEAR.get());
-
         // Assign generic block states by block type
         {
             final Collection<Block> blocks = MJBlocks.BLOCKS.getEntries()

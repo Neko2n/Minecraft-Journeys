@@ -1,12 +1,9 @@
 package com.nekotune.minecraftjourneys.data.datagen.tags;
 
-import com.farcr.nomansland.common.registry.items.NMLItems;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.data.tags.MJItemTags;
-import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
 import com.nekotune.minecraftjourneys.shared.registries.content.MJItems;
 
-import net.hecco.bountifulfares.registry.tags.BFItemTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
@@ -74,21 +71,6 @@ public class MJItemTagsProvider extends ItemTagsProvider {
             .add(MJItems.CLOTH_CHESTPLATE.get())
             .add(MJItems.CLOTH_LEGGINGS.get())
             .add(MJItems.CLOTH_BOOTS.get());
-
-        // Bountiful fares compatibility
-        tag(MJItemTags.PEAR_LOGS)
-            .add(MJBlocks.PEAR_LOG.asItem())
-            .add(MJBlocks.PEAR_WOOD.asItem())
-            .add(MJBlocks.STRIPPED_PEAR_LOG.asItem())
-            .add(MJBlocks.STRIPPED_PEAR_WOOD.asItem());
-        tag(BFItemTags.FRUIT_LOGS).addTag(MJItemTags.PEAR_LOGS);
-        tag(ItemTags.LOGS_THAT_BURN).addTag(MJItemTags.PEAR_LOGS);
-        tag(MJItemTags.PEAR_LEAVES)
-            .add(MJBlocks.PEAR_LEAVES.asItem());
-            // .add(MJBlocks.FLOWERING_PEAR_LEAVES.asItem());
-        tag(ItemTags.LEAVES).addTag(MJItemTags.PEAR_LEAVES);
-        tag(BFItemTags.C_FRUIT)
-            .add(NMLItems.PEAR.get());
 
         // Vanilla Tags
         tag(ItemTags.DYEABLE)

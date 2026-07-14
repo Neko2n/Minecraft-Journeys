@@ -3,9 +3,6 @@ package com.nekotune.minecraftjourneys.data.datagen.tags;
 import com.farcr.nomansland.common.registry.blocks.NMLBlocks;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.data.tags.MJBlockTags;
-import com.nekotune.minecraftjourneys.shared.registries.content.MJBlocks;
-
-import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.hibiscus.naturespirit.registration.NSBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.tags.BlockTags;
@@ -52,25 +49,5 @@ public class MJBlockTagsProvider extends BlockTagsProvider {
             .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
             .addTag(BlockTags.MINEABLE_WITH_AXE)
             .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
-        tag(BlockTags.MINEABLE_WITH_AXE)
-            .add(MJBlocks.HANGING_PEAR.get())
-            .add(MJBlocks.PEAR_BLOCK.get());
-
-        // Wood tags
-        tag(BlockTags.LOGS_THAT_BURN)
-            .add(MJBlocks.PEAR_LOG.get())
-            .add(MJBlocks.PEAR_WOOD.get())
-            .add(MJBlocks.STRIPPED_PEAR_LOG.get())
-            .add(MJBlocks.STRIPPED_PEAR_WOOD.get());
-
-        // Bountiful fares tags
-        tag(BFBlockTags.HANGING_FRUIT)
-            .add(MJBlocks.HANGING_PEAR.get());
-        tag(MJBlockTags.PEAR_LEAVES)
-            .add(MJBlocks.PEAR_LEAVES.get());
-            // .add(MJBlocks.FLOWERING_PEAR_LEAVES.get());
-        
-        /* Block tags which derive from other tags */
-        tag(BlockTags.LEAVES).addTag(MJBlockTags.PEAR_LEAVES);
     }
 }

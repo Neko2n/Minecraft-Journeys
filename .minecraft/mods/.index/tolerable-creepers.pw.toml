@@ -1,20 +1,20 @@
-filename = 'tolerable_creepers-neoforge-1.21.1-2.2.3.jar'
+filename = 'tolerable_creepers-neoforge-1.21.1-2.2.4.jar'
 name = 'Tolerable Creepers'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '2.2.3-1.21.1-neoforge'
+x-prismlauncher-version-number = '2.2.4-1.21.1-neoforge'
 
 [download]
-hash = '5ff1df4bdb631ed39648ef93d4667960240b61a2a7d7e2ece35d7a7d8b9fb2b6ac52c149620ba4841bb313ba47a33999bf74d5c26591771d865f6516c8183732'
+hash = '9cab1f2fb258662a1e39935fa9f7cb9a6dc73092410e4ad156a2e12881f546b259836e08501f6fcc3b80f999897246e1d3dac3c4b7089c3eaa2e1ecfc6dac310'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/k9OKXOrZ/versions/T1W4Sn7u/tolerable_creepers-neoforge-1.21.1-2.2.3.jar'
+url = 'https://cdn.modrinth.com/data/k9OKXOrZ/versions/vb41f0Ua/tolerable_creepers-neoforge-1.21.1-2.2.4.jar'
 
 [update.modrinth]
 mod-id = 'k9OKXOrZ'
-version = 'T1W4Sn7u'
+version = 'vb41f0Ua'
 
 [[x-prismlauncher-dependencies]]
 addonId = '9s6osm5g'
