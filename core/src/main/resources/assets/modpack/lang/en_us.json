@@ -1,12 +1,5 @@
 {
-  "block.modpack.pear_block": "Pear Block",
-  "block.modpack.pear_leaves": "Pear Leaves",
-  "block.modpack.pear_log": "Pear Log",
-  "block.modpack.pear_sapling": "Pear Sapling",
-  "block.modpack.pear_wood": "Pear Wood",
-  "block.modpack.stripped_pear_log": "Stripped Pear Log",
-  "block.modpack.stripped_pear_wood": "Stripped Pear Wood",
-
+  "item.modpack.grass": "Grass",
   "item.modpack.stone_mattock": "Stone Tool",
   "item.modpack.flint_mattock": "Flint Tool",
   "item.modpack.bone_mattock": "Bone Tool",
@@ -25,6 +18,14 @@
   "item.modpack.cloth_chestplate": "Cloth Tunic",
   "item.modpack.cloth_leggings": "Cloth Pants",
   "item.modpack.cloth_boots": "Cloth Boots",
+
+  "block.modpack.pear_block": "Pear Block",
+  "block.modpack.pear_leaves": "Pear Leaves",
+  "block.modpack.pear_log": "Pear Log",
+  "block.modpack.pear_sapling": "Pear Sapling",
+  "block.modpack.pear_wood": "Pear Wood",
+  "block.modpack.stripped_pear_log": "Stripped Pear Log",
+  "block.modpack.stripped_pear_wood": "Stripped Pear Wood",
 
   "entity.modpack.thrown_spear": "Thrown Spear",
 

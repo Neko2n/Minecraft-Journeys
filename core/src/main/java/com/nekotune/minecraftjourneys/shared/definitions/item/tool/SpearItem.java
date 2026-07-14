@@ -82,14 +82,17 @@ public class SpearItem extends TieredItem implements ProjectileItem {
         if (i < 10) return;
         if (isTooDamagedToUse(stack)) return;
         if (!level.isClientSide) {
-            stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(entityLiving.getUsedItemHand()));
             
             ThrownSpear thrownSpear = asProjectile(level, player.position().add(0.0f, 1.65f, 0.0f), stack, player.getDirection());
             thrownSpear.setOwner(player);
-            thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.6F, 1.0F);
             if (player.hasInfiniteMaterials()) {
                 thrownSpear.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+            } else {
+                thrownSpear.pickup = AbstractArrow.Pickup.ALLOWED;
+                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(entityLiving.getUsedItemHand()));
+                player.getInventory().removeItem(stack);
             }
+            thrownSpear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.6F, 1.0F);
 
             level.addFreshEntity(thrownSpear);
             final float fv = 0.2F;
@@ -97,9 +100,6 @@ public class SpearItem extends TieredItem implements ProjectileItem {
             level.playSound(null, thrownSpear, 
                     MJSoundEvents.SPEAR_THROW.get(), SoundSource.PLAYERS,
                     1.0F, pitch);
-            if (!player.hasInfiniteMaterials()) {
-                player.getInventory().removeItem(stack);
-            }
         }
         player.awardStat(Stats.ITEM_USED.get(this));
     }
@@ -147,9 +147,7 @@ public class SpearItem extends TieredItem implements ProjectileItem {
 
     @Override
     public ThrownSpear asProjectile(Level level, Position pos, ItemStack stack, Direction direction) {
-        ThrownSpear thrownSpear = new ThrownSpear(throwDamage,
+        return new ThrownSpear(throwDamage,
                 level, pos.x(), pos.y(), pos.z(), stack.copyWithCount(1));
-        thrownSpear.pickup = AbstractArrow.Pickup.ALLOWED;
-        return thrownSpear;
     }
 }

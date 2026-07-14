@@ -53,7 +53,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     public static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(ThrownSpear.class,
             EntityDataSerializers.ITEM_STACK);
 
-    private boolean inGround = false;
+    private boolean dealtDamage;
     public int clientSideReturnSpearTickCount;
     public final Collection<Entity> hitEntities = new HashSet<>();
     private final float throwDamage;
@@ -84,11 +84,11 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
 
         // Update loyalty recall state
         if (this.inGroundTime > 4) {
-            this.inGround = true;
+            this.dealtDamage = true;
         }
         Entity entity = this.getOwner();
         int i = this.entityData.get(ID_LOYALTY);
-        if (i > 0 && (this.inGround || this.isNoPhysics()) && entity != null) {
+        if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (!this.level().isClientSide && this.pickup == AbstractArrow.Pickup.ALLOWED) {
                     this.spawnAtLocation(this.getPickupItem(), 0.1F);
@@ -136,7 +136,7 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Nullable
     @Override
     protected EntityHitResult findHitEntity(Vec3 startVec, Vec3 endVec) {
-        return this.inGround ? null : super.findHitEntity(startVec, endVec);
+        return this.dealtDamage ? null : super.findHitEntity(startVec, endVec);
     }
 
     /**
@@ -176,6 +176,8 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
             if (this.level() instanceof ServerLevel serverlevel) {
                 f = EnchantmentHelper.modifyDamage(serverlevel, this.getWeaponItem(), entity, damagesource, f);
             }
+
+            this.dealtDamage = true;
 
             // Attempt to apply damage
             this.hitEntities.add(entity);
@@ -282,14 +284,14 @@ public class ThrownSpear extends AbstractArrow implements ItemSupplier {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.inGround = compound.getBoolean("InGround");
+        this.dealtDamage = compound.getBoolean("DealtDamage");
         this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putBoolean("InGround", this.inGround);
+        compound.putBoolean("DealtDamage", this.dealtDamage);
     }
 
     private byte getLoyaltyFromItem(ItemStack stack) {

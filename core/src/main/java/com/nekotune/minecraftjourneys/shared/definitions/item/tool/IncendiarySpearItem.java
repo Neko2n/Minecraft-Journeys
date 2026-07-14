@@ -24,9 +24,7 @@ public class IncendiarySpearItem extends SpearItem {
 
     @Override
     public ThrownSpear asProjectile(Level level, Position pos, ItemStack stack, Direction direction) {
-        ThrownSpear thrownSpear = new ThrownIncendiarySpear(throwDamage,
+        return new ThrownIncendiarySpear(throwDamage,
                 level, pos.x(), pos.y(), pos.z(), stack.copyWithCount(1));
-        thrownSpear.pickup = AbstractArrow.Pickup.ALLOWED;
-        return thrownSpear;
     }
 }
