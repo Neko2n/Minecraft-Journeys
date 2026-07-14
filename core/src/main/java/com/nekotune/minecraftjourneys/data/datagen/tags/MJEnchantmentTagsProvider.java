@@ -5,11 +5,8 @@ import com.nekotune.minecraftjourneys.data.datagen.MJDatapackEntriesProvider;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public class MJEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     public MJEnchantmentTagsProvider(GatherDataEvent event, MJDatapackEntriesProvider datapackEntries) {

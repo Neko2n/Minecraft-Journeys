@@ -10,12 +10,9 @@ import net.hibiscus.naturespirit.registration.NSBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public class MJBlockTagsProvider extends BlockTagsProvider {
 
     public MJBlockTagsProvider(GatherDataEvent event) {

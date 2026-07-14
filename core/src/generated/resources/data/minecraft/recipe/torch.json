@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": [
+      {
+        "tag": "minecraft:coals"
+      },
+      {
+        "type": "neoforge:compound",
+        "children": [
+          {
+            "item": "modpack:grass"
+          },
+          {
+            "item": "nomansland:resin"
+          }
+        ]
+      }
+    ],
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "G",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:torch"
+  }
+}

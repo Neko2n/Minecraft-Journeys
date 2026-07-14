@@ -1,0 +1,16 @@
+{
+  "type": "modpack:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": "#c:tools/knives"
+      }
+    },
+    {
+      "condition": "modpack:match_entity_type",
+      "predicate": "#modpack:drops_pelt"
+    }
+  ],
+  "item": "minecraft:rabbit_hide"
+}

@@ -1,0 +1,11 @@
+{
+  "entries": [
+    "modpack:grass_to_grass_plants",
+    "modpack:grass_to_grass_plants_extra",
+    "modpack:grass_to_grass_plants_knife",
+    "modpack:remove_vanilla_rabbit_hide",
+    "modpack:pelt_to_pelt_entities",
+    "modpack:pelt_to_pelt_entities_knife"
+  ],
+  "replace": false
+}

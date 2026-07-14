@@ -8,11 +8,8 @@ import com.ninni.spawn.registry.SpawnEntityType;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.world.entity.EntityType;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public class MJEntityTypeTagsProvider extends EntityTypeTagsProvider {
 
     public MJEntityTypeTagsProvider(GatherDataEvent event) {

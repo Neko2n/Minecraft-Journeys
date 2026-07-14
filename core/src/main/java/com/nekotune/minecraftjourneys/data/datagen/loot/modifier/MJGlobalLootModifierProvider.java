@@ -19,12 +19,9 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public class MJGlobalLootModifierProvider extends GlobalLootModifierProvider {
     
     public MJGlobalLootModifierProvider(GatherDataEvent event, MJDatapackEntriesProvider datapackEntries) {

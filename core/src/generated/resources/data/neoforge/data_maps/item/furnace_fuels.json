@@ -1,0 +1,16 @@
+{
+  "values": {
+    "#c:armors/cloth": {
+      "burn_time": 200
+    },
+    "modpack:grass": {
+      "burn_time": 50
+    },
+    "modpack:incendiary_spear": {
+      "burn_time": 100
+    },
+    "modpack:wooden_spear": {
+      "burn_time": 100
+    }
+  }
+}

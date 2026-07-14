@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "Knives",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "nomansland:pebbles"
+    }
+  },
+  "pattern": [
+    " X",
+    "S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "modpack:stone_knife"
+  }
+}

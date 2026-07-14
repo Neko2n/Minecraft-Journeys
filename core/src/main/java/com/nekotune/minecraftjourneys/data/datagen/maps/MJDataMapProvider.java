@@ -8,13 +8,10 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.registries.datamaps.DataMapType;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public final class MJDataMapProvider extends DataMapProvider {
     
 	public MJDataMapProvider(GatherDataEvent event) {

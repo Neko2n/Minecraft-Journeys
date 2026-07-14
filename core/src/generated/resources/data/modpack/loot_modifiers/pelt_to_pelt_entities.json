@@ -1,0 +1,10 @@
+{
+  "type": "modpack:add_item",
+  "conditions": [
+    {
+      "condition": "modpack:match_entity_type",
+      "predicate": "#modpack:drops_pelt"
+    }
+  ],
+  "item": "minecraft:rabbit_hide"
+}

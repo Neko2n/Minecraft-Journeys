@@ -12,8 +12,6 @@ import com.nekotune.minecraftjourneys.data.datagen.tags.MJEnchantmentTagsProvide
 import com.nekotune.minecraftjourneys.data.datagen.tags.MJEntityTypeTagsProvider;
 import com.nekotune.minecraftjourneys.data.datagen.tags.MJItemTagsProvider;
 
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -22,8 +20,9 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 public class MJDataGenerator {
     
     @SubscribeEvent
-    @OnlyIn(value = Dist.DEDICATED_SERVER)
     public static void onGatherData(GatherDataEvent event) {
+        if (!event.includeServer()) return;
+
         final var datapackEntries = event.addProvider(new MJDatapackEntriesProvider(event));
 
         // TODO: Group tag providers into sub-providers under one main provider
@@ -43,8 +42,9 @@ public class MJDataGenerator {
     }
 
     @SubscribeEvent
-    @OnlyIn(value = Dist.CLIENT)
     public static void onGatherDataClient(GatherDataEvent event) {
+        if (!event.includeClient()) return;
+        
         final var blockStates = event.addProvider(new MJBlockStateProvider(event));
         final var itemModels = event.addProvider(new MJItemModelProvider(event));
     }

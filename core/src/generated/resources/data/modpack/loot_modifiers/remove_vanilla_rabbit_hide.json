@@ -1,0 +1,9 @@
+{
+  "type": "modpack:remove_item",
+  "conditions": [
+    {
+      "condition": "modpack:match_entity_type"
+    }
+  ],
+  "item": "minecraft:rabbit_hide"
+}

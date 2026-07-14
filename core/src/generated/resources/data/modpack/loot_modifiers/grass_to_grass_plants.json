@@ -1,0 +1,19 @@
+{
+  "type": "modpack:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:survives_explosion"
+    },
+    {
+      "condition": "modpack:match_block",
+      "predicate": {
+        "blocks": "#modpack:drops_grass"
+      }
+    },
+    {
+      "chance": 0.3,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "modpack:grass"
+}

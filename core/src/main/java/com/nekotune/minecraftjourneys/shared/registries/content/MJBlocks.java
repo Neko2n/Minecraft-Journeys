@@ -31,25 +31,15 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class MJBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MinecraftJourneys.MOD_ID);
 
-    /** Giant fruit block */
     public static final DeferredBlock<PearBlock> PEAR_BLOCK;
-    /** Tree log */
     public static final DeferredBlock<FruitLogBlock> PEAR_LOG;
-    /** Wood */
     public static final DeferredBlock<FruitLogBlock> PEAR_WOOD;
-    /** Stripped log */
     public static final DeferredBlock<StrippedFruitLogBlock> STRIPPED_PEAR_LOG;
-    /** Stripped wood */
     public static final DeferredBlock<StrippedFruitLogBlock> STRIPPED_PEAR_WOOD;
-    /** Hanging fruit */
     public static final DeferredBlock<HangingPearBlock> HANGING_PEAR;
-    /** Tree sapling */
     public static final DeferredBlock<PublicSaplingBlock> PEAR_SAPLING;
-    /** Potted tree sapling */
     public static final DeferredBlock<FlowerPotBlock> POTTED_PEAR_SAPLING;
-    /** Tree leaves */
     public static final DeferredBlock<FruitLeavesBlock> PEAR_LEAVES;
-    /** Flowering tree leaves */
     // public static final DeferredBlock<FruitLeavesBlock> FLOWERING_PEAR_LEAVES;
 
     static {

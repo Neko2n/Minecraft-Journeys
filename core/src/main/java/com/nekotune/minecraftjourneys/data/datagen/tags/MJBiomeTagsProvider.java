@@ -9,11 +9,8 @@ import net.hecco.bountifulfares.registry.tags.BFBiomeTags;
 import net.hibiscus.naturespirit.registration.NSBiomes;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@OnlyIn(value = Dist.DEDICATED_SERVER)
 public class MJBiomeTagsProvider extends BiomeTagsProvider {
 
     public MJBiomeTagsProvider(GatherDataEvent event) {

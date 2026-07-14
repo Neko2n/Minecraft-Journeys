@@ -36,7 +36,7 @@ public record MatchEntityType(Optional<EntityTypePredicate> predicate) implement
     }
     
     public static LootItemCondition.Builder any() {
-        return () -> new MatchEntityType(Optional.of(null));
+        return () -> new MatchEntityType(Optional.empty());
     }
 
     public static LootItemCondition.Builder entityTypeMatches(EntityTypePredicate predicate) {

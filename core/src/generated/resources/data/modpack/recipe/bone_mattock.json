@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "Mattocks",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " SX",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "modpack:bone_mattock"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "modpack:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": "#c:tools/knives"
+      }
+    },
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "modpack:match_block",
+          "predicate": {
+            "blocks": "#modpack:drops_grass"
+          }
+        },
+        {
+          "condition": "modpack:match_block",
+          "predicate": {
+            "blocks": "#modpack:drops_grass_extra"
+          }
+        }
+      ]
+    }
+  ],
+  "item": "modpack:grass"
+}
