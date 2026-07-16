@@ -1,0 +1,18 @@
+filename = 'surfaceparticles-neoforge-1.21.1-1.0.01.jar'
+name = 'Surface Particles'
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '[NeoForge]SurfaceParticles-1.21.1-1.0.01'
+
+[download]
+hash = '815c56ca876e96a5fb2ffd860e91e35810e74df4'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8431607
+project-id = 1606364

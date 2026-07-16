@@ -291,7 +291,12 @@
 		trapped_present = true
 
 [building]
-	lapis_bricks = true
+	pancake = false
+	flint_block = false
+	lapis_bricks = false
+	feather_block = false
+	fire_pit = false
+	fine_wood = false
 	deepslate_lamp = true
 	end_stone_lamp = true
 	blackstone_lamp = true
@@ -300,20 +305,12 @@
 	blackstone_tile = true
 	#Buntings are automatically disabled if 'rope' feature is disabled
 	bunting = true
-	pancake = true
 	checker_block = true
 	raked_gravel = true
-	feather_block = true
 	statue = true
 	doormat = true
-	flint_block = true
-	fine_wood = true
 	candle_holder = true
-	fire_pit = true
 	wicker_fence = true
-
-	[building.gold_bars]
-		enabled = false
 
 	[building.spider_head]
 		enabled = true
@@ -356,6 +353,9 @@
 		double_opening = true
 		#Makes iron (ang gold) gates behave like their door counterpart so for example iron gates will only be openable by redstone
 		door-like_gates = false
+
+	[building.gold_bars]
+		enabled = true
 
 	[building.item_shelf]
 		enabled = true
@@ -804,3 +804,5 @@
 		push_block_entities = true
 		#If true, adjacent pistons facing the same direction can pool their 12-block push budget to move structures larger than a single piston could handle alone (e.g. two side-by-side pistons pushing a 24-block slime contraption). Only triggers when a single piston's vanilla resolve would fail.
 		cooperative_pistons = true
+		#If true, pushing an empty cauldron into a water or lava source (with a piston or a pulley) fills it with that fluid, instead of leaving it empty. Also tops up cauldrons being moved.
+		moved_cauldron_filling = true

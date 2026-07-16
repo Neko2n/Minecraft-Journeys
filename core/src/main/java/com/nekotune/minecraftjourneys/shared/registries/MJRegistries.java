@@ -21,5 +21,7 @@ public final class MJRegistries {
         MJBlocks.BLOCKS.register(modEventBus);
         MJEntityTypes.ENTITY_TYPES.register(modEventBus);
         MJEnchantmentEffects.ENTITY_ENCHANTMENT_EFFECTS.register(modEventBus);
+
+        MJAttachmentTypes.ATTACHMENT_TYPES.register(modEventBus);
     }
 }

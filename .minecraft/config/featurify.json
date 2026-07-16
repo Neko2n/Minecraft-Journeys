@@ -1,62 +1,10 @@
 {
   "config_version": "1.0.4",
-  "config_datetime": "2026-07-06_14-27-04",
+  "config_datetime": "2026-07-14_23-07-54",
   "global": {
     "disable_all_placed_features": false
   },
   "placed_features": [
-    {
-      "name": "aether:holiday_tree",
-      "is_disabled": true
-    },
-    {
-      "name": "aether:zanite_ore",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_coal",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_copper",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_diamond",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_iron",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_lapis",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_lead",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_nickel",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_sulfur",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_tin",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_uranium",
-      "is_disabled": true
-    },
-    {
-      "name": "aether_overworld_ores:holystone_ore_zinc",
-      "is_disabled": true
-    },
     {
       "name": "curiosities:ore_aluminum",
       "is_disabled": true
@@ -71,14 +19,6 @@
     },
     {
       "name": "curiosities:ore_nickel_buried",
-      "is_disabled": true
-    },
-    {
-      "name": "deep_aether:more_skyjade_ore",
-      "is_disabled": true
-    },
-    {
-      "name": "deep_aether:skyjade_ore",
       "is_disabled": true
     },
     {
@@ -107,6 +47,22 @@
     },
     {
       "name": "natures_spirit:patch_azolla",
+      "is_disabled": true
+    },
+    {
+      "name": "nomansland:fancy_oak_apple_005",
+      "is_disabled": true
+    },
+    {
+      "name": "nomansland:fancy_oak_apple_01",
+      "is_disabled": true
+    },
+    {
+      "name": "nomansland:oak_apple_005",
+      "is_disabled": true
+    },
+    {
+      "name": "nomansland:oak_apple_01",
       "is_disabled": true
     },
     {

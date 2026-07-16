@@ -1,53 +1,53 @@
-[general]
-	# Never show full tooltip details, even when holding Shift.
-	# default: false
-	neverExpanded = false
-	# Always show full tooltip details without holding Shift.
-	# default: false
-	alwaysExpanded = false
-	# Amount of space characters between icons.
-	# default: 1
-	spacing = 1
-	# Amount of space characters between icons when the tooltip is expanded.
-	# default: 1
-	expandedSpacing = 1
-	# Change attribute tooltips in the 'inline_tooltips:shows_percentage' attribute tag to percentages.
-	# default: true
-	checkPercentageTag = true
+	[general]
+		# Never show full tooltip details, even when holding Shift.
+		# default: false
+		neverExpanded = false
+		# Always show full tooltip details without holding Shift.
+		# default: false
+		alwaysExpanded = false
+		# Amount of space characters between icons.
+		# default: 1
+		spacing = 1
+		# Amount of space characters between icons when the tooltip is expanded.
+		# default: 1
+		expandedSpacing = 1
+		# Change attribute tooltips in the 'inline_tooltips:shows_percentage' attribute tag to percentages.
+		# default: true
+		checkPercentageTag = true
 
-[iconTooltips]
-	# Add tooltips based on item attributes.
-	# default: true
-	attributeTooltips = true
-	# matches r'#[0-9A-Fa-f]{6}'
-	# default: #aa0000
-	attributeTooltipColour = "#aa0000"
-	# Add tooltips based on fuel levels.
-	# default: true
-	fuelTooltip = false
-	# matches r'#[0-9A-Fa-f]{6}'
-	# default: #ffaa00
-	fuelTooltipColour = "#ffaa00"
-	# Add tooltips based on amount of bees.
-	# default: true
-	beesTooltip = true
-	# matches r'#[0-9A-Fa-f]{6}'
-	# default: #ffaa00
-	beeTooltipColour = "#ffaa00"
-	# Add tooltips based on amount of honey.
-	# default: true
-	honeyTooltip = true
-	# matches r'#[0-9A-Fa-f]{6}'
-	# default: #ffaa00
-	honeyTooltipColour = "#ffaa00"
-	# Add tooltips based on light level.
-	# default: true
-	lightLevelTooltip = true
-	# matches r'#[0-9A-Fa-f]{6}'
-	# default: #ffaa00
-	lightLevelTooltipColour = "#ffaa00"
-	# default: true
-	foodTooltip = false
+	[iconTooltips]
+		# Add tooltips based on item attributes.
+		# default: true
+		attributeTooltips = true
+		# matches r'#[0-9A-Fa-f]{6}'
+		# default: #aa0000
+		attributeTooltipColour = "#aa0000"
+		# Add tooltips based on fuel levels.
+		# default: true
+		fuelTooltip = false
+		# matches r'#[0-9A-Fa-f]{6}'
+		# default: #ffaa00
+		fuelTooltipColour = "#ffaa00"
+		# Add tooltips based on amount of bees.
+		# default: true
+		beesTooltip = true
+		# matches r'#[0-9A-Fa-f]{6}'
+		# default: #ffaa00
+		beeTooltipColour = "#ffaa00"
+		# Add tooltips based on amount of honey.
+		# default: true
+		honeyTooltip = true
+		# matches r'#[0-9A-Fa-f]{6}'
+		# default: #ffaa00
+		honeyTooltipColour = "#ffaa00"
+		# Add tooltips based on light level.
+		# default: true
+		lightLevelTooltip = true
+		# matches r'#[0-9A-Fa-f]{6}'
+		# default: #ffaa00
+		lightLevelTooltipColour = "#ffaa00"
+		# default: true
+		foodTooltip = false
 	# matches r'#[0-9A-Fa-f]{6}'
 	# default: #ffaa00
 	foodTooltipColour = "#ffaa00"

@@ -30,12 +30,6 @@ caverns_and_chasms:necromium
 caverns_and_chasms:sanguine
 caverns_and_chasms:cowl
 caverns_and_chasms:toolbelt
-alexscaves:primordial
-alexscaves:hazmat_suit
-alexscaves:diving_suit
-alexscaves:darkness
-alexscaves:rainbounce
-alexscaves:gingerbread
 enderscape:drift_leggings
 oreganized:electrum
 curiosities:aluminum

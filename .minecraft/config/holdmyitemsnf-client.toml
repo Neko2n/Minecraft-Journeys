@@ -38,7 +38,7 @@
 
 [modRenderExclusions]
 	#Specific item IDs to exclude from custom rendering (e.g. 'modid:itemname').
-	excludedItemIds = ["modpack:wooden_spear", "modpack:stone_spear", "modpack:flint_spear", "modpack:bone_spear", "modpack:obsidian_spear"]
+	excludedItemIds = ["modpack:wooden_spear", "modpack:stone_spear", "modpack:flint_spear", "modpack:bone_spear", "modpack:obsidian_spear", "caverns_and_chasms:toolbox", "caverns_and_chasms:weathered_toolbox", "caverns_and_chasms:exposed_toolbox", "caverns_and_chasms:oxidized_toolbox", "caverns_and_chasms:waxed_toolbox", "caverns_and_chasms:waxed_exposed_toolbox", "caverns_and_chasms:waxed_weathered_toolbox", "caverns_and_chasms:waxed_oxidized_toolbox"]
 	#Mod IDs that should be excluded from custom rendering (entire mod).
 	excludedModIds = ["pointblank", "jeg", "cataclysm"]
 	#Skips the blockItem renderer, useful especially for create items because they're already 3D.

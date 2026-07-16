@@ -1,9 +1,0 @@
-{
-  "type": "nomansland:ancestral_effigy",
-  "config": {
-    "tries": 86,
-    "xz_spread": 7,
-    "y_spread": 3,
-    "stack_chance": 0.3
-  }
-}

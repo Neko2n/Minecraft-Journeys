@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "11",
+    "11"
+  ],
+  "key": {
+    "1": {
+      "tag": "bountifulfares:fruit_logs"
+    }
+  },
+  "result": {
+    "id": "supplementaries:fine_wood",
+    "count": 2
+  }
+}

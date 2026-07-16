@@ -1,0 +1,18 @@
+filename = 'firefly_bush_backport-1.21.1-1.1.1.jar'
+name = 'Firefly Bush Backport'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.1'
+
+[download]
+hash = '034e67507f2b3ec32f9da3c701c6a6c8286a2e0792ccf11047290365b8d84ec8f8764972742e6e580474e367651f968b30193ed4411a03bab837ff5192ab94bc'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/fWv64ug8/versions/E7uaYw5l/firefly_bush_backport-1.21.1-1.1.1.jar'
+
+[update.modrinth]
+mod-id = 'fWv64ug8'
+version = 'E7uaYw5l'
