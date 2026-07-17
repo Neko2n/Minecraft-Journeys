@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "IncrementalMiningMixins$Rules",
-    "IncrementalMiningMixins$Feedback"
+    "IncrementalMiningMixins$Feedback",
+    "LocalPlayerMixins"
   ],
   "injectors": {
     "defaultRequire": 1

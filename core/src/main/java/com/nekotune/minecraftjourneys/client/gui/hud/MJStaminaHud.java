@@ -47,47 +47,44 @@ public class MJStaminaHud implements IGuiLayer {
             this.minecraft.getProfiler().push("staminaHud");
             final float stamina = playerStamina.get();
             final float proportion = stamina / ((float) maxStamina);
-            final int k = (int)(proportion * ((float) IMG_WIDTH + 1f));
+            final int fill = (int)(proportion * ((float) IMG_WIDTH + 1f));
             final int l = guiGraphics.guiHeight() - 32 + 3;
-            final ResourceLocation background = SpriteManager
+            final ResourceLocation background = SpriteCache
                     .getSprite(false, maxStamina);
-            final ResourceLocation filled = SpriteManager
+            final ResourceLocation filled = SpriteCache
                     .getSprite(true, maxStamina);
             RenderSystem.enableBlend();
             guiGraphics.blitSprite(background,
                     x, l,
                     IMG_WIDTH, IMG_HEIGHT);
-            if (k > 0) {
+            if (fill > 0) {
                 guiGraphics.blitSprite(filled,
                         IMG_WIDTH, IMG_HEIGHT,
                         0, 0,
                         x, l,
-                        k, IMG_HEIGHT);
+                        fill, IMG_HEIGHT);
             }
             RenderSystem.disableBlend();
             this.minecraft.getProfiler().pop();
         }
     }
 
-    private static final class SpriteManager {
+    private static final class SpriteCache {
 
-        private static ResourceLocation[] cacheBackground = new ResourceLocation[10];
-        private static ResourceLocation[] cacheFilled = new ResourceLocation[10];
+        private static ResourceLocation backgroundSprite = null;
+        private static ResourceLocation filledSprite = null;
+        private static int i = -1;
 
-        public static ResourceLocation getSprite(boolean filled, Integer maxStamina) {
-            final String path = filled ? "filled/" : "background/";
-            final ResourceLocation[] cache = filled ? cacheFilled : cacheBackground;
-            if (cache.length < maxStamina) {
-                cacheFilled = new ResourceLocation[maxStamina];
-                cacheBackground = new ResourceLocation[maxStamina];
+        public static ResourceLocation getSprite(boolean filled, int maxStamina) {
+            if (i != maxStamina) {
+                i = maxStamina;
+                final String s = String.valueOf(maxStamina);
+                filledSprite = ResourceLocation.fromNamespaceAndPath(
+                        MinecraftJourneys.MOD_ID, "hud/stamina/filled/" + s);
+                backgroundSprite = ResourceLocation.fromNamespaceAndPath(
+                        MinecraftJourneys.MOD_ID, "hud/stamina/background/" + s);
             }
-            ResourceLocation resource = cache[maxStamina - 1];
-            if (resource == null) {
-                resource = ResourceLocation.fromNamespaceAndPath(
-                        MinecraftJourneys.MOD_ID, "hud/stamina/" + path + String.valueOf(maxStamina));
-                cache[maxStamina - 1] = resource;
-            }
-            return resource;
+            return filled ? filledSprite : backgroundSprite;
         }
     }
 }
