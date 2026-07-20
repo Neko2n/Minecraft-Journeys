@@ -27,6 +27,7 @@ sourceSets.main.resources {
 }
 
 repositories {
+    mavenCentral()
     exclusiveContent {
         forRepository {
             maven {
@@ -162,7 +163,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     // Content
-    implementation name: "natures_spirit-2.3.0-1.21.1" // Nature's Spirit
+    implementation ":natures_spirit-2.3.0-1.21.1" // Nature's Spirit
     implementation "maven.modrinth:fFEIiSDQ:53oYzPfG" // Supplementaries
     implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
@@ -187,8 +188,9 @@ dependencies {
     implementation "maven.modrinth:AANobbMI:S3DUMfBo" // Sodium
     implementation "maven.modrinth:3KUWeVhG:dqlL6EvF" // Veil
 
-    // Developer Tools
-    implementation "maven.modrinth:qy8EtCnG:E02gbf8F" // ImGui MC
+    // ImGui MC
+    implementation "maven.modrinth:qy8EtCnG:E02gbf8F"
+    compileOnly "io.github.spair:imgui-java-binding:1.92.0"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

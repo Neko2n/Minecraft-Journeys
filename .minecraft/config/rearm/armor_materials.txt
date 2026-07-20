@@ -15,6 +15,7 @@ mowziesmobs:sol_visage
 mowziesmobs:umvuthana_mask
 mowziesmobs:wrought_helm
 mowziesmobs:geomancer_armor
+aeronautics:aviators_goggles
 the_beyond:shroud
 the_beyond:anchor
 create:copper

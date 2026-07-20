@@ -44,3 +44,11 @@ additionalUpswingMultiplier = 0.15
 entityBlacklist = []
 #Log one-off diagnostics about resolved weapon poses and attack animations. Useful when reporting a bug; noisy otherwise.
 debugLogging = false
+#Ticks between an empty-handed mob starting its attack and dealing damage. Set to 0 for vanilla instant damage.
+# Default: 6
+# Range: 0 ~ 40
+emptyHandedAttackDelayTicks = 6
+#Extra blocks added to Better Combat mob melee reach and hit detection.
+# Default: 0.0
+# Range: 0.0 ~ 16.0
+additionalAttackRange = 0.0

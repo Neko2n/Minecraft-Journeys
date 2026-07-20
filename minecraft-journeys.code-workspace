@@ -155,7 +155,10 @@
                 },
                 "interface": "#9eb8d7",
                 "enum": "#9eb8d7",
-                "enumMember": "#6e8bc4",
+                "enumMember": {
+                    "foreground": "#6e8bc4",
+                    "bold": true,
+                },
                 "function": "#efa861",
                 "method": "#e0cc9a",
                 "method.declaration": "#eacc6a",
@@ -167,10 +170,11 @@
                     "bold": false
                 },
                 "parameter": "#d5bbb3",
+                "parameter.readonly": "#a1a4c7",
                 "property": "#bcbcbc",
                 "property.readonly": "#6e8bc4",
                 "variable": "#ABB2BF",
-                "variable.readonly": "#6e8bc4",
+                "variable.readonly": "#8e9fc2",
                 "keyword": "#e06c75",
                 "modifier": "#e06c75"
             }

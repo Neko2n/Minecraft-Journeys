@@ -9,7 +9,7 @@
 	bladeHeight = 0.35
 	#Scales the built-in blade height variation. 1.0 is the default look; 0 makes blades uniform.
 	# Default: 1.0
-	# Range: 0.0 ~ 2.0
+	# Range: 0.0 ~ 5.0
 	heightVariation = 1.0
 	#Width multiplier for grass blades.
 	# Default: 1.2
@@ -46,21 +46,33 @@
 	# Default: 0.0
 	# Range: 0.0 ~ 360.0
 	windDirectionDegrees = 0.0
-	#If true, wind smoothly wanders in direction and varies speed between 35 and 110.
+	#If true, wind smoothly wanders in direction and varies speed between 70 and 110.
 	dynamicWind = true
+	#Fraction of blades removed from clump rims inward. 0 keeps all; 1 removes all.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	grassSparsity = 0.0
+	#Replace vanilla short and tall grass plants with generated custom blades.
+	grassPlantsAsBlades = true
+	#Flowers surrounded by more flowers sprout extra companions, filling out patches.
+	denseFlowers = true
+	#Shed occasional grass-blade particles into sufficiently strong wind.
+	bladeParticles = true
+	#Render grass blades when a thin snow layer covers the grass block.
+	grassThroughSnow = false
+	#Render grass blades and re-rendered plants into Iris/Oculus shader-pack shadow maps.
+	shaderPackShadows = false
+	#Maximum stable per-blade hue offset in degrees.
+	# Default: 15.0
+	# Range: 0.0 ~ 30.0
+	bladeHueJitterDegrees = 15.0
+	#Multiplier limiting the dynamic-wind speed range. 1.0 preserves 70-110; 0.0 is calm.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	dynamicWindSpeedLimit = 1.0
 
 [plants]
 	#Block ids Grassier Grass should leave to vanilla rendering instead of hiding and re-rendering.
-	plantBlacklist = [
-		"minecraft:seagrass",
-		"minecraft:sea_pickle",
-		"bountifulfares:hanging_apple",
-		"bountifulfares:hanging_lemon",
-		"bountifulfares:hanging_orange",
-		"bountifulfares:hanging_plum",
-		"bountifulfares:hanging_hoary_apple",
-		"bountifulfares:hanging_golden_apple",
-		"bountifulfares:hanging_withered_golden_apple",
-		"bountifulfares:hanging_walnuts",
-		"bountifulpears:hanging_pear"
-	]
+	plantBlacklist = ["minecraft:seagrass", "minecraft:sea_pickle", "bountifulfares:hanging_apple", "bountifulfares:hanging_lemon", "bountifulfares:hanging_orange", "bountifulfares:hanging_plum", "bountifulfares:hanging_hoary_apple", "bountifulfares:hanging_golden_apple", "bountifulfares:hanging_withered_golden_apple", "bountifulfares:hanging_walnuts", "bountifulpears:hanging_pear"]
+	#Extra block ids Grassier Grass should hide and re-render as grass blades.
+	plantWhitelist = []
