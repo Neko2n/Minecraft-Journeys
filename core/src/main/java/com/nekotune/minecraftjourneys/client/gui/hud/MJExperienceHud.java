@@ -10,7 +10,10 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
+@OnlyIn(value = Dist.CLIENT)
 public class MJExperienceHud implements IGuiLayer {
     public static final ResourceLocation EXPERIENCE_BAR = ResourceLocation.fromNamespaceAndPath(MinecraftJourneys.MOD_ID, "hud/experience/bar");
     public static final ResourceLocation EXPERIENCE_LEVEL = ResourceLocation.fromNamespaceAndPath(MinecraftJourneys.MOD_ID, "hud/experience/number");

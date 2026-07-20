@@ -2,7 +2,7 @@ package com.nekotune.minecraftjourneys.client.hooks.register;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.client.gui.hud.MJExperienceHud;
-import com.nekotune.minecraftjourneys.client.gui.hud.MJStaminaHud;
+import com.nekotune.minecraftjourneys.client.gui.hud.stamina.MJStaminaHud;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;

@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.CreativeModeTabRegistry;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @EventBusSubscriber
-public class BuildCreativeTabs {
+public final class BuildCreativeTabs {
     
     @SubscribeEvent
     public static void onBuildCreativeTabs(BuildCreativeModeTabContentsEvent event) {

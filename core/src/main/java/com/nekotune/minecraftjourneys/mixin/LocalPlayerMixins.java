@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.nekotune.minecraftjourneys.shared.systems.PlayerStamina;
+import com.nekotune.minecraftjourneys.shared.systems.stamina.PlayerStamina;
 
 import net.minecraft.client.player.LocalPlayer;
 
@@ -16,6 +16,6 @@ public class LocalPlayerMixins {
     private void modpack$hasEnoughFoodToStartSprinting(CallbackInfoReturnable<Boolean> ci) {
         final LocalPlayer player = (LocalPlayer) (Object) this;
         final PlayerStamina stamina = PlayerStamina.get(player);
-        ci.setReturnValue(player.isPassenger() || player.mayFly() || stamina.get() > 0);
+        ci.setReturnValue(player.isPassenger() || player.mayFly() || stamina.getValue() > 0);
     }
 }
