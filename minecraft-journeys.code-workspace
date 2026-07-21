@@ -1,8 +1,8 @@
 {
     "folders": [
         {
-            "name": "Modpack Files (.minecraft)",
-            "path": ".minecraft"
+            "name": "Pack Data (.minecraft)",
+            "path": ".minecraft/datapacks/modpack"
         },
         {
             "name": "Mod Source (core)",
@@ -12,7 +12,7 @@
     "settings": {
         "java.configuration.updateBuildConfiguration": "automatic",
         "java.compile.nullAnalysis.mode": "disabled",
-        "java.jdt.ls.vmargs": "-Xmx1G -XX:+UseG1GC",
+        "java.jdt.ls.vmargs": "-Xmx2G -XX:+UseG1GC",
         "files.watcherExclude": {
             "**/.git/objects/**": true,
             "**/target/**": true, 

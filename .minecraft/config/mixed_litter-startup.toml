@@ -1,6 +1,6 @@
 [remodels]
 	#If the rabbit remodel and texture variants are enabled
-	rabbitRemodel = false
+	rabbitRemodel = true
 	#Config changes require a restart to take effect
 	#If the chicken remodel and texture variants are enabled
 	chickenRemodel = true

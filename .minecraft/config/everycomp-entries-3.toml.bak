@@ -1,6 +1,3 @@
-#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
-[types]
-
 		[types.wood_type.newworld]
 			fir = false
 
@@ -43,10 +40,6 @@
 		[types.wood_type.bountifulfares]
 			hoary = true
 			walnut = true
-
-		[types.wood_type.alexscaves]
-			pewen = true
-			thornwood = true
 
 		[types.wood_type.enderscape]
 			veiled = true
@@ -119,9 +112,6 @@
 		[types.leaves_type.newworld]
 			fir = true
 
-		[types.leaves_type.primal]
-			thorny_acacia = true
-
 		[types.leaves_type.bountifulfares]
 			apple = true
 			flowering_apple = true
@@ -136,13 +126,11 @@
 			golden_apple = true
 			flowering_golden_apple = true
 
-		[types.leaves_type.alexscaves]
-			ancient = true
-
 		[types.leaves_type.spawn]
 			date = true
 
 		[types.cake.bountifulfares]
+			#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
 			coconut_cake = true
 			cocoa_cake = true
 			sponge_cake = true
@@ -203,9 +191,6 @@
 		[types.lantern.curiosities]
 			heavy_lantern = true
 			heavy_soul_lantern = true
-
-#Disables specific entries
-[entries]
 
 		[entries.wood_type.curiosities]
 			fancied_planks = false

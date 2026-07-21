@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Supplier;
 
+import javax.annotation.Nullable;
+
 import org.joml.Math;
 
 import com.nekotune.minecraftjourneys.MJConfig;
@@ -68,18 +70,12 @@ public class PlayerStamina {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             final ClientLevel level = Minecraft.getInstance().level;
             if (level != null) {
-                final Player player = level.getPlayerByUUID(playerId);
-                if (player != null) {
-                    return Optional.of(level.getPlayerByUUID(playerId));
-                }
+                return Optional.ofNullable(level.getPlayerByUUID(playerId));
             }
         } else {
             final MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
             if (server != null) {
-                final ServerPlayer serverPlayer = server.getPlayerList().getPlayer(playerId);
-                if (serverPlayer != null) {
-                    return Optional.of(serverPlayer);
-                }
+                return Optional.ofNullable(server.getPlayerList().getPlayer(playerId));
             }
         }
         return Optional.empty();
@@ -291,12 +287,13 @@ public class PlayerStamina {
 
     /**
      * Returns the PlayerStamina object attached to the given player.
+     * Returns an unlinked dummy instance if the player's stamina isn't initialized.
      * 
      * @param player The player owner of the returned PlayerStamina object
-     * @return PlayerStamina object
+     * @return PlayerStamina object.
      */
     public static PlayerStamina get(final Player player) {
-        return MAP.get(player.getUUID());
+        return MAP.getOrDefault(player.getUUID(), new PlayerStamina(player));
     }
 
     /**
@@ -373,7 +370,8 @@ public class PlayerStamina {
         @SubscribeEvent
         public static void onPlayerTickPost(PlayerTickEvent.Post event) {
             final Player player = event.getEntity();
-            PlayerStamina.get(player).tick(player);
+            PlayerStamina.get(player.getUUID())
+                    .ifPresent(stamina -> stamina.tick(player));
         }
 
         @SubscribeEvent

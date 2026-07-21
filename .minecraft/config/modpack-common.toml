@@ -1,17 +1,28 @@
-## Stamina settings
-#A global multiplier applied to stamina drain.
-# Default: 1.0
-# Range: 0.0 ~ 3.4028234663852886E38
-staminaDrainMultiplier = 1.0
-#A global multiplier applied to stamina regeneration.
-# Default: 1.0
-# Range: 0.0 ~ 3.4028234663852886E38
-staminaRegenMultiplier = 1.0
-#The cooldown for stamina regeneration, in ticks.
-# Default: 40
-# Range: > 0
-staminaRegenCooldownTicks = 40
-#A global multiplier applied to the stamina penalty for swinging heavy weapons.
-# Default: 1.0
-# Range: 0.0 ~ 3.4028234663852886E38
-heavySwingStaminaMultiplier = 1.0
+[stamina]
+	## Stamina settings
+	#A global multiplier applied to base stamina drain.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.4028234663852886E38
+	base_drain_multiplier = 1.0
+	#A global multiplier applied to base stamina regeneration.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.4028234663852886E38
+	base_regen_multiplier = 1.0
+	#The cooldown for stamina regeneration, in ticks.
+	# Default: 60
+	# Range: > 0
+	regen_cooldown = 60
+	#A global multiplier applied to the stamina penalty for swinging heavy weapons.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.4028234663852886E38
+	heavy_swing_penalty_multiplier = 1.0
+	#The conversion rate multiplied against gained experience to convert into stamina.
+	xp_to_stamina = 0.05
+	#A global multiplier applied to the stamina penalty for the soul speed enchantment.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.4028234663852886E38
+	soul_speed_multiplier = 1.0
+	#A global multiplier applied to stamina consumption from using Reliable Gliders' gliders.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.4028234663852886E38
+	glider_drain_multiplier = 1.0

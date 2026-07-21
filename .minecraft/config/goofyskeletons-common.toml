@@ -1,0 +1,4 @@
+#How much the skeletons will miss their shots. Higher value means more inaccuracy.
+# Default: 10
+# Range: 0 ~ 20
+inaccuracyFactor = 10
