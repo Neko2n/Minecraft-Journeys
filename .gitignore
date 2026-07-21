@@ -50,7 +50,7 @@ run/
 repo/
 !**/src/**/repo/
 
-## Other ###
+### Other ###
 /desktop.ini
 /resourcepacks/
 /net/
