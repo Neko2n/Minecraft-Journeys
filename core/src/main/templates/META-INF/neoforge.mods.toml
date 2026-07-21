@@ -51,7 +51,11 @@ Example mod description.
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
-config="${mod_id}.mixins.json"
+config="mixin/${mod_id}.mixins.json"
+
+[[mixins]]
+config="mixin/reliable_gliders.mixins.json"
+requiredMods = ["reliable_gliders"]
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -92,15 +96,8 @@ config="${mod_id}.mixins.json"
     modId="veil"
     type="required"
     versionRange="[0,)"
-    ordering="BEFORE"
+    ordering="AFTER"
     side="BOTH"
-
-[[dependencies.${mod_id}]]
-    modId="windy"
-    type="optional"
-    versionRange="[0,)"
-    ordering="BEFORE"
-    side="CLIENT"
 
 [[dependencies.${mod_id}]]
     modId="betterclouds"
@@ -181,6 +178,13 @@ config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
     modId="bettercombat"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="reliable_gliders"
     type="optional"
     versionRange="[0,)"
     ordering="AFTER"

@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.client.hooks.render;
+package com.nekotune.minecraftjourneys.client.logic.render;
 
 import java.util.HashSet;
 import java.util.List;

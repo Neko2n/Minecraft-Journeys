@@ -162,6 +162,7 @@ configurations {
 
 configurations.minimalClientImplementation {
     exclude group: 'maven.modrinth', module: '5sy6g3kz' // Better Combat
+    exclude group: 'maven.modrinth', module: 'pVIWsXir' // Reliable Gliders
 }
 
 dependencies {
@@ -201,6 +202,7 @@ dependencies {
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
     implementation "maven.modrinth:tfjmPSbI:xDwRcEoZ" // Caverns & Chasms
     implementation "maven.modrinth:5sy6g3kz:VhIOvcXP" // Better Combat
+    implementation "maven.modrinth:pVIWsXir:ntiVNsBO" // Reliable Gliders
 
     // Graphics
     implementation "maven.modrinth:3jCB9cn2:oExXoCBC" // Grassier Grass

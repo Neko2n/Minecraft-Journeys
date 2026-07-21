@@ -31,10 +31,12 @@ public class MinecraftJourneys {
     public static final String MOD_ID = "modpack";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static enum Dependency {
-        BETTER_COMBAT
+        BETTER_COMBAT,
+        RELIABLE_GLIDERS
     }
     public static final EnumMap<Dependency, ModDependency> DEPENDENCIES = new EnumMap<>(Map.of(
-        Dependency.BETTER_COMBAT, new ModDependency("bettercombat")
+        Dependency.BETTER_COMBAT, new ModDependency("bettercombat"),
+        Dependency.RELIABLE_GLIDERS, new ModDependency("reliable_gliders")
     ));
     
     
@@ -44,7 +46,7 @@ public class MinecraftJourneys {
      */
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
-    public static @interface UnreliableEventBusSubscriber {
+    public static @interface DependentEventBusSubscriber {
 
         /**
          * The mod dependency that should be checked.
@@ -71,7 +73,7 @@ public class MinecraftJourneys {
         NeoForge.EVENT_BUS.register(this);
 
         // Register optional dependency event subscriber classes
-        final var annotationType = UnreliableEventBusSubscriber.class;
+        final var annotationType = DependentEventBusSubscriber.class;
         ModList.get().getModFileById(MOD_ID).getFile().getScanResult()
                 .getAnnotatedBy(annotationType, ElementType.TYPE)
                 .forEach(annotationData -> {

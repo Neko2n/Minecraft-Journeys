@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.hooks;
+package com.nekotune.minecraftjourneys.shared.logic;
 
 import java.util.Optional;
 

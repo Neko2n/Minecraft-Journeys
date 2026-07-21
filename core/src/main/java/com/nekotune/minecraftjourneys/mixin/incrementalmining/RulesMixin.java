@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.jdynamo.incrementalmining.mining.MiningTargets;
 import com.nekotune.minecraftjourneys.shared.definitions.item.tool.KnifeItem;
-import com.nekotune.minecraftjourneys.shared.hooks.ToolRequirements;
+import com.nekotune.minecraftjourneys.shared.logic.ToolRequirements;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;

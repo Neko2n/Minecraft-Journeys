@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.client.hooks.register;
+package com.nekotune.minecraftjourneys.client.logic.register;
 
 import java.util.stream.Stream;
 

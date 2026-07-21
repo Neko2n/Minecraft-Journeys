@@ -48,6 +48,8 @@ public class PlayerStamina {
     private final String playerName;
     private float stamina;
     private int maxStamina;
+    private float cycle = 0f;
+    private Map<String, Cycle> cycleMap = new HashMap<>();
     private float drainRate = 0.05f;
     private float regenRate = 0.05f;
     private int regenCooldownTicks = 0;
@@ -176,82 +178,115 @@ public class PlayerStamina {
     }
 
     /**
-     * Returns the player's current stamina.
+     * @return The player's current stamina.
      */
     public float getValue() {
         return stamina;
     }
 
     /**
-     * Returns the player's maximum stamina.
+     * @return The player's maximum stamina.
      */
     public int getMaxValue() {
         return maxStamina;
     }
 
     /**
-     * Returns the per-second rate that stamina should regenerate at.
+     * @return True if the player's current stamina is 0.
      */
-    public float regenRate() {
-        return regenRate * MJConfig.STAMINA_REGEN_MULTIPLIER.get().floatValue();
+    public boolean isEmpty() {
+        return stamina == 0f;
+    }
+
+    protected float getBaseRegenRate() {
+        return regenRate * MJConfig.STAMINA_BASE_REGEN_MULTIPLIER.get().floatValue() / 20f;
+    }
+
+    protected float getBaseDrainRate() {
+        return drainRate * MJConfig.STAMINA_BASE_DRAIN_MULTIPLIER.get().floatValue() / 20f;
     }
 
     /**
-     * Returns the per-second rate that stamina should drain at.
+     * Adds a basic regen cycle to be applied each tick until its removal.
+     * @return The removable cycle instance.
      */
-    public float drainRate() {
-        return drainRate * MJConfig.STAMINA_DRAIN_MULTIPLIER.get().floatValue();
+    public Cycle addCycleBasicRegen() {
+        return new Cycle(this, getBaseRegenRate());
     }
 
     /**
-     * Returns whether or not the player's stamina is currently able to regenerate
-     * passively.
+     * Adds a basic drain cycle to be applied each tick until its removal.
+     * @return The removable cycle instance.
      */
-    public boolean canRegen() {
-        return true;
+    public Cycle addCycleBasicDrain() {
+        return new Cycle(this, getBaseDrainRate());
     }
 
     /**
-     * @return True if the player's stamina should be draining.
+     * Adds a cycle to be applied each tick until its removal.
+     * @param deltaStamina The stamina to be added each tick while this cycle is active.
+     * @return The removable cycle instance.
      */
-    public boolean shouldDrain() {
-        final var player = player();
-        if (player.isEmpty()) return false;
-        return player.get().isSprinting();
+    public Cycle addCycle(final float deltaStamina) {
+        return new Cycle(this, deltaStamina);
+    }
+
+    /**
+     * Maps a cycle object to a given string key, to be indexed later.
+     * @param key The string key to map the cycle instance to.
+     * @param value The cycle instance to map to the key.
+     * @return The passed in cycle instance.
+     */
+    public Cycle mapCycleToKey(final String key, final Cycle value) {
+        cycleMap.put(key, value);
+        return value;
+    }
+
+    /**
+     * Fetches a cycle object using the given map key.
+     * @param key The string key to use for lookup.
+     * @return The cycle instance mapped to the given key.
+     */
+    public Optional<Cycle> getCycleFromKey(final String key) {
+        final var c = cycleMap.get(key);
+        return (c == null) ? Optional.empty() : Optional.of(c);
+    }
+
+    /**
+     * @return The amount of passive regen that should be applied each tick.
+     */
+    public float passiveRegen() {
+        return this.regenCooldownTicks > 0 ? 0f : getBaseRegenRate();
     }
 
     /**
      * Temporarily pauses the player's stamina regeneration.
-     * @see MJConfig
+     * @see MJConfig#STAMINA_REGEN_COOLDOWN_TICKS
      */
     public void delayRegen() {
         this.regenCooldownTicks = MJConfig.STAMINA_REGEN_COOLDOWN_TICKS.get();
     }
 
     /**
-     * @see EventHooks
+     * @see EventHooks#onPlayerTickPost
      */
-    protected void tick() {
-        final var preEvent = new StaminaEvent.TickEvent.Pre(this);
-        NeoForge.EVENT_BUS.post(preEvent);
-        final float cycle;
-        if (shouldDrain()) {
-            cycle = -drainRate() / 20.0f;
-            delayRegen();
-        } else if (canRegen()) {
-            if (regenCooldownTicks == 0) {
-                cycle = regenRate() / 20.0f;
-            } else {
-                regenCooldownTicks--;
-                cycle = 0f;
-            }
+    protected void tick(final Player player) {
+        NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.Pre(this, player));
+        float deltaStamina = this.cycle;
+        deltaStamina += passiveRegen();
+        regenCooldownTicks = Math.max(0, regenCooldownTicks - 1);
+        final var preCycleEvent = NeoForge.EVENT_BUS.post(
+                new StaminaEvent.TickEvent.CycleEvent.Pre(this, player, deltaStamina));
+        final float previousStamina = stamina;
+        if (preCycleEvent.isCanceled()) {
+            deltaStamina = 0f;
         } else {
-            delayRegen();
-            cycle = 0f;
+            deltaStamina = preCycleEvent.getCycleValue();
+            stamina = Math.clamp(0f, getMaxValue(), stamina + deltaStamina);
+            deltaStamina = stamina - previousStamina;
         }
-        stamina = Math.clamp(0f, getMaxValue(), stamina + cycle);
-        final var postEvent = new StaminaEvent.TickEvent.Post(this, cycle);
-        NeoForge.EVENT_BUS.post(postEvent);
+        NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.CycleEvent.Post(this, player, deltaStamina, previousStamina));
+        NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.Post(this, player, deltaStamina));
     }
 
     /**
@@ -268,18 +303,17 @@ public class PlayerStamina {
      * Returns the PlayerStamina object attached to the given player ID.
      * 
      * @param playerId The UUID of the player owner of the returned PlayerStamina object
-     * @return PlayerStamina object
+     * @return PlayerStamina weak reference
      */
-    public static PlayerStamina get(final UUID playerId) {
-        return MAP.get(playerId);
+    public static Optional<PlayerStamina> get(final UUID playerId) {
+        return Optional.ofNullable(MAP.get(playerId));
     }
 
     /**
      * @see EventHooks Implementation
      */
     private static void init(final Player player) {
-        if (MAP.containsKey(player.getUUID())) return;
-        MAP.put(player.getUUID(), new PlayerStamina(player));
+        MAP.putIfAbsent(player.getUUID(), new PlayerStamina(player));
     }
 
     /**
@@ -339,7 +373,7 @@ public class PlayerStamina {
         @SubscribeEvent
         public static void onPlayerTickPost(PlayerTickEvent.Post event) {
             final Player player = event.getEntity();
-            PlayerStamina.get(player).tick();
+            PlayerStamina.get(player).tick(player);
         }
 
         @SubscribeEvent
@@ -361,6 +395,21 @@ public class PlayerStamina {
         public static void onClientPlayerLoggingOut(final ClientPlayerNetworkEvent.LoggingOut event) {
             if (event.getPlayer() == null) return;
             PlayerStamina.unlink(event.getPlayer());
+        }
+    }
+
+    public static final class Cycle {
+        private final Runnable onRemove;
+
+        public Cycle(PlayerStamina stamina, final float amount) {
+            onRemove = () -> {
+                stamina.cycle -= amount;
+            };
+            stamina.cycle += amount;
+        }
+
+        public void remove() {
+            onRemove.run();
         }
     }
 }

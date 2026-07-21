@@ -1,16 +1,15 @@
-package com.nekotune.minecraftjourneys.shared.hooks;
+package com.nekotune.minecraftjourneys.shared.logic.stamina;
 
 import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.evandev.reliable_gliders.api.GlidingState;
 import com.nekotune.minecraftjourneys.MJConfig;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.ModDependency;
-import com.nekotune.minecraftjourneys.MinecraftJourneys.UnreliableEventBusSubscriber;
-import com.nekotune.minecraftjourneys.shared.logic.stamina.GUIAnimationProperties;
-import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
+import com.nekotune.minecraftjourneys.MinecraftJourneys.DependentEventBusSubscriber;
 
 import net.bettercombat.api.AttackHand;
 import net.bettercombat.api.client.BetterCombatClientEvents;
@@ -37,7 +36,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.LeftClickEmpty;
 
 @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
-public class StaminaModifiers {
+public class StaminaHooks {
     private static final ModDependency betterCombat = MinecraftJourneys.DEPENDENCIES.get(Dependency.BETTER_COMBAT);
 
     private static float lastAttackStrengthScale = 1.0f;
@@ -53,6 +52,18 @@ public class StaminaModifiers {
             attackedFullStrength = true;
         }
         lastAttackStrengthScale = player.getAttackStrengthScale(0.0f);
+    }
+
+    /**
+     * Stamina drains while sprinting.
+     */
+    @SubscribeEvent
+    public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+        final var player = event.getPlayer();
+        if (player.isSprinting()) {
+            event.addBasicDrain();
+            event.getStamina().delayRegen();
+        }
     }
 
     /**
@@ -152,9 +163,9 @@ public class StaminaModifiers {
         return 0d;
     }
 
-    @UnreliableEventBusSubscriber(dependency = Dependency.BETTER_COMBAT, value = Dist.CLIENT)
+    @DependentEventBusSubscriber(dependency = Dependency.BETTER_COMBAT, value = Dist.CLIENT)
     @OnlyIn(value = Dist.CLIENT)
-    public static final class BetterCombatHooks {
+    public static final class BetterCombatClientHooks {
 
         private static boolean registered = false;
 
@@ -162,8 +173,8 @@ public class StaminaModifiers {
         public static void onClientLoggedIn(ClientPlayerNetworkEvent.LoggingIn event) {
             if (registered)
                 return;
-            BetterCombatClientEvents.ATTACK_HIT.register(BetterCombatHooks::onAttackHit);
-            BetterCombatHooks.registered = true;
+            BetterCombatClientEvents.ATTACK_HIT.register(BetterCombatClientHooks::onAttackHit);
+            BetterCombatClientHooks.registered = true;
         }
 
         private static void onAttackHit(LocalPlayer player, AttackHand attackHand,
@@ -172,6 +183,22 @@ public class StaminaModifiers {
                 swingWeaponEvent(attackHand.isOffHand() ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
             }
             // If the attack hit any entities, onHitEnemy already handles success
+        }
+    }
+
+    /**
+     * Drain stamina while gliding, and cancel gliding if stamina runs out.
+     */
+    @DependentEventBusSubscriber(dependency = Dependency.RELIABLE_GLIDERS)
+    public static final class ReliableGlidersHooks {
+
+        @SubscribeEvent
+        public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+            final var player = event.getPlayer();
+            if (GlidingState.wasGliding(player)) {
+                event.addBasicDrain(MJConfig.STAMINA_GLIDER_DRAIN_MULTIPLIER.get().floatValue());
+                event.getStamina().delayRegen();
+            }
         }
     }
 }
