@@ -51,10 +51,10 @@ repo/
 !**/src/**/repo/
 
 ## Other ###
-desktop.ini
-resourcepacks/
-net/hibiscus/
-minecraft-1.21.1-source
+/desktop.ini
+/resourcepacks/
+/net/
+/minecraft-1.21.1-source
 
 ### NOTICE ON AI USE ###
 # AI tools were used for the following purposes:
