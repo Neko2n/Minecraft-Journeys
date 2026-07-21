@@ -3,7 +3,7 @@ package com.nekotune.minecraftjourneys.client.gui.hud.stamina;
 import java.util.UUID;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.systems.stamina.StaminaEvent;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.StaminaEvent;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;

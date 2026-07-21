@@ -1,0 +1,54 @@
+["battlemusic configs"]
+#Volume of battle music, set to zero to mute
+# Default: 1.0
+# Range: 0.0 ~ 5.0
+volume = 1.0
+#
+#Whether battle music's volume is affected by the music slider
+linked_to_music_volume = true
+#
+#How much the battle music changes in pitch when at low health    
+#    > Values below zero shift the pitch down, above zero shift the pitch up    
+#    > Set to zero to disable   
+# Default: 0.05
+# Range: -0.5 ~ 1.0
+health_pitch_amount = 0.05
+#
+#How much the battle music changes in pitch during the second phases of the Ender Dragon and Wither fights    
+#    > Values below zero shift the pitch down, above zero shift the pitch up  
+#    > Set to zero to disable     
+# Default: 0.05
+# Range: -0.5 ~ 1.0
+phase2_pitch_amount = 0.05
+#
+#At what HP should the battle music shift in pitch
+# Default: 6
+# Range: > 1
+health_pitch_thresh = 6
+#
+#Is the health threshold a percentage value?    
+#    > If it is, the above value must be between 1 and 100    
+health_pitch_percent = false
+#
+#How many seconds songs take to fade in and out
+# Default: 1.0
+# Range: 0.0 ~ 10.0
+fade_time = 1.0
+#
+#Entites and their respective songs, write in entity;song;priority format       
+#    > entity = the entity's ID, eg. "minecraft:pig"       
+#    > song = the song's ID, eg. "battlemusic:mini1"       
+#    > priority = what precedence this song takes over other entity's music, eg. a priority of 1 will fade out and play over a priority of 0.      
+entities_songs = [
+  "minecraft:warden;battlemusic:necromancer;1",
+  "minecraft:wither;battlemusic:wither_storm;2",
+  "minecraft:ender_dragon;battlemusic:enderman;5",
+  "bosses_of_mass_destruction:void_blossom;battlemusic:arena2;1",
+  "bosses_of_mass_destruction:lich;battlemusic:boss;2",
+  "bosses_of_mass_destruction:gauntlet;battlemusic:kermetic;3",
+  "bosses_of_mass_destruction:obsidilith;battlemusic:broken_heart_of_ender;3"
+]
+#
+#A generic battle song to play for any other undefined hostile entity      
+#    > Leave blank for no default battle music       
+default_song = ""

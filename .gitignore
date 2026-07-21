@@ -2,13 +2,12 @@
 .minecraft/*
 !.minecraft/icon.png
 !.minecraft/emi.json
-!.minecraft/shaderpacks/
 !.minecraft/resourcepacks/
 !.minecraft/mods/
-!.minecraft/kubejs/
 !.minecraft/config/
 !.minecraft/datapacks/
 .minecraft/mods/*.jar
+.minecraft/config/spark/**
 
 ### Gradle ###
 .gradle
@@ -50,6 +49,12 @@ run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+## Other ###
+desktop.ini
+resourcepacks/
+net/hibiscus/
+minecraft-1.21.1-source
 
 ### NOTICE ON AI USE ###
 # AI tools were used for the following purposes:

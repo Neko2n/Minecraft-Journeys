@@ -3,7 +3,7 @@ package com.nekotune.minecraftjourneys.shared.registries;
 import java.util.function.Supplier;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.systems.stamina.packet.MaxStaminaPacket;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.packet.MaxStaminaPacket;
 
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;

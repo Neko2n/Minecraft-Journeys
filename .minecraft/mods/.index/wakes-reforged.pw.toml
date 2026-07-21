@@ -17,13 +17,13 @@ mod-id = 'E0SdeAoH'
 version = 'jssHGPbO'
 
 [[x-prismlauncher-dependencies]]
+addonId = 'oWaK0Q19'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
 addonId = 'T9PomCSv'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
 addonId = 'LNytGWDc'
-type = 'OPTIONAL'
-
-[[x-prismlauncher-dependencies]]
-addonId = 'oWaK0Q19'
 type = 'OPTIONAL'

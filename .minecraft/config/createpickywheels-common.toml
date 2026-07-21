@@ -5,37 +5,18 @@
 	#Only enable pickyness onPlacement, if the water wheel was instead generated during worldgen, it works as default.
 	waterwheelsPickyOnPlacement = true
 
-	#Biome impact on waterwheel
-	[waterwheels."biome efficiency"]
-		#RPM Boost for Waterwheels placed on boosted biomes tag.
-		# Default: 1.0
-		# Range: 0.0 ~ 1.7976931348623157E308
-		waterwheelBiomeRPMBoost = 1.0
-		#RPM Penalty for Waterwheels placed on whitelisted but not on preferential biomes [waterwheel_boosted biome tag].
-		# Default: 0.75
-		# Range: 0.0 ~ 1.7976931348623157E308
-		waterwheelBiomeRPMPenalty = 0.75
-		#STRESS Boost for Waterwheels placed on boosted Biomes.
-		# Default: 1.25
-		# Range: 0.0 ~ 1.7976931348623157E308
-		waterwheelBiomeSTRESSBoost = 1.25
-		#STRESS Penalty for Waterwheels placed on whitelisted but not on preferential biomes [waterwheel_boosted biome tag].
-		# Default: 0.5
-		# Range: 0.0 ~ 1.7976931348623157E308
-		waterwheelBiomeSTRESSPenalty = 0.5
-
 	#Body of water requirement impact (similar to infinite fluid extraction from pulley)
 	[waterwheels."power source condition"]
+		#Penalty for Waterwheels placed under create's default conditions.
+		# Default: 0.5
+		# Range: 0.0 ~ 1.7976931348623157E308
+		waterwheelSourceRPMPenalty = 0.2
 		#When enabled waterwheels also work when under create's default conditions but at a penalty
 		waterwheelsPorqueNoLosDos = true
 		#Boost for Waterwheels placed on optimal conditions.
 		# Default: 1.5
 		# Range: 0.0 ~ 1.7976931348623157E308
 		waterwheelSourceRPMBoost = 1.5
-		#Penalty for Waterwheels placed under create's default conditions.
-		# Default: 0.5
-		# Range: 0.0 ~ 1.7976931348623157E308
-		waterwheelSourceRPMPenalty = 0.5
 		#Boost for Waterwheels placed on optimal conditions.
 		# Default: 1.25
 		# Range: 0.0 ~ 1.7976931348623157E308
@@ -60,6 +41,25 @@
 		# Default: 3
 		# Range: 1 ~ 7
 		waterwheelsMinimumShallowness = 3
+
+	#Biome impact on waterwheel
+	[waterwheels."biome efficiency"]
+		#RPM Boost for Waterwheels placed on boosted biomes tag.
+		# Default: 1.0
+		# Range: 0.0 ~ 1.7976931348623157E308
+		waterwheelBiomeRPMBoost = 1.0
+		#RPM Penalty for Waterwheels placed on whitelisted but not on preferential biomes [waterwheel_boosted biome tag].
+		# Default: 0.75
+		# Range: 0.0 ~ 1.7976931348623157E308
+		waterwheelBiomeRPMPenalty = 0.75
+		#STRESS Boost for Waterwheels placed on boosted Biomes.
+		# Default: 1.25
+		# Range: 0.0 ~ 1.7976931348623157E308
+		waterwheelBiomeSTRESSBoost = 1.25
+		#STRESS Penalty for Waterwheels placed on whitelisted but not on preferential biomes [waterwheel_boosted biome tag].
+		# Default: 0.5
+		# Range: 0.0 ~ 1.7976931348623157E308
+		waterwheelBiomeSTRESSPenalty = 0.5
 
 ##Windmill requirements
 [windmills]

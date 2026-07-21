@@ -1,0 +1,18 @@
+filename = 'battlemusic-1.2.0.jar'
+name = 'Battle Music'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.2.0'
+
+[download]
+hash = '70c084300825c5424afdcc34c81b6a62efef6cb4a4e286aeb4fe4caf3302106735e35c805445ff7b0336a532a37950c11a104127393f63ad5b85601e09923994'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/8HFCp5k3/versions/54jLMoeO/battlemusic-1.2.0.jar'
+
+[update.modrinth]
+mod-id = '8HFCp5k3'
+version = '54jLMoeO'

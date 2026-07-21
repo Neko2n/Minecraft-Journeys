@@ -31,5 +31,11 @@
 
   "sounds.modpack.spear.throw": "Spear thrown",
   "sounds.modpack.spear.hit": "Spear hits",
-  "sounds.modpack.spear.hit_ground": "Spear hits ground"
+  "sounds.modpack.spear.hit_ground": "Spear hits ground",
+
+  "config.modpack.stamina.drain_multiplier": "Stamina Drain Multiplier",
+  "config.modpack.stamina.regen_multiplier": "Stamina Regen Multiplier",
+  "config.modpack.stamina.regen_cooldown": "Stamina Regen Cooldown (ticks)",
+  "config.modpack.stamina.heavy_swing_penalty_multiplier": "Heavy Weapon Stamina Penalty Multiplier",
+  "config.modpack.stamina.xp_to_stamina": "XP to Stamina Conversion Rate"
 }

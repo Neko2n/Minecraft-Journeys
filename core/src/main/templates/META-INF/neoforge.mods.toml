@@ -97,28 +97,28 @@ config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
     modId="windy"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="BEFORE"
     side="CLIENT"
 
 [[dependencies.${mod_id}]]
     modId="betterclouds"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="CLIENT"
 
 [[dependencies.${mod_id}]]
     modId="atmospherics"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="CLIENT"
 
 [[dependencies.${mod_id}]]
     modId="grassiergrass"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="CLIENT"
@@ -175,6 +175,13 @@ config="${mod_id}.mixins.json"
 [[dependencies.${mod_id}]]
     modId="caverns_and_chasms"
     type="required"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="bettercombat"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"

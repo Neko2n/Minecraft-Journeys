@@ -1,8 +1,7 @@
 package com.nekotune.minecraftjourneys.client;
 
-import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.shared.systems.stamina.GUIAnimationProperties;
-import com.nekotune.minecraftjourneys.shared.systems.stamina.PlayerStamina;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.GUIAnimationProperties;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
 
 import foundry.imgui.neoforge.api.event.RenderImGuiEventsNeoforge;
 import imgui.ImGui;
@@ -12,11 +11,9 @@ import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 
-@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID, value = Dist.CLIENT)
 @OnlyIn(value = Dist.CLIENT)
 public final class MJImGui {
     private static boolean playerLoaded = false;

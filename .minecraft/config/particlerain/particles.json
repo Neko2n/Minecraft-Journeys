@@ -1,0 +1,30 @@
+{
+  "rain": {},
+  "heavy_dust": {
+    "enabled": false
+  },
+  "splatter": {},
+  "smoke": {},
+  "streak": {},
+  "mist": {},
+  "shrub": {
+    "enabled": true,
+    "density": 0.0,
+    "biomeList": {
+      "entries": [
+        "#c:is_badlands",
+        "#c:is_desert"
+      ],
+      "isWhitelist": true
+    }
+  },
+  "snow_haze": {},
+  "mist_after_rain": {},
+  "ripple": {},
+  "rain_haze": {},
+  "snow": {},
+  "dust": {
+    "enabled": false
+  },
+  "dust_haze": {}
+}

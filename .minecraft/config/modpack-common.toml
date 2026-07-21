@@ -1,10 +1,17 @@
-#Whether to log the dirt block on common setup
-logDirtBlock = true
-#A magic number
-# Default: 42
+## Stamina settings
+#A global multiplier applied to stamina drain.
+# Default: 1.0
+# Range: 0.0 ~ 3.4028234663852886E38
+staminaDrainMultiplier = 1.0
+#A global multiplier applied to stamina regeneration.
+# Default: 1.0
+# Range: 0.0 ~ 3.4028234663852886E38
+staminaRegenMultiplier = 1.0
+#The cooldown for stamina regeneration, in ticks.
+# Default: 40
 # Range: > 0
-magicNumber = 42
-#What you want the introduction message to be for the magic number
-magicNumberIntroduction = "The magic number is... "
-#A list of items to log on common setup.
-items = ["minecraft:iron_ingot"]
+staminaRegenCooldownTicks = 40
+#A global multiplier applied to the stamina penalty for swinging heavy weapons.
+# Default: 1.0
+# Range: 0.0 ~ 3.4028234663852886E38
+heavySwingStaminaMultiplier = 1.0

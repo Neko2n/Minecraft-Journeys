@@ -1,7 +1,6 @@
 package com.nekotune.minecraftjourneys.client.hooks.register;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.client.gui.hud.MJExperienceHud;
 import com.nekotune.minecraftjourneys.client.gui.hud.stamina.MJStaminaHud;
 
 import net.neoforged.api.distmarker.Dist;
@@ -17,6 +16,5 @@ public final class RegisterGuiLayers {
     @SubscribeEvent
     public static void onRegisterGuiLayers(RegisterGuiLayersEvent event) {
         new MJStaminaHud().register(event);
-        new MJExperienceHud().register(event);
     }
 }

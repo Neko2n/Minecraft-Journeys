@@ -26,6 +26,12 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache") // datagen cache files
 }
 
+sourceSets {
+    // Reuses the compiled "main" classes but resolves its own dependency set,
+    // so a run using this source set can omit specific mods.
+    minimalClient
+}
+
 repositories {
     mavenCentral()
     exclusiveContent {
@@ -63,6 +69,10 @@ neoForge {
     // This line is optional. Access Transformers are automatically detected
     // accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
 
+    // Gives the isolated "minimalClient" source set access to Minecraft/NeoForge itself,
+    // since it doesn't extend "main" and wouldn't otherwise see those dependencies.
+    addModdingDependenciesTo sourceSets.minimalClient
+
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
@@ -70,6 +80,13 @@ neoForge {
             client()
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        // Same as "client" but without optional dependencies, for testing purposes.
+        clientMinimal {
+            client()
+            sourceSet = sourceSets.minimalClient
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
 
@@ -127,6 +144,7 @@ neoForge {
         // multi mod projects should define one per mod
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.minimalClient)
         }
     }
 }
@@ -137,9 +155,20 @@ neoForge {
 // "optional", meaning it will not be pulled by dependents of this mod.
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+
+    // Inherits everything from "implementation", minus the mods excluded below.
+    minimalClientImplementation.extendsFrom(implementation)
+}
+
+configurations.minimalClientImplementation {
+    exclude group: 'maven.modrinth', module: '5sy6g3kz' // Better Combat
 }
 
 dependencies {
+
+    // Reuse the compiled "main" classes for the minimalClient run rather than recompiling.
+    minimalClientImplementation sourceSets.main.output
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -163,7 +192,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     // Content
-    implementation ":natures_spirit-2.3.0-1.21.1" // Nature's Spirit
+    implementation ":natures_spirit-2.3.0-1.21.1"     // Nature's Spirit
     implementation "maven.modrinth:fFEIiSDQ:53oYzPfG" // Supplementaries
     implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
@@ -171,6 +200,14 @@ dependencies {
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land
     implementation "maven.modrinth:YgrSDjlb:3EC8C1GU" // Bountiful Fares
     implementation "maven.modrinth:tfjmPSbI:xDwRcEoZ" // Caverns & Chasms
+    implementation "maven.modrinth:5sy6g3kz:VhIOvcXP" // Better Combat
+
+    // Graphics
+    implementation "maven.modrinth:3jCB9cn2:oExXoCBC" // Grassier Grass
+    implementation "maven.modrinth:ft2cYBpB:e3AdhSXi" // Atmospherics
+    implementation "maven.modrinth:5srFLIaK:XK8POrWQ" // Better Clouds
+    implementation "maven.modrinth:AANobbMI:S3DUMfBo" // Sodium
+    implementation "maven.modrinth:3KUWeVhG:dqlL6EvF" // Veil
     
     // Libraries
     implementation "maven.modrinth:twkfQtEc:JtfVx8PK" // Moonlight Lib (required by Supplementaries)
@@ -178,19 +215,13 @@ dependencies {
     implementation "maven.modrinth:bgDhVmqz:6oD2aKnX" // Nexus Lib (required by Bountiful Fares)
     implementation "maven.modrinth:VsM5EDoI:LMGtMapI" // Blueprint (required by Caverns & Chasms)
     implementation "maven.modrinth:EOA6vv83:HzOpAks9" // Gallery (required by Caverns & Chasms)
-    implementation "maven.modrinth:1eAoo2KR:7TVdVtxF" // YACL (required by Windy & Better Clouds)
-
-    // Graphics
-    implementation "maven.modrinth:3jCB9cn2:oExXoCBC" // Grassier Grass
-    implementation "maven.modrinth:ft2cYBpB:e3AdhSXi" // Atmospherics
-    implementation "maven.modrinth:EwYg6C78:xcBfBf8H" // Windy
-    implementation "maven.modrinth:5srFLIaK:XK8POrWQ" // Better Clouds
-    implementation "maven.modrinth:AANobbMI:S3DUMfBo" // Sodium
-    implementation "maven.modrinth:3KUWeVhG:dqlL6EvF" // Veil
+    implementation "maven.modrinth:1eAoo2KR:7TVdVtxF" // YACL (required by Better Clouds)
+    implementation "maven.modrinth:gedNE4y2:HJZB6bmA" // Player Animator (required by Better Combat)
+    implementation "maven.modrinth:9s6osm5g:izKINKFg" // Cloth Config API (required by Better Combat)
 
     // ImGui MC
     implementation "maven.modrinth:qy8EtCnG:E02gbf8F"
-    compileOnly "io.github.spair:imgui-java-binding:1.92.0"
+    compileOnly    "io.github.spair:imgui-java-binding:1.92.0"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

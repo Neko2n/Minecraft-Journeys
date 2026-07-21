@@ -1,0 +1,18 @@
+filename = 'ui_resprite-1.0.1-resourcepack-1.21.4.zip'
+name = "CodyTravis' HUD Resprite"
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.2', '1.21.3', '1.21.4', '1.21.5', '1.21.6', '1.21.7', '1.21.8' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.1'
+
+[download]
+hash = '22778355f93066d1bf4657bc2236be69175652cc476decdf48a21f681075d4b51050ab0b6047c3964b6efd41437fa18fd81afc9f92d6af3c71d33dbc0d32eef5'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/9ibjliAi/versions/jTAmDsMt/ui_resprite-1.0.1-resourcepack-1.21.4.zip'
+
+[update.modrinth]
+mod-id = '9ibjliAi'
+version = 'jTAmDsMt'

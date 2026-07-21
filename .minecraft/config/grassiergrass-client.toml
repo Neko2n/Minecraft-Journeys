@@ -6,7 +6,7 @@
 	#Height of the grass blades.
 	# Default: 0.35
 	# Range: 0.1 ~ 1.3
-	bladeHeight = 0.35
+	bladeHeight = 0.3499999940395355
 	#Scales the built-in blade height variation. 1.0 is the default look; 0 makes blades uniform.
 	# Default: 1.0
 	# Range: 0.0 ~ 5.0
@@ -14,7 +14,7 @@
 	#Width multiplier for grass blades.
 	# Default: 1.2
 	# Range: 0.25 ~ 2.0
-	bladeWidth = 1.2
+	bladeWidth = 1.2000000476837158
 	#How far (in blocks) grass renders around you. Cached per chunk, so distance is cheap.
 	# Default: 100
 	# Range: 16 ~ 160
@@ -33,7 +33,7 @@
 	#Brightness multiplier at the tip of each grass blade.
 	# Default: 1.1
 	# Range: 0.25 ~ 2.0
-	bladeGradientTop = 1.1
+	bladeGradientTop = 1.100000023841858
 	#Blade gradient response curve. 1.0 is linear.
 	# Default: 1.5
 	# Range: 0.1 ~ 4.0
@@ -69,10 +69,10 @@
 	#Multiplier limiting the dynamic-wind speed range. 1.0 preserves 70-110; 0.0 is calm.
 	# Default: 1.0
 	# Range: 0.0 ~ 1.0
-	dynamicWindSpeedLimit = 1.0
+	dynamicWindSpeedLimit = 0.800000011920929
 
 [plants]
 	#Block ids Grassier Grass should leave to vanilla rendering instead of hiding and re-rendering.
-	plantBlacklist = ["minecraft:seagrass", "minecraft:sea_pickle", "bountifulfares:hanging_apple", "bountifulfares:hanging_lemon", "bountifulfares:hanging_orange", "bountifulfares:hanging_plum", "bountifulfares:hanging_hoary_apple", "bountifulfares:hanging_golden_apple", "bountifulfares:hanging_withered_golden_apple", "bountifulfares:hanging_walnuts", "bountifulpears:hanging_pear"]
+	plantBlacklist = ["bountifulfares:hanging_apple", "bountifulfares:hanging_golden_apple", "bountifulfares:hanging_hoary_apple", "bountifulfares:hanging_lemon", "bountifulfares:hanging_orange", "bountifulfares:hanging_plum", "bountifulfares:hanging_walnuts", "bountifulfares:hanging_withered_golden_apple", "bountifulpears:hanging_pear", "minecraft:sea_pickle", "minecraft:seagrass"]
 	#Extra block ids Grassier Grass should hide and re-render as grass blades.
 	plantWhitelist = []

@@ -4,7 +4,8 @@
         "items": [
             "bountifulfares:sweet_berry_pips",
             "minecraft:leaf_litter",
-            "nomansland:willow_leaves"
+            "nomansland:willow_leaves",
+            "etcetera:hammer"
         ]
     },
     {
@@ -14,7 +15,8 @@
             "natures_spirit:.*beach_grass",
             "natures_spirit:.*melic_grass",
             "natures_spirit:.*scorched_grass",
-            "natures_spirit:.*frigid_grass"
+            "natures_spirit:.*frigid_grass",
+            "etcetera:.*cotton.*"
         ]
     },
     {
