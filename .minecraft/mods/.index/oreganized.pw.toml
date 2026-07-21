@@ -1,21 +1,21 @@
 filename = 'Oreganized 1.21.1-5.1.2.jar'
 name = 'Oreganized'
-side = ''
+side = 'both'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Oreganized 5.1.2'
+x-prismlauncher-version-number = '5.1.2'
 
 [download]
-hash = '1258156217420f377f0768557fb11f09c1505375'
-hash-format = 'sha1'
-mode = 'metadata:curseforge'
-url = ''
+hash = 'ef7689c85a7098597746c6e5171712a248c5f952ba8b70d3c2d8ce74164bf0dbbe555b17d6ce5a07b29de6e56a056f2a6afc040b03b490f25cadb0dd561d09b5'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/2FJutzEL/versions/IfqSv0rv/Oreganized 1.21.1-5.1.2.jar'
 
-[update.curseforge]
-file-id = 7707160
-project-id = 769203
+[update.modrinth]
+mod-id = '2FJutzEL'
+version = 'IfqSv0rv'
 
 [[x-prismlauncher-dependencies]]
-addonId = '382216'
+addonId = 'VsM5EDoI'
 type = 'REQUIRED'

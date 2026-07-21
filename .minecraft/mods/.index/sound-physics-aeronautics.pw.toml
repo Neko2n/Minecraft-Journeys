@@ -1,0 +1,18 @@
+filename = 'sound-physics-aeronautics-0.2.0-alpha.1.jar'
+name = 'Sound Physics: Aeronautics'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'alpha'
+x-prismlauncher-version-number = '1.21.1-1.5.1'
+
+[download]
+hash = 'c79caeb2a8a278a3b49e20f997f25d4c9d6891d842b67dc6740fdd7a4bd2b58efb66dc3e8c7584b60d3a0ead52a888da556d24854a7aef5955767227734d3795'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/JHKPj7kB/versions/R3qhVH9r/sound-physics-aeronautics-0.2.0-alpha.1.jar'
+
+[update.modrinth]
+mod-id = 'JHKPj7kB'
+version = 'R3qhVH9r'

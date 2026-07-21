@@ -1,21 +1,21 @@
 filename = 'mobsuseshields-0.8.5-1.21.1.jar'
 name = 'Mobs Use Shields'
-side = 'server'
+side = 'both'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'mobsuseshields-0.8.5-1.21.1.jar'
+x-prismlauncher-version-number = '0.8.5-1.21.1'
 
 [download]
-hash = '6539ffe662dc88692be4672477497cd121f7c8a2'
-hash-format = 'sha1'
-mode = 'metadata:curseforge'
-url = ''
+hash = 'c2eed71696c2f61f69f52b68e9702f6c5c48ba254ea57b45bcb498cd355b80f155278a221b5899a9278c262ae22dfae2ff48ce157095e7acdb1bc051c2540a5e'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/uX9IOzgf/versions/48VxEk5r/mobsuseshields-0.8.5-1.21.1.jar'
 
-[update.curseforge]
-file-id = 8194649
-project-id = 1479835
+[update.modrinth]
+mod-id = 'uX9IOzgf'
+version = '48VxEk5r'
 
 [[x-prismlauncher-dependencies]]
-addonId = '1484243'
+addonId = 'XMTApXrU'
 type = 'REQUIRED'

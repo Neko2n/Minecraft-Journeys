@@ -1,18 +1,18 @@
 filename = 'neurolib-0.3.3-1.21.1.jar'
 name = 'NeuroLib'
-side = 'server'
+side = 'both'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'neurolib-0.3.3-1.21.1.jar'
+x-prismlauncher-version-number = '0.3.3-1.21.1'
 
 [download]
-hash = 'f7da6f42e82851d9e7b7f48b112c152a92653749'
-hash-format = 'sha1'
-mode = 'metadata:curseforge'
-url = ''
+hash = '933c77fc69bfb2bae37cc2fe60d3e77185913781d0e5f5ac06ab051bf3a66eabd4d1eb20a84b9689669d86cff20027700f85bd1ede81b31304644faaee8fe7ab'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/XMTApXrU/versions/bmKhElKd/neurolib-0.3.3-1.21.1.jar'
 
-[update.curseforge]
-file-id = 8060559
-project-id = 1484243
+[update.modrinth]
+mod-id = 'XMTApXrU'
+version = 'bmKhElKd'

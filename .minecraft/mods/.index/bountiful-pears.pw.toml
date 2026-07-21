@@ -1,25 +1,25 @@
 filename = 'bountifulpears-1.0.1.jar'
 name = 'Bountiful Pears'
-side = 'server'
+side = 'both'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'bountifulpears-1.0.1.jar'
+x-prismlauncher-version-number = '1.0.1'
 
 [download]
-hash = 'b1b478f967286591403deac07438b4f708ea0415'
-hash-format = 'sha1'
-mode = 'metadata:curseforge'
-url = ''
+hash = 'c19009ee7b1e0843f8ccd2ade49b7e3205ddddc575a428c09a8744b7286fae7638140107f05947d080896212cd6613b5d0cbd6fb517971e3e7161363f6c8677b'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/6Dp7qelE/versions/di7SUjGT/bountifulpears-1.0.1.jar'
 
-[update.curseforge]
-file-id = 8474130
-project-id = 1610018
+[update.modrinth]
+mod-id = '6Dp7qelE'
+version = 'di7SUjGT'
 
 [[x-prismlauncher-dependencies]]
-addonId = '538493'
+addonId = 'YgrSDjlb'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]
-addonId = '972289'
+addonId = 'kjZCvAn6'
 type = 'REQUIRED'

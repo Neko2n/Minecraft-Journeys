@@ -1,0 +1,18 @@
+filename = 'Slag-n-Embers-1.21.1-1.1a.jar'
+name = "Slag n' Embers"
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1a'
+
+[download]
+hash = '1b7209fac5573a4a86ecdf18abdf3e6a81260eafa3cf617fba1f295f777bab887c94cb93b6f2090facbc83616e385b1dbbbf3141badf7d245da9fd7754f09033'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/56bnCCwq/versions/CGRQn5ML/Slag-n-Embers-1.21.1-1.1a.jar'
+
+[update.modrinth]
+mod-id = '56bnCCwq'
+version = 'CGRQn5ML'

@@ -1,0 +1,18 @@
+filename = 'PowerScreenshot-Minecraft1.21.1-NeoForge-1.0.2.jar'
+name = 'Power Screenshot'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.2'
+
+[download]
+hash = 'eae1213ce29f7212646d4cbdb2c0f8aff270bc2fbd043ba9241c6949fa299e30a3725e3b589d801bf73d211294f2a01eb0db6d954def5def3f61d328264a09d1'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/hmJnmIp3/versions/pnYFkkbB/PowerScreenshot-Minecraft1.21.1-NeoForge-1.0.2.jar'
+
+[update.modrinth]
+mod-id = 'hmJnmIp3'
+version = 'pnYFkkbB'
