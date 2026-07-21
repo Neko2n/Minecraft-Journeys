@@ -44,7 +44,7 @@
     "file/PolishedChests-1.19.zip",
     "file/\u00A7c1.21.2 Redstone Torch\u00A7r.zip",
     "bountifulfares:vanilla_item_override",
-    "file/Pack Resources",
+    "file/core",
     "file/sunbathing-v1.6.zip",
     "file/rainbows-foliage-polytone-edition-v1.7.zip",
     "file/Vanilla+ Collections Snap 2.6-d.zip",
@@ -103,7 +103,7 @@
       "file/PolishedChests-1.19.zip",
       "file/\u00A7c1.21.2 Redstone Torch\u00A7r.zip",
       "bountifulfares:vanilla_item_override",
-      "file/Pack Resources"
+      "file/core"
     ],
     "$$required": {
       "required": true
