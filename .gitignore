@@ -8,6 +8,10 @@
 !.minecraft/datapacks/
 .minecraft/mods/*.jar
 .minecraft/config/spark/**
+.minecraft/resourcepacks/*
+!.minecraft/resourcepacks/core/
+!.minecraft/resourcepacks/*.rpo
+!.minecraft/resourcepacks/.index/
 
 ### Gradle ###
 .gradle
