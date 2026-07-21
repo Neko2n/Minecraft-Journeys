@@ -7,6 +7,7 @@
 !.minecraft/config/
 !.minecraft/datapacks/
 .minecraft/mods/*.jar
+!.minecraft/mods/*.override.jar
 .minecraft/config/spark/**
 .minecraft/resourcepacks/*
 !.minecraft/resourcepacks/core/
