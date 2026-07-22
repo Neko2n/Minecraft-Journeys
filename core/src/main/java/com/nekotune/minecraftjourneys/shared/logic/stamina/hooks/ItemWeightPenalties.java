@@ -23,6 +23,39 @@ import net.neoforged.fml.common.EventBusSubscriber;
 public final class ItemWeightPenalties {
 
     /**
+     * Returns whether or not the given item stack should apply a weight penalty.
+     * 
+     * @param stack The item stack to check
+     * @return True if the item stack should apply a weight penalty; false
+     *         otherwise.
+     */
+    public static boolean isHeavy(ItemStack stack) {
+        return stack.getItem() instanceof BundleItem
+                && BundleItem.getFullnessDisplay(stack) > 0f;
+    }
+
+    /**
+     * Searches a player's inventory for items that have weight penalties.
+     * 
+     * @param inventory The player's inventory to search through.
+     * @return List of items that should apply weight flags.
+     */
+    public static InventoryQueryResult queryHeavyItems(final Inventory inventory) {
+        final var queryResult = new InventoryQueryResult();
+        final Consumer<ItemStack> tryAdd = stack -> {
+            if (stack.isEmpty())
+                return;
+            if (isHeavy(stack)) {
+                queryResult.add(stack);
+            }
+        };
+        inventory.items.forEach(tryAdd);
+        inventory.armor.forEach(tryAdd);
+        inventory.offhand.forEach(tryAdd);
+        return queryResult;
+    }
+
+    /**
      * Apply weight penalties to stamina cycles.
      */
     @SubscribeEvent
@@ -54,39 +87,6 @@ public final class ItemWeightPenalties {
         } else {
             WeightFlag.set(stamina, heavyItems);
         }
-    }
-
-    /**
-     * Returns whether or not the given item stack should apply a weight penalty.
-     * 
-     * @param stack The item stack to check
-     * @return True if the item stack should apply a weight penalty; false
-     *         otherwise.
-     */
-    public static boolean isHeavy(ItemStack stack) {
-        return stack.getItem() instanceof BundleItem
-                && BundleItem.getFullnessDisplay(stack) > 0f;
-    }
-
-    /**
-     * Searches a player's inventory for items that have weight penalties.
-     * 
-     * @param inventory The player's inventory to search through.
-     * @return List of items that should apply weight flags.
-     */
-    public static InventoryQueryResult queryHeavyItems(final Inventory inventory) {
-        final var queryResult = new InventoryQueryResult();
-        final Consumer<ItemStack> tryAdd = stack -> {
-            if (stack.isEmpty())
-                return;
-            if (isHeavy(stack)) {
-                queryResult.add(stack);
-            }
-        };
-        inventory.items.forEach(tryAdd);
-        inventory.armor.forEach(tryAdd);
-        inventory.offhand.forEach(tryAdd);
-        return queryResult;
     }
 
     public static final class InventoryQueryResult {
