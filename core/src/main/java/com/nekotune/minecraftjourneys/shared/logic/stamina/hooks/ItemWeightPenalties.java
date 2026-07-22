@@ -34,7 +34,7 @@ public final class ItemWeightPenalties {
             }
             for (final ItemStack stack : flag.getInflicting().get()) {
                 final int count = flag.getInflicting().count(stack.getItem());
-                event.multiply((float)Math.pow(penaltyPerItem, count - 1));
+                event.multiply((float) Math.pow(penaltyPerItem, count - 1));
             }
         });
     }
@@ -57,6 +57,18 @@ public final class ItemWeightPenalties {
     }
 
     /**
+     * Returns whether or not the given item stack should apply a weight penalty.
+     * 
+     * @param stack The item stack to check
+     * @return True if the item stack should apply a weight penalty; false
+     *         otherwise.
+     */
+    public static boolean isHeavy(ItemStack stack) {
+        return stack.getItem() instanceof BundleItem
+                && BundleItem.getFullnessDisplay(stack) > 0f;
+    }
+
+    /**
      * Searches a player's inventory for items that have weight penalties.
      * 
      * @param inventory The player's inventory to search through.
@@ -67,8 +79,7 @@ public final class ItemWeightPenalties {
         final Consumer<ItemStack> tryAdd = stack -> {
             if (stack.isEmpty())
                 return;
-            if (stack.getItem() instanceof BundleItem &&
-                    BundleItem.getFullnessDisplay(stack) > 0f) {
+            if (isHeavy(stack)) {
                 queryResult.add(stack);
             }
         };
