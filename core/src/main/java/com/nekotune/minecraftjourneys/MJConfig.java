@@ -11,6 +11,7 @@ public final class MJConfig {
     public static final ModConfigSpec.ConfigValue<Float> XP_TO_STAMINA; 
     public static final ModConfigSpec.DoubleValue STAMINA_SOUL_SPEED_MULTIPLIER; 
     public static final ModConfigSpec.DoubleValue STAMINA_GLIDER_DRAIN_MULTIPLIER; 
+    public static final ModConfigSpec.DoubleValue HEAVY_ITEM_STAMINA_PENALTY; 
     
     static {
         final ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
@@ -36,6 +37,9 @@ public final class MJConfig {
         STAMINA_GLIDER_DRAIN_MULTIPLIER = builder
                 .comment("A global multiplier applied to stamina consumption from using Reliable Gliders' gliders.")
                 .defineInRange("stamina.glider_drain_multiplier", 1d, 0d, Float.MAX_VALUE);
+        HEAVY_ITEM_STAMINA_PENALTY = builder
+                .comment("Multiplier applied to your stamina while carrying too many heavy items.")
+                .defineInRange("stamina.heavy_item_penalty", 0.5d, 0d, 1d);
         SPEC = builder.build();
     }
 }

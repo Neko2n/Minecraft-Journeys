@@ -32,11 +32,13 @@ public class MinecraftJourneys {
     public static final Logger LOGGER = LogUtils.getLogger();
     public static enum Dependency {
         BETTER_COMBAT,
-        RELIABLE_GLIDERS
+        RELIABLE_GLIDERS,
+        ALL_WITH_YOU
     }
     public static final EnumMap<Dependency, ModDependency> DEPENDENCIES = new EnumMap<>(Map.of(
         Dependency.BETTER_COMBAT, new ModDependency("bettercombat"),
-        Dependency.RELIABLE_GLIDERS, new ModDependency("reliable_gliders")
+        Dependency.RELIABLE_GLIDERS, new ModDependency("reliable_gliders"),
+        Dependency.ALL_WITH_YOU, new ModDependency("all_with_you")
     ));
     
     

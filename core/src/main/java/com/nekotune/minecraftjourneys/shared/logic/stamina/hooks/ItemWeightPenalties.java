@@ -1,0 +1,186 @@
+package com.nekotune.minecraftjourneys.shared.logic.stamina.hooks;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Optional;
+import java.util.WeakHashMap;
+import java.util.function.Consumer;
+
+import com.nekotune.minecraftjourneys.MJConfig;
+import com.nekotune.minecraftjourneys.MinecraftJourneys;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina.StaminaFlag;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.StaminaEvent;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BundleItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+
+@EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
+public final class ItemWeightPenalties {
+
+    /**
+     * Apply weight penalties to stamina cycles.
+     */
+    @SubscribeEvent
+    public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+        WeightFlag.get(event.getStamina()).ifPresent(flag -> {
+            float penaltyPerItem = MJConfig.HEAVY_ITEM_STAMINA_PENALTY.get().floatValue();
+            if (event.getCycleValue() < 0) {
+                penaltyPerItem = 1 / penaltyPerItem;
+            }
+            for (final ItemStack stack : flag.getInflicting().get()) {
+                final int count = flag.getInflicting().count(stack.getItem());
+                event.multiply((float)Math.pow(penaltyPerItem, count - 1));
+            }
+        });
+    }
+
+    /**
+     * Update players' stamina weight flags every N ticks.
+     */
+    @SubscribeEvent
+    public static void onStaminaTickPost(final StaminaEvent.TickEvent.Post event) {
+        final Player player = event.getPlayer();
+        if (player.level().getGameTime() % 40 != 0)
+            return;
+        final PlayerStamina stamina = event.getStamina();
+        final InventoryQueryResult heavyItems = queryHeavyItems(player.getInventory());
+        if (heavyItems.count() == 0) {
+            WeightFlag.tryRemove(stamina);
+        } else {
+            WeightFlag.set(stamina, heavyItems);
+        }
+    }
+
+    /**
+     * Searches a player's inventory for items that have weight penalties.
+     * 
+     * @param inventory The player's inventory to search through.
+     * @return List of items that should apply weight flags.
+     */
+    public static InventoryQueryResult queryHeavyItems(final Inventory inventory) {
+        final var queryResult = new InventoryQueryResult();
+        final Consumer<ItemStack> tryAdd = stack -> {
+            if (stack.isEmpty())
+                return;
+            if (stack.getItem() instanceof BundleItem &&
+                    BundleItem.getFullnessDisplay(stack) > 0f) {
+                queryResult.add(stack);
+            }
+        };
+        inventory.items.forEach(tryAdd);
+        inventory.armor.forEach(tryAdd);
+        inventory.offhand.forEach(tryAdd);
+        return queryResult;
+    }
+
+    public static final class InventoryQueryResult {
+        private final HashMap<Integer, Integer> itemCounts = new HashMap<>();
+        private final ArrayList<ItemStack> items = new ArrayList<>();
+        private int n = 0;
+
+        private InventoryQueryResult() {
+        }
+
+        public int count(final Item item) {
+            return itemCounts.getOrDefault(Item.getId(item), 0);
+        }
+
+        public int count() {
+            return n;
+        }
+
+        public void add(final ItemStack stack) {
+            items.add(stack);
+            increment(stack.getItem());
+        }
+
+        public Iterable<ItemStack> get() {
+            return items;
+        }
+
+        private void increment(final Item item) {
+            final int count = itemCounts.computeIfAbsent(Item.getId(item), $ -> 0);
+            itemCounts.put(Item.getId(item), count + 1);
+            n++;
+        }
+    }
+
+    public static final class WeightFlag extends StaminaFlag {
+        private static final WeakHashMap<PlayerStamina, Optional<WeightFlag>> ACTIVE = new WeakHashMap<>();
+        private InventoryQueryResult queryResult;
+        private long lifeTime = 0;
+
+        private WeightFlag(final PlayerStamina adornee,
+                final InventoryQueryResult queryResult) {
+            super(adornee);
+            this.queryResult = queryResult;
+        }
+
+        /**
+         * Returns the active WeightFlag attached to the given player's
+         * stamina manager, if one exists.
+         * 
+         * @return Weak WeightFlag reference.
+         */
+        public static Optional<WeightFlag> get(final PlayerStamina adornee) {
+            return ACTIVE.getOrDefault(adornee, Optional.empty());
+        }
+
+        /**
+         * Sets the active weight flag for the given stamina manager.
+         * 
+         * @param adornee The stamina manager to attach the flag to.
+         * @param item    The query of items inflicting this weight flag.
+         * @return The active weight flag.
+         */
+        private static void set(final PlayerStamina adornee,
+                final InventoryQueryResult queryResult) {
+            get(adornee).ifPresentOrElse(flag -> {
+                flag.queryResult = queryResult;
+            }, () -> {
+                ACTIVE.put(adornee, Optional.of(
+                        new WeightFlag(adornee, queryResult)));
+            });
+        }
+
+        /**
+         * Removes the active weight flag for the given
+         * stamina manager, if there was one.
+         * 
+         * @param adornee The stamina manager to remove the flag from.
+         * @return Weak reference to the removed flag, if there was one.
+         */
+        public static Optional<WeightFlag> tryRemove(final PlayerStamina adornee) {
+            final Optional<WeightFlag> flag = get(adornee);
+            if (flag.isPresent()) {
+                flag.get().remove();
+            }
+            return flag;
+        }
+
+        public long lifeTime() {
+            return lifeTime;
+        }
+
+        public InventoryQueryResult getInflicting() {
+            return queryResult;
+        }
+
+        @Override
+        protected void tick() {
+            super.tick();
+            this.lifeTime++;
+        }
+
+        @Override
+        protected void onRemove() {
+            super.onRemove();
+            ACTIVE.put(adornee, Optional.empty());
+        }
+    }
+}

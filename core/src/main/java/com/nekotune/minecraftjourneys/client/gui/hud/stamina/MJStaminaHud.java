@@ -31,7 +31,7 @@ public class MJStaminaHud extends MJHudLayer {
 
     public static Optional<MJStaminaHud> instance = Optional.empty(); 
 
-    private final Minecraft minecraft;
+    protected final Minecraft minecraft;
     protected final DeltaAnimation deltaAnimation = new DeltaAnimation();
 
     public MJStaminaHud() {
@@ -55,25 +55,53 @@ public class MJStaminaHud extends MJHudLayer {
     }
 
     @Override
-    protected void render(final GuiGraphics guiGraphics, final DeltaTracker deltaTracker) {
+    protected final void render(final GuiGraphics guiGraphics, final DeltaTracker deltaTracker) {
         this.minecraft.getProfiler().push("staminaHud");
         final var playerStamina = PlayerStamina.get(this.minecraft.player);
-        final float stamina = playerStamina.getValue();
-        final int maxStamina = playerStamina.getMaxValue();
 
+        // Render the bar and fill
+        final BarRenderResult bar = renderBar(guiGraphics, deltaTracker, playerStamina);
+
+        // Render the delta overlay
+        if (this.deltaAnimation.shouldStart) {
+            this.deltaAnimation.shouldStart = false;
+            this.deltaAnimation.elapsedTicks = 0f;
+        }
+        if (this.deltaAnimation.elapsedTicks < this.deltaAnimation.tickLength) {
+            this.deltaAnimation.elapsedTicks += deltaTracker.getGameTimeDeltaTicks();
+            renderDeltaAnimation(guiGraphics, deltaTracker, playerStamina, bar);
+        }
+        
+        // TODO: Render the cycle overlay
+
+        // TODO: Render item weight penalties
+
+        RenderSystem.disableBlend();
+        this.minecraft.getProfiler().pop();
+    }
+
+    /**
+     * Render the bar (background and fill)
+     */
+    protected BarRenderResult renderBar(final GuiGraphics guiGraphics,
+            final DeltaTracker deltaTracker, final PlayerStamina stamina) {
+        GuiUtils.setColor(guiGraphics, Colors.FULL);
+
+        // Calculate positions and sizes
+        final int maxStamina = stamina.getMaxValue();
         final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_STAMINA * (maxStamina - 1);
-        final float proportion = stamina / ((float) maxStamina);
-        final int fillWidth = (int)(proportion * ((float) imgWidth + 1f));
         final int barX = (guiGraphics.guiWidth() - imgWidth) / 2;
         final int barY = guiGraphics.guiHeight() - 32 + IMG_HEIGHT;
+        final float fillProportion = stamina.getValue() / ((float) maxStamina);
+        final int fillWidth = (int)(fillProportion * ((float) imgWidth + 1f));
+
+        // Fetch sprites
         final ResourceLocation barBackground = SpriteHelper
                 .fromCache(SpriteHelper.SpriteType.BAR_BACKGROUND, maxStamina);
         final ResourceLocation barFill = SpriteHelper
                 .fromCache(SpriteHelper.SpriteType.BAR_FILL, maxStamina);
-        RenderSystem.enableBlend();
 
-        // Render the bar (background and fill)
-        GuiUtils.setColor(guiGraphics, Colors.FULL);
+        // Render
         guiGraphics.blitSprite(barBackground,
                 barX, barY,
                 imgWidth, IMG_HEIGHT);
@@ -85,49 +113,60 @@ public class MJStaminaHud extends MJHudLayer {
                     fillWidth, IMG_HEIGHT);
         }
         GuiUtils.clearColor(guiGraphics);
-
-        // Render the delta overlay
-        if (this.deltaAnimation.shouldStart) {
-            this.deltaAnimation.shouldStart = false;
-            this.deltaAnimation.elapsedTicks = 0f;
-        }
-        if (this.deltaAnimation.elapsedTicks < this.deltaAnimation.tickLength) {
-            this.deltaAnimation.elapsedTicks += deltaTracker.getGameTimeDeltaTicks();
-
-            // Calculate width
-            final float deltaProportion = Math.abs(this.deltaAnimation.deltaStamina) / ((float) maxStamina);
-            final float alpha = (float)Math.pow(
-                    this.deltaAnimation.elapsedTicks / this.deltaAnimation.tickLength,
-                    DeltaAnimation.CURVE);
-            int width = (int)((1f - alpha) * (deltaProportion * ((float) (imgWidth - 2) + 1f)));
-
-            // Calculate position
-            final boolean positive = this.deltaAnimation.deltaStamina >= 0;
-            int x = barX + fillWidth - (positive ? width : 0);
-
-            // Adjust position and width for borders
-            if (x == barX) {
-                x++;
-                width--;
-            }
-            if (x + width == barX + imgWidth) {
-                width--;
-            }
-
-            // Render
-            final int color = positive ? Colors.DELTA_POSITIVE : Colors.DELTA_NEGATIVE;
-            GuiUtils.setColor(guiGraphics, color);
-            guiGraphics.blitSprite(SpriteHelper.DELTA_SPRITE,
-                    x, barY,
-                    width, IMG_HEIGHT);
-            GuiUtils.clearColor(guiGraphics);
-        }
-
-        RenderSystem.disableBlend();
-        this.minecraft.getProfiler().pop();
+        return new BarRenderResult(barX, barY, imgWidth, IMG_HEIGHT, fillWidth,
+                barBackground, barFill);
     }
 
-    static final class DeltaAnimation {
+    /**
+     * Render the delta animation
+     */
+    protected void renderDeltaAnimation(final GuiGraphics guiGraphics,
+            final DeltaTracker deltaTracker, final PlayerStamina stamina,
+            final BarRenderResult bar) {
+        
+        // Calculate width
+        final int maxStamina = stamina.getMaxValue();
+        final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_STAMINA * (maxStamina - 1);
+        final float deltaProportion = Math.abs(this.deltaAnimation.deltaStamina) / ((float) maxStamina);
+        final float alpha = (float)Math.pow(
+                this.deltaAnimation.elapsedTicks / this.deltaAnimation.tickLength,
+                DeltaAnimation.CURVE);
+        int width = (int)((1f - alpha) * (deltaProportion * ((float) (imgWidth - 2) + 1f)));
+
+        // Calculate position
+        final boolean positive = this.deltaAnimation.deltaStamina >= 0;
+        int x = bar.posX + bar.fillWidth - (positive ? width : 0);
+
+        // Adjust position and width for borders
+        if (x == bar.posX) {
+            x++;
+            width--;
+        }
+        if (x + width == bar.posX + imgWidth) {
+            width--;
+        }
+
+        // Render
+        final int color = positive ? Colors.DELTA_POSITIVE : Colors.DELTA_NEGATIVE;
+        GuiUtils.setColor(guiGraphics, color);
+        guiGraphics.blitSprite(SpriteHelper.DELTA_SPRITE,
+                x, bar.posY,
+                width, IMG_HEIGHT);
+        GuiUtils.clearColor(guiGraphics);
+    }
+
+    protected static final record BarRenderResult (
+        int posX,
+        int posY,
+        int barWidth,
+        int barHeight,
+        int fillWidth,
+        ResourceLocation backgroundSprite,
+        ResourceLocation fillSprite
+    ) {}
+
+    public static final class DeltaAnimation {
+        private DeltaAnimation() {}
         public static final int CURVE = 6;
         public float tickLength = 0f;
         public float deltaStamina = 0f;

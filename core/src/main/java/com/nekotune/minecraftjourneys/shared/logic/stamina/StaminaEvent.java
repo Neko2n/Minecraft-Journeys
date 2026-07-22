@@ -22,6 +22,17 @@ public abstract sealed class StaminaEvent extends Event {
     }
 
     /**
+     * Fired when the player's stamina is first initialized.
+     * @see PlayerStamina#init
+     */
+    public static final class InitEvent extends StaminaEvent {
+    
+        public InitEvent(final PlayerStamina playerStamina) {
+            super(playerStamina);
+        }
+    }
+
+    /**
      * Fired when the player's maximum stamina changes.
      * @see PlayerStamina#setMaxValue
      */
@@ -142,6 +153,10 @@ public abstract sealed class StaminaEvent extends Event {
 
                 public void add(final float cycle) {
                     this.cycle += cycle;
+                }
+
+                public void multiply(final float multiplier) {
+                    this.cycle *= multiplier;
                 }
             }
 

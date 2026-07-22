@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.nekotune.minecraftjourneys.mixin.minecraft",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnvilMenuMixin",
+    "LocalPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

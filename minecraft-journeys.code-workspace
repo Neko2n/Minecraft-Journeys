@@ -114,7 +114,7 @@
                         "string.quoted.single.java"
                     ],
                     "settings": {
-                        "foreground": "#79c37c"
+                        "foreground": "#79c388"
                     }
                 },
                 {
@@ -177,11 +177,11 @@
                 "namespace.importDeclaration": {
                     "bold": false
                 },
-                "parameter": "#d5bbb3",
-                "parameter.readonly": "#a1a4c7",
+                "parameter": "#c6b6b2",
+                "parameter.readonly": "#a6a1c7",
                 "property": "#bcbcbc",
                 "property.readonly": "#6e8bc4",
-                "variable": "#ABB2BF",
+                "variable": "#bcbcbc",
                 "variable.readonly": "#8e9fc2",
                 "keyword": "#e06c75",
                 "modifier": "#e06c75"

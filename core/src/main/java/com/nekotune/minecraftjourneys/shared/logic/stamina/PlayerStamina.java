@@ -1,12 +1,12 @@
 package com.nekotune.minecraftjourneys.shared.logic.stamina;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Supplier;
-
-import javax.annotation.Nullable;
 
 import org.joml.Math;
 
@@ -48,13 +48,14 @@ public class PlayerStamina {
 
     public final UUID playerId;
     private final String playerName;
+    private final Map<String, Cycle> cycleMap = new HashMap<>();
+    private final Set<StaminaFlag> flags = new HashSet<>();
     private float stamina;
     private int maxStamina;
-    private float cycle = 0f;
-    private Map<String, Cycle> cycleMap = new HashMap<>();
     private float drainRate = 0.05f;
     private float regenRate = 0.05f;
     private int regenCooldownTicks = 0;
+    private float cycle = 0f;
 
     private PlayerStamina(final Player player) {
         this.playerId = player.getUUID();
@@ -66,7 +67,7 @@ public class PlayerStamina {
     /**
      * @return The player owner of this stamina instance.
      */
-    public Optional<Player> player() {
+    public Optional<Player> getPlayer() {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             final ClientLevel level = Minecraft.getInstance().level;
             if (level != null) {
@@ -194,6 +195,13 @@ public class PlayerStamina {
         return stamina == 0f;
     }
 
+    /**
+     * @return Collection of the player's current stamina flags.
+     */
+    public Iterable<StaminaFlag> getFlags() {
+        return Set.copyOf(this.flags);
+    }
+
     protected float getBaseRegenRate() {
         return regenRate * MJConfig.STAMINA_BASE_REGEN_MULTIPLIER.get().floatValue() / 20f;
     }
@@ -268,20 +276,27 @@ public class PlayerStamina {
      */
     protected void tick(final Player player) {
         NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.Pre(this, player));
-        float deltaStamina = this.cycle;
-        deltaStamina += passiveRegen();
+
+        // Tick flags
+        Set.copyOf(flags).forEach(flag -> flag.tick());
+
+        // Tick regen CD
         regenCooldownTicks = Math.max(0, regenCooldownTicks - 1);
+
+        // Apply cycle (regen/drain)
         final var preCycleEvent = NeoForge.EVENT_BUS.post(
-                new StaminaEvent.TickEvent.CycleEvent.Pre(this, player, deltaStamina));
-        final float previousStamina = stamina;
+                new StaminaEvent.TickEvent.CycleEvent.Pre(this, player, this.cycle));
+        float deltaStamina;
         if (preCycleEvent.isCanceled()) {
             deltaStamina = 0f;
         } else {
-            deltaStamina = preCycleEvent.getCycleValue();
+            deltaStamina = preCycleEvent.getCycleValue() + passiveRegen();
+            final float previousStamina = stamina;
             stamina = Math.clamp(0f, getMaxValue(), stamina + deltaStamina);
             deltaStamina = stamina - previousStamina;
+            NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.CycleEvent.Post(this, player, deltaStamina, previousStamina));
         }
-        NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.CycleEvent.Post(this, player, deltaStamina, previousStamina));
+
         NeoForge.EVENT_BUS.post(new StaminaEvent.TickEvent.Post(this, player, deltaStamina));
     }
 
@@ -302,15 +317,20 @@ public class PlayerStamina {
      * @param playerId The UUID of the player owner of the returned PlayerStamina object
      * @return PlayerStamina weak reference
      */
-    public static Optional<PlayerStamina> get(final UUID playerId) {
+    public static Optional<PlayerStamina> getRaw(final UUID playerId) {
         return Optional.ofNullable(MAP.get(playerId));
     }
 
     /**
      * @see EventHooks Implementation
+     * @see StaminaEvent.InitEvent
      */
     private static void init(final Player player) {
-        MAP.putIfAbsent(player.getUUID(), new PlayerStamina(player));
+        MAP.computeIfAbsent(player.getUUID(), playerId -> {
+            final var stamina = new PlayerStamina(player);
+            NeoForge.EVENT_BUS.post(new StaminaEvent.InitEvent(stamina));
+            return stamina;
+        });
     }
 
     /**
@@ -370,7 +390,7 @@ public class PlayerStamina {
         @SubscribeEvent
         public static void onPlayerTickPost(PlayerTickEvent.Post event) {
             final Player player = event.getEntity();
-            PlayerStamina.get(player.getUUID())
+            PlayerStamina.getRaw(player.getUUID())
                     .ifPresent(stamina -> stamina.tick(player));
         }
 
@@ -408,6 +428,61 @@ public class PlayerStamina {
 
         public void remove() {
             onRemove.run();
+        }
+    }
+
+    /**
+     * Data type for general stamina flags.
+     */
+    public static abstract class StaminaFlag {
+        public final PlayerStamina adornee;
+
+        public StaminaFlag(final PlayerStamina adornee) {
+            this.adornee = adornee;
+            adornee.flags.add(this);
+        }
+        
+        public final void remove() {
+            this.adornee.flags.remove(this);
+            onRemove();
+        }
+
+        protected void onRemove() {};
+
+        protected void tick() {};
+
+        /**
+         * Stamina flag that automatically removes itself after a given number of ticks.
+         */
+        public static abstract class TemporaryFlag extends StaminaFlag {
+            protected int ticksRemaining = 0;
+
+            public TemporaryFlag(PlayerStamina adornee, int tickLength) {
+                super(adornee);
+                this.ticksRemaining = tickLength;
+            }
+
+            public final int getTicksRemaining() {
+                return ticksRemaining;
+            }
+
+            public final void setTicksRemaining(final int ticks) {
+                this.ticksRemaining = Math.max(0, ticks);
+            }
+
+            public TemporaryFlag merge(TemporaryFlag other) {
+                this.ticksRemaining = Math.max(this.ticksRemaining, other.ticksRemaining);
+                other.remove();
+                return this;
+            }
+
+            @Override
+            protected void tick() {
+                ticksRemaining--;
+                if (ticksRemaining == 0) {
+                    remove();
+                }
+            }
         }
     }
 }

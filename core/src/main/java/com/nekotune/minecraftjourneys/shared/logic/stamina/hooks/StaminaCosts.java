@@ -1,4 +1,4 @@
-package com.nekotune.minecraftjourneys.shared.logic.stamina;
+package com.nekotune.minecraftjourneys.shared.logic.stamina.hooks;
 
 import java.util.List;
 
@@ -9,6 +9,9 @@ import com.nekotune.minecraftjourneys.MJConfig;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.ModDependency;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.GUIAnimationProperties;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.StaminaEvent;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.DependentEventBusSubscriber;
 
 import net.bettercombat.api.AttackHand;
@@ -16,12 +19,9 @@ import net.bettercombat.api.client.BetterCombatClientEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.api.distmarker.Dist;
@@ -30,13 +30,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.LeftClickEmpty;
 
 @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
-public class StaminaHooks {
+public class StaminaCosts {
     private static final ModDependency betterCombat = MinecraftJourneys.DEPENDENCIES.get(Dependency.BETTER_COMBAT);
 
     private static float lastAttackStrengthScale = 1.0f;
@@ -58,67 +56,12 @@ public class StaminaHooks {
      * Stamina drains while sprinting.
      */
     @SubscribeEvent
-    public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+    public static void onStaminaCyclePre(final StaminaEvent.TickEvent.CycleEvent.Pre event) {
         final var player = event.getPlayer();
         if (player.isSprinting()) {
             event.addBasicDrain();
             event.getStamina().delayRegen();
         }
-    }
-
-    /**
-     * XP orbs give stamina instead of experience.
-     */
-    @SubscribeEvent
-    public static void onXpChanged(PlayerXpEvent.XpChange event) {
-        final int xpAdded = event.getAmount();
-        final var player = event.getEntity();
-        final var stamina = PlayerStamina.get(player);
-        final float staminaAdded = ((float) xpAdded) * MJConfig.XP_TO_STAMINA.get().floatValue();
-        stamina.setValue(stamina.getValue() + staminaAdded,
-                GUIAnimationProperties.defaultScaled(staminaAdded));
-    }
-
-    @SubscribeEvent
-    public static void onLevelChange(PlayerXpEvent.LevelChange event) {
-        event.setCanceled(true);
-    }
-
-    /**
-     * Give a little bit of stamina upon dealing damage to enemies.
-     */
-    @SubscribeEvent
-    public static void onHitEnemy(LivingDamageEvent.Post event) {
-        final var source = event.getSource();
-        if (!source.is(DamageTypeTags.IS_PLAYER_ATTACK))
-            return;
-        final var attacker = source.getEntity();
-        if (!(attacker instanceof final Player player))
-            return;
-        final var target = event.getEntity();
-        if (!(target instanceof Enemy))
-            return;
-        final float damage = event.getNewDamage();
-        final float reward = Math.min(0.2f, (damage - 3f) / 40f);
-        if (reward <= 0f)
-            return;
-        final var stamina = PlayerStamina.get(player);
-        stamina.setValue(stamina.getValue() + reward,
-                GUIAnimationProperties.defaultScaled(reward));
-    }
-
-    @SubscribeEvent
-    public static void onPlayerLeftClickEmpty(final LeftClickEmpty event) {
-        if (betterCombat.isLoaded())
-            return;
-        swingWeaponEvent(event.getHand());
-    }
-
-    @SubscribeEvent
-    public static void onPlayerAttackEntity(final AttackEntityEvent event) {
-        if (betterCombat.isLoaded())
-            return;
-        swingWeaponEvent(event.getEntity().swingingArm);
     }
 
     /**
@@ -150,7 +93,21 @@ public class StaminaHooks {
         attackedFullStrength = false;
     }
 
-    private static double getAttackSpeedModifier(ItemStack stack) {
+    @SubscribeEvent
+    public static void onPlayerLeftClickEmpty(final LeftClickEmpty event) {
+        if (betterCombat.isLoaded())
+            return;
+        swingWeaponEvent(event.getHand());
+    }
+
+    @SubscribeEvent
+    public static void onPlayerAttackEntity(final AttackEntityEvent event) {
+        if (betterCombat.isLoaded())
+            return;
+        swingWeaponEvent(event.getEntity().swingingArm);
+    }
+
+    private static double getAttackSpeedModifier(final ItemStack stack) {
         ItemAttributeModifiers modifiers = stack.get(DataComponents.ATTRIBUTE_MODIFIERS);
         if (modifiers == null)
             return 0d;
@@ -170,30 +127,41 @@ public class StaminaHooks {
         private static boolean registered = false;
 
         @SubscribeEvent
-        public static void onClientLoggedIn(ClientPlayerNetworkEvent.LoggingIn event) {
+        public static void onClientLoggedIn(final ClientPlayerNetworkEvent.LoggingIn event) {
             if (registered)
                 return;
             BetterCombatClientEvents.ATTACK_HIT.register(BetterCombatClientHooks::onAttackHit);
+            BetterCombatClientEvents.ATTACK_START.register(BetterCombatClientHooks::onAttackStart);
             BetterCombatClientHooks.registered = true;
         }
 
-        private static void onAttackHit(LocalPlayer player, AttackHand attackHand,
-                List<Entity> targets, @Nullable Entity cursorTarget) {
+        /**
+         * Delay stamina regeneration upon swinging any weapon.
+         */
+        private static void onAttackStart(final LocalPlayer player, final AttackHand attackHand) {
+            PlayerStamina.get(player).delayRegen();
+        }
+
+        /**
+         * Apply the swing weapon penalty *only* upon missing an attack.
+         * @see StaminaRewards#onHitEnemy
+         */
+        private static void onAttackHit(final LocalPlayer player, final AttackHand attackHand,
+                final List<Entity> targets, @Nullable final Entity cursorTarget) {
             if (targets.isEmpty()) {
                 swingWeaponEvent(attackHand.isOffHand() ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
             }
-            // If the attack hit any entities, onHitEnemy already handles success
         }
     }
 
     /**
-     * Drain stamina while gliding, and cancel gliding if stamina runs out.
+     * Drain stamina while gliding.
      */
     @DependentEventBusSubscriber(dependency = Dependency.RELIABLE_GLIDERS)
     public static final class ReliableGlidersHooks {
 
         @SubscribeEvent
-        public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+        public static void onStaminaCyclePre(final StaminaEvent.TickEvent.CycleEvent.Pre event) {
             final var player = event.getPlayer();
             if (GlidingState.wasGliding(player)) {
                 event.addBasicDrain(MJConfig.STAMINA_GLIDER_DRAIN_MULTIPLIER.get().floatValue());

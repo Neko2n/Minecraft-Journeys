@@ -51,11 +51,15 @@ Example mod description.
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
-config="mixin/${mod_id}.mixins.json"
+config="mixin/minecraft.mixins.json"
 
 [[mixins]]
 config="mixin/reliable_gliders.mixins.json"
 requiredMods = ["reliable_gliders"]
+
+[[mixins]]
+config="mixin/incrementalmining.mixins.json"
+requiredMods = ["incrementalmining"]
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -94,7 +98,7 @@ requiredMods = ["reliable_gliders"]
 
 [[dependencies.${mod_id}]]
     modId="veil"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
@@ -122,56 +126,56 @@ requiredMods = ["reliable_gliders"]
 
 [[dependencies.${mod_id}]]
     modId="supplementaries"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="incrementalmining"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="wholecloth"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="natures_spirit"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="spawn"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="nomansland"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="bountifulfares"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="caverns_and_chasms"
-    type="required"
+    type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
@@ -185,6 +189,13 @@ requiredMods = ["reliable_gliders"]
 
 [[dependencies.${mod_id}]]
     modId="reliable_gliders"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="all_with_you"
     type="optional"
     versionRange="[0,)"
     ordering="AFTER"
