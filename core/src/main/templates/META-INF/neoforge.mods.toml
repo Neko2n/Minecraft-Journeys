@@ -55,11 +55,9 @@ config="mixin/minecraft.mixins.json"
 
 [[mixins]]
 config="mixin/reliable_gliders.mixins.json"
-requiredMods = ["reliable_gliders"]
 
 [[mixins]]
 config="mixin/incrementalmining.mixins.json"
-requiredMods = ["incrementalmining"]
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg

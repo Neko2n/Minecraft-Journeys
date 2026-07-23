@@ -13,13 +13,13 @@ import net.minecraft.world.entity.player.Player;
 /**
  * @see GlidingState
  */
-@Mixin(targets = "com.evandev.reliable_gliders.api.GlidingState")
+@Mixin(value = GlidingState.class, remap = false)
 public class GlidingStateMixin {
     
     // Cannot glide without stamina
 	@Inject(method = "isGliding", at = @At("HEAD"), cancellable = true)
-    public static void modpack$isGliding(Player player, CallbackInfoReturnable<Boolean> cir) {
-        final var stamina = PlayerStamina.get(player);
+    private static void modpack$isGliding(Player player, CallbackInfoReturnable<Boolean> cir) {
+        final PlayerStamina stamina = PlayerStamina.get(player);
         if (stamina.isEmpty()) {
             GlidingState.setGliding(player, false);
             cir.setReturnValue(false);

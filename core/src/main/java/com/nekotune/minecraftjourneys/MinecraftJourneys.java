@@ -31,11 +31,13 @@ public class MinecraftJourneys {
     public static final String MOD_ID = "modpack";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static enum Dependency {
+        INCREMENTAL_MINING,
         BETTER_COMBAT,
         RELIABLE_GLIDERS,
         ALL_WITH_YOU
     }
     public static final EnumMap<Dependency, ModDependency> DEPENDENCIES = new EnumMap<>(Map.of(
+        Dependency.INCREMENTAL_MINING, new ModDependency("incrementalmining"),
         Dependency.BETTER_COMBAT, new ModDependency("bettercombat"),
         Dependency.RELIABLE_GLIDERS, new ModDependency("reliable_gliders"),
         Dependency.ALL_WITH_YOU, new ModDependency("all_with_you")

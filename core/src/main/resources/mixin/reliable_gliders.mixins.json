@@ -1,7 +1,8 @@
 {
-  "required": false,
+  "required": true,
   "package": "com.nekotune.minecraftjourneys.mixin.reliablegliders",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "com.nekotune.minecraftjourneys.mixin.reliablegliders.ReliableGlidersMixinPlugin",
   "mixins": [
     "GlidingStateMixin"
   ],

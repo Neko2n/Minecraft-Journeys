@@ -2,6 +2,7 @@
   "required": true,
   "package": "com.nekotune.minecraftjourneys.mixin.incrementalmining",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "com.nekotune.minecraftjourneys.mixin.incrementalmining.IncrementalMiningMixinPlugin",
   "mixins": [
     "RulesMixin",
     "FeedbackMixin"
