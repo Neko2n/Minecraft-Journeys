@@ -56,6 +56,7 @@ public class PlayerStamina {
     private float regenRate = 0.05f;
     private int regenCooldownTicks = 0;
     private float cycle = 0f;
+    private float deltaStamina = 0f;
 
     private PlayerStamina(final Player player) {
         this.playerId = player.getUUID();
@@ -257,6 +258,14 @@ public class PlayerStamina {
     }
 
     /**
+     * Returns the change in stamina since the last tick.
+     * @return
+     */
+    public float getDeltaStamina() {
+        return deltaStamina;
+    }
+
+    /**
      * @return The amount of passive regen that should be applied each tick.
      */
     public float passiveRegen() {
@@ -285,12 +294,12 @@ public class PlayerStamina {
 
         // Apply cycle (regen/drain)
         final var preCycleEvent = NeoForge.EVENT_BUS.post(
-                new StaminaEvent.TickEvent.CycleEvent.Pre(this, player, this.cycle));
-        float deltaStamina;
+                new StaminaEvent.TickEvent.CycleEvent.Pre(this, player,
+                        this.cycle + passiveRegen()));
         if (preCycleEvent.isCanceled()) {
             deltaStamina = 0f;
         } else {
-            deltaStamina = preCycleEvent.getCycleValue() + passiveRegen();
+            deltaStamina = preCycleEvent.getCycleValue();
             final float previousStamina = stamina;
             stamina = Math.clamp(0f, getMaxValue(), stamina + deltaStamina);
             deltaStamina = stamina - previousStamina;

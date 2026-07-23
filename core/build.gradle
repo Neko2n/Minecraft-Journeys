@@ -196,7 +196,7 @@ dependencies {
     // Content
     implementation ":natures_spirit-2.3.0-1.21.1"     // Nature's Spirit
     implementation "maven.modrinth:fFEIiSDQ:53oYzPfG" // Supplementaries
-    implementation "maven.modrinth:NguWGade:LvlBpY8A" // Incremental Mining
+    implementation "maven.modrinth:NguWGade:FbdYAOET" // Incremental Mining
     implementation "maven.modrinth:zlnswouL:kxwDTK9v" // Whole Cloth
     implementation "maven.modrinth:rex9wwpz:kmNDEibJ" // Spawn
     implementation "maven.modrinth:kjZCvAn6:kFPJl0ig" // No Man's Land

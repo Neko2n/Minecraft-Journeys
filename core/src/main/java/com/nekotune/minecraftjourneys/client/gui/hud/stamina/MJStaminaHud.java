@@ -1,38 +1,54 @@
 package com.nekotune.minecraftjourneys.client.gui.hud.stamina;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.client.gui.hud.MJHudLayer;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties;
+import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties.WeightFlag;
 import com.nekotune.minecraftjourneys.client.gui.GuiUtils;
 
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
+import net.minecraft.world.item.BundleItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.BundleContents;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(value = Dist.CLIENT)
 public class MJStaminaHud extends MJHudLayer {
-    private static final ResourceLocation STAMINA_HUD = ResourceLocation.fromNamespaceAndPath(MinecraftJourneys.MOD_ID, "hud/stamina");
-    
+    private static final ResourceLocation STAMINA_HUD = ResourceLocation.fromNamespaceAndPath(MinecraftJourneys.MOD_ID,
+            "hud/stamina");
+
     private static final int BASE_IMG_WIDTH = 61;
-    private static final int WIDTH_PER_STAMINA = 4;
+    private static final int WIDTH_PER_MAX_STAMINA = 4;
     private static final int IMG_HEIGHT = 5;
+    private static final int PENALTY_ARROW_ANIM_SPEED = 22;
+
     private static final class Colors {
         public static final int FULL = FastColor.ARGB32.opaque(0xFF40F5A0);
         public static final int DELTA_POSITIVE = Colors.FULL;
         public static final int DELTA_NEGATIVE = FastColor.ARGB32.opaque(0xFFFFA0A0);
+        public static final int ARROW_NEGATIVE = FastColor.ARGB32.opaque(0xFFFF0000);
     }
 
-    public static Optional<MJStaminaHud> instance = Optional.empty(); 
+    public static Optional<MJStaminaHud> instance = Optional.empty();
 
     protected final Minecraft minecraft;
     protected final DeltaAnimation deltaAnimation = new DeltaAnimation();
+    private final Map<Integer, ItemStack> stackCache = new HashMap<>();
 
     public MJStaminaHud() {
         minecraft = Minecraft.getInstance();
@@ -71,10 +87,13 @@ public class MJStaminaHud extends MJHudLayer {
             this.deltaAnimation.elapsedTicks += deltaTracker.getGameTimeDeltaTicks();
             renderDeltaAnimation(guiGraphics, deltaTracker, playerStamina, bar);
         }
-        
+
         // TODO: Render the cycle overlay
 
-        // TODO: Render item weight penalties
+        // Render item weight penalties
+        ItemWeightPenalties.WeightFlag.get(playerStamina).ifPresent(flag -> {
+            renderItemPenalties(guiGraphics, deltaTracker, playerStamina, bar, flag);
+        });
 
         RenderSystem.disableBlend();
         this.minecraft.getProfiler().pop();
@@ -89,17 +108,17 @@ public class MJStaminaHud extends MJHudLayer {
 
         // Calculate positions and sizes
         final int maxStamina = stamina.getMaxValue();
-        final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_STAMINA * (maxStamina - 1);
+        final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_MAX_STAMINA * (maxStamina - 1);
         final int barX = (guiGraphics.guiWidth() - imgWidth) / 2;
         final int barY = guiGraphics.guiHeight() - 32 + IMG_HEIGHT;
         final float fillProportion = stamina.getValue() / ((float) maxStamina);
-        final int fillWidth = (int)(fillProportion * ((float) imgWidth + 1f));
+        final int fillWidth = (int) (fillProportion * ((float) imgWidth + 1f));
 
         // Fetch sprites
-        final ResourceLocation barBackground = SpriteHelper
-                .fromCache(SpriteHelper.SpriteType.BAR_BACKGROUND, maxStamina);
-        final ResourceLocation barFill = SpriteHelper
-                .fromCache(SpriteHelper.SpriteType.BAR_FILL, maxStamina);
+        final ResourceLocation barBackground = StaminaSprites
+                .fromCache(StaminaSprites.SpriteType.BAR_BACKGROUND, maxStamina);
+        final ResourceLocation barFill = StaminaSprites
+                .fromCache(StaminaSprites.SpriteType.BAR_FILL, maxStamina);
 
         // Render
         guiGraphics.blitSprite(barBackground,
@@ -123,15 +142,15 @@ public class MJStaminaHud extends MJHudLayer {
     protected void renderDeltaAnimation(final GuiGraphics guiGraphics,
             final DeltaTracker deltaTracker, final PlayerStamina stamina,
             final BarRenderResult bar) {
-        
+
         // Calculate width
         final int maxStamina = stamina.getMaxValue();
-        final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_STAMINA * (maxStamina - 1);
+        final int imgWidth = BASE_IMG_WIDTH + WIDTH_PER_MAX_STAMINA * (maxStamina - 1);
         final float deltaProportion = Math.abs(this.deltaAnimation.deltaStamina) / ((float) maxStamina);
-        final float alpha = (float)Math.pow(
+        final float alpha = (float) Math.pow(
                 this.deltaAnimation.elapsedTicks / this.deltaAnimation.tickLength,
                 DeltaAnimation.CURVE);
-        int width = (int)((1f - alpha) * (deltaProportion * ((float) (imgWidth - 2) + 1f)));
+        int width = (int) ((1f - alpha) * (deltaProportion * ((float) (imgWidth - 2) + 1f)));
 
         // Calculate position
         final boolean positive = this.deltaAnimation.deltaStamina >= 0;
@@ -149,24 +168,83 @@ public class MJStaminaHud extends MJHudLayer {
         // Render
         final int color = positive ? Colors.DELTA_POSITIVE : Colors.DELTA_NEGATIVE;
         GuiUtils.setColor(guiGraphics, color);
-        guiGraphics.blitSprite(SpriteHelper.DELTA_SPRITE,
+        guiGraphics.blitSprite(StaminaSprites.DELTA_SPRITE,
                 x, bar.posY,
                 width, IMG_HEIGHT);
         GuiUtils.clearColor(guiGraphics);
     }
 
-    protected static final record BarRenderResult (
-        int posX,
-        int posY,
-        int barWidth,
-        int barHeight,
-        int fillWidth,
-        ResourceLocation backgroundSprite,
-        ResourceLocation fillSprite
-    ) {}
+    protected void renderItemPenalties(final GuiGraphics guiGraphics,
+            final DeltaTracker deltaTracker, final PlayerStamina stamina,
+            final BarRenderResult bar, final WeightFlag flag) {
+
+        // Render penalty sprites for each penalizing item
+        final List<Item> penaltyItems = flag.getInflicting().getItems().stream()
+                .distinct()
+                .filter(item -> flag.getPenaltyLevel(item) > 0)
+                .sorted(Comparator.<Item>comparingInt(flag::getPenaltyLevel))
+                .toList();
+        final int penaltyItemCount = penaltyItems.size();
+        if (penaltyItemCount == 0) {
+            stackCache.clear();
+            return;
+        }
+        final int itemY = bar.posY - 16 - 2;
+        final float spacing = 24f;
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(-spacing * ((penaltyItemCount - 1)/2f), 0f, 0f);
+        for (int i = 0; i < penaltyItemCount; i++) {
+
+            // Render item sprite
+            final Item item = penaltyItems.get(i);
+            final int itemX = bar.posX + (bar.barWidth / 2) - 8;
+            final ItemStack stack = stackCache.computeIfAbsent(Item.getId(item), id -> {
+                final ItemStack newStack = item.getDefaultInstance();
+                if (item instanceof BundleItem) {
+                    newStack.set(DataComponents.BUNDLE_CONTENTS,
+                            new BundleContents(List.of(new ItemStack(Items.APPLE))));
+                }
+                return newStack;
+            });
+            guiGraphics.renderFakeItem(stack, itemX, itemY);
+
+            // Render animated arrow sprite
+            final int arrowX = itemX - 8;
+            final int arrowY = itemY - 8;
+            final long gameTicks = minecraft.level.getGameTime();
+            final ResourceLocation arrowSprite;
+            if ((gameTicks / PENALTY_ARROW_ANIM_SPEED) % 2 == 0) {
+                arrowSprite = StaminaSprites.ARROW_SPRITE_1;
+            } else {
+                arrowSprite = StaminaSprites.ARROW_SPRITE_2;
+            }
+            guiGraphics.flush();
+            RenderSystem.disableDepthTest();
+            GuiUtils.setColor(guiGraphics, Colors.ARROW_NEGATIVE);
+            guiGraphics.blitSprite(arrowSprite, arrowX, arrowY, 32, 32);
+            GuiUtils.clearColor(guiGraphics);
+            guiGraphics.flush();
+            RenderSystem.enableDepthTest();
+
+            guiGraphics.pose().translate(spacing, 0f, 0f);
+        }
+        guiGraphics.pose().popPose();
+    }
+
+    protected static final record BarRenderResult(
+            int posX,
+            int posY,
+            int barWidth,
+            int barHeight,
+            int fillWidth,
+            ResourceLocation backgroundSprite,
+            ResourceLocation fillSprite) {
+    }
 
     public static final class DeltaAnimation {
-        private DeltaAnimation() {}
+        private DeltaAnimation() {
+        }
+
         public static final int CURVE = 6;
         public float tickLength = 0f;
         public float deltaStamina = 0f;

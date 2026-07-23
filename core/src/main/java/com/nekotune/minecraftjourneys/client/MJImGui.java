@@ -29,7 +29,7 @@ public final class MJImGui {
         if (playerLoaded) {
             
             if (ImGui.begin("Stamina")) {
-                PlayerStamina stamina = PlayerStamina.get(minecraft.player);
+                final PlayerStamina stamina = PlayerStamina.get(minecraft.player);
                 ImGui.inputFloat("Tween Length", ImVariables.animLength);
                 ImGui.text("Add");
                 final var guiAnimation = new GUIAnimationProperties.Builder()
@@ -42,7 +42,10 @@ public final class MJImGui {
                 }
                 if (ImGui.inputInt("Max Stamina", ImVariables.maxStamina)) {
                     stamina.setMaxValue(ImVariables.maxStamina.get());
+                } else {
+                    ImVariables.maxStamina.set(stamina.getMaxValue());
                 }
+                ImGui.text("Delta: " + String.format("%.6f", stamina.getDeltaStamina()));
             }
             ImGui.end();
         }

@@ -1,7 +1,6 @@
 package com.nekotune.minecraftjourneys.shared.logic.stamina;
 
 import java.util.UUID;
-
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.ICancellableEvent;
@@ -118,45 +117,62 @@ public abstract sealed class StaminaEvent extends Event {
             public CycleEvent(final PlayerStamina playerStamina, final Player player) {
                 super(playerStamina, player);
             }
-
-            public abstract float getCycleValue();
+            
+            protected abstract float getCycleValue();
 
             public static final class Pre extends CycleEvent implements ICancellableEvent {
-                private float cycle;
+                private final float cycle;
+                private float add = 0f;
+                private float drainMul = 1f;
+                private float regenMul = 1f;
 
                 public Pre(final PlayerStamina playerStamina, final Player player,
                             final float cycle) {
                     super(playerStamina, player);
                     this.cycle = cycle;
                 }
-        
-                @Override
-                public float getCycleValue() {
-                    return cycle;
+
+                public void addDrain(final float absAmount) {
+                    add -= Math.abs(absAmount);
+                }
+
+                public void addBasicDrain(final float absMultiplier) {
+                    addDrain(this.getStamina().getBaseDrainRate() * absMultiplier);
                 }
 
                 public void addBasicDrain() {
-                    this.cycle -= this.getStamina().getBaseDrainRate();
+                    addBasicDrain(1f);
                 }
 
-                public void addBasicDrain(final float multiplier) {
-                    this.cycle -= this.getStamina().getBaseDrainRate() * multiplier;
+                public void addRegen(final float absAmount) {
+                    add += Math.abs(absAmount);
+                }
+
+                public void addBasicRegen(final float absMultiplier) {
+                    addRegen(this.getStamina().getBaseRegenRate() * absMultiplier);
                 }
 
                 public void addBasicRegen() {
-                    this.cycle += this.getStamina().getBaseRegenRate();
+                    addBasicRegen(1f);
                 }
 
-                public void addBasicRegen(final float multiplier) {
-                    this.cycle += this.getStamina().getBaseRegenRate() * multiplier;
+                public void multiplyIfDrain(final float absMultiplier) {
+                    drainMul *= Math.abs(absMultiplier);
                 }
 
-                public void add(final float cycle) {
-                    this.cycle += cycle;
+                public void multiplyIfRegen(final float absMultiplier) {
+                    regenMul *= Math.abs(absMultiplier);
                 }
 
-                public void multiply(final float multiplier) {
-                    this.cycle *= multiplier;
+                @Override
+                protected float getCycleValue() {
+                    float value = cycle + add;
+                    if (value > 0f) {
+                        value *= regenMul;
+                    } else {
+                        value *= drainMul;
+                    }
+                    return value;
                 }
             }
 
@@ -170,7 +186,7 @@ public abstract sealed class StaminaEvent extends Event {
                     this.cycle = cycle;
                     this.previousStamina = previousStamina;
                 }
-        
+                
                 @Override
                 public float getCycleValue() {
                     return cycle;

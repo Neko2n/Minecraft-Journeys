@@ -2,6 +2,7 @@ package com.nekotune.minecraftjourneys.shared.logic.stamina.hooks;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.WeakHashMap;
 import java.util.function.Consumer;
@@ -60,15 +61,22 @@ public final class ItemWeightPenalties {
      */
     @SubscribeEvent
     public static void onStaminaCyclePre(StaminaEvent.TickEvent.CycleEvent.Pre event) {
+        final double penaltyPerItem = MJConfig.HEAVY_ITEM_STAMINA_PENALTY.get();
+        if (penaltyPerItem == 0d) return;
         WeightFlag.get(event.getStamina()).ifPresent(flag -> {
-            float penaltyPerItem = MJConfig.HEAVY_ITEM_STAMINA_PENALTY.get().floatValue();
-            if (event.getCycleValue() < 0) {
-                penaltyPerItem = 1 / penaltyPerItem;
+            final int penaltyLevel = flag.getPenaltyLevel();
+            if (penaltyLevel == 0)
+                return;
+
+            // TODO: Remove debug logging
+            if (event.getPlayer().level().getGameTime() % 40 == 0) {
+                MinecraftJourneys.LOGGER.debug("[ItemWeightPenalties#onStaminaCyclePre] Penalty level: " + penaltyLevel
+                        + "; Regen multiplier: " + Math.pow(penaltyPerItem, penaltyLevel) + "; Drain multiplier: "
+                        + Math.pow(penaltyPerItem, -penaltyLevel));
             }
-            for (final ItemStack stack : flag.getInflicting().get()) {
-                final int count = flag.getInflicting().count(stack.getItem());
-                event.multiply((float) Math.pow(penaltyPerItem, count - 1));
-            }
+
+            event.multiplyIfRegen((float) Math.pow(penaltyPerItem, penaltyLevel));
+            event.multiplyIfDrain((float) Math.pow(penaltyPerItem, -penaltyLevel));
         });
     }
 
@@ -110,8 +118,20 @@ public final class ItemWeightPenalties {
             increment(stack.getItem());
         }
 
-        public Iterable<ItemStack> get() {
+        /**
+         * @return The list of ItemStacks included in the query results.
+         */
+        public List<ItemStack> getItemStacks() {
             return items;
+        }
+
+        /**
+         * @return A list of distinct Items included in the query results.
+         */
+        public List<Item> getItems() {
+            return items.stream().map(stack -> {
+                return stack.getItem();
+            }).toList();
         }
 
         private void increment(final Item item) {
@@ -180,6 +200,19 @@ public final class ItemWeightPenalties {
 
         public InventoryQueryResult getInflicting() {
             return queryResult;
+        }
+
+        public int getPenaltyLevel(Item item) {
+            return Math.max(0, queryResult.count(item) - 1);
+        }
+
+        public int getPenaltyLevel() {
+            int level = 0;
+            for (final Item item : queryResult.getItems()
+                    .stream().distinct().toList()) {
+                level += getPenaltyLevel(item);
+            }
+            return level;
         }
 
         @Override
