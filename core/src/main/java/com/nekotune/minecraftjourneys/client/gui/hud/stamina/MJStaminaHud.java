@@ -1,13 +1,15 @@
 package com.nekotune.minecraftjourneys.client.gui.hud.stamina;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.WeakHashMap;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.client.gui.hud.MJHudLayer;
+import com.nekotune.minecraftjourneys.client.gui.hud.stamina.StaminaSprites.BarSprites;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties.WeightFlag;
@@ -48,7 +50,7 @@ public class MJStaminaHud extends MJHudLayer {
 
     protected final Minecraft minecraft;
     protected final DeltaAnimation deltaAnimation = new DeltaAnimation();
-    private final Map<Integer, ItemStack> stackCache = new HashMap<>();
+    private final Map<Integer, ItemStack> stackCache = new WeakHashMap<>();
 
     public MJStaminaHud() {
         minecraft = Minecraft.getInstance();
@@ -115,10 +117,10 @@ public class MJStaminaHud extends MJHudLayer {
         final int fillWidth = (int) (fillProportion * ((float) imgWidth + 1f));
 
         // Fetch sprites
-        final ResourceLocation barBackground = StaminaSprites
-                .fromCache(StaminaSprites.SpriteType.BAR_BACKGROUND, maxStamina);
-        final ResourceLocation barFill = StaminaSprites
-                .fromCache(StaminaSprites.SpriteType.BAR_FILL, maxStamina);
+        final ResourceLocation barBackground = BarSprites
+                .fromCache(BarSprites.SpriteType.BACKGROUND, maxStamina);
+        final ResourceLocation barFill = BarSprites
+                .fromCache(BarSprites.SpriteType.FILL, maxStamina);
 
         // Render
         guiGraphics.blitSprite(barBackground,
@@ -185,10 +187,8 @@ public class MJStaminaHud extends MJHudLayer {
                 .sorted(Comparator.<Item>comparingInt(flag::getPenaltyLevel))
                 .toList();
         final int penaltyItemCount = penaltyItems.size();
-        if (penaltyItemCount == 0) {
-            stackCache.clear();
+        if (penaltyItemCount == 0)
             return;
-        }
         final int itemY = bar.posY - 16 - 2;
         final float spacing = 24f;
         guiGraphics.pose().pushPose();

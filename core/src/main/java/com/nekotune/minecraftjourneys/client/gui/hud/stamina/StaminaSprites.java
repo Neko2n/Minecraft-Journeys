@@ -1,5 +1,8 @@
 package com.nekotune.minecraftjourneys.client.gui.hud.stamina;
 
+import java.util.Map;
+import java.util.WeakHashMap;
+
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 
 import net.minecraft.resources.ResourceLocation;
@@ -14,32 +17,26 @@ public final class StaminaSprites {
     public static final ResourceLocation ARROW_SPRITE_2 = ResourceLocation.fromNamespaceAndPath(
             MinecraftJourneys.MOD_ID, PATH_PREFIX + "arrow/2");
 
-    public static enum SpriteType {
-        BAR_FILL,
-        BAR_BACKGROUND
-    }
+    public static final class BarSprites {
 
-    private static ResourceLocation backgroundSprite = null;
-    private static ResourceLocation filledSprite = null;
-    private static int i = -1;
+        public static enum SpriteType {
+            FILL,
+            BACKGROUND
+        }
 
-    public static ResourceLocation fromCache(final SpriteType type, final int maxStamina) {
-        if (i != maxStamina) {
-            i = maxStamina;
-            final String s = String.valueOf(maxStamina);
-            filledSprite = ResourceLocation.fromNamespaceAndPath(
-                    MinecraftJourneys.MOD_ID, PATH_PREFIX + "filled/" + s);
-            backgroundSprite = ResourceLocation.fromNamespaceAndPath(
-                    MinecraftJourneys.MOD_ID, PATH_PREFIX + "background/" + s);
-        }
-        switch(type) {
-            case SpriteType.BAR_FILL: {
-                return filledSprite;
+        private static Map<SpriteType, ResourceLocation> spriteCache = new WeakHashMap<>();
+        private static int i = -1;
+        
+        public static ResourceLocation fromCache(final SpriteType type, final int maxStamina) {
+            if (i != maxStamina) {
+                i = maxStamina;
+                final String s = String.valueOf(maxStamina);
+                spriteCache.put(type, ResourceLocation.fromNamespaceAndPath(
+                        MinecraftJourneys.MOD_ID, StaminaSprites.PATH_PREFIX + "filled/" + s));
+                spriteCache.put(type, ResourceLocation.fromNamespaceAndPath(
+                        MinecraftJourneys.MOD_ID, StaminaSprites.PATH_PREFIX + "background/" + s));
             }
-            case SpriteType.BAR_BACKGROUND: {
-                return backgroundSprite;
-            }
+            return spriteCache.get(type);
         }
-        return null; // Cannot be reached
     }
 }
