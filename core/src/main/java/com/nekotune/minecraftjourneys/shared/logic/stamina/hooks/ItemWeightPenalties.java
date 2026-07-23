@@ -67,14 +67,6 @@ public final class ItemWeightPenalties {
             final int penaltyLevel = flag.getPenaltyLevel();
             if (penaltyLevel == 0)
                 return;
-
-            // TODO: Remove debug logging
-            if (event.getPlayer().level().getGameTime() % 40 == 0) {
-                MinecraftJourneys.LOGGER.debug("[ItemWeightPenalties#onStaminaCyclePre] Penalty level: " + penaltyLevel
-                        + "; Regen multiplier: " + Math.pow(penaltyPerItem, penaltyLevel) + "; Drain multiplier: "
-                        + Math.pow(penaltyPerItem, -penaltyLevel));
-            }
-
             event.multiplyIfRegen((float) Math.pow(penaltyPerItem, penaltyLevel));
             event.multiplyIfDrain((float) Math.pow(penaltyPerItem, -penaltyLevel));
         });
