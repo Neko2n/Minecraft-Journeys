@@ -26,3 +26,7 @@
 	# Default: 1.0
 	# Range: 0.0 ~ 3.4028234663852886E38
 	glider_drain_multiplier = 1.0
+	#Multiplier applied to your stamina while carrying too many heavy items.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	heavy_item_penalty = 0.5

@@ -1,0 +1,21 @@
+filename = 'peaceless-1.0.jar'
+name = 'Peaceless'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Peaceless 1.0'
+
+[download]
+hash = '76932927fd1a974fb4500641436494e4698b9686'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8496269
+project-id = 1622671
+
+[[x-prismlauncher-dependencies]]
+addonId = '1597849'
+type = 'REQUIRED'

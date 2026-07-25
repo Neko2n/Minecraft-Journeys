@@ -1,4 +1,4 @@
-filename = 'Icons - Numerals v.1.2.zip'
+filename = 'Icons - Numerals v.1.3.zip'
 name = 'Icons - Numerals'
 side = ''
 x-prismlauncher-dependencies = []
@@ -22,17 +22,21 @@ x-prismlauncher-mc-versions = [
     '1.21.8',
     '1.21.9',
     '1.21.10',
-    '1.21.11'
+    '1.21.11',
+    '26.1',
+    '26.1.1',
+    '26.1.2',
+    '26.2'
 ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.2'
+x-prismlauncher-version-number = '1.3'
 
 [download]
-hash = '88c50c2b142df151a32de29a02bb53cc1fb24f7e54f706d58b8815943d34da3c7a77da50b088ecfd7c9569191fec239022a2b6cd02585b65f695e2b8cfa4bd5d'
+hash = '62e54b6711e28828a9b8b1b420e837a766349e1905f21dd6ac1ee4551905d2b12ac90da20a47f1ce2775936b10a291b357a85f62479de713068d5f09b1d15aea'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/C54EmbDN/versions/35QdDXl8/Icons - Numerals v.1.2.zip'
+url = 'https://cdn.modrinth.com/data/C54EmbDN/versions/260Znmux/Icons - Numerals v.1.3.zip'
 
 [update.modrinth]
 mod-id = 'C54EmbDN'
-version = '35QdDXl8'
+version = '260Znmux'

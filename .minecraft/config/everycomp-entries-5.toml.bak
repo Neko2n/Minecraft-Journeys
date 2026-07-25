@@ -41,10 +41,6 @@
 			hoary = true
 			walnut = true
 
-		[types.wood_type.alexscaves]
-			pewen = true
-			thornwood = true
-
 		[types.wood_type.enderscape]
 			veiled = true
 			celestial = true
@@ -129,9 +125,6 @@
 			walnut = true
 			golden_apple = true
 			flowering_golden_apple = true
-
-		[types.leaves_type.alexscaves]
-			ancient = true
 
 		[types.leaves_type.spawn]
 			date = true

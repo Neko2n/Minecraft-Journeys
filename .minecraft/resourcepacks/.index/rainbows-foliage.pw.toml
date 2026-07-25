@@ -1,18 +1,18 @@
-filename = 'rainbows-foliage-polytone-edition-v1.7.zip'
+filename = 'rainbows-foliage-polytone-edition-v1.8.zip'
 name = "rainbow's foliage: polytone"
-side = 'client'
+side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = []
-x-prismlauncher-mc-versions = [ '1.20.1', '1.21.1', '1.21.5', '1.21.11' ]
+x-prismlauncher-mc-versions = [ '1.20.1', '1.21.1', '1.21.5', '1.21.11', '26.1.2', '26.2' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.7'
+x-prismlauncher-version-number = '1.8'
 
 [download]
-hash = '77a1619b40a13826bb758efaf93339ec032bfa7d54f0da5e3fc0cbbc109599daebc17308d33f989b670c7eb6f2ea0173148e9f94d6cd190904ae580dedc8ef1f'
+hash = 'a42331ef07fa7e2152ced6d178283f9711ecb7158496f3ae17594886976c749b9db0e28bc9888d9319529971b662d2380bb888111a239ad1a49c261ad5dbde60'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/bY2CaVIh/versions/yi1axqHV/rainbows-foliage-polytone-edition-v1.7.zip'
+url = 'https://cdn.modrinth.com/data/bY2CaVIh/versions/a2zIOsX7/rainbows-foliage-polytone-edition-v1.8.zip'
 
 [update.modrinth]
 mod-id = 'bY2CaVIh'
-version = 'yi1axqHV'
+version = 'a2zIOsX7'
