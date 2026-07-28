@@ -114,7 +114,7 @@ public class MJStaminaHud extends MJHudLayer {
         final int barX = (guiGraphics.guiWidth() - imgWidth) / 2;
         final int barY = guiGraphics.guiHeight() - 32 + IMG_HEIGHT;
         final float fillProportion = stamina.getValue() / ((float) maxStamina);
-        final int fillWidth = (int) (fillProportion * ((float) imgWidth + 1f));
+        final int fillWidth = (int) (fillProportion * imgWidth);
 
         // Fetch sprites
         final ResourceLocation barBackground = BarSprite.BACKGROUND.cacheRead(maxStamina);

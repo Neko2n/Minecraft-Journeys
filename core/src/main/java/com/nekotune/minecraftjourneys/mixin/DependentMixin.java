@@ -7,7 +7,6 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
 
 import net.neoforged.fml.loading.LoadingModList;
@@ -18,7 +17,7 @@ public abstract class DependentMixin implements IMixinConfigPlugin {
 
     @Override
     public final boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        final String id = MinecraftJourneys.DEPENDENCIES.get(dependency()).MOD_ID;
+        final String id = dependency().MOD_ID;
         return LoadingModList.get().getModFileById(id) != null;
     }
 

@@ -3,7 +3,7 @@
   "OVERWORLD_CLOUDS_RENDERED": true,
   "NETHER_CLOUDS_RENDERED": true,
   "END_CLOUDS_RENDERED": true,
-  "lastModificationTime": 1785260521552,
+  "lastModificationTime": 1784825668196,
   "CLOUD_COLOR": [
     {
       "time": 0,
@@ -154,10 +154,10 @@
           "BRIGHTNESS": 1.0,
           "LAYER_COLOR": 16777215,
           "CLOUD_Y_SCALE": 1.5,
-          "LAYER_OFFSET_X": 128,
-          "LAYER_OFFSET_Z": 128,
-          "LAYER_SPEED_X": 0.15999955,
-          "LAYER_SPEED_Z": 0.15999955,
+          "LAYER_OFFSET_X": 0,
+          "LAYER_OFFSET_Z": 0,
+          "LAYER_SPEED_X": 0.03,
+          "LAYER_SPEED_Z": 0.03,
           "LAYER_HEIGHT_OFFSET": 0.23,
           "TEXTURE_NAME": "clouds",
           "TEXTURE_NAMESPACE": "minecraft",

@@ -4,8 +4,6 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.util.EnumMap;
-import java.util.Map;
 
 import javax.annotation.Nullable;
 
@@ -31,18 +29,33 @@ public class MinecraftJourneys {
     public static final String MOD_ID = "modpack";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static enum Dependency {
-        INCREMENTAL_MINING,
-        BETTER_COMBAT,
-        RELIABLE_GLIDERS,
-        ALL_WITH_YOU
+        INCREMENTAL_MINING("incrementalmining"),
+        BETTER_COMBAT("bettercombat"),
+        RELIABLE_GLIDERS("reliable_gliders"),
+        ALL_WITH_YOU("all_with_you");
+        
+        /**
+         * The dependency's string mod id.
+         */
+        public final String MOD_ID;
+
+        private Boolean isLoaded = null;
+
+        private Dependency(final String mod_id) {
+            MOD_ID = mod_id;
+        }
+
+        /**
+         * @return True if the dependency is loaded.
+         * @see ModList#isLoaded()
+         */
+        public boolean isLoaded() {
+            if (isLoaded == null) {
+                isLoaded = ModList.get().isLoaded(this.MOD_ID);
+            }
+            return isLoaded;
+        }
     }
-    public static final EnumMap<Dependency, ModDependency> DEPENDENCIES = new EnumMap<>(Map.of(
-        Dependency.INCREMENTAL_MINING, new ModDependency("incrementalmining"),
-        Dependency.BETTER_COMBAT, new ModDependency("bettercombat"),
-        Dependency.RELIABLE_GLIDERS, new ModDependency("reliable_gliders"),
-        Dependency.ALL_WITH_YOU, new ModDependency("all_with_you")
-    ));
-    
     
     /**
      * Annotate a class which will be subscribed to an Event Bus at mod construction time
@@ -91,7 +104,7 @@ public class MinecraftJourneys {
                     final var annotation = clazz.getAnnotation(annotationType);
                     for (Dist dist : annotation.value()) {
                         if (FMLEnvironment.dist == dist) {
-                            if (DEPENDENCIES.get(annotation.dependency()).isLoaded()) {
+                            if (annotation.dependency().isLoaded()) {
                                 NeoForge.EVENT_BUS.register(clazz);
                             }
                             return;
@@ -118,33 +131,5 @@ public class MinecraftJourneys {
     @SubscribeEvent
     private void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
-    }
-    
-    /**
-     * Data type holding information about a mod dependency.
-     */
-    public static final class ModDependency {
-
-        /**
-         * The dependency's string mod id.
-         */
-        public final String MOD_ID;
-
-        private Boolean isLoaded = null;
-
-        private ModDependency(final String mod_id) {
-            MOD_ID = mod_id;
-        }
-
-        /**
-         * @return True if the dependency is loaded.
-         * @see ModList#isLoaded()
-         */
-        public boolean isLoaded() {
-            if (isLoaded == null) {
-                isLoaded = ModList.get().isLoaded(this.MOD_ID);
-            }
-            return isLoaded;
-        }
     }
 }

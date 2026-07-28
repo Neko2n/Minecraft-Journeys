@@ -8,7 +8,6 @@ import com.evandev.reliable_gliders.api.GlidingState;
 import com.nekotune.minecraftjourneys.MJConfig;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
-import com.nekotune.minecraftjourneys.MinecraftJourneys.ModDependency;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.GUIAnimationProperties;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.StaminaEvent;
@@ -35,7 +34,6 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.LeftClickE
 
 @EventBusSubscriber(modid = MinecraftJourneys.MOD_ID)
 public class StaminaCosts {
-    private static final ModDependency betterCombat = MinecraftJourneys.DEPENDENCIES.get(Dependency.BETTER_COMBAT);
 
     private static float lastAttackStrengthScale = 1.0f;
     private static boolean attackedFullStrength = false;
@@ -83,7 +81,7 @@ public class StaminaCosts {
 
             // If weapon is heavy enough and attack was fully charged, apply further stamina
             // penalty
-            if (!attackedFullStrength && !betterCombat.isLoaded())
+            if (!attackedFullStrength && !Dependency.BETTER_COMBAT.isLoaded())
                 return;
             reduction /= 3f;
             reduction *= MJConfig.HEAVY_SWING_STAMINA_MULTIPLIER.get().floatValue();
@@ -95,14 +93,14 @@ public class StaminaCosts {
 
     @SubscribeEvent
     public static void onPlayerLeftClickEmpty(final LeftClickEmpty event) {
-        if (betterCombat.isLoaded())
+        if (Dependency.BETTER_COMBAT.isLoaded())
             return;
         swingWeaponEvent(event.getHand());
     }
 
     @SubscribeEvent
     public static void onPlayerAttackEntity(final AttackEntityEvent event) {
-        if (betterCombat.isLoaded())
+        if (Dependency.BETTER_COMBAT.isLoaded())
             return;
         swingWeaponEvent(event.getEntity().swingingArm);
     }
