@@ -1,29 +1,29 @@
-filename = 'reliable_remover-neoforge-1.21.1-2.10.7.jar'
+filename = 'reliable_remover-neoforge-1.21.1-2.10.8.jar'
 name = 'Reliable Remover'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '2.10.7-1.21.1-neoforge'
+x-prismlauncher-version-number = '2.10.8-1.21.1-neoforge'
 
 [download]
-hash = '636da5ef07c05bc5b4f16bfeb9d8a85144ffbfa3aac98c3cca3253306e6d80f5aeb71d0ae468e38e7ebd219b0ca61d66ab79d2b4da6a69ad73e5f96cbb9143a4'
+hash = 'a60c5f57a287a5c3a2988d71cd66bdc66abce7642bc44e5a8deaab33a042e9406cc2b31c86ae44613aa41cf184d7cfd1306370a98eaf055ccb6c285763334d0b'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/pLxsKvNt/versions/b83t34Mv/reliable_remover-neoforge-1.21.1-2.10.7.jar'
+url = 'https://cdn.modrinth.com/data/pLxsKvNt/versions/3oC2RpJD/reliable_remover-neoforge-1.21.1-2.10.8.jar'
 
 [update.modrinth]
 mod-id = 'pLxsKvNt'
-version = 'b83t34Mv'
+version = '3oC2RpJD'
 
 [[x-prismlauncher-dependencies]]
 addonId = 'Hl4ARA1z'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]
-addonId = '1eAoo2KR'
-type = 'REQUIRED'
-
-[[x-prismlauncher-dependencies]]
 addonId = 'fRiHVvU7'
 type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1eAoo2KR'
+type = 'REQUIRED'
