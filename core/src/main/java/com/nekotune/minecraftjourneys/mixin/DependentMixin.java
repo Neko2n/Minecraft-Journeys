@@ -7,13 +7,13 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
+import com.nekotune.minecraftjourneys.MJDependency;
 
 import net.neoforged.fml.loading.LoadingModList;
 
 public abstract class DependentMixin implements IMixinConfigPlugin {
 
-    protected abstract Dependency dependency();
+    protected abstract MJDependency dependency();
 
     @Override
     public final boolean shouldApplyMixin(String targetClassName, String mixinClassName) {

@@ -5,13 +5,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.evandev.reliable_gliders.api.GlidingState;
+import com.nekotune.minecraftjourneys.MJDependency;
+import com.nekotune.minecraftjourneys.MJDependency.DependentEventBusSubscriber;
 import com.nekotune.minecraftjourneys.MJConfig;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
-import com.nekotune.minecraftjourneys.MinecraftJourneys.Dependency;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.GUIAnimationProperties;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.StaminaEvent;
-import com.nekotune.minecraftjourneys.MinecraftJourneys.DependentEventBusSubscriber;
 
 import net.bettercombat.api.AttackHand;
 import net.bettercombat.api.client.BetterCombatClientEvents;
@@ -81,7 +81,7 @@ public class StaminaCosts {
 
             // If weapon is heavy enough and attack was fully charged, apply further stamina
             // penalty
-            if (!attackedFullStrength && !Dependency.BETTER_COMBAT.isLoaded())
+            if (!attackedFullStrength && !MJDependency.BETTER_COMBAT.isLoaded())
                 return;
             reduction /= 3f;
             reduction *= MJConfig.HEAVY_SWING_STAMINA_MULTIPLIER.get().floatValue();
@@ -93,14 +93,14 @@ public class StaminaCosts {
 
     @SubscribeEvent
     public static void onPlayerLeftClickEmpty(final LeftClickEmpty event) {
-        if (Dependency.BETTER_COMBAT.isLoaded())
+        if (MJDependency.BETTER_COMBAT.isLoaded())
             return;
         swingWeaponEvent(event.getHand());
     }
 
     @SubscribeEvent
     public static void onPlayerAttackEntity(final AttackEntityEvent event) {
-        if (Dependency.BETTER_COMBAT.isLoaded())
+        if (MJDependency.BETTER_COMBAT.isLoaded())
             return;
         swingWeaponEvent(event.getEntity().swingingArm);
     }
@@ -118,7 +118,7 @@ public class StaminaCosts {
         return 0d;
     }
 
-    @DependentEventBusSubscriber(dependency = Dependency.BETTER_COMBAT, value = Dist.CLIENT)
+    @DependentEventBusSubscriber(dependency = MJDependency.BETTER_COMBAT, value = Dist.CLIENT)
     @OnlyIn(value = Dist.CLIENT)
     public static final class BetterCombatClientHooks {
 
@@ -155,7 +155,7 @@ public class StaminaCosts {
     /**
      * Drain stamina while gliding.
      */
-    @DependentEventBusSubscriber(dependency = Dependency.RELIABLE_GLIDERS)
+    @DependentEventBusSubscriber(dependency = MJDependency.RELIABLE_GLIDERS)
     public static final class ReliableGlidersHooks {
 
         @SubscribeEvent

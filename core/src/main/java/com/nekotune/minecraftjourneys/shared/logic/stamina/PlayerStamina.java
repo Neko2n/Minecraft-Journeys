@@ -111,14 +111,14 @@ public class PlayerStamina {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             final StaminaPacket.ToServer packet = new StaminaPacket.ToServer(stamina);
             PacketDistributor.sendToServer(packet);
-            MinecraftJourneys.LOGGER.debug("[Stamina] Sent StaminaPacket to server");
+            MinecraftJourneys.LOG.debug("[Stamina] Sent StaminaPacket to server");
         } else {
             final MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
             if (server != null) {
                 final ServerPlayer serverPlayer = server.getPlayerList().getPlayer(playerId);
                 final StaminaPacket.ToClient packet = new StaminaPacket.ToClient(stamina, guiAnimation.tweenTime());
                 PacketDistributor.sendToPlayer(serverPlayer, packet);
-                MinecraftJourneys.LOGGER.debug("[Stamina] Sent StaminaPacket to client");
+                MinecraftJourneys.LOG.debug("[Stamina] Sent StaminaPacket to client");
             }
         }
     }
@@ -145,7 +145,7 @@ public class PlayerStamina {
         final int previousValue = this.maxStamina;
         final int clamped = Math.max(0, maxStamina);
         if (maxStamina != clamped) {
-            MinecraftJourneys.LOGGER.warn(
+            MinecraftJourneys.LOG.warn(
                     "Tried to set maxStamina for player " + playerName
                             + " to invalid value " + String.valueOf(maxStamina)
                             + "; clamped to 0.");
@@ -161,7 +161,7 @@ public class PlayerStamina {
                 final MaxStaminaPacket.ToClient packet = new MaxStaminaPacket.ToClient(this.maxStamina);
                 serverPlayer.setData(Attachments.MAX_STAMINA.get(), packet);
                 PacketDistributor.sendToPlayer(serverPlayer, packet);
-                MinecraftJourneys.LOGGER.debug("[Stamina] Sent MaxStaminaPacket to client");
+                MinecraftJourneys.LOG.debug("[Stamina] Sent MaxStaminaPacket to client");
             }
         }
 
@@ -355,7 +355,7 @@ public class PlayerStamina {
             final Player player = context.player();
             final PlayerStamina stamina = PlayerStamina.get(player);
             stamina.setMaxValue(data.value());
-            MinecraftJourneys.LOGGER.debug("[Stamina] Received MaxStaminaPacket from server");
+            MinecraftJourneys.LOG.debug("[Stamina] Received MaxStaminaPacket from server");
         }
 
         private static void acceptPayload(final StaminaPacket.ToClient data, final IPayloadContext context) {
@@ -365,14 +365,14 @@ public class PlayerStamina {
                     new GUIAnimationProperties.Builder()
                             .length(data.tweenTime())
                             .build());
-            MinecraftJourneys.LOGGER.debug("[Stamina] Received StaminaPacket from server");
+            MinecraftJourneys.LOG.debug("[Stamina] Received StaminaPacket from server");
         }
 
         private static void acceptPayload(final StaminaPacket.ToServer data, final IPayloadContext context) {
             final Player player = context.player();
             final PlayerStamina stamina = PlayerStamina.get(player);
             stamina.stamina = data.value();
-            MinecraftJourneys.LOGGER.debug("[Stamina] Received StaminaPacket from client");
+            MinecraftJourneys.LOG.debug("[Stamina] Received StaminaPacket from client");
         }
     }
 

@@ -35,7 +35,7 @@ public class MinecraftJourneysClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        MinecraftJourneys.LOGGER.info("HELLO FROM CLIENT SETUP");
-        MinecraftJourneys.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        MinecraftJourneys.LOG.info("HELLO FROM CLIENT SETUP");
+        MinecraftJourneys.LOG.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
