@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 import com.nekotune.minecraftjourneys.client.gui.hud.MJHudLayer;
-import com.nekotune.minecraftjourneys.client.gui.hud.stamina.StaminaSprites.BarSprites;
+import com.nekotune.minecraftjourneys.client.gui.hud.stamina.StaminaSprites.BarSprite;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.PlayerStamina;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties;
 import com.nekotune.minecraftjourneys.shared.logic.stamina.hooks.ItemWeightPenalties.WeightFlag;
@@ -117,10 +117,8 @@ public class MJStaminaHud extends MJHudLayer {
         final int fillWidth = (int) (fillProportion * ((float) imgWidth + 1f));
 
         // Fetch sprites
-        final ResourceLocation barBackground = BarSprites
-                .fromCache(BarSprites.SpriteType.BACKGROUND, maxStamina);
-        final ResourceLocation barFill = BarSprites
-                .fromCache(BarSprites.SpriteType.FILL, maxStamina);
+        final ResourceLocation barBackground = BarSprite.BACKGROUND.cacheRead(maxStamina);
+        final ResourceLocation barFill = BarSprite.FILL.cacheRead(maxStamina);
 
         // Render
         guiGraphics.blitSprite(barBackground,
