@@ -8,11 +8,11 @@
   "advancedExplosions": false,
   "lenientParry": false,
   "lenientStamina": false,
-  "tooltips": true,
-  "tooltipCooldown": true,
+  "tooltips": false,
+  "tooltipCooldown": false,
   "tooltipStamina": false,
   "tooltipSpeed": false,
   "tooltipParryDamage": false,
-  "tooltipParryWindow": true,
+  "tooltipParryWindow": false,
   "tooltipBlastResistance": false
 }
