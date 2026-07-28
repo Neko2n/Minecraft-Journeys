@@ -1,7 +1,7 @@
 package com.nekotune.minecraftjourneys.client.gui.hud.stamina;
 
+import java.util.EnumMap;
 import java.util.Map;
-import java.util.WeakHashMap;
 
 import com.nekotune.minecraftjourneys.MinecraftJourneys;
 
@@ -24,7 +24,8 @@ public final class StaminaSprites {
             BACKGROUND
         }
 
-        private static Map<SpriteType, ResourceLocation> spriteCache = new WeakHashMap<>();
+        private static Map<SpriteType, ResourceLocation> spriteCache =
+                new EnumMap<>(SpriteType.class);
         private static int i = -1;
         
         public static ResourceLocation fromCache(final SpriteType type, final int maxStamina) {
@@ -36,23 +37,7 @@ public final class StaminaSprites {
                 spriteCache.put(type, ResourceLocation.fromNamespaceAndPath(
                         MinecraftJourneys.MOD_ID, StaminaSprites.PATH_PREFIX + "background/" + s));
             }
-            return spriteCache.computeIfAbsent(type, t -> {
-                final String s = String.valueOf(maxStamina);
-                final String n;
-                switch (type) {
-                    case SpriteType.FILL:
-                        n = "filled/";
-                        break;
-                    case SpriteType.BACKGROUND:
-                        n = "background/";
-                        break;
-                    default:
-                        throw new UnsupportedOperationException();
-                }
-                return ResourceLocation.fromNamespaceAndPath(
-                        MinecraftJourneys.MOD_ID,
-                        StaminaSprites.PATH_PREFIX + n + s);
-            });
+            return spriteCache.get(type);
         }
     }
 }
