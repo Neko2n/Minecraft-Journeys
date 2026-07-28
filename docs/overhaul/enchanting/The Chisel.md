@@ -1,4 +1,6 @@
-Silk touch is removed, replaced with a dedicated tool.
+[[Enchanting Overhaul]]
+
+Silk touch is removed, replaced with a dedicated tool, the **Chisel**.
 
 Mines glass-like blocks faster (including the new obsidian)
 

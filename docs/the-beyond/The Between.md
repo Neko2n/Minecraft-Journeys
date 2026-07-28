@@ -1,3 +1,5 @@
+[[The Beyond]]
+
 The between is a dimension accessed exclusively from [[The Stronghold]], and contains the [[Final Boss]].
 
 The between is an infinitely procedurally generated stronghold with more difficult rooms and unique mechanics that only work because it is a dimension.

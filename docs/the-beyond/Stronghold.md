@@ -1,4 +1,6 @@
-The stronghold from vanilla is removed. The new stronghold is a structure which generates in [[The Beyond]] at 0, 0 in place of the removed center island.
+[[The Beyond]]
+
+The stronghold from vanilla is removed. The new stronghold is a structure which generates in the Beyond at 0, 0 in place of the removed center island.
 
 The stronghold is an extremely dangerous dungeon akin to a broken-up nether fortress combined with an end city. It's an absolutely massive structure.
 

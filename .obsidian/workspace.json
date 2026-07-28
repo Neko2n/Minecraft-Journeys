@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/stamina/Campfire Effect.md",
+                "file": "docs/overhaul/progression/Brewing Overhaul.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Campfire Effect"
+              "title": "Brewing Overhaul"
             }
           }
         ]
@@ -182,29 +182,41 @@
   },
   "active": "19b400b95c8e3a3f",
   "lastOpenFiles": [
-    "docs/overhaul/crafting/Anvil Overhaul.md",
-    "docs/stamina/Campfire Effect.md",
-    "docs/progression",
-    "docs/overhaul/misc/Explosive Spawners.md",
-    "docs/overhaul/misc/Obsidian Shards.md",
+    "docs/overhaul/progression/Thermal Shard.md",
+    "docs/overhaul/progression/Brewing Overhaul.md",
+    "docs/overhaul/progression/Workbench.md",
+    "docs/overhaul/progression/Crucible.md",
+    "docs/overhaul/progression/Progression.md",
+    "docs/overhaul/progression/Early Game.md",
+    "docs/overhaul/player/Hunger Overhaul.md",
+    "docs/the-above/Phantoms & Gliders.md",
+    "docs/the-above/biomes/Indigo Quarry.md",
+    "docs/the-below/biomes/Basalt Vents.md",
+    "docs/the-above/Twine.md",
+    "docs/the-above/biomes/Twilight Thicket.md",
+    "docs/the-above/biomes/Golden Woods & Wilds.md",
+    "docs/the-above/The Above.md",
+    "docs/the-above/biomes/Scarlet Field.md",
+    "docs/the-above/biomes/Wistful Weald.md",
+    "docs/the-above/biomes/Glass Wastes.md",
+    "docs/the-below/biomes/Upper Caverns.md",
+    "docs/the-above/biomes",
+    "docs/the-above/Climbing Claws.md",
+    "docs/overhaul/enchanting/Diamond Upgrading.md",
+    "docs/overhaul/smithing/Smithing Overhaul.md",
+    "docs/overhaul/smithing",
+    "docs/overhaul/enchanting/Enchanting Overhaul.md",
     "docs/overhaul/enchanting/The Chisel.md",
+    "docs/overhaul/crafting/Anvil Overhaul.md",
+    "docs/integration/Torches & Campfires.md",
+    "docs/overhaul/misc/Consistent Dust Blocks.md",
+    "docs/integration/core-content",
+    "docs/balancing",
+    "docs/the-below/biomes",
+    "docs/overhaul/player",
+    "docs/overhaul/progression",
     "docs/overhaul/enchanting",
     "docs/overhaul/misc",
-    "docs/overhaul/piglins",
-    "docs/overhaul/crafting/Dye Vat.md",
-    "docs/the-above/The Above.md",
-    "docs/overhaul/crafting",
-    "docs/the-below/The Below.md",
-    "docs/the-beyond/The Between.md",
-    "docs/the-beyond/The Beyond.md",
-    "docs/the-beyond/Stronghold.md",
-    "docs/the-beyond/Final Boss.md",
-    "docs/the-beyond/Suspicious Trader.md",
-    "docs/the-beyond/Rifts.md",
-    "docs/the-beyond",
-    "docs/the-below",
-    "docs/the-above",
-    "docs/stamina",
-    "docs/systems"
+    "docs/overhaul/piglins"
   ]
 }

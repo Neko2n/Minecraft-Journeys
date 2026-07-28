@@ -1,0 +1,1 @@
+Replacement for experience, and a new resource required for many different actions in the game.

@@ -1,4 +1,6 @@
-Rifts form all dimensions, and are the primary way of getting to [[The Beyond]]. These are random cracks in reality, made up of multiple blocks which replace existing blocks temporarily.
+[[The Beyond]]
+
+Rifts form all dimensions, and are the primary way of getting to the Beyond. These are random cracks in reality, made up of multiple blocks which replace existing blocks temporarily.
 
 Rifts naturally collapse after roughly half an in-game day, removing the rift and reverting any included blocks to their original versions.
 
