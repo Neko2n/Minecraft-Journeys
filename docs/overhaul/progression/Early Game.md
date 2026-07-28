@@ -12,4 +12,10 @@ Once players can harvest stone and coal, they can use a workbench to create a fu
 
 Optionally, now that they have access to the crafting table, they can search out leather/cloth to make leather or cloth armor.
 
-Players now must travel underground to find [[Thermal Shard]] items to craft and fuel the [[Forge]] work station and the [[Crucible]]. This allows them to craft tools beyond copper.
+Players now must travel underground to find [[Thermal Shard]] items to have enough heat to smelt iron, allowing them to get iron tools.
+
+Optionally, players may also use an [[Assembly Table]] to craft a mechanical press, which in turn can be powered to make metal plates, which make metal armor.
+
+They then must collect at least 4 diamonds to activate [[Beacon Shrines]].
+
+Once they've successfully activated a beacon shrine, they'll enter tier 2 of their progression, [[Going Above]].

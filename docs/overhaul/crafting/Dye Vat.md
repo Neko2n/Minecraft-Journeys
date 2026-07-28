@@ -1,3 +1,5 @@
+[[Early Game]]
+
 Remove dye crafting table recipes. Remove dye item recipes.
 
 Add new dye vat block, crafted with 7 wood (like a wood cauldron).

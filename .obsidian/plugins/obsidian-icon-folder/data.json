@@ -5,7 +5,13 @@
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
-    "recentlyUsedIcons": [],
+    "recentlyUsedIcons": [
+      "LiDroplets",
+      "LiCuboid",
+      "LiGem",
+      "LiPyramid",
+      "LiDrumstick"
+    ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
     "extraMargin": {
@@ -27,5 +33,21 @@
     "lucideIconPackType": "native",
     "debugMode": false,
     "useInternalPlugins": false
-  }
+  },
+  "docs/overhaul/player/Armor Overhaul.md": "LiShirt",
+  "docs/overhaul/player/Freeze.md": "LiSnowflake",
+  "docs/overhaul/player/Heat.md": "LiSun",
+  "docs/overhaul/player/Health & Damage Overhaul.md": "LiHeartCrack",
+  "docs/overhaul/player/Hunger Overhaul.md": "LiDrumstick",
+  "docs/overhaul/progression/Beacon Shrines.md": "LiPyramid",
+  "docs/overhaul/progression/Thermal Shard.md": "LiGem",
+  "docs/overhaul/progression/materials/Blaze Bronze.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Brass.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Copper.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Electrum.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Gold.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Iron.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Soul Steel.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Tin.md": "LiCuboid",
+  "docs/overhaul/progression/materials/Zinc.md": "LiDroplets"
 }

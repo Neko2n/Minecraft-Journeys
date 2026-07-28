@@ -22,8 +22,6 @@ New undead mob, **The Boiled**. Looks like a 4-block tall burned with one skinny
 
 Deepslate quartz ore spawns here frequently, and you can find quartz geodes with special new raw quartz and quartz bud blocks.
 
-New fluid: **boiling water**. Created when water generates naturally in the Below. When bucketed, grants regular water. Has a lighter color than water, and constantly bubbles. Entering it will behave like soul sand columns, and will damage you like lava. Boiling water still evaporates if it somehow reaches the lower caverns.
-
 Blobs of crimson and warped deepslate generate on the surfaces of caves in all upper caverns biomes, which themselves generate the roots and rarely even the trees.
 
 Thorium can generate in the upper caverns, but rarely. It's mostly found in the lower caverns.

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e2cd0e4965de4738",
+        "id": "9c8d4b069aa951a1",
         "type": "tabs",
         "children": [
           {
-            "id": "19b400b95c8e3a3f",
+            "id": "e3d8c415ed3d50c2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/overhaul/progression/Brewing Overhaul.md",
+                "file": "docs/the-above/The Above.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Brewing Overhaul"
+              "title": "The Above"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 256.5
   },
   "right": {
     "id": "79093d8b5da9f949",
@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/the-above/The Above.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for The Above"
             }
           },
           {
@@ -166,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -180,43 +181,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "19b400b95c8e3a3f",
+  "active": "e3d8c415ed3d50c2",
   "lastOpenFiles": [
-    "docs/overhaul/progression/Thermal Shard.md",
-    "docs/overhaul/progression/Brewing Overhaul.md",
-    "docs/overhaul/progression/Workbench.md",
-    "docs/overhaul/progression/Crucible.md",
-    "docs/overhaul/progression/Progression.md",
-    "docs/overhaul/progression/Early Game.md",
-    "docs/overhaul/player/Hunger Overhaul.md",
-    "docs/the-above/Phantoms & Gliders.md",
-    "docs/the-above/biomes/Indigo Quarry.md",
-    "docs/the-below/biomes/Basalt Vents.md",
     "docs/the-above/Twine.md",
+    "docs/the-above/mobs/Tanuki.md",
     "docs/the-above/biomes/Twilight Thicket.md",
-    "docs/the-above/biomes/Golden Woods & Wilds.md",
     "docs/the-above/The Above.md",
-    "docs/the-above/biomes/Scarlet Field.md",
-    "docs/the-above/biomes/Wistful Weald.md",
-    "docs/the-above/biomes/Glass Wastes.md",
-    "docs/the-below/biomes/Upper Caverns.md",
-    "docs/the-above/biomes",
-    "docs/the-above/Climbing Claws.md",
+    "docs/the-above/mobs/Harpy.md",
+    "docs/the-above/mobs/Happy Ghasts.md",
+    "instance.cfg.lock",
+    "docs/the-above/mobs/TBD & Climbing Claws.md",
+    "docs/the-above/mobs/Phantom & Gliders.md",
+    "docs/the-above/mobs/Chickens.md",
+    "docs/the-above/mobs",
+    "docs/overhaul/player/Heat.md",
+    "docs/the-below/upper-caverns/Boiling Water.md",
+    "docs/the-below/upper-caverns/Upper Caverns.md",
+    "docs/the-below/upper-caverns/Quartz Pools.md",
+    "docs/the-below/upper-caverns/Bismuth Cavern.md",
+    "docs/the-below/upper-caverns/Crimson & Warped Caves.md",
+    "docs/overhaul/crafting/Smithing Table.md",
     "docs/overhaul/enchanting/Diamond Upgrading.md",
-    "docs/overhaul/smithing/Smithing Overhaul.md",
+    "docs/overhaul/player/Hunger Overhaul.md",
+    "docs/overhaul/player/Health & Damage Overhaul.md",
+    "docs/overhaul/misc/Freezing Soul Fire.md",
+    "docs/overhaul/player/Freeze.md",
+    "docs/overhaul/progression/materials/Blaze Bronze.md",
+    "docs/overhaul/player/Armor Overhaul.md",
+    "docs/overhaul/misc/Rotten Food.md",
+    "docs/overhaul/crafting/Assembly Table.md",
+    "docs/overhaul/crafting/Brewing Stand.md",
+    "docs/overhaul/progression/materials",
+    "docs/the-above/biomes",
     "docs/overhaul/smithing",
-    "docs/overhaul/enchanting/Enchanting Overhaul.md",
-    "docs/overhaul/enchanting/The Chisel.md",
-    "docs/overhaul/crafting/Anvil Overhaul.md",
-    "docs/integration/Torches & Campfires.md",
-    "docs/overhaul/misc/Consistent Dust Blocks.md",
     "docs/integration/core-content",
     "docs/balancing",
-    "docs/the-below/biomes",
+    "docs/the-below/upper-caverns",
     "docs/overhaul/player",
-    "docs/overhaul/progression",
-    "docs/overhaul/enchanting",
-    "docs/overhaul/misc",
-    "docs/overhaul/piglins"
+    "docs/overhaul/progression"
   ]
 }

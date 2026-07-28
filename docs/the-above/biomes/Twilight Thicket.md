@@ -7,7 +7,7 @@ The grass and foliage here are a deeper, colder green.
 - Leaves and grass re-sprited to be orange and more autumn-themed, with a few japanese-inspired decorations added in
 - Also includes aspen trees now
 - Generates new steam mushrooms, which emit smoke you can use with gliders to float upward. The large mushrooms grow into multiple columns, and the small mushrooms are flat platform-esque models. Can also grow as shelf variants.
-- Spawns tanukis, a tiny raccoon-esque animal which can fly. Can be tamed and used as a glider which has three "boosts".
+- Spawns [[Tanuki]]
 - Spawns sugar gliders, a new animal which glides between the cliff sides
 - Horizon fog is a twilight orange
 - Cliff tops generate new huge fan-shaped trees which block out skylight

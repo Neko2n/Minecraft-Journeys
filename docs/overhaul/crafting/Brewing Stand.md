@@ -1,6 +1,6 @@
-[[Progression]] [[Going Above]]
+[[Going Above]]
 
-The brewing stand is now made with 1 [[Thermal Shard]] instead of 1 blaze rod.
+The brewing stand is now made with 1 [[Thermal Shard]] and 1 block of [[Silver]] in a [[Workbench]].
 
 Nether wart is changed to instead be a second amplifier for potions, boosting them into greater potions with stronger effects.
 
