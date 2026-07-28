@@ -36,7 +36,23 @@ public final class StaminaSprites {
                 spriteCache.put(type, ResourceLocation.fromNamespaceAndPath(
                         MinecraftJourneys.MOD_ID, StaminaSprites.PATH_PREFIX + "background/" + s));
             }
-            return spriteCache.get(type);
+            return spriteCache.computeIfAbsent(type, t -> {
+                final String s = String.valueOf(maxStamina);
+                final String n;
+                switch (type) {
+                    case SpriteType.FILL:
+                        n = "filled/";
+                        break;
+                    case SpriteType.BACKGROUND:
+                        n = "background/";
+                        break;
+                    default:
+                        throw new UnsupportedOperationException();
+                }
+                return ResourceLocation.fromNamespaceAndPath(
+                        MinecraftJourneys.MOD_ID,
+                        StaminaSprites.PATH_PREFIX + n + s);
+            });
         }
     }
 }
