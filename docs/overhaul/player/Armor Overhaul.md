@@ -12,3 +12,14 @@ Armor with broken shield hearts will show a broken shield heart icon in its tool
 Explosion damage can be heavier than heavy attacks. They still behave like heavy attacks in that they'll do one less heart of damage and shatter your armor, but say they would have done five hearts of damage, it will instead do four.
 
 On mobs, armor still works identically to how it did before, using armor to calculate defense and using shields to calculate toughness.
+
+Shield and armor values are as follows:
+- Cloth: 1a, 3a, 2a, 1a
+- Leather: 2a, 4a, 3a, 2a
+- Gilded: 2a 1s, 4a 1s, 3a 1s, 2a 1s
+- Iron: 3a 1s, 5a 1s, 4a 1s, 3a 1s
+- Silver: 2a 1s, 4a 1s, 3a 1s, 2a 1s
+- Sanguine: 2a, 4a, 3a, 2a
+- Blaze Bronze: 4a 2s, 6a 2s, 5a 2s, 4a 2s
+- Soul Steel: 4a 2s, 6a 2s, 5a 2s, 4a 2s
+- Electrum: 3a 2s, 5a 2s, 4a 2s, 3a 2s

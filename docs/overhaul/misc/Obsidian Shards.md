@@ -4,7 +4,7 @@ Makes a deeper glass break sound when broken.
 
 The shards are immune to fire and explosion damage, behaving identically to the block.
 
-Collecting the block directly requires [[The Chisel]].
+Collecting the block directly requires [[Chisel]].
 
 Obsidian shards are used to craft the spear and knife.
 

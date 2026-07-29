@@ -9,4 +9,7 @@ Taking damage with electrum armor on releases any built up electricity as a burs
 Electrum weapons and tools build up electricity scaling with your horizontal movement, gaining higher swing speed and mining speed. They also deal bonus "static" damage scaling with your horizontal movement.
 The scaling starts at +0 for base walk speed.
 
+Electrum shields build up and store energy after blocking attacks. Releasing block will unleash that energy as a burst of electricity and propel you forward.
+Blocking with the electrum sword gives it electricity buildup.
+
 Electrum is used to craft hypertubes and other movement-related blocks.

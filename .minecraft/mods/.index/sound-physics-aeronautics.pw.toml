@@ -1,18 +1,18 @@
-filename = 'sound-physics-aeronautics-1.2.0.jar'
-name = 'Sound Physics: Aeronautics'
-side = 'both'
+filename = 'sound-physics-aeronautics-1.2.1.jar'
+name = 'Sound Physics Aeronautics'
+side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'alpha'
-x-prismlauncher-version-number = '1.2.0'
+x-prismlauncher-version-number = '1.2.1'
 
 [download]
-hash = '48566ac7373453e78535b094a742f5e4c9e7fec2221203993abe2fbe8985ea21ae6d6bc005bf13184b0b00a0111b9712f4c61ad969ab46efacc9ee665c73eb03'
+hash = '27bef75a256ec6d25b3ab8be75aef6d02e76087a23213a26fe10c18bff08ba1baf47d5f46f55c60d9e3392b4eb6adf96ff459ced3383a8ec1c72a7434d9c2549'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/JHKPj7kB/versions/bCFn9jyV/sound-physics-aeronautics-1.2.0.jar'
+url = 'https://cdn.modrinth.com/data/JHKPj7kB/versions/myIAtAPL/sound-physics-aeronautics-1.2.1.jar'
 
 [update.modrinth]
 mod-id = 'JHKPj7kB'
-version = 'bCFn9jyV'
+version = 'myIAtAPL'

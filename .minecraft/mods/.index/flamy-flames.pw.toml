@@ -1,0 +1,18 @@
+filename = 'flamyflames-1.1.0.jar'
+name = 'Flamy Flames'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.0'
+
+[download]
+hash = '2277467b3917c93abb58e5964cff654754cb813853dca3f2b7377ef9a6e0b8a23dd33d6ad3d93814ef2eff5032c8c01a9d4058b963a917be57cd310b2ba5fcc4'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/CTWQU8rS/versions/hPn7MOnn/flamyflames-1.1.0.jar'
+
+[update.modrinth]
+mod-id = 'CTWQU8rS'
+version = 'hPn7MOnn'

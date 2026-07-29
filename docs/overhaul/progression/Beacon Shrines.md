@@ -1,4 +1,4 @@
-[[Progression]] [[Early Game]]
+[[Progression]] [[Early Game]] [[Going Above]]
 
 Beacon shrines are fairly rare structures which generate on the surface of the overworld. One is always guaranteed to spawn exactly 16 chunks away from world spawn.
 
