@@ -537,7 +537,7 @@
 	"Slabs To Blocks" = true
 	"Slimes To Magma Cubes" = true
 	"Snow Golem Player Heads" = true
-	"Utility Recipes" = true
+	"Utility Recipes" = false
 	"Vexes Die With Their Masters" = true
 	"Villagers Follow Emeralds" = true
 	"Zombie Villagers On Normal" = true

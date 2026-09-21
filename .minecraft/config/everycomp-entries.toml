@@ -34,9 +34,6 @@
 			ancient = true
 			blossom = true
 
-		[types.wood_type.infernalexp]
-			luminous = true
-
 		[types.wood_type.bountifulfares]
 			hoary = true
 			walnut = true
@@ -55,6 +52,11 @@
 		[types.wood_type.spawn]
 			rotten = true
 			date = true
+
+		[types.wood_type.abundant_atmosphere]
+			red_bamboo = true
+			ashroot = true
+			gourdrot = true
 
 		[types.leaves_type.natures_spirit]
 			frosty_fir = false
@@ -132,6 +134,10 @@
 		[types.leaves_type.bountifulpears]
 			pear = true
 
+		[types.leaves_type.abundant_atmosphere]
+			ashroot = true
+			gourdrot = true
+
 		[types.cake.bountifulfares]
 			coconut_cake = true
 			cocoa_cake = true
@@ -141,10 +147,7 @@
 			cheese_block = true
 
 		[types.lantern.netherexp]
-			ancient_lantern = true
-
-		[types.lantern.infernalexp]
-			glowlight_lantern = true
+			treacherous_lantern = true
 
 		[types.lantern.darkerdepths]
 			glowshroom_lantern = true
@@ -189,13 +192,6 @@
 
 		[types.lantern.enderscape]
 			bulb_lantern = true
-
-		[types.lantern.curiosities]
-			heavy_lantern = true
-			heavy_soul_lantern = true
-
-		[entries.wood_type.curiosities]
-			fancied_planks = false
 
 		[entries.wood_type.nomansland]
 			bookshelf = true

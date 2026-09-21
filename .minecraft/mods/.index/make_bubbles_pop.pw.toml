@@ -1,20 +1,20 @@
-filename = 'make_bubbles_pop-0.4.0-beta.1-neoforge-mc1.21-1.21.1.jar'
+filename = 'make_bubbles_pop-0.4.0-beta.2-neoforge-mc1.21-1.21.1.jar'
 name = 'Make Bubbles Pop'
-side = 'client'
+side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'beta'
-x-prismlauncher-version-number = '0.4.0-beta.1-neoforge'
+x-prismlauncher-version-number = '0.4.0-beta.2'
 
 [download]
-hash = '6deed060052256befe3342965bdb269a7d587d3461a0bc5f0f84270d5c555a6e1fcc224c2ca5e31cae1cbc4af4250f5d83c847c6881f35dc5eb417b506e2c15f'
+hash = '05d4db48cb7797c7c2ed32fabcd68a5511ee930ce2bfca0f967327cd47b9b8bfc930ce4d0aacfc1e57a6e76b83c1d669642e7bf799bf960274c634f49e92280e'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/gPCdW0Wr/versions/qHvQZt4g/make_bubbles_pop-0.4.0-beta.1-neoforge-mc1.21-1.21.1.jar'
+url = 'https://cdn.modrinth.com/data/gPCdW0Wr/versions/OkGl4Kh9/make_bubbles_pop-0.4.0-beta.2-neoforge-mc1.21-1.21.1.jar'
 
 [update.modrinth]
 mod-id = 'gPCdW0Wr'
-version = 'qHvQZt4g'
+version = 'OkGl4Kh9'
 
 [[x-prismlauncher-dependencies]]
 addonId = '1eAoo2KR'

@@ -1,0 +1,21 @@
+filename = 'vanity_aesthetic_armory-1.1.1.jar'
+name = 'Vanity: Aesthetic Armory'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'fabric' ]
+x-prismlauncher-mc-versions = [ '1.20.1', '1.20.2', '1.20.3', '1.20.4', '1.20.5', '1.20.6', '1.21', '1.21.1', '1.21.2', '1.21.3' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.1'
+
+[download]
+hash = '7b28d30e9fc799afd92d00c66c394694ab47cbb32688a3ebe24ac15a3568dec132e2e43f04b549622e09aebfdd9e1ca158fdb48d3b81faaa49181e3b0f3557ae'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/vEDzaSHn/versions/5Z2AFerI/vanity_aesthetic_armory-1.1.1.jar'
+
+[update.modrinth]
+mod-id = 'vEDzaSHn'
+version = '5Z2AFerI'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'kEcg2xYc'
+type = 'REQUIRED'

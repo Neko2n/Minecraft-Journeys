@@ -1,7 +1,7 @@
 {
-  "enabled": true,
-  "experimental_player_mass": true,
-  "experimental_player_sublevel_interaction": true,
+  "enabled": false,
+  "experimental_player_mass": false,
+  "experimental_player_sublevel_interaction": false,
   "living_entity": {
     "enabled": true,
     "only_player": false,

@@ -1,0 +1,21 @@
+filename = 'ambiance-neoforge-1.21-1.1.0.jar'
+name = 'Aurae!'
+side = 'client'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.0-neoforge-1.21'
+
+[download]
+hash = '553c3770f90b4a465d92dfc24c55c0ad2c929e33d940dbaa81c491f8fb2504a6466da8ef18fe0020ab739cadf075b83a55d4973e7a75d2f746431318d3687004'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/hCdWhw9o/versions/dzhhyyOv/ambiance-neoforge-1.21-1.1.0.jar'
+
+[update.modrinth]
+mod-id = 'hCdWhw9o'
+version = 'dzhhyyOv'
+
+[[x-prismlauncher-dependencies]]
+addonId = '3WjjSM5O'
+type = 'REQUIRED'

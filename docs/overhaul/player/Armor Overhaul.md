@@ -16,9 +16,9 @@ On mobs, armor still works identically to how it did before, using armor to calc
 Shield and armor values are as follows:
 - Cloth: 1a, 3a, 2a, 1a
 - Leather: 2a, 4a, 3a, 2a
-- Gilded: 2a 1s, 4a 1s, 3a 1s, 2a 1s
 - Iron: 3a 1s, 5a 1s, 4a 1s, 3a 1s
 - Silver: 2a 1s, 4a 1s, 3a 1s, 2a 1s
+- Mithril: 3a 2s, 5a 2s, 4a 2s, 3a 2s
 - Sanguine: 2a, 4a, 3a, 2a
 - Blaze Bronze: 4a 2s, 6a 2s, 5a 2s, 4a 2s
 - Soul Steel: 4a 2s, 6a 2s, 5a 2s, 4a 2s

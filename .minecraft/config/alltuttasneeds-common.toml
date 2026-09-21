@@ -1,0 +1,171 @@
+	[doors.behavior]
+		#Allows Transit Doors to open automatically for eligible entities.
+		transitAutomaticOpeningEnabled = true
+		#Allows Transit Doors to close automatically after entities move away.
+		transitAutomaticClosingEnabled = true
+		#Allows Pet Doors to open automatically for entities.
+		petAutomaticOpeningEnabled = true
+		#Allows Pet Doors to close automatically after entities move away.
+		petAutomaticClosingEnabled = true
+		#Delay before an automatically closing door checks whether it can close.
+		#20 ticks equals one second.
+		# Default: 20
+		# Range: 1 ~ 1200
+		automaticClosingDelayTicks = 20
+		#By default, automatic opening and closing work without redstone and stop while powered.
+		#Enable this to make both behaviors work only while powered.
+		invertAutomaticClosingRedstone = false
+
+		[beds.gameplay.interactions]
+			#Cover or blanket suffixes whose data-driven items cannot be applied directly.
+			#Disabled blanket assignments also cannot be used by the dynamic combination recipe or returned as loot.
+			#Normal generated recipes remain available.
+			#The list applies to native and compatible materials with the same suffix.
+			directApplyDisabled = []
+
+		[beds.gameplay.tiers]
+			#Whether the time required to complete sleep changes with the bed tier.
+			#Other mods' beds are treated as Tier BASIC.
+			tieredSleepDurationEnabled = true
+			#Whether vanilla Minecraft beds use the Tier BASIC sleep-duration multiplier.
+			#When disabled, vanilla beds always keep vanilla's five-second sleep duration.
+			vanillaBedsUseTieredSleepDuration = true
+			#Whether vanilla Minecraft beds use their resolved tier's respawn rule.
+			#With the default assignments and basic.setsSpawn=false, enabling this means vanilla beds do not set spawn.
+			#When disabled, vanilla beds always set spawn normally.
+			vanillaBedsUseTierSpawnRules = true
+			#Whether vanilla Minecraft beds apply their resolved tier's wake effects.
+			vanillaBedsUseTierWakeEffects = true
+
+			[beds.gameplay.tiers.basic]
+				#Whether beds in this tier set the player's respawn point.
+				setsSpawn = false
+				#Multiplier applied to vanilla's five-second sleep duration.
+				# Default: 2.0
+				# Range: 0.1 ~ 10.0
+				sleepDurationMultiplier = 2.0
+				#Whether beds in this tier allow sleeping while nearby monsters would normally prevent it.
+				ignoresNearbyMonsters = false
+				#Optional block IDs assigned to this tier, overriding their automatic classification.
+				#Use a full ID such as "minecraft:red_bed" or a namespace wildcard such as "minecraft:*".
+				#If a block appears in multiple tiers, the highest tier wins.
+				blockOverrides = []
+				#Block IDs that cannot use this tier.
+				#Use a full ID or namespace wildcard, following the same format as blockOverrides.
+				#A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.
+				blockExclusions = []
+
+				[beds.gameplay.tiers.basic.wakeEffect]
+					#Whether waking up from this applies any configured effects.
+					effectEnabled = false
+					#Registry name of the primary effect, e.g. "minecraft:regeneration". Any effect, from any mod, works.
+					effectId = "minecraft:regeneration"
+					#Duration of the primary effect, in seconds.
+					# Default: 0
+					# Range: 0 ~ 107374182
+					effectDurationSeconds = 0
+					#Additional effects applied after waking, each with its own duration.
+					#Use "effect_id=duration_seconds", for example "minecraft:absorption=10".
+					#Effects from any loaded mod work. Invalid or unavailable entries are ignored.
+					additionalEffects = []
+
+			[beds.gameplay.tiers.low]
+				#Whether beds in this tier set the player's respawn point.
+				setsSpawn = true
+				#Multiplier applied to vanilla's five-second sleep duration.
+				# Default: 1.5
+				# Range: 0.1 ~ 10.0
+				sleepDurationMultiplier = 1.5
+				#Whether beds in this tier allow sleeping while nearby monsters would normally prevent it.
+				ignoresNearbyMonsters = false
+				#Optional block IDs assigned to this tier, overriding their automatic classification.
+				#Use a full ID such as "minecraft:red_bed" or a namespace wildcard such as "minecraft:*".
+				#If a block appears in multiple tiers, the highest tier wins.
+				blockOverrides = []
+				#Block IDs that cannot use this tier.
+				#Use a full ID or namespace wildcard, following the same format as blockOverrides.
+				#A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.
+				blockExclusions = []
+
+				[beds.gameplay.tiers.low.wakeEffect]
+					#Whether waking up from this applies any configured effects.
+					effectEnabled = false
+					#Registry name of the primary effect, e.g. "minecraft:regeneration". Any effect, from any mod, works.
+					effectId = "minecraft:regeneration"
+					#Duration of the primary effect, in seconds.
+					# Default: 0
+					# Range: 0 ~ 107374182
+					effectDurationSeconds = 0
+					#Additional effects applied after waking, each with its own duration.
+					#Use "effect_id=duration_seconds", for example "minecraft:absorption=10".
+					#Effects from any loaded mod work. Invalid or unavailable entries are ignored.
+					additionalEffects = []
+
+			[beds.gameplay.tiers.normal]
+				#Whether beds in this tier set the player's respawn point.
+				setsSpawn = true
+				#Multiplier applied to vanilla's five-second sleep duration.
+				# Default: 1.0
+				# Range: 0.1 ~ 10.0
+				sleepDurationMultiplier = 1.0
+				#Whether beds in this tier allow sleeping while nearby monsters would normally prevent it.
+				ignoresNearbyMonsters = false
+				#Optional block IDs assigned to this tier, overriding their automatic classification.
+				#Use a full ID such as "minecraft:red_bed" or a namespace wildcard such as "minecraft:*".
+				#If a block appears in multiple tiers, the highest tier wins.
+				blockOverrides = []
+				#Block IDs that cannot use this tier.
+				#Use a full ID or namespace wildcard, following the same format as blockOverrides.
+				#A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.
+				blockExclusions = []
+
+				[beds.gameplay.tiers.normal.wakeEffect]
+					#Whether waking up from this applies any configured effects.
+					effectEnabled = true
+					#Registry name of the primary effect, e.g. "minecraft:regeneration". Any effect, from any mod, works.
+					effectId = "minecraft:regeneration"
+					#Duration of the primary effect, in seconds.
+					# Default: 5
+					# Range: 0 ~ 107374182
+					effectDurationSeconds = 5
+					#Additional effects applied after waking, each with its own duration.
+					#Use "effect_id=duration_seconds", for example "minecraft:absorption=10".
+					#Effects from any loaded mod work. Invalid or unavailable entries are ignored.
+					additionalEffects = []
+
+			[beds.gameplay.tiers.deluxe]
+				#Whether beds in this tier set the player's respawn point.
+				setsSpawn = true
+				#Multiplier applied to vanilla's five-second sleep duration.
+				# Default: 0.5
+				# Range: 0.1 ~ 10.0
+				sleepDurationMultiplier = 0.5
+				#Whether beds in this tier allow sleeping while nearby monsters would normally prevent it.
+				ignoresNearbyMonsters = true
+				#Optional block IDs assigned to this tier, overriding their automatic classification.
+				#Use a full ID such as "minecraft:red_bed" or a namespace wildcard such as "minecraft:*".
+				#If a block appears in multiple tiers, the highest tier wins.
+				blockOverrides = []
+				#Block IDs that cannot use this tier.
+				#Use a full ID or namespace wildcard, following the same format as blockOverrides.
+				#A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.
+				blockExclusions = []
+
+				[beds.gameplay.tiers.deluxe.wakeEffect]
+					#Whether waking up from this applies any configured effects.
+					effectEnabled = true
+					#Registry name of the primary effect, e.g. "minecraft:regeneration". Any effect, from any mod, works.
+					effectId = "minecraft:regeneration"
+					#Duration of the primary effect, in seconds.
+					# Default: 10
+					# Range: 0 ~ 107374182
+					effectDurationSeconds = 10
+					#Additional effects applied after waking, each with its own duration.
+					#Use "effect_id=duration_seconds", for example "minecraft:absorption=10".
+					#Effects from any loaded mod work. Invalid or unavailable entries are ignored.
+					additionalEffects = []
+
+	[delights.recipes]
+		#Uses cheese wedges instead of milk in recipes where milk represents cheese.
+		#The milk recipe is used when Brewin' and Chewin' is not installed.
+		useCheeseWedges = false

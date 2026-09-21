@@ -34,9 +34,6 @@
 			ancient = true
 			blossom = true
 
-		[types.wood_type.infernalexp]
-			luminous = true
-
 		[types.wood_type.bountifulfares]
 			hoary = true
 			walnut = true
@@ -55,6 +52,11 @@
 		[types.wood_type.spawn]
 			rotten = true
 			date = true
+
+		[types.wood_type.abundant_atmosphere]
+			red_bamboo = true
+			ashroot = true
+			gourdrot = true
 
 		[types.leaves_type.natures_spirit]
 			frosty_fir = false
@@ -132,8 +134,11 @@
 		[types.leaves_type.bountifulpears]
 			pear = true
 
+		[types.leaves_type.abundant_atmosphere]
+			ashroot = true
+			gourdrot = true
+
 		[types.cake.bountifulfares]
-			#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
 			coconut_cake = true
 			cocoa_cake = true
 			sponge_cake = true
@@ -142,10 +147,7 @@
 			cheese_block = true
 
 		[types.lantern.netherexp]
-			ancient_lantern = true
-
-		[types.lantern.infernalexp]
-			glowlight_lantern = true
+			treacherous_lantern = true
 
 		[types.lantern.darkerdepths]
 			glowshroom_lantern = true

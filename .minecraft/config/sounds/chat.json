@@ -21,7 +21,8 @@
 		"soundEvent": "minecraft:block.note_block.chime"
 	},
 	"mentionKeywords": [
-		"@NekoTune"
+		"@NekoTune",
+		"@Neko2n"
 	],
 	"ignoreSystemChats": false,
 	"enableChatSoundCooldown": false,

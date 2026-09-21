@@ -1,0 +1,2 @@
+- Make throwing items (spears, tridents) cost stamina to throw
+- Make bows and crossbows consume a tiny bit of stamina while charging

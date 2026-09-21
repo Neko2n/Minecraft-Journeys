@@ -56,6 +56,31 @@
 			rotten = true
 			date = true
 
+		[types.wood_type.abundant_atmosphere]
+			red_bamboo = true
+			ashroot = true
+			gourdrot = true
+
+		[types.wood_type.burnt]
+			smoldering_bamboo = true
+			burnt = true
+			smoldering = true
+			burnt_bamboo = true
+			ember = true
+			sooty_oak = true
+			sooty_dark_oak = true
+			sooty_spruce = true
+			sooty_birch = true
+			sooty_acacia = true
+			sooty_mangrove = true
+			sooty_cherry = true
+			sooty_jungle = true
+			blazing = true
+
+		[types.wood_type.burnt_additions]
+			smoldering_soul = true
+			soul_tempered = true
+
 		[types.leaves_type.natures_spirit]
 			frosty_fir = false
 			red_maple = false
@@ -129,8 +154,27 @@
 		[types.leaves_type.spawn]
 			date = true
 
+		[types.leaves_type.bountifulpears]
+			pear = true
+
+		[types.leaves_type.abundant_atmosphere]
+			ashroot = true
+			gourdrot = true
+
+		[types.leaves_type.burnt]
+			burnt = true
+			smoldering = true
+			smoldering_oak = true
+			smoldering_dark_oak = true
+			smoldering_spruce = true
+			smoldering_birch = true
+			smoldering_jungle = true
+			smoldering_mangrove = true
+			smoldering_cherry = true
+			smoldering_acacia = true
+			blast = true
+
 		[types.cake.bountifulfares]
-			#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
 			coconut_cake = true
 			cocoa_cake = true
 			sponge_cake = true

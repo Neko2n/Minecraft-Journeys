@@ -51,13 +51,13 @@
 	#Fraction of blades removed from clump rims inward. 0 keeps all; 1 removes all.
 	# Default: 0.1
 	# Range: 0.0 ~ 1.0
-	grassSparsity = 0.0
+	grassSparsity = 1.0
 	#Replace vanilla short and tall grass plants with generated custom blades.
-	grassPlantsAsBlades = true
+	grassPlantsAsBlades = false
 	#Flowers surrounded by more flowers sprout extra companions, filling out patches.
 	denseFlowers = true
 	#Shed occasional grass-blade particles into sufficiently strong wind.
-	bladeParticles = true
+	bladeParticles = false
 	#Render grass blades when a thin snow layer covers the grass block.
 	grassThroughSnow = false
 	#Render grass blades and re-rendered plants into Iris/Oculus shader-pack shadow maps.

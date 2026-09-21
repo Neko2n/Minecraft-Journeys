@@ -1,25 +1,25 @@
-filename = 'zipline-neoforge-1.21.1-1.5.0.jar'
+filename = 'zipline-neoforge-1.21.1-1.5.2.jar'
 name = 'Zipline'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.5.0-1.21.1-neoforge'
+x-prismlauncher-version-number = '1.5.2-1.21.1-neoforge'
 
 [download]
-hash = '31030f8a0ad37dfa3392fb6ea49dbd574cc90b71381b3c184b6631e56b4609ebf0815bda3a8fec821c883974be02aec1a85a3316d9a714542a175a86abbb6b93'
+hash = '3718150dbbf3174d10fcb6447169cf90ade173b17db886e79f27f9a2c2bc5498529dd48f22cb9bbe8dd3f0301604762f4a9704ebdae1b0538293647f7375f90d'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/C1MoWQlb/versions/Rjr0HKPQ/zipline-neoforge-1.21.1-1.5.0.jar'
+url = 'https://cdn.modrinth.com/data/C1MoWQlb/versions/4aA41064/zipline-neoforge-1.21.1-1.5.2.jar'
 
 [update.modrinth]
 mod-id = 'C1MoWQlb'
-version = 'Rjr0HKPQ'
-
-[[x-prismlauncher-dependencies]]
-addonId = '9s6osm5g'
-type = 'OPTIONAL'
+version = '4aA41064'
 
 [[x-prismlauncher-dependencies]]
 addonId = '5pzBXDS3'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '9s6osm5g'
 type = 'OPTIONAL'

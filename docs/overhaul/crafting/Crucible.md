@@ -16,3 +16,5 @@ The crucible has the following recipes:
 - 2 silver, 1 breeze powder, and 1 gold = 1 [[Electrum]]
 
 Crucibles can be found in Bastion workshops as a form of world building, to explain how Piglins make their brass.
+
+The crucible is crafted with 1 scoria and 1 [[Tungsten]]. It takes a long time to break and requires a tier-3 tool or mechanical drill to mine.

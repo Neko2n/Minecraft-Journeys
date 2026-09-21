@@ -1,0 +1,21 @@
+filename = 'Gleam-1.21.1-1.0.0.jar'
+name = 'Gleam'
+side = 'client'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.21.1-1.0.0'
+
+[download]
+hash = '70c52066f53c51a13247c5043662832b3e381e842193630af88b207ca6638a234b6746a14b24529fa8033140362fd77a169a3c19a9c96271b9734904985b47fe'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/3vnBzYeg/versions/lFy7ufUl/Gleam-1.21.1-1.0.0.jar'
+
+[update.modrinth]
+mod-id = '3vnBzYeg'
+version = 'lFy7ufUl'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'AANobbMI'
+type = 'OPTIONAL'

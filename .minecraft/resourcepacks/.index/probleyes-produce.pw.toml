@@ -1,0 +1,18 @@
+filename = 'probleyes_produce_1.6.zip'
+name = "Probleyes' Produce"
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.16', '1.17', '1.18', '1.19', '1.20', '1.20.1', '1.21', '1.21.1', '1.21.11' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.6'
+
+[download]
+hash = 'f63d7c149e95629f0136fca6a541f59e65ca7914c30fc688dfa86e6e23f6d279b044e0a7fa73351a8b30d109c52bb03975a7046e2e4c785c5c15cc727f28be97'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/QCxWGCms/versions/hNxBdM51/probleyes_produce_1.6.zip'
+
+[update.modrinth]
+mod-id = 'QCxWGCms'
+version = 'hNxBdM51'

@@ -1,20 +1,20 @@
-filename = 'connectiblechains-neoforge-1.21.1-2.2.5.jar'
+filename = 'connectiblechains-neoforge-1.21.1-2.3.3.jar'
 name = 'Reconnectible Chains'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '2.2.5-1.21.1-neoforge'
+x-prismlauncher-version-number = '2.3.3-1.21.1-neoforge'
 
 [download]
-hash = 'afc1f8c7af27cbae2fa27dc0d2142818b440a80cd6888aef254cc26dd4ce0e632951bb18ad94893f62272c26f255d2800a0370e6103eb1243adfdacd4260e01e'
+hash = '69cdfbf356cebdd30148b6b5f1cc4e111b1d2f46b2685a836e8e7375be95610a4eeff46331bd811c65638eead3195fd227119892317f3879621079ebeb8f922d'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/5pzBXDS3/versions/kxlFAdAZ/connectiblechains-neoforge-1.21.1-2.2.5.jar'
+url = 'https://cdn.modrinth.com/data/5pzBXDS3/versions/4eo89fhi/connectiblechains-neoforge-1.21.1-2.3.3.jar'
 
 [update.modrinth]
 mod-id = '5pzBXDS3'
-version = 'kxlFAdAZ'
+version = '4eo89fhi'
 
 [[x-prismlauncher-dependencies]]
 addonId = '9s6osm5g'

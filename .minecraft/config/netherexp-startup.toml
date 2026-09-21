@@ -8,6 +8,9 @@
 	#If you'd like to disable profanity entirely or uncensor it you may do so with this config
 	#Allowed Values: DISABLED, CENSORED, UNFILTERED
 	profanity = "CENSORED"
+	#Turns on various developer loggers, technical information and such for debugging purposes 
+	#I suggest you keep this disabled if you're just a casual player... or don't, I'm not your mother
+	developerMode = false
 
 #Pack Settings
 [packSettings]

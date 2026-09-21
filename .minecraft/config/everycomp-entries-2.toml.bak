@@ -21,7 +21,6 @@
 			saxaul = true
 
 		[types.wood_type.caverns_and_chasms]
-			#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
 			azalea = true
 
 		[types.wood_type.netherexp]
@@ -34,9 +33,6 @@
 			azalea = true
 			ancient = true
 			blossom = true
-
-		[types.wood_type.infernalexp]
-			luminous = true
 
 		[types.wood_type.bountifulfares]
 			hoary = true
@@ -56,6 +52,31 @@
 		[types.wood_type.spawn]
 			rotten = true
 			date = true
+
+		[types.wood_type.abundant_atmosphere]
+			red_bamboo = true
+			ashroot = true
+			gourdrot = true
+
+		[types.wood_type.burnt]
+			smoldering_bamboo = true
+			burnt = true
+			smoldering = true
+			burnt_bamboo = true
+			ember = true
+			sooty_oak = true
+			sooty_dark_oak = true
+			sooty_spruce = true
+			sooty_birch = true
+			sooty_acacia = true
+			sooty_mangrove = true
+			sooty_cherry = true
+			sooty_jungle = true
+			blazing = true
+
+		[types.wood_type.burnt_additions]
+			smoldering_soul = true
+			soul_tempered = true
 
 		[types.leaves_type.natures_spirit]
 			frosty_fir = false
@@ -133,6 +154,23 @@
 		[types.leaves_type.bountifulpears]
 			pear = true
 
+		[types.leaves_type.abundant_atmosphere]
+			ashroot = true
+			gourdrot = true
+
+		[types.leaves_type.burnt]
+			burnt = true
+			smoldering = true
+			smoldering_oak = true
+			smoldering_dark_oak = true
+			smoldering_spruce = true
+			smoldering_birch = true
+			smoldering_jungle = true
+			smoldering_mangrove = true
+			smoldering_cherry = true
+			smoldering_acacia = true
+			blast = true
+
 		[types.cake.bountifulfares]
 			coconut_cake = true
 			cocoa_cake = true
@@ -142,10 +180,7 @@
 			cheese_block = true
 
 		[types.lantern.netherexp]
-			ancient_lantern = true
-
-		[types.lantern.infernalexp]
-			glowlight_lantern = true
+			treacherous_lantern = true
 
 		[types.lantern.darkerdepths]
 			glowshroom_lantern = true
@@ -196,7 +231,6 @@
 			heavy_soul_lantern = true
 
 		[entries.wood_type.curiosities]
-			#Disables specific entries
 			fancied_planks = false
 
 		[entries.wood_type.nomansland]

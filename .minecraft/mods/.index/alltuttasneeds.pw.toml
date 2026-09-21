@@ -1,0 +1,18 @@
+filename = 'alltuttasneeds-3.3.0.jar'
+name = "All Tutta's Needs"
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '3.3.0'
+
+[download]
+hash = '815686ac198e6f77aeb8e3f1f5827429791f4cf0e0fe9e2168f2cc9a090361488bcc1e73c4efa0f6099945ac2ea6c2662a34d06432dd71792ce6b26f53324508'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/XVZogNXg/versions/3rjR8LXR/alltuttasneeds-3.3.0.jar'
+
+[update.modrinth]
+mod-id = 'XVZogNXg'
+version = '3rjR8LXR'

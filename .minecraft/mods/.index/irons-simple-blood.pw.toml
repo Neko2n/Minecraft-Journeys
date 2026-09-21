@@ -1,18 +1,18 @@
-filename = 'simpleblood-1.21.1-1.0.3.jar'
+filename = 'simpleblood-1.21.1-1.0.4.jar'
 name = "Iron's Simple Blood"
 side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.21.1-1.0.3'
+x-prismlauncher-version-number = '1.21.1-1.0.4'
 
 [download]
-hash = '769b5bacd423e809e54940fdae2d944fd812b12e40a4f7552b8f5f809aba390ef11c7b9a84780c5395ce333c995f87acacb6a9b14a6eec0cf21c38d2887d255d'
+hash = '61f297f80036b6ccf6ba00e4b0855ca88aed7de3aee4d64f8e585eb5dd1dfc4224581e3eb32930fd3dcb118cd18d730b1762ed0984aae7ad8dfa47c85c1e4b42'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/l7Ddlxg5/versions/YnPPVhjF/simpleblood-1.21.1-1.0.3.jar'
+url = 'https://cdn.modrinth.com/data/l7Ddlxg5/versions/YStIsByV/simpleblood-1.21.1-1.0.4.jar'
 
 [update.modrinth]
 mod-id = 'l7Ddlxg5'
-version = 'YnPPVhjF'
+version = 'YStIsByV'

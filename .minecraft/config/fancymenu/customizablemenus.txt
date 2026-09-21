@@ -1,11 +1,11 @@
 type = customizablemenus
 
-com.aetherteam.aether.client.gui.screen.menu.VanillaLeftTitleScreen {
-}
-
 net.minecraft.client.gui.screens.PauseScreen {
 }
 
 net.minecraft.client.gui.screens.LevelLoadingScreen {
+}
+
+net.minecraft.client.gui.screens.TitleScreen {
 }
 

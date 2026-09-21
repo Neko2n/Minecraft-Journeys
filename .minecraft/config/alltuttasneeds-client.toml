@@ -1,0 +1,7 @@
+	[doors.behavior]
+		#Shows Tutta's Doors style descriptions on door items.
+		tooltipsEnabled = true
+
+	[beds.general]
+		#Shows Tutta's Beds descriptions on bed items.
+		tooltipsEnabled = true

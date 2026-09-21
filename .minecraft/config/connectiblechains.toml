@@ -4,4 +4,5 @@ quality = 4
 showToolTip = false
 showRangeWarningHud = true
 collisionsEnabled = false
+hangingBlockCollisions = true
 debugDraw = false

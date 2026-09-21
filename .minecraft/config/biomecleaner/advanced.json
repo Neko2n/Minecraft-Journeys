@@ -1,0 +1,26 @@
+{
+  "groups": {
+    "rare": ["minecraft:mushroom_fields", "minecraft:stony_peaks"],
+    "oceans": [
+      "minecraft:ocean", "minecraft:warm_ocean", "minecraft:lukewarm_ocean",
+      "minecraft:cold_ocean", "minecraft:frozen_ocean", "minecraft:deep_ocean",
+      "minecraft:deep_lukewarm_ocean", "minecraft:deep_cold_ocean", "minecraft:deep_frozen_ocean"
+    ],
+    "rivers": ["minecraft:river", "minecraft:frozen_river"],
+    "beaches": ["minecraft:beach", "minecraft:snowy_beach", "minecraft:stony_shore"]
+  },
+  "sizeThresholdOverrides": {
+    "beaches": 32,
+    "minecraft:stony_shore": [32, 64],
+    "rivers": 48
+  },
+  "intraGroupPreference": {
+    "oceans": {
+      "mode": "preferred",
+      "fallbackOutOfGroupBelowSize": 8
+    }
+  },
+  "requiredBoundaryGroups": {
+    "beaches": ["oceans", "rivers"]
+  }
+}

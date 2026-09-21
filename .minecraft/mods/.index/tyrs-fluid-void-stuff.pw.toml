@@ -1,0 +1,21 @@
+filename = 'tyrsfluidvoidstuff-1.0.1.jar'
+name = "Tyr's Fluid Void Stuff"
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.1'
+
+[download]
+hash = '28aac89af7daebf96fd16c0835fbaa57907595d9db95314190d1895c56f594fff32b4746c4a82bcab9fd8e84862eab620254171a107aad0785fb1553212f5488'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/fXXYl7Tv/versions/ttoLNxNi/tyrsfluidvoidstuff-1.0.1.jar'
+
+[update.modrinth]
+mod-id = 'fXXYl7Tv'
+version = 'ttoLNxNi'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'AANobbMI'
+type = 'REQUIRED'

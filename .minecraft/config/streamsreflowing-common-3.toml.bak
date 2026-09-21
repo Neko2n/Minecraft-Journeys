@@ -1,0 +1,219 @@
+#Master switch for river WORLD GENERATION.
+#  true  = carve streams into newly generated chunks (the normal mod).
+#  false = generate NO rivers, at ZERO terrain-sampling cost. The [water] tweaks still apply
+#          to existing water, so you can keep just those without touching terrain.
+#Only affects chunks generated while on; already-generated chunks are left as-is.
+generateRivers = true
+
+#PERFORMANCE -- how FAST vs. how GOOD generation is. Costs CPU at world-gen time only; each
+#region builds once and is saved to disk forever, so the cost is one-time per area. If live
+#hitches bother you, pre-generate ahead with a mod like Chunky.
+[performance]
+	#The one dial that sets everything under [advanced]. Higher = finer, more accurate rivers but a
+	#longer one-time build per region; lower = coarser rivers, near-instant. Choose by CPU strength
+	#and whether you pre-generate.
+	#
+	#  POTATO   ~4s/region   smoothest while flying; coarse rivers
+	#  LOW      ~12s         smooth while flying
+	#  MEDIUM   ~19s         default; brief hitch into never-seen land
+	#  HIGH     ~1min        pre-gen (Chunky) suggested
+	#  EXTREME  ~20min       pre-gen needed
+	#  MAX      ~1hr         pre-gen mandatory; finest
+	#(Rough, one-time per region, on heavy Tectonic terrain; vanilla is far cheaper.)
+	#Allowed: POTATO, LOW, MEDIUM, HIGH, EXTREME, MAX.
+	#Allowed Values: POTATO, LOW, MEDIUM, HIGH, EXTREME, MAX
+	qualityPreset = "MEDIUM"
+
+	#Fine overrides for the preset above. Leave each at -1 (auto) to follow the preset; set one to a
+	#real number to override JUST that knob while the rest keep following the preset.
+	[performance.advanced]
+		#
+		#Routing/sampling grid spacing in blocks -- the master quality dial.
+		#  LOWER  = finer, more accurate river paths, but cost rises steeply (~1/spacing^2).
+		#  HIGHER = coarser, blockier rivers, much faster.
+		#-1 = auto (follow preset).
+		# Default: -1
+		# Range: -1 ~ 64
+		gridSpacing = -1
+		#
+		#Size (blocks) of one region built in a single pass. Build GRANULARITY, not quality -- the total
+		#cost to cover the world is the same at any value.
+		#  LOWER  = smaller, more frequent builds, but more region seams (rare perched-water artifacts).
+		#  HIGHER = fewer seams = cleaner, larger networks, at the cost of a bigger one-time build.
+		#-1 = auto.
+		# Default: -1
+		# Range: -1 ~ 4096
+		plateScale = -1
+		#
+		#Sample the (expensive) host terrain height every N blocks, then interpolate onto the routing
+		#grid. Only takes effect when set ABOVE gridSpacing.
+		#  HIGHER = far fewer terrain lookups = faster, slightly smoother valleys.  0 = full detail.
+		#-1 = auto.
+		# Default: -1
+		# Range: -1 ~ 256
+		terrainSampleSpacing = -1
+		#
+		#After coarse routing, pull each river point onto the true lowest terrain within N blocks, so
+		#rivers sit in the real valley floor even on a coarse grid.
+		#  HIGHER = stronger pull (cleaner beds); too large over-straightens.  0 = off.
+		#-1 = auto.
+		# Default: -1
+		# Range: -1 ~ 64
+		valleySnapRadius = -1
+
+#APPEARANCE -- how streams look. These shape the network and channels and do NOT meaningfully
+#affect speed. Anything that changes the network (most of these) applies to NEW chunks only.
+[appearance]
+	#
+	#How MANY streams spawn.
+	#  HIGHER = more, smaller streams packed closer.  LOWER = fewer, larger rivers, bigger gaps.
+	#Default 1.0.
+	# Default: 1.0
+	# Range: 0.05 ~ 20.0
+	streamFrequency = 1.0
+	#
+	#How finely streams BRANCH -- how much upstream drainage a cell needs before it becomes a stream.
+	#  LOWER = more, finer tributaries (denser, more fractal branching).  1.0 = sparsest.
+	#Default 0.75.
+	# Default: 0.75
+	# Range: 0.1 ~ 1.0
+	growDensity = 0.75
+	#
+	#How WIDE rivers get for a given drainage area.
+	#  HIGHER = broader rivers.  LOWER = narrow, creek-like channels.
+	#Grid-independent; maxWidth still caps the main stem. Default 1.0.
+	# Default: 1.0
+	# Range: 0.0 ~ 50.0
+	widthScale = 1.0
+	#
+	#Headwater thinness -- the minimum half-width a stream starts at (it tapers to a point above this).
+	#  HIGHER = chunkier sources.  LOWER = finer, threadier headwaters.
+	#Default 0.4.
+	# Default: 0.4
+	# Range: 0.1 ~ 4.0
+	baseWidth = 0.4
+	#
+	#Main-stem cap -- the widest half-width a big river reaches near the ocean.
+	#  HIGHER = broad rivers.  LOWER = everything stays creek-sized.
+	#Default 8.0.
+	# Default: 8.0
+	# Range: 1.0 ~ 32.0
+	maxWidth = 8.0
+	#
+	#How much streams WIND (steep reaches straighten out automatically).
+	#  HIGHER = lazier, more meandering.  LOWER = straighter, more direct.
+	#Default 1.2.
+	# Default: 1.2
+	# Range: 0.0 ~ 5.0
+	meanderStrength = 1.2
+	#
+	#How DEEP streams carve in, as a fraction of their width (the bed is a smooth bowl, deepest at
+	#the center).
+	#  HIGHER = deeper, more incised channels.  LOWER = shallow, flatter beds.
+	#Default 0.34 (~1/3 of width). Carve-only: applies to new chunks without rebuilding networks.
+	# Default: 0.34
+	# Range: 0.0 ~ 2.0
+	streamDepth = 0.34
+	#
+	#How NOISY/ragged the bank and berm edges are: max +/- blocks of random jitter on the cut edge.
+	#  HIGHER = rougher, more broken-up banks.  0 = perfectly smooth, straight-edged cuts.
+	#Default 0.35. Carve-only: applies to new chunks without rebuilding networks.
+	# Default: 0.35
+	# Range: 0.0 ~ 3.0
+	bankNoise = 0.35
+	#
+	#Where a stream crosses a slope and its water would sheet off the downhill side, wall it in with a
+	#terrain-matching berm and floor the bed (held only up to the surrounding ground, never on a pillar).
+	#  true = on (default).  false = off (streams may sheet over steep cross-slopes).
+	#Carve-only: shapes new chunks as they generate; toggling never regenerates terrain.
+	containmentBerm = true
+	#
+	#Extra plant life near water (decoration only -- never changes terrain or the network).
+	#  0 = none.
+	#  1 = simple: extra grass, tall grass, ferns and a few flowers near the water, thinning out.
+	#  2 = biome-boost: as 1, plus the BIOME'S OWN plants and rocks (whatever it normally places --
+	#      flowers, cacti, dead bushes, boulders, etc.) at higher density near the water, so banks
+	#      match their biome and any terrain mod. (Trees are never re-placed.)
+	# -1 = auto (follow preset: POTATO none, LOW simple, MEDIUM/HIGH/EXTREME/MAX biome-boost).
+	#Applies to NEW chunks only.
+	# Default: -1
+	# Range: -1 ~ 2
+	vegetation = -1
+	#
+	#Extra flora around ALL water sources -- vanilla rivers, lakes and oceans -- not just this mod's
+	#streams. Costs a little extra world-gen scanning in every water-adjacent chunk.
+	#  0 = off (only this mod's streams get flora, at the 'vegetation' level above).
+	#  1 = extra grass/ferns/flowers around all water.
+	#  2 = biome-boost (also re-runs the biome's own plants/rocks) + extra grass around all water.
+	# -1 = auto (follow preset: off for POTATO/LOW, level 2 for MEDIUM and above).
+	# Default: -1
+	# Range: -1 ~ 2
+	allWaterFlora = -1
+	#
+	#Skin the carved stream channel with the bank styles in config/streamsreflowing/bank_styles/
+	#(bed / waterline / bank blocks per biome) instead of leaving whatever the cut exposed.
+	#  true = on (default).  false = off (raw cut banks).
+	#Carve-only: applies to new chunks.
+	customBanks = true
+	#
+	#How far (blocks) from the water's edge the extra flora reaches; density fades out to this edge.
+	#  HIGHER = a wider planted band.  LOWER = hugs the shoreline.
+	#Default 5.
+	# Default: 5
+	# Range: 1 ~ 16
+	floraRadius = 5
+
+#WATER & BOATS -- runtime behaviour of water itself. These affect ALL water in the world, not
+#just this mod's streams, and apply LIVE (no regeneration needed).
+[water]
+	#
+	#Let water spread across SOURCE-water surfaces so streams flow continuously over their own pools
+	#instead of stalling at them -- smoother, more natural flow.
+	#  true = on (default).  false = fully vanilla water spreading.
+	spillOverWater = true
+	#
+	#When flowing streams collide (right-angle up to head-on) on one level, fuse the spot into a source
+	#block, so converging water backs up and fills basins instead of flickering. Self-limiting (ordinary
+	#flow never converts); will NOT flood flat ground.
+	#  EXPERIMENTAL (default OFF): tick-based, can add lag in very wet areas.  true = on.  false = off.
+	convergeSpills = false
+	#
+	#Let boats float on flowing stream water instead of sinking when spilled water tops them (the current
+	#still carries you downstream; SOURCE water can still submerge a boat).
+	#  true = on (default).  false = vanilla boat behaviour.
+	boatsFloatOnFlowingWater = true
+
+#EXPERIMENTAL -- off by default, rough edges, niche. Most change the network (NEW chunks only).
+[experimental]
+	#
+	#Repath a stream that runs across a steep slope onto the nearby valley line. Costs extra terrain
+	#sampling and didn't visibly help in practice, so it stays off.
+	#  1 = on, 0 = off, -1 = auto (currently OFF).
+	# Default: -1
+	# Range: -1 ~ 1
+	confineToBanks = -1
+	#
+	#Join a stream that peters out near ANOTHER stream (even one in a neighbouring region) into it, so
+	#cross-region streams that just miss each other link up. Only ever routes downhill and forward.
+	#  MODERATE COST: a region must also build its neighbours to see across the border. Streams reaching
+	#  the sea or a lake already connect without this, so leave it off unless you want stream-to-stream joins.
+	#  true = on.  false = off (default).
+	connectNearbyWater = false
+	#
+	#How far (blocks) a dead-end looks for another stream to join, when connectNearbyWater is on.
+	#  HIGHER = bridges bigger gaps (less natural).  LOWER = only near-touching streams.
+	#-1 = auto (24).
+	# Default: -1
+	# Range: -1 ~ 96
+	connectRadius = -1
+	#
+	#Make every stream end in WATER: one that would dead-end is routed into a real excavated POND it
+	#pours into instead of stopping as a stub. (It still connects straight to the sea/a lake otherwise.)
+	#  true = on.  false = off (default).
+	sinkRooted = false
+	#
+	#Where two stream channels run close together, drop the containment berm BETWEEN them so they meet
+	#instead of an unnatural wall partitioning the two carved channels (a higher stream may waterfall
+	#into a lower one). Pure X/Z proximity -- no height check. Carve-only: applies to new chunks.
+	#  true = on (default).  false = off.
+	bermYieldToStreams = true

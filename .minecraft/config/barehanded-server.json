@@ -1,5 +1,5 @@
 {
-  "configVersion": 12,
+  "configVersion": 13,
   "maxForce": 90.0,
   "minDistance": 1.5,
   "grabReachBonus": 0.0,
@@ -133,9 +133,9 @@
   "tetherHardEscapeBuffer": 2.0,
   "enableExhaustion": true,
   "exhaustionIdleRate": 0.03,
-  "exhaustionMovementRate": 0.08,
-  "exhaustionTensionRate": 0.06,
-  "exhaustionForceRate": 0.07,
+  "exhaustionMovementRate": 0.05,
+  "exhaustionTensionRate": 0.04,
+  "exhaustionForceRate": 0.04,
   "exhaustionPassiveThreshold": 20.0,
   "exhaustionSupportHeightThreshold": 0.8,
   "exhaustionLowSupportMultiplier": 0.5,
@@ -149,5 +149,6 @@
   "creativeMaxMotorForce": 1.0E12,
   "sableRagdollsCompatAllowGrabbingPlayerRagdolls": false,
   "sableRagdollsCompatAllowGrabbingMobRagdolls": true,
-  "sableRagdollsCompatMobRagdollMaxSize": 1.0
+  "sableRagdollsCompatMobRagdollMaxSize": 1.0,
+  "treeAssemblyMode": "AUTO"
 }

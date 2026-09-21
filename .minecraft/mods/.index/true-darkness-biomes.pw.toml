@@ -1,0 +1,18 @@
+filename = 'darkness-1.2.1.jar'
+name = 'True Darkness Biomes'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.2.1'
+
+[download]
+hash = '8101fb524483848e99650735e1d7ad51e224a656dae9e37bc9409cae9beeb251a31c7d1ceca00f9980919bca96eca5eda98f66253760b60dfe3e6f88050ede94'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/c44xmpkF/versions/bORmByU7/darkness-1.2.1.jar'
+
+[update.modrinth]
+mod-id = 'c44xmpkF'
+version = 'bORmByU7'

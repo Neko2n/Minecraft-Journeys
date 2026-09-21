@@ -20,7 +20,7 @@ sculkDustBiomes = [
 
 [geysers]
 useUpdatedSmoke = false
-flameGeyserSpawnChance = 5
+flameGeyserSpawnChance = 0
 flameGeyserSpawnableBlocks = [
     "minecraft:netherrack",
     "minecraft:blackstone",
@@ -29,7 +29,7 @@ flameGeyserSpawnableBlocks = [
 flameGeyserSoundVolume = 0.5
 flameGeyserActiveTime = 300
 flameGeyserInactiveTime = 500
-smokeGeyserSpawnChance = 5
+smokeGeyserSpawnChance = 0
 smokeGeyserSpawnableBlocks = [
     "minecraft:netherrack",
     "minecraft:blackstone",
@@ -38,7 +38,7 @@ smokeGeyserSpawnableBlocks = [
 smokeGeyserSoundVolume = 0.2
 smokeGeyserActiveTime = 300
 smokeGeyserInactiveTime = 500
-bubbleGeyserSpawnChance = 5
+bubbleGeyserSpawnChance = 0
 bubbleGeyserSpawnableBlocks = [
     "minecraft:sand",
     "minecraft:red_sand",
@@ -51,7 +51,7 @@ bubbleGeyserActiveTime = 300
 bubbleGeyserInactiveTime = 500
 
 [fireflies]
-firefliesEnabled = true
+firefliesEnabled = false
 dimensionBlocklist = [
     "minecraft:the_nether",
     "minecraft:the_end",
@@ -94,7 +94,7 @@ habitatBiomes = [
 habitatBiomeDensity = 4
 
 [waterfalls]
-waterfallsEnabled = true
+waterfallsEnabled = false
 smallWaterfallsEnabled = true
 waterfallUpdateFrequency = 6
 randomizeWaterfallParticleRotation = true
