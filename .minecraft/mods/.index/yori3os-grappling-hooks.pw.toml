@@ -1,20 +1,20 @@
-filename = 'yo_hooks-5.0.2-neoforge.jar'
+filename = 'yo_hooks-5.2.0.jar'
 name = "Yori3o's Grappling Hooks"
-side = ''
+side = 'both'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '5.0.2'
+x-prismlauncher-version-number = '5.2.0'
 
 [download]
-hash = '057a92a4f50cc1df070aed8473b03f6245f28eb748fc013e9faebb56522f6938c55e91be52352429239703aa584168e3d4dac8dc7c9bcb25a76480368957108e'
+hash = '4f51d5c87227938ca225bfbc1a4e51911acc219ab89bc666ae1aead6ece4043cd74e3ba860a6eb07aba921cda36b8faa6054959da3b80c5f48cf20c066cf6b63'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/t1p8V2nl/versions/WoUQUddA/yo_hooks-5.0.2-neoforge.jar'
+url = 'https://cdn.modrinth.com/data/t1p8V2nl/versions/oz02F2lD/yo_hooks-5.2.0.jar'
 
 [update.modrinth]
 mod-id = 't1p8V2nl'
-version = 'WoUQUddA'
+version = 'oz02F2lD'
 
 [[x-prismlauncher-dependencies]]
 addonId = '1eAoo2KR'

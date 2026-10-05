@@ -1,20 +1,20 @@
-filename = 'Gleam-1.21.1-1.0.0.jar'
+filename = 'Gleam-1.21.1-1.1.0.0-NeoForge.jar'
 name = 'Gleam'
 side = 'client'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.21.1-1.0.0'
+x-prismlauncher-version-number = '1.21.1-1.1.0.0-NeoForge'
 
 [download]
-hash = '70c52066f53c51a13247c5043662832b3e381e842193630af88b207ca6638a234b6746a14b24529fa8033140362fd77a169a3c19a9c96271b9734904985b47fe'
+hash = 'c6a37b766024c7daa776e998f48e25d627f3fe97a81a27ee1b3c9b2de5111684ceba09f4446d959431b11f552ba7fcb4041064ca9092b7df0ea3b418ec09af06'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/3vnBzYeg/versions/lFy7ufUl/Gleam-1.21.1-1.0.0.jar'
+url = 'https://cdn.modrinth.com/data/3vnBzYeg/versions/zCkCyEZR/Gleam-1.21.1-1.1.0.0-NeoForge.jar'
 
 [update.modrinth]
 mod-id = '3vnBzYeg'
-version = 'lFy7ufUl'
+version = 'zCkCyEZR'
 
 [[x-prismlauncher-dependencies]]
 addonId = 'AANobbMI'

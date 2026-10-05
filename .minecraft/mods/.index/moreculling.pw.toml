@@ -1,6 +1,6 @@
 filename = 'moreculling-neoforge-1.21.1-1.0.10.jar'
 name = 'More Culling'
-side = ''
+side = 'client'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'release'

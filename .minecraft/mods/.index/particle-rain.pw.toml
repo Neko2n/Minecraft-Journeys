@@ -1,6 +1,6 @@
 filename = 'particlerain-4.0.0-beta.11+1.21.1-neoforge.jar'
 name = 'Particle Rain'
-side = ''
+side = 'client'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]

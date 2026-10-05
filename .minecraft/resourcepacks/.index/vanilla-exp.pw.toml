@@ -1,0 +1,21 @@
+filename = '§6§lVanilla Experience+§0.zip'
+name = 'Vanilla Experience+'
+side = 'client'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1', '1.21.2', '1.21.3', '1.21.4', '1.21.5', '1.21.6', '1.21.7', '1.21.8', '1.21.9', '1.21.10' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'v2.0'
+
+[download]
+hash = '12cef4758a649dd2090e5577ccbfcc2266c8037bd29a9f173af9308d6e6c32d5833e470e9b86b9dcd289908ffdfa388b8a6cb278534309479d933515519545d0'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/8bf2GogI/versions/wUvjSaUl/§6§lVanilla Experience%2B§0.zip'
+
+[update.modrinth]
+mod-id = '8bf2GogI'
+version = 'wUvjSaUl'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'qBYnVP8S'
+type = 'OPTIONAL'

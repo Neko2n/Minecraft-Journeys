@@ -1,3 +1,0 @@
-[client]
-	#Mobs let off an angry particle to indicate the cooldown to impatient players
-	"Angry particle" = true

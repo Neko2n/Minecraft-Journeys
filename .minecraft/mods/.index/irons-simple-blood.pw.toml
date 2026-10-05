@@ -1,6 +1,6 @@
 filename = 'simpleblood-1.21.1-1.0.4.jar'
 name = "Iron's Simple Blood"
-side = ''
+side = 'both'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]

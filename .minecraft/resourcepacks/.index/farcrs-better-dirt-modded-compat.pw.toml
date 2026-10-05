@@ -1,0 +1,18 @@
+filename = 'Farcrs Better Dirt - Modded Compat.zip'
+name = "Farcr's Better Dirt - Modded Compat"
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.05'
+
+[download]
+hash = '3e15a261de7dfb84f2f8b103c20e7a351988990e16dfd0598af717b04585cd65668a04905fb993fd2c947052243a06d3828e09c8c607c5454ec4acf970374c84'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/JdCxKRxl/versions/8OSOePmc/Farcrs Better Dirt - Modded Compat.zip'
+
+[update.modrinth]
+mod-id = 'JdCxKRxl'
+version = '8OSOePmc'

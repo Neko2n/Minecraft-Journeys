@@ -1,3 +1,0 @@
-[client]
-	#If false, illagers with shield do not cross their hand.
-	hidePillagerShieldInArms = true

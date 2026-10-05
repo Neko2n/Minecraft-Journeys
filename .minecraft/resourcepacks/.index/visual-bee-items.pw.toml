@@ -1,0 +1,21 @@
+filename = '§6§lVisual§0-§e§lBee§0-§6§lItems§0-§7§o1.0§0-§8.zip'
+name = 'Visual Bee Items'
+side = 'client'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.19', '1.19.1', '1.19.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0'
+
+[download]
+hash = '7698ed03fbcaecb53684e6d202ab6c309e6a18f9a1dfe90284ba5333d53c44d16d7cdd6f38943b5e65262fb823e5e39320107855eb12d0364242b28c38a83997'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/p1cyQxKb/versions/6rPAXP8C/§6§lVisual§0-§e§lBee§0-§6§lItems§0-§7§o1.0§0-§8.zip'
+
+[update.modrinth]
+mod-id = 'p1cyQxKb'
+version = '6rPAXP8C'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'otVJckYQ'
+type = 'OPTIONAL'

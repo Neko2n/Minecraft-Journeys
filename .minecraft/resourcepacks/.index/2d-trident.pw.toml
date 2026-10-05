@@ -1,46 +1,18 @@
 filename = '2D_Trident.zip'
 name = '2D Trident'
-side = ''
+side = 'client'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = []
-x-prismlauncher-mc-versions = [
-    '1.18',
-    '1.18.1',
-    '1.18.2',
-    '1.19',
-    '1.19.1',
-    '1.19.2',
-    '1.19.3',
-    '1.19.4',
-    '1.20',
-    '1.20.1',
-    '1.20.2',
-    '1.20.3',
-    '1.20.4',
-    '1.20.5',
-    '1.20.6',
-    '1.21',
-    '1.21.1',
-    '1.21.2',
-    '1.21.3',
-    '1.21.4',
-    '1.21.5',
-    '1.21.6',
-    '1.21.7',
-    '1.21.8',
-    '1.21.9',
-    '1.21.10',
-    '1.21.11'
-]
+x-prismlauncher-mc-versions = [ '1.21.9', '1.21.10', '1.21.11', '26.1', '26.1.1', '26.1.2' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.18+_fix'
+x-prismlauncher-version-number = '1.21.9+'
 
 [download]
-hash = 'bfeb7364ddd24000eb85f06715cfd400555fdbb6b600f7366e87b3183086312a369fc878b6432e5a2d6cfa0ec2d5bb6c5b6cf82c00a7aaf822505d09345a6202'
+hash = 'dcd33d1cdba89434930618f6b83e7860657f12f6afd91711969a731851e10af0bc4746c8c6df708cfdd55837438f0b72d6c0885db82677a3dd0333268a05916d'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/5VGeHh7s/versions/2HAMnH9p/2D_Trident.zip'
+url = 'https://cdn.modrinth.com/data/5VGeHh7s/versions/jFZQ1QPJ/2D_Trident.zip'
 
 [update.modrinth]
 mod-id = '5VGeHh7s'
-version = '2HAMnH9p'
+version = 'jFZQ1QPJ'

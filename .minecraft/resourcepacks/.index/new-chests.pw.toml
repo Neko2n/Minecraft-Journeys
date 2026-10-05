@@ -1,0 +1,18 @@
+filename = 'New Chests.zip'
+name = 'New Chests'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2', '1.20.3', '1.20.4', '1.20.5', '1.20.6', '1.21', '1.21.1', '1.21.2', '1.21.3', '1.21.4' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.0'
+
+[download]
+hash = 'f2c5c501325b57fb5436f375e7c1d0ec191972873440d92f06dbaa0c66e2bc58c12739f59ee9140db6e989103a1950c97f268e85b126f4c8af5a83b492a4df09'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/qaS62BSw/versions/jCPROR3F/New Chests.zip'
+
+[update.modrinth]
+mod-id = 'qaS62BSw'
+version = 'jCPROR3F'

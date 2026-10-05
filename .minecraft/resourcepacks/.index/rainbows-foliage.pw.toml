@@ -1,0 +1,21 @@
+filename = 'rainbows-foliage-polytone-edition-v2.0.zip'
+name = "rainbow's foliage: polytone"
+side = 'client'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.11', '26.1.2', '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '2.0'
+
+[download]
+hash = '823a0afb2cc074046565de404bde4bbe63a9329fae9a5f95fb80ff519e0bbea831bf228d2f2e3f6985b6feba9b5d4d3141b2b91f84baeb79d97a891a0bddea76'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/bY2CaVIh/versions/JcLjpSJg/rainbows-foliage-polytone-edition-v2.0.zip'
+
+[update.modrinth]
+mod-id = 'bY2CaVIh'
+version = 'JcLjpSJg'
+
+[[x-prismlauncher-dependencies]]
+addonId = '3qAYkBMB'
+type = 'REQUIRED'
