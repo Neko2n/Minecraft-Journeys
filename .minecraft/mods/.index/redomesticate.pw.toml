@@ -1,0 +1,25 @@
+filename = 'redomesticate-neoforge-1.21.1-1.11.0.jar'
+name = 'Redomesticate'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.11.0-1.21.1-neoforge'
+
+[download]
+hash = 'ba28949b3a8b306526a3dc43c3b0d7892c948c03c240d52e795632f35c65321a0117156f0e1827ec3b537b0730a0ac8aa63eab5a94760aa11e6436364e5445dc'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/4QTKALKe/versions/xv3eht26/redomesticate-neoforge-1.21.1-1.11.0.jar'
+
+[update.modrinth]
+mod-id = '4QTKALKe'
+version = 'xv3eht26'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'nvQzSEkH'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '9s6osm5g'
+type = 'OPTIONAL'

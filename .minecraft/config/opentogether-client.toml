@@ -1,0 +1,12 @@
+#Blocks that may act as double fence gates which can open together.
+#This option only takes effect when playing on a multiplayer server without this mod installed. In all other scenarios, configure the respective tag instead.
+#Default Value: [#minecraft:fence_gates]
+valid_double_fence_gates = ["#minecraft:fence_gates"]
+#Blocks that may act as double doors which can open together.
+#This option only takes effect when playing on a multiplayer server without this mod installed. In all other scenarios, configure the respective tag instead.
+#Default Value: [#minecraft:doors]
+valid_double_doors = ["#minecraft:doors"]
+#Blocks that may act as double trapdoors which can open together.
+#This option only takes effect when playing on a multiplayer server without this mod installed. In all other scenarios, configure the respective tag instead.
+#Default Value: [#minecraft:trapdoors]
+valid_double_trapdoors = ["#minecraft:trapdoors"]

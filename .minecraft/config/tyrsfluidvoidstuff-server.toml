@@ -1,0 +1,13 @@
+#Maximum vertical drop (in blocks) that a fluid column may span below its source.
+#Applies to every FlowingFluid (water, lava, modded fluids) unless blacklisted below.
+#0 (default) = vanilla behaviour (unlimited).
+#Any other value N means a fluid can drop at most N blocks below its source Y;
+#the column then ends with air underneath, and the renderer draws the same
+#fade-into-void gradient at the bottom of that truncated column.
+# Default: 0
+# Range: > 0
+maxFluidColumnLength = 0
+#Fluids in this list are NOT affected by the custom column-length / orphaned-fall
+#logic and behave 100% vanilla. Both the source and flowing form should be listed
+#if you want full vanilla behaviour (e.g. "minecraft:lava", "minecraft:flowing_lava").
+fluidColumnLengthBlacklist = []

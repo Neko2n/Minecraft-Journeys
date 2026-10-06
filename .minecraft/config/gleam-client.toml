@@ -1,0 +1,28 @@
+#Colored Light Settings
+[coloredLightSettings]
+	#Toggle colored lights
+	enableColoredLights = true
+	#Toggle UV blacklight emission
+	enableUvBlacklights = true
+	#Global multiplier applied to every colored light's intensity
+	# Default: 1.0
+	# Range: 4.9E-324 ~ 1.7976931348623157E308
+	globalLightIntensity = 1.0
+	#Global saturation multiplier applied to every colored light's color
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	globalLightSaturation = 1.0
+	#Maximum block distance at which light-emitting sections are gathered
+	# Default: 128.0
+	# Range: 16.0 ~ 512.0
+	lightGatheringDistance = 128.0
+	#Maximum block distance at which gathered lights are uploaded and rendered
+	# Default: 192.0
+	# Range: 16.0 ~ 512.0
+	lightRenderDistance = 192.0
+	#Apply distance-based brightness falloff to lights near the render distance limit
+	dimFartherLights = true
+	#Maximum block distance the camera may drift from the light anchor before lights are re-uploaded
+	# Default: 256.0
+	# Range: 16.0 ~ 4096.0
+	anchorDriftDistance = 256.0

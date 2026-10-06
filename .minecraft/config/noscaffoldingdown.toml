@@ -1,0 +1,2 @@
+#Minimum downward look angle required to descend from scaffolding. 0 = looking straight ahead, 90 = looking straight down.
+lookDownAngle = 70.0

@@ -10,6 +10,8 @@ Thorium has a fuel value of 16, identical to thermal shards. Thorium smelts at b
 
 Thorium has a unique purpose of acting as fuel for the **Onyx Drill**. See: [[Onyx]]
 
+Thorium can be made into a Block of Thorium which gives off immense heat, melting nearby blocks. Adjacent stone blocks will slowly be converted into magma blocks and then into lava, wooden blocks will catch on fire, and any other blocks with smelting recipes will slowly turn into their smelted version.
+
 **Incendiary Items**
 If a thorium item entity catches on fire, it will set the block it is on on fire.
 If a thorium item entity contains multiple thorium in its stack, it will create a small explosion.

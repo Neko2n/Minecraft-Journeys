@@ -1,0 +1,25 @@
+filename = 'PassableFoliage-1.21.1-NeoForge-9.3.2.jar'
+name = 'Passable Foliage 🌳'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '9.3.2+neoforge'
+
+[download]
+hash = '9eeeaf01d18dd8861b4f8bb4af810b15c51b5682f022ba39566cf0da6b6881c7020ef598037d4325c6fc82e810a98a76ec578a9e5bb47695f7d353f42eb42b28'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/uaLW6JVR/versions/YU7X3l1D/PassableFoliage-1.21.1-NeoForge-9.3.2.jar'
+
+[update.modrinth]
+mod-id = 'uaLW6JVR'
+version = 'YU7X3l1D'
+
+[[x-prismlauncher-dependencies]]
+addonId = '9s6osm5g'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'ufdDoWPd'
+type = 'REQUIRED'

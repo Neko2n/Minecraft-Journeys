@@ -7,7 +7,7 @@ The first input slot accepts only blocks.
 The second input slot accepts only non-block items.
 
 The workbench has the following recipes:
-- Crafting table - 1 copper ingot and 1 wood plank
+- Crafting table - 1 leather and 1 wood plank
 - Furnace - 1 coal and 1 of any stone
 - Smoker - 1 resin and 1 \[log, wood\]
 - Blast furnace - 1 thermal shard and 1 polished deepslate

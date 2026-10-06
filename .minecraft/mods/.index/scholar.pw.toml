@@ -1,0 +1,18 @@
+filename = 'scholar-neoforge-1.21.1-1.2.6.jar'
+name = 'Scholar'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.2.6'
+
+[download]
+hash = '33436ad49ecf495f93de5c07cda09aae3de8cab8fd68f74637f375b708a9296ca2d5cbd9b73f9f84a19007edc86d31342048ed6f16a05ca04783b1e8b56ed9f2'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/fX4dIQCo/versions/CCOhtz1H/scholar-neoforge-1.21.1-1.2.6.jar'
+
+[update.modrinth]
+mod-id = 'fX4dIQCo'
+version = 'CCOhtz1H'
