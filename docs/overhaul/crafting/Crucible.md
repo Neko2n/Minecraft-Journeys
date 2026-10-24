@@ -13,7 +13,7 @@ The crucible has the following recipes:
 - 2 gold and 2 zinc = 1 [[Brass]]
 - 2 iron, 1 banshee powder, and 1 of any coal = 1 [[Soul Steel]]
 - 2 copper, 1 blaze powder, and 1 tin = 1 [[Blaze Bronze]]
-- 2 silver, 1 breeze powder, and 1 gold = 1 [[Electrum]]
+- 2 gold, 1 breeze powder, and 1 silver = 1 [[Electrum]]
 
 Crucibles can be found in Bastion workshops as a form of world building, to explain how Piglins make their brass.
 

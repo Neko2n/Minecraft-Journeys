@@ -1,0 +1,41 @@
+filename = 'better_cloud_shadows-neoforge-1.21.1-1.4.2.jar'
+name = 'Better Cloud Shadows'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Better Cloud Shadows Neoforge 1.21.1 - 1.4.2'
+
+[download]
+hash = '4cdbf07e2eff2e7aa1ab8942d28d9662ee1be26d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 9221038
+project-id = 1704307
+
+[[x-prismlauncher-dependencies]]
+addonId = '1602068'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1285973'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1572354'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '667299'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1146749'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '508933'
+type = 'OPTIONAL'

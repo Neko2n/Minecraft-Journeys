@@ -1,0 +1,42 @@
+filename = 'Continents_26.2_v1.1.14.jar'
+name = 'Continents'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [
+    '1.20',
+    '1.20.1',
+    '1.20.2',
+    '1.20.3',
+    '1.20.4',
+    '1.20.5',
+    '1.20.6',
+    '1.21',
+    '1.21.1',
+    '1.21.2',
+    '1.21.3',
+    '1.21.4',
+    '1.21.5',
+    '1.21.6',
+    '1.21.7',
+    '1.21.8',
+    '1.21.9',
+    '1.21.10',
+    '1.21.11',
+    '26.1',
+    '26.1.1',
+    '26.1.2',
+    '26.2'
+]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.14'
+
+[download]
+hash = 'c6ce875302ae2dc7962480135af970e64e70c19f28fffb2bdabc6d7cb9ea832d36c9a31cd5a1a71346b95dd23c033843702f4688ca4f533f7890a5757bd3ec82'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/bQ5TJA1E/versions/bVXaqvWr/Continents_26.2_v1.1.14.jar'
+
+[update.modrinth]
+mod-id = 'bQ5TJA1E'
+version = 'bVXaqvWr'

@@ -1,20 +1,20 @@
-filename = 'nomansland-1.5.12.jar'
+filename = 'nomansland-1.6.2.jar'
 name = "No Man's Land"
-side = 'both'
+side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.5.12'
+x-prismlauncher-version-number = '1.6.2'
 
 [download]
-hash = '64a4791b9c05b466442eb3203d6f57241035359cf8deb2d79f6e3664484619ed38ce0d3725960d42cffff4e889eb0c00474a3b5f7354b1aa3fb81f7fa3fde9b5'
+hash = 'c7da5e70bcf09933b6cacc8d383e840be78079a41a646cbc121863360c224ec3ffc9139568cfd3d0f350513208cd6b4dbdd3fc742d4495610e204f3339ffe00e'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/kjZCvAn6/versions/bcszfrVc/nomansland-1.5.12.jar'
+url = 'https://cdn.modrinth.com/data/kjZCvAn6/versions/yDQCtLNp/nomansland-1.6.2.jar'
 
 [update.modrinth]
 mod-id = 'kjZCvAn6'
-version = 'bcszfrVc'
+version = 'yDQCtLNp'
 
 [[x-prismlauncher-dependencies]]
 addonId = 'cU1kDASI'

@@ -1,0 +1,10 @@
+{
+  "cloudShadows": true,
+  "affectedByLights": true,
+  "cloudShadowStrength": 1.0,
+  "cloudShadowSoftness": 4,
+  "matchCloudRenderDistance": true,
+  "cloudShadowDistance": 512,
+  "cloudShadowShear": 1.0,
+  "distantHorizonsClouds": true
+}

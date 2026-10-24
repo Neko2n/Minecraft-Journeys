@@ -1,14 +1,17 @@
 [[Early Game]]
 
-The 2x2 inventory grid is removed, replaced with two input slots and an output slot, as well as a "combining" system.
+The inventory is changed from a 2x2 crafting grid to an "A + B = C" crafting system.
 
-Some notable early-game recipes are changed to fit with this system, and some new items are added to complement it.
-
-Some example recipes:
-- Stick + stick = handle
-- Stick + grass = torch
-- Handle + pebbles/bone/flint = mallet
-- Mallet + 
-- Stick + grass + 1 pebbles/bone/flint = stone/bone/flint knife
-- 2 sticks + grass + 1 pebbles/bone/flint = stone/bone/flint mallet
-- 2 sticks + grass + 3 pebbles/bone/flint = stone/bone/flint axe
+Here's some examples of crucial recipes:
+- Stick + flint = flint knife
+- Stick + pebbles = stone axe
+- Stick + bone = bone pick
+- Bone + bone = bone pike
+- Flint + flint = firestarter
+- Log + log = kindling
+	- New building block, campfire without the ashes
+- Kindling + \<fuel\> = campfire
+- Stick + \<fuel\> = torch
+- Log + \<knife\> = stripped log
+- Log + \<axe\> = planks
+- Planks + planks = workbench

@@ -1,18 +1,18 @@
-filename = 'tooltipoverhaul-neoforge-1.21.1-2.0.6.jar'
-name = 'Tooltip Overhaul'
-side = 'client'
+filename = 'tooltipoverhaul-neoforge-1.21.1-2.0.7.jar'
+name = 'Tooltip overhaul'
+side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '2.0.6'
+x-prismlauncher-version-number = '2.0.7'
 
 [download]
-hash = '88d787e8d6272d4c81809804d8ecab8ce9dea9efc744816dd777484f9b0c10710a36622803d40120d0ed4fa6ec928372e99b2d7b8ddafd81520d08a1b15474b8'
+hash = '5f4a6b2009ba914398291e02e5a494400ad9f04f1ef2c43cf18d31f7a9ebc5f1c3380100c18e10183071fed3d4859b6f8ce3ab5c9563812084198c080de3ea7b'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/vRFcG5n6/versions/aclR21OH/tooltipoverhaul-neoforge-1.21.1-2.0.6.jar'
+url = 'https://cdn.modrinth.com/data/vRFcG5n6/versions/zHL7vnJP/tooltipoverhaul-neoforge-1.21.1-2.0.7.jar'
 
 [update.modrinth]
 mod-id = 'vRFcG5n6'
-version = 'aclR21OH'
+version = 'zHL7vnJP'

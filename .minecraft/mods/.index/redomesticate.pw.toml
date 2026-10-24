@@ -1,25 +1,25 @@
-filename = 'redomesticate-neoforge-1.21.1-1.11.0.jar'
+filename = 'redomesticate-neoforge-1.21.1-1.11.2.jar'
 name = 'Redomesticate'
-side = 'both'
+side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.11.0-1.21.1-neoforge'
+x-prismlauncher-version-number = '1.11.2-1.21.1-neoforge'
 
 [download]
-hash = 'ba28949b3a8b306526a3dc43c3b0d7892c948c03c240d52e795632f35c65321a0117156f0e1827ec3b537b0730a0ac8aa63eab5a94760aa11e6436364e5445dc'
+hash = 'cc5a9042a740186655e82756a58ae664110b9f9bd1e6b9c09864246d60cdc98e27c995dd9f3e9e12617f7cffded3b3cfce986458b8911a55ee6d12a86a4214da'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/4QTKALKe/versions/xv3eht26/redomesticate-neoforge-1.21.1-1.11.0.jar'
+url = 'https://cdn.modrinth.com/data/4QTKALKe/versions/uoJoscHM/redomesticate-neoforge-1.21.1-1.11.2.jar'
 
 [update.modrinth]
 mod-id = '4QTKALKe'
-version = 'xv3eht26'
-
-[[x-prismlauncher-dependencies]]
-addonId = 'nvQzSEkH'
-type = 'OPTIONAL'
+version = 'uoJoscHM'
 
 [[x-prismlauncher-dependencies]]
 addonId = '9s6osm5g'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'nvQzSEkH'
 type = 'OPTIONAL'

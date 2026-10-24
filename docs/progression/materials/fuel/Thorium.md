@@ -4,13 +4,14 @@ Thorium is a unique progression item used to craft and fuel the [[Crucible]].
 
 Thorium is found as an ore in [[The Below]]. It generates in rare boulder structures made of scoria, magma blocks, and a new block, **blastrock**. Blastrock explodes violently when mined at roughly the strength of a deeper, being enough to kill an unprepared player. It will sizzle and quiver stronger and stronger the closer it gets to being broken, telegraphing the effect.
 The thorium ore itself is inside of blastrock and copies this property, exploding when broken.
-You can mine blastrock and thorium with a [[Chisel]] to avoid the explosion effect. This will also drop the block itself, allowing you to place it elsewhere.
+You can mine blastrock and thorium ore with a [[Chisel]] to avoid the explosion effect. This will also drop the block itself, allowing you to place it elsewhere.
 
 Thorium has a fuel value of 16, identical to thermal shards. Thorium smelts at blazing temperature. See: [[Smelting]]
 
 Thorium has a unique purpose of acting as fuel for the **Onyx Drill**. See: [[Onyx]]
 
-Thorium can be made into a Block of Thorium which gives off immense heat, melting nearby blocks. Adjacent stone blocks will slowly be converted into magma blocks and then into lava, wooden blocks will catch on fire, and any other blocks with smelting recipes will slowly turn into their smelted version.
+Thorium can be made into a Block of Thorium which gives off immense heat, melting nearby blocks. Adjacent stone blocks will slowly be converted into magma blocks and then into lava, flammable blocks will catch on fire, and water will boil.
+Blocks of thorium also behave like blastrock, but create a much larger explosion when broken if not broken with a chisel.
 
 **Incendiary Items**
 If a thorium item entity catches on fire, it will set the block it is on on fire.
@@ -19,5 +20,4 @@ The explosion scales with the number of thorium items in the stack. At 2 thorium
 Thorium explosions also coat the area they exploded in fire and magma blocks.
 
 **Sprite**
-Thorium resembles a raw ore, but is extremely bright orange.
-The sprite is animated with a harsh, pulsing glow, as well as visible flames trailing off of the ore.
+Thorium resembles a typical raw ore, but is extremely bright orange. There are visible flames trailing off of the ore chunk.

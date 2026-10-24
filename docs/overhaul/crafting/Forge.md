@@ -12,6 +12,6 @@ Each craft takes 1 durability from the hammer, and 1/4th of a block of lava.
 
 All tool and armor recipes which use high-heat metals are moved to the forge.
 
-The forge is how you combine two ingots into a plate, which are used to make armor.
+The forge is how you combine two ingots into a plate, which are used to craft & upgrade metal armors.
 
-To make lava easier to obtain and automate for forges in the late game, all stones and magma blocks can now be converted into lava by placing them adjacent to a Block of [[Thorium]].
+Blocks of [[Thorium]] can be used to automate/renew lava in the late-game.

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/overhaul/misc/Rotten Food, Salt, & Iceboxes.md",
+                "file": "docs/overhaul/player/Hunger Overhaul.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rotten Food, Salt, & Iceboxes"
+              "title": "Hunger Overhaul"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/overhaul/crafting/Forge.md",
+                "file": "docs/progression/materials/metals/Tin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Forge"
+              "title": "Tin"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,36 +198,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "e3d8c415ed3d50c2",
+  "active": "7c1ba9aca41ddfec",
   "lastOpenFiles": [
-    "docs/overhaul/misc/Salt.md",
-    "docs/overhaul/misc/Rotten Food, Salt, & Iceboxes.md",
-    "docs/misc",
-    "docs/progression/Early Game.md",
-    "docs/overhaul/misc/Redstone Gel.md",
-    "docs/overhaul/crafting/Forge.md",
-    "docs/progression/materials/fuel/Thorium.md",
-    "docs/progression/Progression.md",
-    "docs/progression/Health & Stamina Upgrades.md",
-    "docs/progression/Going Beyond.md",
-    "docs/progression/Early Tools Revamp.md",
-    "docs/progression/Going Above.md",
-    "docs/progression/Going Below.md",
-    "docs/overhaul/misc/Tool Buckets.md",
-    "docs/progression/materials/metals/Zinc.md",
-    "docs/progression/materials/metals/Mithril.md",
-    "docs/progression/materials/metals/Electrum.md",
-    "docs/progression/materials/metals/Copper.md",
-    "docs/progression/materials/metals/Gold.md",
-    "docs/progression/materials/metals/Tin.md",
-    "docs/progression/materials/metals/Silver.md",
-    "docs/progression/materials/metals/Iron.md",
-    "docs/progression/materials/metals/Lead.md",
-    "docs/overhaul/crafting/Workbench.md",
     "docs/overhaul/crafting/Cooking Pot.md",
-    "docs/overhaul/crafting/Mortar & Millstone.md",
-    "docs/overhaul/crafting/Crafting Table.md",
+    "docs/progression/materials/metals/Blaze Bronze.md",
+    "docs/overhaul/crafting/Crucible.md",
+    "docs/overhaul/crafting/Dye Vat.md",
+    "docs/overhaul/crafting/Inventory.md",
+    "docs/overhaul/crafting/Spinning Wheel.md",
+    "docs/overhaul/crafting/Workbench.md",
     "instance.cfg.lock",
+    "docs/the-beyond/Rifts.md",
+    "docs/the-beyond/The Beyond.md",
+    "docs/progression/materials/metals/Tin.md",
+    "docs/progression/materials/metals/Lead.md",
+    "docs/progression/materials/metals/Tungsten.md",
+    "docs/overhaul/enchanting/Enchanting Overhaul.md",
+    "docs/overhaul/misc/Consistent Dust Blocks.md",
+    "docs/overhaul/misc/Specific Spawners.md",
+    "docs/overhaul/misc/Bubbles & Hot Tubs.md",
+    "docs/progression/materials/fuel/Thorium.md",
+    "docs/overhaul/crafting/Forge.md",
+    "docs/overhaul/player/Armor Overhaul.md",
+    "docs/overhaul/player/Freeze.md",
+    "docs/overhaul/player/Health & Damage Overhaul.md",
+    "docs/stamina/Campfire Effect.md",
+    "docs/overhaul/player/Heat.md",
+    "docs/overhaul/player/Hunger Overhaul.md",
+    "docs/stamina/Climbing.md",
+    "docs/stamina/Stamina.md",
+    "docs/misc",
     "docs/the-above/structures",
     "docs/the-below/under-prison",
     "instance.cfg.lRmlQm",

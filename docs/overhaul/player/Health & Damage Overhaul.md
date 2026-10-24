@@ -1,13 +1,15 @@
 Damage is now dealt in full hearts. There are no half hearts, and there's no fractional damage that deals less than that.
 
-Almost all damage sources now deal one full heart on contact.
+Almost all damage sources now deal one full heart.
 
 Your hearts can now be damaged in multiple ways.
 There's regular damage, and then theres:
-- Broken hearts - cannot be regenerated. Broken hearts repair at a rate of one heart every 10 minutes. Sleeping removes one broken heart. Broken hearts persist through death.
-- Withered hearts - like broken hearts, but clears after just 2 minutes from when it was applied, and resets on death. Replaces the wither potion effect.
+- **Bleeding hearts** - delayed damage, doesn't apply until the next time you take damage. Typically cleared with bandages. Basically the equivalent to half a heart--most weak damage sources inflict bleeding hearts.
+- **Broken hearts** - cannot be regenerated. Broken hearts persist through death. You cannot have less than 3 hearts, so at one point hearts can no longer be broken. You heal 1 broken heart each time you rest.
+- **Poison hearts** - replacement for the poison effect, applies damage after 60 seconds if not cleared. Can be cleared with antidotes and antidote bandages.
+- **Withered hearts** - like poison hearts, but black and breaks hearts when applied. Also takes twice as long to apply.
 
-Some damage sources are deemed as **Heavy Attacks**. This includes any mob with a weapon, warden sonic booms, large mobs like golems, etc.
+Some damage sources are deemed as **Heavy Attacks**. This includes any mob with a weapon, warden sonic booms, large mobs like golems, etc. Heavy attacks deal two full hearts and have special damage effects like dampening your audio for a moment and making a large crack sound.
 
 Some damage sources are even heavier than heavy attacks, being able to deal more than two hearts of damage. This includes only explosions and warden melee attacks. These attacks will *always* break at least one heart.
 
