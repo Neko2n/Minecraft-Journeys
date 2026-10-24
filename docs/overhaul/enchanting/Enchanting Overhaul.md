@@ -17,5 +17,5 @@ Multi-tool replacement for silk touch.
 **Unbreakable Equipment**
 Replacements for mending. Includes:
 - [[Zinc]] application
-- **Master Smithing Upgrades** via. [[Tungsten]]
+- **Master Smithing Upgrades** via. [[Titanium]]
 - [[Sanguine]] armor

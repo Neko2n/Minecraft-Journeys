@@ -1,17 +1,18 @@
 [[Early Game]]
 
-The forge is a 3x3 crafting grid for shaped & shapeless recipes which requires lava and a hammer.
+The forge is a 2x2 crafting grid for shaped & shapeless *smelting* recipes, with a fuel slot.
 
-Crafting items in a forge takes manual input and a short time equal to that of the mortar. 
+The forge also has a hammer slot, which unlocks a hammer button. Clicking the button while the forge is fueled progresses the recipe. The forge will not consume fuel until this button has been pressed. You basically want to mash the button as fast as you can.
+Each strike has a 10% chance to take 1 durability from the hammer, and each successful craft takes 1 durability.
 
-By default crafting is disabled with the output (a hammer icon) greyed out. To re-enable it:
-- Have a hammer in the hammer slot
-- Have lava in the lava meter (filled either through a bucket input slot or through clicking the forge block with a lava bucket)
-While crafting, the hammer icon does a little smashing animation while also filling up with white like a progress arrow, and the ingredient items are given a glowing hot orange overlay.
-Each craft takes 1 durability from the hammer, and 1/4th of a block of lava.
-
-All tool and armor recipes which use high-heat metals are moved to the forge.
-
-The forge is how you combine two ingots into a plate, which are used to craft & upgrade metal armors.
+Metal plates, a crucial resource used for making metal armors and many other metal items, are made by putting any two of the same metal together in the forge.
 
 Blocks of [[Thorium]] can be used to automate/renew lava in the late-game.
+
+You can automate forge recipes by running a mechanical press above it.
+
+Some recipe examples:
+- 2 lead rods above 2 iron plates, any heat = metal bucket
+- 2 lead rods above 2 titanium plates, blazing heat = titanium bucket
+- 2 lead ingots = lead rod
+- 1 metal ingot = 9 metal nuggets of the same metal

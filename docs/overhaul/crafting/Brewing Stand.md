@@ -1,11 +1,11 @@
 [[Going Above]]
 
-The brewing stand is now made with 1 [[Thermal Shard]] and 1 block of [[Silver]] in a [[Workbench]].
+The brewing stand is now made with 1 [[Thermite]] and 1 block of [[Silver]] in a [[Workbench]].
 
 Nether wart is changed to instead be a second amplifier for potions, boosting them into greater potions with stronger effects.
 
 Potions now have a new crafting system:
-- Fueled by [[Thermal Shard]] items
+- Fueled by [[Thermite]] items
 - Has four "scent" meters; sweet, sour, strong, and sickening. The names aren't actually displayed; they're just colored vertical meters with a little icon at the top of each meter representing its scent.
 - Sweet creates potions related to health. Sour makes potions related to stamina and movement. Strong makes potions related to damage. Sickening makes negative potions.
 - Each meter has five segments; the exact combination of these segments determines your output potion.

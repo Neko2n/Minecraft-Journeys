@@ -9,6 +9,6 @@ Some example recipes:
 - 2 iron ingots + 1 lead rod (in the middle), with a hammer = cogwheel
 - 1 iron block on the bottom, 1 lead rod above that, 1 cogwheel above that, with a wrench = mechanical press
 - 2 wood planks + 1 lead rod (in the middle), with a hammer = waterwheel
-- 2 redstone + 1 wood plank (in the middle), with a wrench = noteblock
-- 2 spinel + 1 wood plank (in the middle), with a wrench = jukebox
-- 2 cobblestone + 1 bow (in the middle), with a wrench = dispenser
+- 1 iron blade + 1 lead rod (in the middle) + 1 iron blade = sawblade
+- 1 sawblade + 1 chain + 1 stone = [[Sawmill & Stonecutter|Stonecutter]]
+- 1 sawblade + 1 chain + 1 planks = [[Sawmill & Stonecutter|Sawmill]]

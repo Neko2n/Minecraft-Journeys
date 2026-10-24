@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiGem",
+      "LiTriangleDashed",
+      "LiCirclePile",
       "LiX",
-      "LiCuboid",
-      "LiBox",
-      "LiLeaf",
-      "LiGem"
+      "LiCuboid"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -39,8 +39,6 @@
   "docs/overhaul/player/Heat.md": "LiSun",
   "docs/overhaul/player/Health & Damage Overhaul.md": "LiHeartCrack",
   "docs/overhaul/player/Hunger Overhaul.md": "LiDrumstick",
-  "docs/progression/materials/Sanguine.md": "LiHeartCrack",
-  "docs/progression/materials/fuel/Thermal Shard.md": "LiGem",
   "docs/progression/materials/fuel/Thorium.md": "LiFlame",
   "docs/progression/materials/metals/Brass.md": "LiCuboid",
   "docs/progression/materials/metals/Copper.md": "LiCuboid",
@@ -48,11 +46,20 @@
   "docs/progression/materials/metals/Silver.md": "LiCuboid",
   "docs/progression/materials/metals/Iron.md": "LiCuboid",
   "docs/progression/materials/metals/Lead.md": "LiCuboid",
-  "docs/progression/materials/metals/Tin.md": "LiCuboid",
   "docs/progression/materials/metals/Zinc.md": "LiDroplets",
   "docs/progression/Early Game.md": "LiLeaf",
-  "docs/progression/materials/metals/Tungsten.md": "LiBox",
   "docs/progression/materials/Onyx.md": "LiGem",
   "docs/progression/Beacon Shrine.md": "LiPyramid",
-  "docs/progression/materials/metals/Mithril.md": "LiCuboid"
+  "docs/archived/Blaze Bronze.md": "LiCuboid",
+  "docs/archived/Electrum.md": "LiCuboid",
+  "docs/archived/Mithril.md": "LiCuboid",
+  "docs/archived/Soul Steel.md": "LiCuboid",
+  "docs/archived/Sanguine.md": "LiHeartCrack",
+  "docs/archived/Tin (Going Below).md": "LiCuboid",
+  "docs/progression/materials/metals/Tin.md": "LiCuboid",
+  "docs/progression/materials/metals/Titanium.md": "LiBox",
+  "docs/progression/materials/metals/Platinum.md": "LiCuboid",
+  "docs/progression/materials/fuel/Thermite.md": "LiCirclePile",
+  "docs/progression/materials/Hardstone.md": "LiBox",
+  "docs/progression/materials/Diamond.md": "LiGem"
 }

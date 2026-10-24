@@ -1,6 +1,6 @@
 [[Going Below]]
 
-Blaze bronze is a tier-3 metal made in a [[Crucible]] from alloying [[Tin]] and [[Copper]] with blaze powder.
+Blaze bronze is a tier-3 metal made in a [[Crucible]] from alloying [[Tin (Going Below)]] and [[Copper]] with blaze powder.
 
 Blaze bronze's primary thing is fire.
 
