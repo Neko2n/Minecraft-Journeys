@@ -6,7 +6,7 @@ Zinc is used to make [[Brass]].
 
 Zinc ingots can be used to wax oxidizable blocks just like honeycomb.
 
-Zinc ingots can be applied to any item in a smithing table to give it a temporary upgrade equivalent to [[Diamond Upgrading]]. You can do this up to three times for any item. This buff lasts 10 minutes, resetting when you apply a new zinc ingot. The buff drains twice as fast in The Below, lasting only 5 minutes.
+Zinc ingots can be applied to any item in a smithing table to give it a temporary upgrade equivalent to [[Equipment Upgrading]]. You can do this up to three times for any item. This buff lasts 10 minutes, resetting when you apply a new zinc ingot. The buff drains twice as fast in The Below, lasting only 5 minutes.
 
 Zinc is also a [[Brewing Stand]] ingredient, providing +3 sour, -2 sweet, +1 strong, and -1 nauseating.
 

@@ -12,7 +12,7 @@ Blocks of [[Thorium]] can be used to automate/renew lava in the late-game.
 You can automate forge recipes by running a mechanical press above it.
 
 Some recipe examples:
-- 2 lead rods above 2 iron plates, any heat = metal bucket
-- 2 lead rods above 2 titanium plates, blazing heat = titanium bucket
+- 4 iron plates, any heat = iron bucket
+- 4 titanium plates, blazing heat = titanium bucket
 - 2 lead ingots = lead rod
 - 1 metal ingot = 9 metal nuggets of the same metal

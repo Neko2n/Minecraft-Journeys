@@ -6,7 +6,7 @@ Thorium is found as an ore in [[The Below]]. It generates in rare boulder struct
 The thorium ore itself is inside of blastrock and copies this property, exploding when broken.
 You can mine blastrock and thorium ore with a [[Chisel]] to avoid the explosion effect. This will also drop the block itself, allowing you to place it elsewhere.
 
-Thorium has a fuel value of 16, identical to thermal shards. Thorium smelts at blazing temperature. See: [[Smelting]]
+Thorium has a fuel value of 16 and smelts at blazing temperature. See: [[Smelting]]
 
 Thorium has a unique purpose of acting as fuel for the **Onyx Drill**. See: [[Onyx]]
 

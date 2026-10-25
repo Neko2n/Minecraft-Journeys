@@ -52,14 +52,14 @@
   "docs/progression/Beacon Shrine.md": "LiPyramid",
   "docs/archived/Blaze Bronze.md": "LiCuboid",
   "docs/archived/Electrum.md": "LiCuboid",
-  "docs/archived/Mithril.md": "LiCuboid",
   "docs/archived/Soul Steel.md": "LiCuboid",
   "docs/archived/Sanguine.md": "LiHeartCrack",
   "docs/archived/Tin (Going Below).md": "LiCuboid",
   "docs/progression/materials/metals/Tin.md": "LiCuboid",
   "docs/progression/materials/metals/Titanium.md": "LiBox",
-  "docs/progression/materials/metals/Platinum.md": "LiCuboid",
   "docs/progression/materials/fuel/Thermite.md": "LiCirclePile",
   "docs/progression/materials/Hardstone.md": "LiBox",
-  "docs/progression/materials/Diamond.md": "LiGem"
+  "docs/progression/materials/Diamond.md": "LiGem",
+  "docs/progression/materials/metals/Mithril.md": "LiCuboid",
+  "docs/progression/materials/metals/Steel.md": "LiCuboid"
 }
